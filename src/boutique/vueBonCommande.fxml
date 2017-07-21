@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boutique.VueBonCommandeController">
+   <children>
+      <Label layoutX="177.0" layoutY="14.0" text="BON DE COMMANDE">
+         <font>
+            <Font name="Montague" size="26.0" />
+         </font>
+      </Label>
+      <HBox layoutX="4.0" layoutY="129.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="41.0" prefWidth="569.0" spacing="10.0">
+         <children>
+            <Label text="Label" />
+            <ComboBox fx:id="com_produits" prefWidth="150.0" />
+            <TextField fx:id="txt_prix" prefHeight="25.0" prefWidth="119.0" />
+            <TextField fx:id="txt_quantite" prefHeight="25.0" prefWidth="99.0" />
+            <Button fx:id="btn_ajouter_modifier" mnemonicParsing="false" onMouseClicked="#btnAjouterModifierClicked" text="AJOUTER /Mod" textFill="#2c03f8" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" />
+         </padding>
+      </HBox>
+      <HBox layoutX="142.0" layoutY="55.0" prefHeight="29.0" prefWidth="346.0" spacing="10.0">
+         <children>
+            <Label text="Fournisseur">
+               <font>
+                  <Font name="Droid Sans" size="14.0" />
+               </font></Label>
+            <ComboBox fx:id="com_fournisseur" prefWidth="150.0" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </HBox>
+      <HBox layoutX="88.0" layoutY="93.0" prefHeight="29.0" prefWidth="400.0" spacing="90.0">
+         <children>
+            <Label text="Produit">
+               <font>
+                  <Font name="DejaVu Sans Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label text="Prix">
+               <font>
+                  <Font name="DejaVu Sans Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label text="Quantité">
+               <font>
+                  <Font name="DejaVu Sans Condensed Bold" size="13.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></Label>
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </HBox>
+      <TableView fx:id="tbl_produits_liste" layoutX="4.0" layoutY="193.0" prefHeight="282.0" prefWidth="569.0">
+        <columns>
+          <TableColumn fx:id="cln_index" prefWidth="283.0" text="N°" />
+          <TableColumn fx:id="cln_produit_lib" prefWidth="284.0" text="Produit" />
+            <TableColumn fx:id="cln_prix" prefWidth="75.0" text="Prix" />
+            <TableColumn fx:id="cln_quantite" prefWidth="75.0" text="Quantité" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <HBox layoutX="2.0" layoutY="491.0" prefHeight="25.0" prefWidth="134.0">
+         <children>
+            <Button fx:id="btn_annuler" mnemonicParsing="false" onMouseClicked="#btnAnnulerClicked" prefHeight="26.0" prefWidth="78.0" text="Annuler" textFill="#f89509">
+               <font>
+                  <Font name="DejaVu Sans Bold" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <HBox layoutX="454.0" layoutY="491.0" prefHeight="15.0" prefWidth="119.0">
+         <children>
+            <Button fx:id="btn_sauvegarder" mnemonicParsing="false" onMouseClicked="#btnSauvegarderClicked" prefHeight="26.0" prefWidth="112.0" text="Sauvegarder" textFill="#159a06">
+               <font>
+                  <Font name="DejaVu Sans Bold" size="13.0" />
+               </font></Button>
+         </children>
+      </HBox>
+      <HBox layoutX="222.0" layoutY="490.0" prefHeight="29.0" prefWidth="105.0">
+         <children>
+            <Button fx:id="btn_supprimer" mnemonicParsing="false" onMouseClicked="#btnSupprimerClicked" prefHeight="26.0" prefWidth="101.0" text="Supprimer" textFill="#f20909">
+               <font>
+                  <Font name="DejaVu Sans Bold" size="13.0" />
+               </font></Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
