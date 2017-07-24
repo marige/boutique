@@ -89,6 +89,7 @@ public class VueBonCommandeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         
+        commandes=FXCollections.observableArrayList(boncommandeController.findBonCommandeEntities());
        
        les_fournisseurs=FXCollections.observableArrayList(fournisseurController.findFournisseurEntities());
       com_fournisseur.getItems().addAll(les_fournisseurs);
