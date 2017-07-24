@@ -41,8 +41,7 @@ public class VueBonCommandeController implements Initializable {
     private ObservableList<Fournisseur> les_fournisseurs=null;  
     private ObservableList<Article> les_produits=null;
     private ObservableList<DetailBonCommande> les_details=null;
-    private ObservableList<BonCommande> commandes=null;
-
+    
     SuperClass superClass =new SuperClass();
     @FXML
     private ComboBox<Article> com_produits;
@@ -89,7 +88,6 @@ public class VueBonCommandeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         
-        commandes=FXCollections.observableArrayList(boncommandeController.findBonCommandeEntities());
        
        les_fournisseurs=FXCollections.observableArrayList(fournisseurController.findFournisseurEntities());
       com_fournisseur.getItems().addAll(les_fournisseurs);
@@ -121,7 +119,7 @@ public class VueBonCommandeController implements Initializable {
             superClass.alert("Valeurs", "Les chanps ne sont pas remplit", "warning");
             
         }else{
-            
+           // boncommandeController.create(bonCommand);
             
            DetailBonCommande nouveau =new DetailBonCommande();
                         nouveau.setCoutDetailBonCommande(Integer.parseInt(txt_prix.getText()));
