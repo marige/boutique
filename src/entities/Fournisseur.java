@@ -143,7 +143,7 @@ public class Fournisseur implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Fournisseur[ idFournisseur=" + idFournisseur + " ]";
+        return libFournisseur;
     }
     
 }

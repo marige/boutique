@@ -6,13 +6,16 @@
 
 package boutique;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
@@ -22,27 +25,15 @@ import javafx.stage.Stage;
 public class Boutique extends Application {
     SuperClass sc= new SuperClass();
     
-    @Override
-    public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                sc.alert("debut","welcome to our program","success");
-                System.out.println("Hello World!");
-            }
-        });
+         @Override
+    public void start(Stage stage) throws Exception {
+             AnchorPane root = FXMLLoader.load(VueBonCommandeController.class.getResource("vueBonCommande.fxml"));
         
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
+        Scene scene = new Scene(root);
         
-        Scene scene = new Scene(root, 300, 250);
+        stage.setScene(scene);
+        stage.show();
         
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
     }
 
     /**

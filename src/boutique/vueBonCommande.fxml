@@ -97,5 +97,11 @@
                </font></Button>
          </children>
       </HBox>
+      <TextField fx:id="txt_idBonCommande" layoutX="484.0" layoutY="19.0" prefHeight="25.0" prefWidth="69.0" />
+      <Label layoutX="454.0" layoutY="24.0" text="N°">
+         <font>
+            <Font name="DejaVu Sans Condensed Bold" size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

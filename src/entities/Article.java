@@ -141,7 +141,7 @@ public class Article implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Article[ idArticle=" + idArticle + " ]";
+        return libArticle;
     }
     
 }
