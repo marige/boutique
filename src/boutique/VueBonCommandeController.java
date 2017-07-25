@@ -127,7 +127,7 @@ public class VueBonCommandeController implements Initializable {
                         nouveau.setBonCommandeidBonCommande(bonCommand);
                         nouveau.setIdDetailBonCommande(detailController.getDetailBonCommandeCount()+1);
                         
-            les_details.add(nouveau);
+           // les_details.add(nouveau);
             
             superClass.alert("Valeurs", "Données Bien enregistrées", "success");
       
