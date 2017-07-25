@@ -43,8 +43,7 @@ public class VueBonCommandeController implements Initializable {
     private ObservableList<DetailBonCommande> les_details=null;
     
     SuperClass superClass =new SuperClass();
-    @FXML
-    private ComboBox<Article> com_produits;
+        //private ComboBox<Article> com_produits;
     @FXML
     private TextField txt_prix;
     @FXML
@@ -80,6 +79,8 @@ public class VueBonCommandeController implements Initializable {
     private final ArticleJpaController articleController= new ArticleJpaController(emf);
     private final DetailBonCommandeJpaController detailController= new DetailBonCommandeJpaController(emf);
     private final  BonCommandeJpaController boncommandeController=new BonCommandeJpaController(emf);
+    @FXML
+    private TextField txt_lib_produit;
     
     /**
      * Initializes the controller class.
@@ -92,8 +93,8 @@ public class VueBonCommandeController implements Initializable {
        les_fournisseurs=FXCollections.observableArrayList(fournisseurController.findFournisseurEntities());
       com_fournisseur.getItems().addAll(les_fournisseurs);
       
-      les_produits=FXCollections.observableArrayList(articleController.findArticleEntities());
-      com_produits.getItems().addAll(les_produits);
+      //les_produits=FXCollections.observableArrayList(articleController.findArticleEntities());
+      //com_produits.getItems().addAll(les_produits);
       
       les_details=FXCollections.observableArrayList(detailController.findDetailBonCommandeEntities());
        tbl_produits_liste.setItems(les_details);
@@ -123,7 +124,7 @@ public class VueBonCommandeController implements Initializable {
             
            DetailBonCommande nouveau =new DetailBonCommande();
                         nouveau.setCoutDetailBonCommande(Integer.parseInt(txt_prix.getText()));
-                        nouveau.setLibDetailBonCommande(com_produits.getSelectionModel().getSelectedItem().getLibArticle());
+                        nouveau.setLibDetailBonCommande(txt_lib_produit.getText());
                         nouveau.setBonCommandeidBonCommande(bonCommand);
                         nouveau.setIdDetailBonCommande(detailController.getDetailBonCommandeCount()+1);
                         
@@ -168,6 +169,7 @@ public class VueBonCommandeController implements Initializable {
         if(selectItems!=null){
                        
                         txt_prix.setText(selectItems.getCoutDetailBonCommande().toString());
+                        txt_lib_produit.setText(selectItems.getLibDetailBonCommande());
         }
     }
     

@@ -16,7 +16,7 @@
       <HBox layoutX="4.0" layoutY="129.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="41.0" prefWidth="569.0" spacing="10.0">
          <children>
             <Label text="Label" />
-            <ComboBox fx:id="com_produits" prefWidth="150.0" />
+            <TextField fx:id="txt_lib_produit" prefHeight="25.0" prefWidth="132.0" />
             <TextField fx:id="txt_prix" prefHeight="25.0" prefWidth="119.0" />
             <TextField fx:id="txt_quantite" prefHeight="25.0" prefWidth="99.0" />
             <Button fx:id="btn_ajouter_modifier" mnemonicParsing="false" onMouseClicked="#btnAjouterModifierClicked" text="AJOUTER /Mod" textFill="#2c03f8" />
