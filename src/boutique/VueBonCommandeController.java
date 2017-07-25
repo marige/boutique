@@ -162,6 +162,13 @@ public class VueBonCommandeController implements Initializable {
 
     @FXML
     private void tableClicked(MouseEvent event) {
+        DetailBonCommande selectItems;
+         selectItems=tbl_produits_liste.getSelectionModel().getSelectedItem();
+        
+        if(selectItems!=null){
+                       
+                        txt_prix.setText(selectItems.getCoutDetailBonCommande().toString());
+        }
     }
     
 }
