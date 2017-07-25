@@ -96,30 +96,30 @@ public class VueBonCommandeController implements Initializable {
       com_produits.getItems().addAll(les_produits);
       
       les_details=FXCollections.observableArrayList(detailController.findDetailBonCommandeEntities());
-       tbl_produits_liste.getItems().addAll(les_details);
+       tbl_produits_liste.setItems(les_details);
             
             cln_index.setCellValueFactory(new PropertyValueFactory<>("idDetailBonCommande"));
             cln_prix.setCellValueFactory(new PropertyValueFactory<>("coutDetailBonCommande"));
             cln_produit_lib.setCellValueFactory(new PropertyValueFactory<>("libDetailBonCommande"));
-       txt_idBonCommande.setText(""+(boncommandeController.getBonCommandeCount()+1));
-       txt_idBonCommande.setEditable(false);
+      
+            txt_idBonCommande.setText(""+(boncommandeController.getBonCommandeCount()+1));
+            txt_idBonCommande.setEditable(false);
      
     }    
 
     @FXML
     private void btnAjouterModifierClicked(MouseEvent event) {
          
-          BonCommande bonCommand= new BonCommande() ;
+          
           Utilisateur utilisateur= new Utilisateur(1);
           
-           bonCommand.setFournisseuridFournisseur(com_fournisseur.getSelectionModel().getSelectedItem());
-           bonCommand.setIdBonCommande(Integer.parseInt(txt_idBonCommande.getText()));
-           bonCommand.setIdUtilisateur(utilisateur);
+          
         if(!controleEntrer()){
             superClass.alert("Valeurs", "Les chanps ne sont pas remplit", "warning");
             
         }else{
-           // boncommandeController.create(bonCommand);
+           
+            BonCommande bonCommand= new BonCommande(com_fournisseur.getValue().getIdFournisseur());
             
            DetailBonCommande nouveau =new DetailBonCommande();
                         nouveau.setCoutDetailBonCommande(Integer.parseInt(txt_prix.getText()));
@@ -127,8 +127,8 @@ public class VueBonCommandeController implements Initializable {
                         nouveau.setBonCommandeidBonCommande(bonCommand);
                         nouveau.setIdDetailBonCommande(detailController.getDetailBonCommandeCount()+1);
                         
-           // les_details.add(nouveau);
-            
+            detailController.create(nouveau);
+            actualiser();
             superClass.alert("Valeurs", "Données Bien enregistrées", "success");
       
         }
@@ -149,6 +149,19 @@ public class VueBonCommandeController implements Initializable {
      private boolean controleEntrer(){
         
         return !txt_prix.getText().isEmpty() && !txt_quantite.getText().isEmpty();
+    }
+     
+     
+     private void actualiser(){
+        les_details.clear();
+        les_details.addAll(detailController.findDetailBonCommandeEntities());
+       txt_quantite.clear();
+       txt_prix.clear();
+       
+    }
+
+    @FXML
+    private void tableClicked(MouseEvent event) {
     }
     
 }
