@@ -81,6 +81,8 @@ public class VueBonCommandeController implements Initializable {
     private final  BonCommandeJpaController boncommandeController=new BonCommandeJpaController(emf);
     @FXML
     private TextField txt_lib_produit;
+    @FXML
+    private TextField txt_lib_bonCommande;
     
     /**
      * Initializes the controller class.
@@ -105,6 +107,8 @@ public class VueBonCommandeController implements Initializable {
       
             txt_idBonCommande.setText(""+(boncommandeController.getBonCommandeCount()+1));
             txt_idBonCommande.setEditable(false);
+            
+            txt_lib_bonCommande.setText("Commande N°"+txt_idBonCommande.getText());
      
     }    
 

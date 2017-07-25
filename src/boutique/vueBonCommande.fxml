@@ -8,15 +8,15 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boutique.VueBonCommandeController">
    <children>
-      <Label layoutX="177.0" layoutY="14.0" text="BON DE COMMANDE">
+      <Label layoutX="171.0" layoutY="7.0" text="BON DE COMMANDE">
          <font>
             <Font name="Montague" size="26.0" />
          </font>
       </Label>
-      <HBox layoutX="4.0" layoutY="129.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="41.0" prefWidth="569.0" spacing="10.0">
+      <HBox layoutX="3.0" layoutY="152.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="41.0" prefWidth="569.0" spacing="10.0">
          <children>
             <Label text="Label" />
-            <TextField fx:id="txt_lib_produit" prefHeight="25.0" prefWidth="132.0" />
+            <TextField fx:id="txt_lib_produit" prefHeight="25.0" prefWidth="117.0" />
             <TextField fx:id="txt_prix" prefHeight="25.0" prefWidth="119.0" />
             <TextField fx:id="txt_quantite" prefHeight="25.0" prefWidth="99.0" />
             <Button fx:id="btn_ajouter_modifier" mnemonicParsing="false" onMouseClicked="#btnAjouterModifierClicked" text="AJOUTER /Mod" textFill="#2c03f8" />
@@ -25,7 +25,7 @@
             <Insets bottom="5.0" left="5.0" right="5.0" />
          </padding>
       </HBox>
-      <HBox layoutX="142.0" layoutY="55.0" prefHeight="29.0" prefWidth="346.0" spacing="10.0">
+      <HBox layoutX="136.0" layoutY="74.0" prefHeight="29.0" prefWidth="346.0" spacing="10.0">
          <children>
             <Label text="Fournisseur">
                <font>
@@ -37,7 +37,7 @@
             <Insets bottom="5.0" />
          </padding>
       </HBox>
-      <HBox layoutX="88.0" layoutY="93.0" prefHeight="29.0" prefWidth="400.0" spacing="90.0">
+      <HBox layoutX="62.0" layoutY="116.0" prefHeight="29.0" prefWidth="400.0" spacing="90.0">
          <children>
             <Label text="Produit">
                <font>
@@ -99,6 +99,12 @@
       </HBox>
       <TextField fx:id="txt_idBonCommande" layoutX="484.0" layoutY="19.0" prefHeight="25.0" prefWidth="69.0" />
       <Label layoutX="454.0" layoutY="24.0" text="N°">
+         <font>
+            <Font name="DejaVu Sans Condensed Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txt_lib_bonCommande" layoutX="223.0" layoutY="44.0" prefHeight="25.0" prefWidth="150.0" />
+      <Label layoutX="58.0" layoutY="45.0" prefHeight="24.0" prefWidth="157.0" text="LIbellé de la commande">
          <font>
             <Font name="DejaVu Sans Condensed Bold" size="13.0" />
          </font>
