@@ -120,7 +120,7 @@ public class VueBonCommandeController implements Initializable {
           
           
         if(!controleEntrer()){
-            superClass.alert("Valeurs", "Les chanps ne sont pas remplit", "warning");
+            superClass.alert("Valeurs", "Les champs ne sont pas remplit", "warning");
             
         }else{
            
@@ -141,6 +141,7 @@ public class VueBonCommandeController implements Initializable {
 
     @FXML
     private void btnAnnulerClicked(MouseEvent event) {
+        
     }
 
     @FXML
