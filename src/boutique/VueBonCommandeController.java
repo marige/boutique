@@ -122,7 +122,13 @@ public class VueBonCommandeController implements Initializable {
         if(!controleEntrer()){
             superClass.alert("Valeurs", "Les champs ne sont pas remplit", "warning");
             
-        }else{
+        }
+        else if(com_fournisseur.isArmed()){
+            superClass.alert("Valeurs", "Veuillez choisir un fournisseur", "warning");
+        }
+        else{
+            
+            
            
             BonCommande bonCommand= new BonCommande(com_fournisseur.getValue().getIdFournisseur());
             
@@ -163,6 +169,7 @@ public class VueBonCommandeController implements Initializable {
         les_details.addAll(detailController.findDetailBonCommandeEntities());
        txt_quantite.clear();
        txt_prix.clear();
+       txt_lib_produit.clear();
        
     }
 
