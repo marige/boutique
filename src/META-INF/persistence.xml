@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-  <persistence-unit name="PROJETBOUTIQUEPU" transaction-type="RESOURCE_LOCAL">
+  <persistence-unit name="BoutiquePU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>entite.Article</class>
-    <class>entite.Categorie</class>
-    <class>entite.Facture</class>
-    <class>entite.Vente</class>
     <class>entite.tableView.DetailFacture</class>
     <class>entite.ArticleFactureId</class>
+    <class>entities.BonCommande</class>
+    <class>entities.DetailBonCommande</class>
+    <class>entities.Stock</class>
+    <class>entities.Utilisateur</class>
+    <class>entities.Fournisseur</class>
+    <class>entities.DetailFacture</class>
+    <class>entities.Vente</class>
+    <class>entities.Facture</class>
+    <class>entities.Categorie</class>
+    <class>entities.Article</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/boutique?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

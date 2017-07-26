@@ -6,9 +6,9 @@
 package projetboutique;
 
 import superpackage.ClassSuper;
-import entite.Article;
-import entite.Facture;
-import entite.Vente;
+import entities.Article;
+import entities.Facture;
+import entities.Vente;
 import entite.tableView.DetailFacture;
 import java.net.URL;
 import java.text.ParseException;

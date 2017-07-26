@@ -27,9 +27,9 @@ import javafx.scene.input.MouseEvent;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import jpaController.ArticleJpaController;
-import jpaController.BonCommandeJpaController;
-import jpaController.DetailBonCommandeJpaController;
-import jpaController.FournisseurJpaController;
+import jpaControler.BonCommandeJpaController;
+import jpaControler.DetailBonCommandeJpaController;
+import jpaControler.FournisseurJpaController;
 
 /**
  * FXML Controller class

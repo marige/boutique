@@ -1,8 +1,8 @@
 
 package projetboutique;
 
-import entite.Article;
-import entite.Categorie;
+import entities.Article;
+import entities.Categorie;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
