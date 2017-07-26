@@ -23,7 +23,7 @@ public class CategorieJpaController implements Serializable {
      private EntityManagerFactory emf=null;
      EntityManager em=null;
      public CategorieJpaController() {
-        this.emf=  emf=Persistence.createEntityManagerFactory("PROJETBOUTIQUEPU");   
+        this.emf=  emf=Persistence.createEntityManagerFactory("BoutiquePU");   
     }
    
     private EntityManager getEntityManager(){

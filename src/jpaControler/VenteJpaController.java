@@ -25,7 +25,7 @@ public class VenteJpaController implements Serializable {
     private EntityManagerFactory emf=null;
     EntityManager em=null;
    public VenteJpaController(){
-         emf=Persistence.createEntityManagerFactory("PROJETBOUTIQUEPU");
+         emf=Persistence.createEntityManagerFactory("BoutiquePU");
    }
 
     public EntityManager getEntityManager() {

@@ -26,7 +26,7 @@ public class FactureJpaController implements Serializable {
     EntityManager em=null;
     
     public FactureJpaController(){
-        emf=Persistence.createEntityManagerFactory("PROJETBOUTIQUEPU");
+        emf=Persistence.createEntityManagerFactory("BoutiquePU");
     }
 
     public EntityManager getEntityManager() {

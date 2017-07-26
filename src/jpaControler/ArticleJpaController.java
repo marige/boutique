@@ -25,7 +25,7 @@ public class ArticleJpaController implements Serializable{
      private EntityManagerFactory emf=null;
      EntityManager em=null;
      public ArticleJpaController() {
-        this.emf=Persistence.createEntityManagerFactory("PROJETBOUTIQUEPU");
+        this.emf=Persistence.createEntityManagerFactory("BoutiquePU");
         em=getEntityManager();
     }
    
