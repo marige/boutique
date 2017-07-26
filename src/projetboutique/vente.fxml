@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" onMouseClicked="#tvClicked" prefHeight="522.0" prefWidth="737.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetboutique.VenteController">
+   <children>
+      <Button fx:id="btnAjouterP" layoutX="580.0" layoutY="164.0" mnemonicParsing="false" onMouseClicked="#clickPanier" prefHeight="25.0" prefWidth="120.0" text="Ajouter" />
+      <TableView id="table" fx:id="tvDetailFacture" layoutX="27.0" layoutY="243.0" prefHeight="232.0" prefWidth="682.0">
+         <columns>
+            <TableColumn id="NOM" fx:id="cln_code" prefWidth="75.0" text="CodeProduit" />
+            <TableColumn id="PRENOMS" fx:id="cln_libarticle" prefWidth="261.0" text="Libellé produits" />
+            <TableColumn fx:id="cln_qte" prefWidth="101.0" text="Qté" />
+            <TableColumn fx:id="cln_pu" prefWidth="101.0" text="Pu" />
+            <TableColumn fx:id="cln_montant" prefWidth="101.0" text="Montant" />
+         </columns>
+      </TableView>
+      <TableView id="table" fx:id="tvListProduit" layoutX="23.0" layoutY="47.0" onMouseClicked="#tvClicked" prefHeight="142.0" prefWidth="320.0">
+         <columns>
+            <TableColumn id="NOM" fx:id="idarticle" prefWidth="75.0" text="CodeProduit" />
+            <TableColumn id="PRENOMS" fx:id="libarticle" prefWidth="150.0" text="Libellé" />
+            <TableColumn fx:id="stock" prefWidth="105.0" text="Qté en stock" />
+         </columns>
+      </TableView>
+      <TextField fx:id="txtRecherche" layoutX="145.0" layoutY="15.0" prefHeight="25.0" prefWidth="198.0" />
+      <Label layoutX="18.0" layoutY="19.0" prefHeight="17.0" prefWidth="120.0" text="Recherche un produit" />
+      <Button fx:id="btnFinCommande" layoutX="153.0" layoutY="483.0" mnemonicParsing="false" onAction="#action" onMouseClicked="#btnFinCommande" prefHeight="25.0" prefWidth="399.0" text="Finaliser la commande" />
+      <Label layoutX="368.0" layoutY="51.0" text="Date Facture" />
+      <DatePicker fx:id="dtDateFacture" layoutX="443.0" layoutY="45.0" prefHeight="25.0" prefWidth="146.0" />
+      <Label layoutX="369.0" layoutY="105.0" text="Libellé article" />
+      <TextField fx:id="txtLibarticle" layoutX="444.0" layoutY="99.0" prefHeight="20.0" prefWidth="265.0">
+         <font>
+            <Font size="11.0" />
+         </font></TextField>
+      <Label layoutX="381.0" layoutY="132.0" text="Quantité" />
+      <TextField fx:id="txtQte" layoutX="444.0" layoutY="126.0" prefHeight="20.0" prefWidth="67.0" />
+      <TextField fx:id="txtMontantTtc" layoutX="328.0" layoutY="204.0" prefHeight="20.0" prefWidth="139.0" promptText="0" />
+      <Label layoutX="244.0" layoutY="210.0" text="Montant TTC" />
+      <TextField fx:id="txtPu" layoutX="588.0" layoutY="126.0" prefHeight="20.0" prefWidth="120.0" />
+      <Label layoutX="528.0" layoutY="132.0" text="P Unitaire" />
+      <TextField fx:id="txtCode" layoutX="443.0" layoutY="72.0" prefHeight="25.0" prefWidth="146.0" />
+      <Label layoutX="374.0" layoutY="78.0" text="Code article" />
+      <Button fx:id="btnRetirer" layoutX="428.0" layoutY="164.0" mnemonicParsing="false" onMouseClicked="#clickRetirer" prefHeight="25.0" prefWidth="120.0" text="Retirer" />
+   </children>
+</AnchorPane>
