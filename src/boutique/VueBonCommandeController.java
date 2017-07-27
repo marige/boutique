@@ -26,7 +26,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import jpaController.ArticleJpaController;
 import jpaControler.BonCommandeJpaController;
 import jpaControler.DetailBonCommandeJpaController;
 import jpaControler.FournisseurJpaController;
