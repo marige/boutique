@@ -6,6 +6,7 @@
 
 package boutique;
 
+import entities.Fournisseur;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -29,17 +30,17 @@ public class VueFournisseursController implements Initializable {
     @FXML
     private TextField txt_recherche;
     @FXML
-    private TableView<?> tbl_fournisseurs;
+    private TableView<Fournisseur> tbl_fournisseurs;
     @FXML
-    private TableColumn<?, ?> cln_ordre;
+    private TableColumn<Fournisseur, ?> cln_ordre;
     @FXML
-    private TableColumn<?, ?> cln_lib_fournisseurs;
+    private TableColumn<Fournisseur, ?> cln_lib_fournisseurs;
     @FXML
-    private TableColumn<?, ?> cln_ifu;
+    private TableColumn<Fournisseur, ?> cln_ifu;
     @FXML
-    private TableColumn<?, ?> cln_rcm;
+    private TableColumn<Fournisseur, ?> cln_rcm;
     @FXML
-    private TableColumn<?, ?> cln_n_commande;
+    private TableColumn<Fournisseur, ?> cln_n_commande;
     @FXML
     private Button btn_modifier;
     @FXML
