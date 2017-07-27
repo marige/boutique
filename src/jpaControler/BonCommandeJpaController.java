@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package jpaController;
+package jpaControler;
 
 import entities.BonCommande;
 import java.io.Serializable;
@@ -19,8 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import jpaController.exceptions.IllegalOrphanException;
-import jpaController.exceptions.NonexistentEntityException;
+import jpaControler.exceptions.IllegalOrphanException;
+import jpaControler.exceptions.NonexistentEntityException;
 
 /**
  *

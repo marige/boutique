@@ -3,145 +3,122 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package entities;
 
+import entities.Categorie;
+import entities.Vente;
 import java.io.Serializable;
+import java.util.List;
+import java.util.Set;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- *
- * @author geres
- */
 @Entity
-@Table(name = "Article")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Article.findAll", query = "SELECT a FROM Article a"),
-    @NamedQuery(name = "Article.findByIdArticle", query = "SELECT a FROM Article a WHERE a.idArticle = :idArticle"),
-    @NamedQuery(name = "Article.findByLibArticle", query = "SELECT a FROM Article a WHERE a.libArticle = :libArticle"),
-    @NamedQuery(name = "Article.findByPrixArticle", query = "SELECT a FROM Article a WHERE a.prixArticle = :prixArticle"),
-    @NamedQuery(name = "Article.findByCoutArticle", query = "SELECT a FROM Article a WHERE a.coutArticle = :coutArticle")})
-public class Article implements Serializable {
+@Table(name= "article")
+//@XmlRootElement
+public class Article implements Serializable{
     private static final long serialVersionUID = 1L;
+       
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "idArticle")
-    private Integer idArticle;
-    @Column(name = "libArticle")
-    private String libArticle;
-    @Column(name = "prixArticle")
-    private Integer prixArticle;
-    @Column(name = "coutArticle")
-    private Integer coutArticle;
-    @JoinColumn(name = "idCategorie", referencedColumnName = "idCategorie")
-    @ManyToOne(optional = false)
-    private Categorie idCategorie;
-    @JoinColumn(name = "idStock", referencedColumnName = "idStock")
-    @ManyToOne(optional = false)
-    private Stock idStock;
-    @JoinColumn(name = "iddetailFacture", referencedColumnName = "iddetailFacture")
-    @ManyToOne(optional = false)
-    private DetailFacture iddetailFacture;
-
+    @Column(name = "idarticle")
+    private int idArticle;
+    @Column(name = "libarticle")
+    private String libarticle;
+    @Column(name = "stock")
+    private int stock;
+    @Column(name = "prixachat")
+    private int prixachat;
+    @Column(name = "prixvente")
+    private int prixvente;
+ 
+    //gestion de 
+    @ManyToOne
+    //integration des identifiants de champs de après
+    @JoinColumn (name="idcategorie")
+    private Categorie categorie;
+    
+    @OneToMany(mappedBy="articleV",cascade=CascadeType.ALL)
+    private List<Vente> vente=null;    
+          
     public Article() {
+        super();
+    }
+     public Article(int id,String lib,int stock,Set factureSet){
+      this.setIdarticle(id);
+      this.setLibarticle(lib);
+      this.setStock(stock);
+     // this.factureSet=factureSet;
+    }
+     
+    public Article(int id,String lib,int stock){
+      this.setIdarticle(id);
+      this.setLibarticle(lib);
+      this.setStock(stock);
     }
 
-    public Article(Integer idArticle) {
-        this.idArticle = idArticle;
+    public Article(int idarticle) {
+      this.idArticle=idarticle;
+    }
+    public int getPrixAchat(){
+        return this.prixachat;
+    }
+    public int getPrixVente(){
+        return this.prixvente;
+    }
+    public void setPrixAchat(int prixachat){
+        this.prixachat=prixachat;
+    }
+    public void setPrixVente(int prixVente){
+        this.prixvente=prixVente;
+    }
+   
+    public int getIdarticle() {
+        return this.idArticle;
+    }
+    
+    public void setIdarticle(int idarticle) {
+       this.idArticle=idarticle;    
+    }
+   
+    public String getLibarticle() {
+        return this.libarticle;
     }
 
-    public Integer getIdArticle() {
-        return idArticle;
+    public void setLibarticle(String libarticle) {
+        this.libarticle=libarticle;
+    }
+   
+    public int getStock() {
+       return this.stock;
     }
 
-    public void setIdArticle(Integer idArticle) {
-        this.idArticle = idArticle;
+    public void setStock(int stock) {
+      this.stock=stock;
     }
-
-    public String getLibArticle() {
-        return libArticle;
+    public void setCategorie(Categorie cat){
+        this.categorie=cat;
     }
-
-    public void setLibArticle(String libArticle) {
-        this.libArticle = libArticle;
+    public Categorie getCategorie(Categorie cat){
+        return this.categorie;
     }
-
-    public Integer getPrixArticle() {
-        return prixArticle;
+    public List<Vente> getVenteArticle(){
+        return this.vente;
     }
-
-    public void setPrixArticle(Integer prixArticle) {
-        this.prixArticle = prixArticle;
+    public void addVenteToArticle(Vente v){
+        this.vente.add(v);
     }
-
-    public Integer getCoutArticle() {
-        return coutArticle;
-    }
-
-    public void setCoutArticle(Integer coutArticle) {
-        this.coutArticle = coutArticle;
-    }
-
-    public Categorie getIdCategorie() {
-        return idCategorie;
-    }
-
-    public void setIdCategorie(Categorie idCategorie) {
-        this.idCategorie = idCategorie;
-    }
-
-    public Stock getIdStock() {
-        return idStock;
-    }
-
-    public void setIdStock(Stock idStock) {
-        this.idStock = idStock;
-    }
-
-    public DetailFacture getIddetailFacture() {
-        return iddetailFacture;
-    }
-
-    public void setIddetailFacture(DetailFacture iddetailFacture) {
-        this.iddetailFacture = iddetailFacture;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idArticle != null ? idArticle.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Article)) {
-            return false;
-        }
-        Article other = (Article) object;
-        if ((this.idArticle == null && other.idArticle != null) || (this.idArticle != null && !this.idArticle.equals(other.idArticle))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return libArticle;
-    }
+    
     
 }

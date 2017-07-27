@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package entities;
 
+import entities.Vente;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -16,28 +17,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author geres
+ * @author OBAM
  */
 @Entity
-@Table(name = "Facture")
+@Table(name = "facture")
 @XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Facture.findAll", query = "SELECT f FROM Facture f"),
-    @NamedQuery(name = "Facture.findByIdFacture", query = "SELECT f FROM Facture f WHERE f.idFacture = :idFacture"),
-    @NamedQuery(name = "Facture.findByDateFacture", query = "SELECT f FROM Facture f WHERE f.dateFacture = :dateFacture")})
 public class Facture implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -48,19 +40,17 @@ public class Facture implements Serializable {
     @Column(name = "dateFacture")
     @Temporal(TemporalType.DATE)
     private Date dateFacture;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idFacture")
-    private List<DetailFacture> detailFactureList;
-    @JoinColumn(name = "idUtilisateur", referencedColumnName = "idUtilisateur")
-    @ManyToOne(optional = false)
-    private Utilisateur idUtilisateur;
-
+    
+   @OneToMany(mappedBy="factureV" ,cascade=CascadeType.ALL)
+   private List<Vente> venteFacture=new ArrayList();
+   
+    
     public Facture() {
-    }
-
+    } 
     public Facture(Integer idFacture) {
         this.idFacture = idFacture;
     }
-
+  
     public Integer getIdFacture() {
         return idFacture;
     }
@@ -76,24 +66,14 @@ public class Facture implements Serializable {
     public void setDateFacture(Date dateFacture) {
         this.dateFacture = dateFacture;
     }
-
-    @XmlTransient
-    public List<DetailFacture> getDetailFactureList() {
-        return detailFactureList;
+    
+    public void addVenteToFacture(Vente vente){
+        this.venteFacture.add(vente);
     }
-
-    public void setDetailFactureList(List<DetailFacture> detailFactureList) {
-        this.detailFactureList = detailFactureList;
+    public List<Vente>  getVenteFacture(){
+        return this.venteFacture;
     }
-
-    public Utilisateur getIdUtilisateur() {
-        return idUtilisateur;
-    }
-
-    public void setIdUtilisateur(Utilisateur idUtilisateur) {
-        this.idUtilisateur = idUtilisateur;
-    }
-
+    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -116,7 +96,7 @@ public class Facture implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Facture[ idFacture=" + idFacture + " ]";
+        return "entite.Facture[ idFacture=" + idFacture + " ]";
     }
     
 }

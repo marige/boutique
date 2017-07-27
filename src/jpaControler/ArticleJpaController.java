@@ -5,8 +5,8 @@
  */
 package jpaControler;
 
-import entite.Article;
-import entite.Categorie;
+import entities.Article;
+import entities.Categorie;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.EntityManager;

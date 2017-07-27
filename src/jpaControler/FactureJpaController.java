@@ -5,7 +5,7 @@
  */
 package jpaControler;
 
-import entite.Facture;
+import entities.Facture;
 import entite.exceptions.NonexistentEntityException;
 import java.io.Serializable;
 import java.util.List;
