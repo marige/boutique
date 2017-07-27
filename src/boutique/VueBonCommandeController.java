@@ -123,25 +123,25 @@ public class VueBonCommandeController implements Initializable {
             superClass.alert("Valeurs", "Les champs ne sont pas remplit", "warning");
             
         }
-        else if(com_fournisseur.isArmed()){
-            superClass.alert("Valeurs", "Veuillez choisir un fournisseur", "warning");
-        }
-        else{
+        else if(com_fournisseur.getSelectionModel().selectedItemProperty()!=null){
             
             
            
             BonCommande bonCommand= new BonCommande(com_fournisseur.getValue().getIdFournisseur());
             
-           DetailBonCommande nouveau =new DetailBonCommande();
-                        nouveau.setCoutDetailBonCommande(Integer.parseInt(txt_prix.getText()));
-                        nouveau.setLibDetailBonCommande(txt_lib_produit.getText());
-                        nouveau.setBonCommandeidBonCommande(bonCommand);
-                        nouveau.setIdDetailBonCommande(detailController.getDetailBonCommandeCount()+1);
-                        
+            DetailBonCommande nouveau =new DetailBonCommande();
+            nouveau.setCoutDetailBonCommande(Integer.parseInt(txt_prix.getText()));
+            nouveau.setLibDetailBonCommande(txt_lib_produit.getText());
+            nouveau.setBonCommandeidBonCommande(bonCommand);
+            nouveau.setIdDetailBonCommande(detailController.getDetailBonCommandeCount()+1);
+            
             detailController.create(nouveau);
             actualiser();
             superClass.alert("Valeurs", "Données Bien enregistrées", "success");
       
+        }
+        else{
+            superClass.alert("Valeurs", "Veuillez choisir un fournisseur", "warning");
         }
     }
 
