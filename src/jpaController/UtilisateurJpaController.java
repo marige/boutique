@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package jpaControler;
+package jpaController;
 
 import java.io.Serializable;
 import javax.persistence.Query;
@@ -18,8 +18,8 @@ import entities.Facture;
 import entities.Utilisateur;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import jpaControler.exceptions.IllegalOrphanException;
-import jpaControler.exceptions.NonexistentEntityException;
+import jpaController.exceptions.IllegalOrphanException;
+import jpaController.exceptions.NonexistentEntityException;
 
 /**
  *
