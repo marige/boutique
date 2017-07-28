@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import projetboutique.VenteController;
 
 /**
  *
@@ -21,7 +22,7 @@ public class Boutique extends Application {
     
          @Override
     public void start(Stage stage) throws Exception {
-             AnchorPane root = FXMLLoader.load(VueBonCommandeController.class.getResource("vueBonCommande.fxml"));
+             AnchorPane root = FXMLLoader.load(VenteController.class.getResource("vente.fxml"));
         
         Scene scene = new Scene(root);
         
