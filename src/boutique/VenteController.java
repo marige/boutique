@@ -1,7 +1,7 @@
 
-package projetboutique;
+package boutique;
 
-import superpackage.ClassSuper;
+import superpackage.SuperClass;
 import entities.Article;
 import entities.Facture;
 import entities.Vente;
@@ -33,7 +33,7 @@ import jpaControler.VenteJpaController;
  *
  * @author OBAM
  */
-public class VenteController extends ClassSuper implements Initializable {
+public class VenteController extends SuperClass implements Initializable {
   
     private final ObservableList<Article> artList= FXCollections.observableArrayList();
     private final ObservableList<DetailFacture> factList= FXCollections.observableArrayList();

@@ -11,10 +11,10 @@ import net.sf.jasperreports.engine.design.JRDesignQuery;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
-import superpackage.ClassSuper;
+import superpackage.SuperClass;
 
 
-public class REPORT extends ClassSuper {
+public class REPORT extends SuperClass {
   
     public static String reportPath=System.getProperty("user.dir")+"\\src\\report\\";
   //  public static String reportPath=System.getProperty("user.dir")+"\\";

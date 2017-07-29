@@ -3,13 +3,8 @@
   <persistence-unit name="BoutiquePU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>entite.tableView.DetailFacture</class>
-    <class>entite.ArticleFactureId</class>
-    <class>entities.BonCommande</class>
-    <class>entities.DetailBonCommande</class>
-    <class>entities.Stock</class>
     <class>entities.Utilisateur</class>
     <class>entities.Fournisseur</class>
-    <class>entities.DetailFacture</class>
     <class>entities.Vente</class>
     <class>entities.Facture</class>
     <class>entities.Categorie</class>
