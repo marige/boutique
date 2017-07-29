@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package entities;
+package entitie;
 
 import java.io.Serializable;
 import java.util.List;
@@ -54,7 +54,7 @@ public class Fournisseur implements Serializable {
     private String rcmFournisseur;
     @Column(name = "detailsFournisseur")
     private String detailsFournisseur;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "fournisseuridFournisseur")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idFournisseur")
     private List<BonCommande> bonCommandeList;
 
     public Fournisseur() {
@@ -143,7 +143,7 @@ public class Fournisseur implements Serializable {
 
     @Override
     public String toString() {
-        return libFournisseur;
+        return  libFournisseur ;
     }
     
 }

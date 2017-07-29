@@ -33,6 +33,10 @@ public class PrincipaleController extends Stage implements Initializable {
     private AnchorPane anchor;
     @FXML
     private Button btnArticleAjouter;
+    @FXML
+    private Button btnBonCommande;
+    @FXML
+    private Button btnFournisseur;
 
     /**
      * Initializes the controller class.
@@ -60,6 +64,14 @@ public class PrincipaleController extends Stage implements Initializable {
     private void clickArticle(ActionEvent event) {
        newForm("vueArticle");
     }
-    
-    
+    @FXML
+    private void clickFournisseur(ActionEvent event) {
+       newForm("vueFournisseurs");
+    }
+    @FXML
+    private void clickBonCommande(ActionEvent event) {
+       newForm("vueBonCommande");
+    }   
+      
+
 }

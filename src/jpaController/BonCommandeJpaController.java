@@ -4,39 +4,30 @@
  * and open the template in the editor.
  */
 
-package jpaControler;
+package jpaController;
 
-import entities.BonCommande;
+import entitie.BonCommande;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import entities.Utilisateur;
-import entities.Fournisseur;
-import entities.DetailBonCommande;
+import entitie.Fournisseur;
+import entitie.DetailBonCommande;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import jpaControler.exceptions.IllegalOrphanException;
-import jpaControler.exceptions.NonexistentEntityException;
+import jpaController.exceptions.IllegalOrphanException;
+import jpaController.exceptions.NonexistentEntityException;
+import superpackage.SuperClass;
 
 /**
  *
  * @author geres
  */
-public class BonCommandeJpaController implements Serializable {
-
-    public BonCommandeJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
-    }
-    private EntityManagerFactory emf = null;
-
-    public EntityManager getEntityManager() {
-        return emf.createEntityManager();
-    }
-
+public class BonCommandeJpaController extends SuperClass implements Serializable {
+    EntityManager em=null;
     public void create(BonCommande bonCommande) {
         if (bonCommande.getDetailBonCommandeList() == null) {
             bonCommande.setDetailBonCommandeList(new ArrayList<DetailBonCommande>());
@@ -45,15 +36,10 @@ public class BonCommandeJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Utilisateur idUtilisateur = bonCommande.getIdUtilisateur();
-            if (idUtilisateur != null) {
-                idUtilisateur = em.getReference(idUtilisateur.getClass(), idUtilisateur.getIdUtilisateur());
-                bonCommande.setIdUtilisateur(idUtilisateur);
-            }
-            Fournisseur fournisseuridFournisseur = bonCommande.getFournisseuridFournisseur();
-            if (fournisseuridFournisseur != null) {
-                fournisseuridFournisseur = em.getReference(fournisseuridFournisseur.getClass(), fournisseuridFournisseur.getIdFournisseur());
-                bonCommande.setFournisseuridFournisseur(fournisseuridFournisseur);
+            Fournisseur idFournisseur = bonCommande.getIdFournisseur();
+            if (idFournisseur != null) {
+                idFournisseur = em.getReference(idFournisseur.getClass(), idFournisseur.getIdFournisseur());
+                bonCommande.setIdFournisseur(idFournisseur);
             }
             List<DetailBonCommande> attachedDetailBonCommandeList = new ArrayList<DetailBonCommande>();
             for (DetailBonCommande detailBonCommandeListDetailBonCommandeToAttach : bonCommande.getDetailBonCommandeList()) {
@@ -62,21 +48,17 @@ public class BonCommandeJpaController implements Serializable {
             }
             bonCommande.setDetailBonCommandeList(attachedDetailBonCommandeList);
             em.persist(bonCommande);
-            if (idUtilisateur != null) {
-                idUtilisateur.getBonCommandeList().add(bonCommande);
-                idUtilisateur = em.merge(idUtilisateur);
-            }
-            if (fournisseuridFournisseur != null) {
-                fournisseuridFournisseur.getBonCommandeList().add(bonCommande);
-                fournisseuridFournisseur = em.merge(fournisseuridFournisseur);
+            if (idFournisseur != null) {
+                idFournisseur.getBonCommandeList().add(bonCommande);
+                idFournisseur = em.merge(idFournisseur);
             }
             for (DetailBonCommande detailBonCommandeListDetailBonCommande : bonCommande.getDetailBonCommandeList()) {
-                BonCommande oldBonCommandeidBonCommandeOfDetailBonCommandeListDetailBonCommande = detailBonCommandeListDetailBonCommande.getBonCommandeidBonCommande();
-                detailBonCommandeListDetailBonCommande.setBonCommandeidBonCommande(bonCommande);
+                BonCommande oldIdBonCommandeOfDetailBonCommandeListDetailBonCommande = detailBonCommandeListDetailBonCommande.getIdBonCommande();
+                detailBonCommandeListDetailBonCommande.setIdBonCommande(bonCommande);
                 detailBonCommandeListDetailBonCommande = em.merge(detailBonCommandeListDetailBonCommande);
-                if (oldBonCommandeidBonCommandeOfDetailBonCommandeListDetailBonCommande != null) {
-                    oldBonCommandeidBonCommandeOfDetailBonCommandeListDetailBonCommande.getDetailBonCommandeList().remove(detailBonCommandeListDetailBonCommande);
-                    oldBonCommandeidBonCommandeOfDetailBonCommandeListDetailBonCommande = em.merge(oldBonCommandeidBonCommandeOfDetailBonCommandeListDetailBonCommande);
+                if (oldIdBonCommandeOfDetailBonCommandeListDetailBonCommande != null) {
+                    oldIdBonCommandeOfDetailBonCommandeListDetailBonCommande.getDetailBonCommandeList().remove(detailBonCommandeListDetailBonCommande);
+                    oldIdBonCommandeOfDetailBonCommandeListDetailBonCommande = em.merge(oldIdBonCommandeOfDetailBonCommandeListDetailBonCommande);
                 }
             }
             em.getTransaction().commit();
@@ -93,10 +75,8 @@ public class BonCommandeJpaController implements Serializable {
             em = getEntityManager();
             em.getTransaction().begin();
             BonCommande persistentBonCommande = em.find(BonCommande.class, bonCommande.getIdBonCommande());
-            Utilisateur idUtilisateurOld = persistentBonCommande.getIdUtilisateur();
-            Utilisateur idUtilisateurNew = bonCommande.getIdUtilisateur();
-            Fournisseur fournisseuridFournisseurOld = persistentBonCommande.getFournisseuridFournisseur();
-            Fournisseur fournisseuridFournisseurNew = bonCommande.getFournisseuridFournisseur();
+            Fournisseur idFournisseurOld = persistentBonCommande.getIdFournisseur();
+            Fournisseur idFournisseurNew = bonCommande.getIdFournisseur();
             List<DetailBonCommande> detailBonCommandeListOld = persistentBonCommande.getDetailBonCommandeList();
             List<DetailBonCommande> detailBonCommandeListNew = bonCommande.getDetailBonCommandeList();
             List<String> illegalOrphanMessages = null;
@@ -105,19 +85,15 @@ public class BonCommandeJpaController implements Serializable {
                     if (illegalOrphanMessages == null) {
                         illegalOrphanMessages = new ArrayList<String>();
                     }
-                    illegalOrphanMessages.add("You must retain DetailBonCommande " + detailBonCommandeListOldDetailBonCommande + " since its bonCommandeidBonCommande field is not nullable.");
+                    illegalOrphanMessages.add("You must retain DetailBonCommande " + detailBonCommandeListOldDetailBonCommande + " since its idBonCommande field is not nullable.");
                 }
             }
             if (illegalOrphanMessages != null) {
                 throw new IllegalOrphanException(illegalOrphanMessages);
             }
-            if (idUtilisateurNew != null) {
-                idUtilisateurNew = em.getReference(idUtilisateurNew.getClass(), idUtilisateurNew.getIdUtilisateur());
-                bonCommande.setIdUtilisateur(idUtilisateurNew);
-            }
-            if (fournisseuridFournisseurNew != null) {
-                fournisseuridFournisseurNew = em.getReference(fournisseuridFournisseurNew.getClass(), fournisseuridFournisseurNew.getIdFournisseur());
-                bonCommande.setFournisseuridFournisseur(fournisseuridFournisseurNew);
+            if (idFournisseurNew != null) {
+                idFournisseurNew = em.getReference(idFournisseurNew.getClass(), idFournisseurNew.getIdFournisseur());
+                bonCommande.setIdFournisseur(idFournisseurNew);
             }
             List<DetailBonCommande> attachedDetailBonCommandeListNew = new ArrayList<DetailBonCommande>();
             for (DetailBonCommande detailBonCommandeListNewDetailBonCommandeToAttach : detailBonCommandeListNew) {
@@ -127,35 +103,27 @@ public class BonCommandeJpaController implements Serializable {
             detailBonCommandeListNew = attachedDetailBonCommandeListNew;
             bonCommande.setDetailBonCommandeList(detailBonCommandeListNew);
             bonCommande = em.merge(bonCommande);
-            if (idUtilisateurOld != null && !idUtilisateurOld.equals(idUtilisateurNew)) {
-                idUtilisateurOld.getBonCommandeList().remove(bonCommande);
-                idUtilisateurOld = em.merge(idUtilisateurOld);
+            if (idFournisseurOld != null && !idFournisseurOld.equals(idFournisseurNew)) {
+                idFournisseurOld.getBonCommandeList().remove(bonCommande);
+                idFournisseurOld = em.merge(idFournisseurOld);
             }
-            if (idUtilisateurNew != null && !idUtilisateurNew.equals(idUtilisateurOld)) {
-                idUtilisateurNew.getBonCommandeList().add(bonCommande);
-                idUtilisateurNew = em.merge(idUtilisateurNew);
-            }
-            if (fournisseuridFournisseurOld != null && !fournisseuridFournisseurOld.equals(fournisseuridFournisseurNew)) {
-                fournisseuridFournisseurOld.getBonCommandeList().remove(bonCommande);
-                fournisseuridFournisseurOld = em.merge(fournisseuridFournisseurOld);
-            }
-            if (fournisseuridFournisseurNew != null && !fournisseuridFournisseurNew.equals(fournisseuridFournisseurOld)) {
-                fournisseuridFournisseurNew.getBonCommandeList().add(bonCommande);
-                fournisseuridFournisseurNew = em.merge(fournisseuridFournisseurNew);
+            if (idFournisseurNew != null && !idFournisseurNew.equals(idFournisseurOld)) {
+                idFournisseurNew.getBonCommandeList().add(bonCommande);
+                idFournisseurNew = em.merge(idFournisseurNew);
             }
             for (DetailBonCommande detailBonCommandeListNewDetailBonCommande : detailBonCommandeListNew) {
                 if (!detailBonCommandeListOld.contains(detailBonCommandeListNewDetailBonCommande)) {
-                    BonCommande oldBonCommandeidBonCommandeOfDetailBonCommandeListNewDetailBonCommande = detailBonCommandeListNewDetailBonCommande.getBonCommandeidBonCommande();
-                    detailBonCommandeListNewDetailBonCommande.setBonCommandeidBonCommande(bonCommande);
+                    BonCommande oldIdBonCommandeOfDetailBonCommandeListNewDetailBonCommande = detailBonCommandeListNewDetailBonCommande.getIdBonCommande();
+                    detailBonCommandeListNewDetailBonCommande.setIdBonCommande(bonCommande);
                     detailBonCommandeListNewDetailBonCommande = em.merge(detailBonCommandeListNewDetailBonCommande);
-                    if (oldBonCommandeidBonCommandeOfDetailBonCommandeListNewDetailBonCommande != null && !oldBonCommandeidBonCommandeOfDetailBonCommandeListNewDetailBonCommande.equals(bonCommande)) {
-                        oldBonCommandeidBonCommandeOfDetailBonCommandeListNewDetailBonCommande.getDetailBonCommandeList().remove(detailBonCommandeListNewDetailBonCommande);
-                        oldBonCommandeidBonCommandeOfDetailBonCommandeListNewDetailBonCommande = em.merge(oldBonCommandeidBonCommandeOfDetailBonCommandeListNewDetailBonCommande);
+                    if (oldIdBonCommandeOfDetailBonCommandeListNewDetailBonCommande != null && !oldIdBonCommandeOfDetailBonCommandeListNewDetailBonCommande.equals(bonCommande)) {
+                        oldIdBonCommandeOfDetailBonCommandeListNewDetailBonCommande.getDetailBonCommandeList().remove(detailBonCommandeListNewDetailBonCommande);
+                        oldIdBonCommandeOfDetailBonCommandeListNewDetailBonCommande = em.merge(oldIdBonCommandeOfDetailBonCommandeListNewDetailBonCommande);
                     }
                 }
             }
             em.getTransaction().commit();
-        } catch (Exception ex) {
+        } catch (IllegalOrphanException ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
                 Integer id = bonCommande.getIdBonCommande();
@@ -189,20 +157,15 @@ public class BonCommandeJpaController implements Serializable {
                 if (illegalOrphanMessages == null) {
                     illegalOrphanMessages = new ArrayList<String>();
                 }
-                illegalOrphanMessages.add("This BonCommande (" + bonCommande + ") cannot be destroyed since the DetailBonCommande " + detailBonCommandeListOrphanCheckDetailBonCommande + " in its detailBonCommandeList field has a non-nullable bonCommandeidBonCommande field.");
+                illegalOrphanMessages.add("This BonCommande (" + bonCommande + ") cannot be destroyed since the DetailBonCommande " + detailBonCommandeListOrphanCheckDetailBonCommande + " in its detailBonCommandeList field has a non-nullable idBonCommande field.");
             }
             if (illegalOrphanMessages != null) {
                 throw new IllegalOrphanException(illegalOrphanMessages);
             }
-            Utilisateur idUtilisateur = bonCommande.getIdUtilisateur();
-            if (idUtilisateur != null) {
-                idUtilisateur.getBonCommandeList().remove(bonCommande);
-                idUtilisateur = em.merge(idUtilisateur);
-            }
-            Fournisseur fournisseuridFournisseur = bonCommande.getFournisseuridFournisseur();
-            if (fournisseuridFournisseur != null) {
-                fournisseuridFournisseur.getBonCommandeList().remove(bonCommande);
-                fournisseuridFournisseur = em.merge(fournisseuridFournisseur);
+            Fournisseur idFournisseur = bonCommande.getIdFournisseur();
+            if (idFournisseur != null) {
+                idFournisseur.getBonCommandeList().remove(bonCommande);
+                idFournisseur = em.merge(idFournisseur);
             }
             em.remove(bonCommande);
             em.getTransaction().commit();

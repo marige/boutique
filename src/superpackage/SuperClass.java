@@ -16,6 +16,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -28,7 +31,15 @@ import javafx.stage.Stage;
  * @author OBAM
  */
 public class SuperClass {
-     
+    
+    private EntityManagerFactory emf=null;
+    
+    public EntityManager getEntityManager(){
+          this.emf=Persistence.createEntityManagerFactory("BoutiquePU");
+          return emf.createEntityManager();
+    }
+    
+    
     public Date convertStringToDate(LocalDate localDate) throws ParseException{
             return  new SimpleDateFormat("yyyy-MM-dd").parse(localDate.toString());    
     }

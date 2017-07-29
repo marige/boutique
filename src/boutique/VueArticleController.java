@@ -1,8 +1,8 @@
 
 package boutique;
 
-import entities.Article;
-import entities.Categorie;
+import entitie.Article;
+import entitie.Categorie;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -16,8 +16,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import jpaControler.ArticleJpaController;
-import jpaControler.CategorieJpaController;
+import jpaController.ArticleJpaController;
+import jpaController.CategorieJpaController;
 import superpackage.SuperClass;
 
 /**

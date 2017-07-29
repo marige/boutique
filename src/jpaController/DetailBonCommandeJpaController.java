@@ -4,49 +4,51 @@
  * and open the template in the editor.
  */
 
-package jpaControler;
+package jpaController;
 
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import entities.BonCommande;
-import entities.DetailBonCommande;
+import entitie.BonCommande;
+import entitie.Article;
+import entitie.DetailBonCommande;
 import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import jpaControler.exceptions.NonexistentEntityException;
+import jpaController.exceptions.NonexistentEntityException;
+import superpackage.SuperClass;
 
 /**
  *
  * @author geres
  */
-public class DetailBonCommandeJpaController implements Serializable {
-
-    public DetailBonCommandeJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
-    }
-    private EntityManagerFactory emf = null;
-
-    public EntityManager getEntityManager() {
-        return emf.createEntityManager();
-    }
-
+public class DetailBonCommandeJpaController extends SuperClass implements Serializable {
+    EntityManager em = null;
+    
     public void create(DetailBonCommande detailBonCommande) {
-        EntityManager em = null;
+       
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            BonCommande bonCommandeidBonCommande = detailBonCommande.getBonCommandeidBonCommande();
-            if (bonCommandeidBonCommande != null) {
-                bonCommandeidBonCommande = em.getReference(bonCommandeidBonCommande.getClass(), bonCommandeidBonCommande.getIdBonCommande());
-                detailBonCommande.setBonCommandeidBonCommande(bonCommandeidBonCommande);
+            BonCommande idBonCommande = detailBonCommande.getIdBonCommande();
+            if (idBonCommande != null) {
+                idBonCommande = em.getReference(idBonCommande.getClass(), idBonCommande.getIdBonCommande());
+                detailBonCommande.setIdBonCommande(idBonCommande);
+            }
+            Article idArticle = detailBonCommande.getIdArticle();
+            if (idArticle != null) {
+                idArticle = em.getReference(idArticle.getClass(), idArticle.getIdarticle());
+                detailBonCommande.setIdArticle(idArticle);
             }
             em.persist(detailBonCommande);
-            if (bonCommandeidBonCommande != null) {
-                bonCommandeidBonCommande.getDetailBonCommandeList().add(detailBonCommande);
-                bonCommandeidBonCommande = em.merge(bonCommandeidBonCommande);
+            if (idBonCommande != null) {
+                idBonCommande.getDetailBonCommandeList().add(detailBonCommande);
+                idBonCommande = em.merge(idBonCommande);
+            }
+            if (idArticle != null) {
+                idArticle.getDetailBonCommandeList().add(detailBonCommande);
+                idArticle = em.merge(idArticle);
             }
             em.getTransaction().commit();
         } finally {
@@ -57,25 +59,39 @@ public class DetailBonCommandeJpaController implements Serializable {
     }
 
     public void edit(DetailBonCommande detailBonCommande) throws NonexistentEntityException, Exception {
-        EntityManager em = null;
+       
         try {
             em = getEntityManager();
             em.getTransaction().begin();
             DetailBonCommande persistentDetailBonCommande = em.find(DetailBonCommande.class, detailBonCommande.getIdDetailBonCommande());
-            BonCommande bonCommandeidBonCommandeOld = persistentDetailBonCommande.getBonCommandeidBonCommande();
-            BonCommande bonCommandeidBonCommandeNew = detailBonCommande.getBonCommandeidBonCommande();
-            if (bonCommandeidBonCommandeNew != null) {
-                bonCommandeidBonCommandeNew = em.getReference(bonCommandeidBonCommandeNew.getClass(), bonCommandeidBonCommandeNew.getIdBonCommande());
-                detailBonCommande.setBonCommandeidBonCommande(bonCommandeidBonCommandeNew);
+            BonCommande idBonCommandeOld = persistentDetailBonCommande.getIdBonCommande();
+            BonCommande idBonCommandeNew = detailBonCommande.getIdBonCommande();
+            Article idArticleOld = persistentDetailBonCommande.getIdArticle();
+            Article idArticleNew = detailBonCommande.getIdArticle();
+            if (idBonCommandeNew != null) {
+                idBonCommandeNew = em.getReference(idBonCommandeNew.getClass(), idBonCommandeNew.getIdBonCommande());
+                detailBonCommande.setIdBonCommande(idBonCommandeNew);
+            }
+            if (idArticleNew != null) {
+                idArticleNew = em.getReference(idArticleNew.getClass(), idArticleNew.getIdarticle());
+                detailBonCommande.setIdArticle(idArticleNew);
             }
             detailBonCommande = em.merge(detailBonCommande);
-            if (bonCommandeidBonCommandeOld != null && !bonCommandeidBonCommandeOld.equals(bonCommandeidBonCommandeNew)) {
-                bonCommandeidBonCommandeOld.getDetailBonCommandeList().remove(detailBonCommande);
-                bonCommandeidBonCommandeOld = em.merge(bonCommandeidBonCommandeOld);
+            if (idBonCommandeOld != null && !idBonCommandeOld.equals(idBonCommandeNew)) {
+                idBonCommandeOld.getDetailBonCommandeList().remove(detailBonCommande);
+                idBonCommandeOld = em.merge(idBonCommandeOld);
             }
-            if (bonCommandeidBonCommandeNew != null && !bonCommandeidBonCommandeNew.equals(bonCommandeidBonCommandeOld)) {
-                bonCommandeidBonCommandeNew.getDetailBonCommandeList().add(detailBonCommande);
-                bonCommandeidBonCommandeNew = em.merge(bonCommandeidBonCommandeNew);
+            if (idBonCommandeNew != null && !idBonCommandeNew.equals(idBonCommandeOld)) {
+                idBonCommandeNew.getDetailBonCommandeList().add(detailBonCommande);
+                idBonCommandeNew = em.merge(idBonCommandeNew);
+            }
+            if (idArticleOld != null && !idArticleOld.equals(idArticleNew)) {
+                idArticleOld.getDetailBonCommandeList().remove(detailBonCommande);
+                idArticleOld = em.merge(idArticleOld);
+            }
+            if (idArticleNew != null && !idArticleNew.equals(idArticleOld)) {
+                idArticleNew.getDetailBonCommandeList().add(detailBonCommande);
+                idArticleNew = em.merge(idArticleNew);
             }
             em.getTransaction().commit();
         } catch (Exception ex) {
@@ -95,7 +111,7 @@ public class DetailBonCommandeJpaController implements Serializable {
     }
 
     public void destroy(Integer id) throws NonexistentEntityException {
-        EntityManager em = null;
+       
         try {
             em = getEntityManager();
             em.getTransaction().begin();
@@ -106,10 +122,15 @@ public class DetailBonCommandeJpaController implements Serializable {
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The detailBonCommande with id " + id + " no longer exists.", enfe);
             }
-            BonCommande bonCommandeidBonCommande = detailBonCommande.getBonCommandeidBonCommande();
-            if (bonCommandeidBonCommande != null) {
-                bonCommandeidBonCommande.getDetailBonCommandeList().remove(detailBonCommande);
-                bonCommandeidBonCommande = em.merge(bonCommandeidBonCommande);
+            BonCommande idBonCommande = detailBonCommande.getIdBonCommande();
+            if (idBonCommande != null) {
+                idBonCommande.getDetailBonCommandeList().remove(detailBonCommande);
+                idBonCommande = em.merge(idBonCommande);
+            }
+            Article idArticle = detailBonCommande.getIdArticle();
+            if (idArticle != null) {
+                idArticle.getDetailBonCommandeList().remove(detailBonCommande);
+                idArticle = em.merge(idArticle);
             }
             em.remove(detailBonCommande);
             em.getTransaction().commit();
@@ -129,7 +150,7 @@ public class DetailBonCommandeJpaController implements Serializable {
     }
 
     private List<DetailBonCommande> findDetailBonCommandeEntities(boolean all, int maxResults, int firstResult) {
-        EntityManager em = getEntityManager();
+        em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
             cq.select(cq.from(DetailBonCommande.class));
@@ -145,7 +166,7 @@ public class DetailBonCommandeJpaController implements Serializable {
     }
 
     public DetailBonCommande findDetailBonCommande(Integer id) {
-        EntityManager em = getEntityManager();
+        em = getEntityManager();
         try {
             return em.find(DetailBonCommande.class, id);
         } finally {
@@ -154,7 +175,7 @@ public class DetailBonCommandeJpaController implements Serializable {
     }
 
     public int getDetailBonCommandeCount() {
-        EntityManager em = getEntityManager();
+        em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
             Root<DetailBonCommande> rt = cq.from(DetailBonCommande.class);

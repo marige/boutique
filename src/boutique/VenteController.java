@@ -2,13 +2,14 @@
 package boutique;
 
 import superpackage.SuperClass;
-import entities.Article;
-import entities.Facture;
-import entities.Vente;
+import entitie.Article;
+import entitie.Facture;
+import entitie.Vente;
 import entite.tableView.DetailFacture;
 import java.net.URL;
 import java.text.ParseException;
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,9 +25,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import jpaControler.ArticleJpaController;
-import jpaControler.FactureJpaController;
-import jpaControler.VenteJpaController;
+import jpaController.ArticleJpaController;
+import jpaController.FactureJpaController;
+import jpaController.VenteJpaController;
+import report.REPORT;
 
 /**
  * FXML Controller class
@@ -89,6 +91,8 @@ public class VenteController extends SuperClass implements Initializable {
     private Button btnRetirer;
     @FXML
     private Button btnFinCommande;
+    @FXML
+    private TextField txtClient;
     
     /**
      * Initializes the controller class.
@@ -151,26 +155,39 @@ public class VenteController extends SuperClass implements Initializable {
 
     @FXML
     private void btnFinCommande(MouseEvent event) {
-        Vente v= new Vente();
-        Article ad=new Article();
-        Facture f = new Facture();
-        
         try {
-            //enregistrement de la facture
-            f.setDateFacture(this.convertStringToDate(dtDateFacture.getValue()));
-            factC.create(f);
-        } catch (ParseException ex) {
+            Vente v= new Vente();
+            Article ad=new Article();
+            Facture f = new Facture();
+            
+            try {
+                //enregistrement de la facture
+                f.setDateFacture(this.convertStringToDate(dtDateFacture.getValue()));
+                f.setClient(txtClient.getText());
+                factC.create(f);
+            } catch (ParseException ex) {
+                Logger.getLogger(VenteController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            for(DetailFacture d:factList){
+                ad=ac.findArticle(d.getId());
+                v.setPu(d.getPu());
+                v.setQte(d.getQte());
+                v.setArticle(ad);
+                v.setFacture(f);
+                venteC.create(v);
+            }
+            
+            //impression de la facture
+            HashMap parameter= new HashMap();
+            parameter.put("idfacture",f.getIdFacture());
+            parameter.put("client",f.getClient());
+            REPORT r= new REPORT();            
+            r.editionReport("facture","select article.libarticle,vente.qte,vente.pu,facture.client from vente,article,facture where vente.idarticle=article.idarticle and vente.idfacture=facture.idfacture and vente.idfacture="+f.getIdFacture(), parameter);
+            
+            
+            
+        } catch (Exception ex) {
             Logger.getLogger(VenteController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-     
-        System.out.println("nombre element est "+factList.size());
-        for(DetailFacture d:factList){
-            ad=ac.findArticle(d.getId());
-            v.setPu(d.getPu());
-            v.setQte(d.getQte());
-            v.setArticle(ad);
-            v.setFacture(f);       
-            venteC.create(v);
         }
        
         

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package entities;
+package entitie;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -38,7 +38,9 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "BonCommande.findAll", query = "SELECT b FROM BonCommande b"),
     @NamedQuery(name = "BonCommande.findByIdBonCommande", query = "SELECT b FROM BonCommande b WHERE b.idBonCommande = :idBonCommande"),
     @NamedQuery(name = "BonCommande.findByLibBonCommande", query = "SELECT b FROM BonCommande b WHERE b.libBonCommande = :libBonCommande"),
-    @NamedQuery(name = "BonCommande.findByDateBonCommande", query = "SELECT b FROM BonCommande b WHERE b.dateBonCommande = :dateBonCommande")})
+    @NamedQuery(name = "BonCommande.findByDateBonCommande", query = "SELECT b FROM BonCommande b WHERE b.dateBonCommande = :dateBonCommande"),
+    @NamedQuery(name = "BonCommande.findByReception", query = "SELECT b FROM BonCommande b WHERE b.reception = :reception"),
+    @NamedQuery(name = "BonCommande.findByDatereception", query = "SELECT b FROM BonCommande b WHERE b.datereception = :datereception")})
 public class BonCommande implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -51,14 +53,16 @@ public class BonCommande implements Serializable {
     @Column(name = "dateBonCommande")
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateBonCommande;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "bonCommandeidBonCommande")
+    @Column(name = "reception")
+    private Boolean reception;
+    @Column(name = "datereception")
+    @Temporal(TemporalType.DATE)
+    private Date datereception;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idBonCommande")
     private List<DetailBonCommande> detailBonCommandeList;
-    @JoinColumn(name = "idUtilisateur", referencedColumnName = "idUtilisateur")
+    @JoinColumn(name = "idFournisseur", referencedColumnName = "idFournisseur")
     @ManyToOne(optional = false)
-    private Utilisateur idUtilisateur;
-    @JoinColumn(name = "Fournisseur_idFournisseur", referencedColumnName = "idFournisseur")
-    @ManyToOne(optional = false)
-    private Fournisseur fournisseuridFournisseur;
+    private Fournisseur idFournisseur;
 
     public BonCommande() {
     }
@@ -91,6 +95,22 @@ public class BonCommande implements Serializable {
         this.dateBonCommande = dateBonCommande;
     }
 
+    public Boolean getReception() {
+        return reception;
+    }
+
+    public void setReception(Boolean reception) {
+        this.reception = reception;
+    }
+
+    public Date getDatereception() {
+        return datereception;
+    }
+
+    public void setDatereception(Date datereception) {
+        this.datereception = datereception;
+    }
+
     @XmlTransient
     public List<DetailBonCommande> getDetailBonCommandeList() {
         return detailBonCommandeList;
@@ -100,20 +120,12 @@ public class BonCommande implements Serializable {
         this.detailBonCommandeList = detailBonCommandeList;
     }
 
-    public Utilisateur getIdUtilisateur() {
-        return idUtilisateur;
+    public Fournisseur getIdFournisseur() {
+        return idFournisseur;
     }
 
-    public void setIdUtilisateur(Utilisateur idUtilisateur) {
-        this.idUtilisateur = idUtilisateur;
-    }
-
-    public Fournisseur getFournisseuridFournisseur() {
-        return fournisseuridFournisseur;
-    }
-
-    public void setFournisseuridFournisseur(Fournisseur fournisseuridFournisseur) {
-        this.fournisseuridFournisseur = fournisseuridFournisseur;
+    public void setIdFournisseur(Fournisseur idFournisseur) {
+        this.idFournisseur = idFournisseur;
     }
 
     @Override
@@ -138,7 +150,7 @@ public class BonCommande implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.BonCommande[ idBonCommande=" + idBonCommande + " ]";
+        return "entitie.BonCommande[ idBonCommande=" + idBonCommande + " ]";
     }
     
 }

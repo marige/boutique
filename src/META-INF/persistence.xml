@@ -3,12 +3,13 @@
   <persistence-unit name="BoutiquePU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>entite.tableView.DetailFacture</class>
-    <class>entities.Utilisateur</class>
-    <class>entities.Fournisseur</class>
-    <class>entities.Vente</class>
-    <class>entities.Facture</class>
-    <class>entities.Categorie</class>
-    <class>entities.Article</class>
+    <class>entitie.Fournisseur</class>
+    <class>entitie.Categorie</class>
+    <class>entitie.Vente</class>
+    <class>entitie.Facture</class>
+    <class>entitie.Article</class>
+    <class>entitie.BonCommande</class>
+    <class>entitie.DetailBonCommande</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/boutique?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

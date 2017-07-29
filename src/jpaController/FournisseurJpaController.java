@@ -4,42 +4,35 @@
  * and open the template in the editor.
  */
 
-package jpaControler;
+package jpaController;
 
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import entities.BonCommande;
-import entities.Fournisseur;
+import entitie.BonCommande;
+import entitie.Fournisseur;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import jpaControler.exceptions.IllegalOrphanException;
-import jpaControler.exceptions.NonexistentEntityException;
+import jpaController.exceptions.IllegalOrphanException;
+import jpaController.exceptions.NonexistentEntityException;
+import superpackage.SuperClass;
 
 /**
  *
  * @author geres
  */
-public class FournisseurJpaController implements Serializable {
-
-    public FournisseurJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
-    }
-    private EntityManagerFactory emf = null;
-
-    public EntityManager getEntityManager() {
-        return emf.createEntityManager();
-    }
-
+public class FournisseurJpaController extends SuperClass implements Serializable {
+    EntityManager em = null;
+   
     public void create(Fournisseur fournisseur) {
         if (fournisseur.getBonCommandeList() == null) {
             fournisseur.setBonCommandeList(new ArrayList<BonCommande>());
         }
-        EntityManager em = null;
+       
         try {
             em = getEntityManager();
             em.getTransaction().begin();
@@ -51,12 +44,12 @@ public class FournisseurJpaController implements Serializable {
             fournisseur.setBonCommandeList(attachedBonCommandeList);
             em.persist(fournisseur);
             for (BonCommande bonCommandeListBonCommande : fournisseur.getBonCommandeList()) {
-                Fournisseur oldFournisseuridFournisseurOfBonCommandeListBonCommande = bonCommandeListBonCommande.getFournisseuridFournisseur();
-                bonCommandeListBonCommande.setFournisseuridFournisseur(fournisseur);
+                Fournisseur oldIdFournisseurOfBonCommandeListBonCommande = bonCommandeListBonCommande.getIdFournisseur();
+                bonCommandeListBonCommande.setIdFournisseur(fournisseur);
                 bonCommandeListBonCommande = em.merge(bonCommandeListBonCommande);
-                if (oldFournisseuridFournisseurOfBonCommandeListBonCommande != null) {
-                    oldFournisseuridFournisseurOfBonCommandeListBonCommande.getBonCommandeList().remove(bonCommandeListBonCommande);
-                    oldFournisseuridFournisseurOfBonCommandeListBonCommande = em.merge(oldFournisseuridFournisseurOfBonCommandeListBonCommande);
+                if (oldIdFournisseurOfBonCommandeListBonCommande != null) {
+                    oldIdFournisseurOfBonCommandeListBonCommande.getBonCommandeList().remove(bonCommandeListBonCommande);
+                    oldIdFournisseurOfBonCommandeListBonCommande = em.merge(oldIdFournisseurOfBonCommandeListBonCommande);
                 }
             }
             em.getTransaction().commit();
@@ -68,7 +61,7 @@ public class FournisseurJpaController implements Serializable {
     }
 
     public void edit(Fournisseur fournisseur) throws IllegalOrphanException, NonexistentEntityException, Exception {
-        EntityManager em = null;
+       
         try {
             em = getEntityManager();
             em.getTransaction().begin();
@@ -81,7 +74,7 @@ public class FournisseurJpaController implements Serializable {
                     if (illegalOrphanMessages == null) {
                         illegalOrphanMessages = new ArrayList<String>();
                     }
-                    illegalOrphanMessages.add("You must retain BonCommande " + bonCommandeListOldBonCommande + " since its fournisseuridFournisseur field is not nullable.");
+                    illegalOrphanMessages.add("You must retain BonCommande " + bonCommandeListOldBonCommande + " since its idFournisseur field is not nullable.");
                 }
             }
             if (illegalOrphanMessages != null) {
@@ -97,12 +90,12 @@ public class FournisseurJpaController implements Serializable {
             fournisseur = em.merge(fournisseur);
             for (BonCommande bonCommandeListNewBonCommande : bonCommandeListNew) {
                 if (!bonCommandeListOld.contains(bonCommandeListNewBonCommande)) {
-                    Fournisseur oldFournisseuridFournisseurOfBonCommandeListNewBonCommande = bonCommandeListNewBonCommande.getFournisseuridFournisseur();
-                    bonCommandeListNewBonCommande.setFournisseuridFournisseur(fournisseur);
+                    Fournisseur oldIdFournisseurOfBonCommandeListNewBonCommande = bonCommandeListNewBonCommande.getIdFournisseur();
+                    bonCommandeListNewBonCommande.setIdFournisseur(fournisseur);
                     bonCommandeListNewBonCommande = em.merge(bonCommandeListNewBonCommande);
-                    if (oldFournisseuridFournisseurOfBonCommandeListNewBonCommande != null && !oldFournisseuridFournisseurOfBonCommandeListNewBonCommande.equals(fournisseur)) {
-                        oldFournisseuridFournisseurOfBonCommandeListNewBonCommande.getBonCommandeList().remove(bonCommandeListNewBonCommande);
-                        oldFournisseuridFournisseurOfBonCommandeListNewBonCommande = em.merge(oldFournisseuridFournisseurOfBonCommandeListNewBonCommande);
+                    if (oldIdFournisseurOfBonCommandeListNewBonCommande != null && !oldIdFournisseurOfBonCommandeListNewBonCommande.equals(fournisseur)) {
+                        oldIdFournisseurOfBonCommandeListNewBonCommande.getBonCommandeList().remove(bonCommandeListNewBonCommande);
+                        oldIdFournisseurOfBonCommandeListNewBonCommande = em.merge(oldIdFournisseurOfBonCommandeListNewBonCommande);
                     }
                 }
             }
@@ -124,7 +117,7 @@ public class FournisseurJpaController implements Serializable {
     }
 
     public void destroy(Integer id) throws IllegalOrphanException, NonexistentEntityException {
-        EntityManager em = null;
+       
         try {
             em = getEntityManager();
             em.getTransaction().begin();
@@ -141,7 +134,7 @@ public class FournisseurJpaController implements Serializable {
                 if (illegalOrphanMessages == null) {
                     illegalOrphanMessages = new ArrayList<String>();
                 }
-                illegalOrphanMessages.add("This Fournisseur (" + fournisseur + ") cannot be destroyed since the BonCommande " + bonCommandeListOrphanCheckBonCommande + " in its bonCommandeList field has a non-nullable fournisseuridFournisseur field.");
+                illegalOrphanMessages.add("This Fournisseur (" + fournisseur + ") cannot be destroyed since the BonCommande " + bonCommandeListOrphanCheckBonCommande + " in its bonCommandeList field has a non-nullable idFournisseur field.");
             }
             if (illegalOrphanMessages != null) {
                 throw new IllegalOrphanException(illegalOrphanMessages);
@@ -164,7 +157,7 @@ public class FournisseurJpaController implements Serializable {
     }
 
     private List<Fournisseur> findFournisseurEntities(boolean all, int maxResults, int firstResult) {
-        EntityManager em = getEntityManager();
+        em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
             cq.select(cq.from(Fournisseur.class));
@@ -180,7 +173,7 @@ public class FournisseurJpaController implements Serializable {
     }
 
     public Fournisseur findFournisseur(Integer id) {
-        EntityManager em = getEntityManager();
+        em = getEntityManager();
         try {
             return em.find(Fournisseur.class, id);
         } finally {
@@ -189,7 +182,7 @@ public class FournisseurJpaController implements Serializable {
     }
 
     public int getFournisseurCount() {
-        EntityManager em = getEntityManager();
+        em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
             Root<Fournisseur> rt = cq.from(Fournisseur.class);

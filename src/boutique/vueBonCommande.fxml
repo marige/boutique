@@ -13,13 +13,14 @@
             <Font name="Montague" size="26.0" />
          </font>
       </Label>
-      <HBox layoutX="3.0" layoutY="152.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="41.0" prefWidth="569.0" spacing="10.0">
+      <HBox layoutX="2.0" layoutY="145.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="41.0" prefWidth="569.0" spacing="10.0">
          <children>
-            <Label text="Label" />
-            <TextField fx:id="txt_lib_produit" prefHeight="25.0" prefWidth="117.0" />
+            <ComboBox fx:id="com_article" prefHeight="25.0" prefWidth="115.0" />
             <TextField fx:id="txt_prix" prefHeight="25.0" prefWidth="119.0" />
             <TextField fx:id="txt_quantite" prefHeight="25.0" prefWidth="99.0" />
-            <Button fx:id="btn_ajouter_modifier" mnemonicParsing="false" onMouseClicked="#btnAjouterModifierClicked" text="AJOUTER /Mod" textFill="#2c03f8" />
+            <DatePicker fx:id="txt_date" prefHeight="25.0" prefWidth="89.0" />
+            <Button fx:id="btn_ajouter" mnemonicParsing="false" onMouseClicked="#btnAjouterModifierClicked" text="+" textFill="#2c03f8" />
+            <Button fx:id="btn_modifier" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" text="Mod" textFill="#e85602" />
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" />
@@ -37,25 +38,30 @@
             <Insets bottom="5.0" />
          </padding>
       </HBox>
-      <HBox layoutX="62.0" layoutY="116.0" prefHeight="29.0" prefWidth="400.0" spacing="90.0">
+      <HBox layoutX="4.0" layoutY="116.0" prefHeight="29.0" prefWidth="490.0" spacing="20.0">
          <children>
-            <Label text="Produit">
+            <Label prefHeight="16.0" prefWidth="103.0" text="Produit">
                <font>
                   <Font name="DejaVu Sans Bold" size="13.0" />
                </font>
             </Label>
-            <Label text="Prix">
+            <Label prefHeight="16.0" prefWidth="119.0" text="Prix">
                <font>
                   <Font name="DejaVu Sans Bold" size="13.0" />
                </font>
             </Label>
-            <Label text="Quantité">
+            <Label prefHeight="16.0" prefWidth="98.0" text="Quantité">
                <font>
                   <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                </font>
                <HBox.margin>
                   <Insets />
                </HBox.margin></Label>
+            <Label prefHeight="15.0" prefWidth="115.0" text="Date Exp">
+               <font>
+                  <Font name="DejaVu Sans Condensed Bold" size="13.0" />
+               </font>
+            </Label>
          </children>
          <padding>
             <Insets left="10.0" right="10.0" top="5.0" />
@@ -67,6 +73,7 @@
           <TableColumn fx:id="cln_produit_lib" prefWidth="284.0" text="Produit" />
             <TableColumn fx:id="cln_prix" prefWidth="75.0" text="Prix" />
             <TableColumn fx:id="cln_quantite" prefWidth="75.0" text="Quantité" />
+            <TableColumn fx:id="cln_exp" prefWidth="75.0" text="Date Exp" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
