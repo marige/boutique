@@ -17,7 +17,6 @@ import entitie.DetailBonCommande;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import jpaController.exceptions.IllegalOrphanException;
 import jpaController.exceptions.NonexistentEntityException;
 import superpackage.SuperClass;
@@ -28,30 +27,42 @@ import superpackage.SuperClass;
  */
 public class BonCommandeJpaController extends SuperClass implements Serializable {
     EntityManager em=null;
+    
     public void create(BonCommande bonCommande) {
+        //verificztion si bon de commande a ses details renseignés
+        //dans le cas contraire il le renseigne avec du vide
         if (bonCommande.getDetailBonCommandeList() == null) {
             bonCommande.setDetailBonCommandeList(new ArrayList<DetailBonCommande>());
         }
+        
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
             Fournisseur idFournisseur = bonCommande.getIdFournisseur();
+            //verification si le bon de commande a de fournisseur
+            // au cas ou renseigné il recherche les info du fournisseur dans la bdd
             if (idFournisseur != null) {
                 idFournisseur = em.getReference(idFournisseur.getClass(), idFournisseur.getIdFournisseur());
                 bonCommande.setIdFournisseur(idFournisseur);
             }
+            //il prend la liste du detail bon de commande 
+            
             List<DetailBonCommande> attachedDetailBonCommandeList = new ArrayList<DetailBonCommande>();
             for (DetailBonCommande detailBonCommandeListDetailBonCommandeToAttach : bonCommande.getDetailBonCommandeList()) {
+                //il recherche chaque ligne de detailbon dans la bdd qu'il ajoute attachedDetailBonCommandeList
                 detailBonCommandeListDetailBonCommandeToAttach = em.getReference(detailBonCommandeListDetailBonCommandeToAttach.getClass(), detailBonCommandeListDetailBonCommandeToAttach.getIdDetailBonCommande());
                 attachedDetailBonCommandeList.add(detailBonCommandeListDetailBonCommandeToAttach);
             }
             bonCommande.setDetailBonCommandeList(attachedDetailBonCommandeList);
             em.persist(bonCommande);
             if (idFournisseur != null) {
+                //si le fournisseur existe aussi il ajoute la list des commandes au fournisseur
                 idFournisseur.getBonCommandeList().add(bonCommande);
+                //mise a jour des modifications du fournisseur 
                 idFournisseur = em.merge(idFournisseur);
             }
+            //parcours de detailbon et mise a jour dans la bdd
             for (DetailBonCommande detailBonCommandeListDetailBonCommande : bonCommande.getDetailBonCommandeList()) {
                 BonCommande oldIdBonCommandeOfDetailBonCommandeListDetailBonCommande = detailBonCommandeListDetailBonCommande.getIdBonCommande();
                 detailBonCommandeListDetailBonCommande.setIdBonCommande(bonCommande);
