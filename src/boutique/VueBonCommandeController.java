@@ -67,8 +67,6 @@ public class VueBonCommandeController implements Initializable {
     @FXML
     private TableColumn<DetailBonCommande, Integer> cln_quantite;
     @FXML
-    private Button btn_annuler;
-    @FXML
     private Button btn_sauvegarder;
     @FXML
     private Button btn_supprimer;
@@ -76,8 +74,7 @@ public class VueBonCommandeController implements Initializable {
     private TextField txt_idBonCommande;
     @FXML
     private TextField txt_lib_bonCommande;
-    @FXML
-    private ComboBox<Article> com_article;
+
 
     /**
      * Initializes the controller class.
@@ -95,6 +92,9 @@ public class VueBonCommandeController implements Initializable {
     private TableColumn<DetailBonCommande, Date> cln_exp;
     @FXML
     private DatePicker txt_date;
+
+    @FXML
+    private DatePicker txt_date_now;
     
     
     @Override
@@ -104,7 +104,7 @@ public class VueBonCommandeController implements Initializable {
       com_fournisseur.getItems().addAll(les_fournisseurs);
       
       les_produits=FXCollections.observableArrayList(articleController.findArticleEntities());
-      com_article.getItems().addAll(les_produits);
+      //com_article.getItems().addAll(les_produits);
       
        les_details=FXCollections.observableArrayList(detailController.findDetailBonCommandeEntities());
        tbl_produits_liste.setItems(les_details);
@@ -156,9 +156,9 @@ public class VueBonCommandeController implements Initializable {
                 Logger.getLogger(VueBonCommandeController.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-            Article articleSelectionne =new Article(com_article.getValue().getIdarticle());
+           // Article articleSelectionne =new Article(com_article.getValue().getIdarticle());
             DetailBonCommande nouveau =new DetailBonCommande();
-            nouveau.setIdArticle(articleSelectionne);
+        //    nouveau.setIdArticle(articleSelectionne);
             nouveau.setIdBonCommande(bonCommand);
             nouveau.setLibDetailBonCommande(txt_lib_bonCommande.getText());
             nouveau.setPuachat(Integer.parseInt(txt_prix.getText()));
@@ -185,7 +185,7 @@ public class VueBonCommandeController implements Initializable {
                         txt_prix.setText(""+selectItems.getPuachat());
                         txt_quantite.setText(""+selectItems.getQuantiteDetailBonCommande());
                        // txt_date.setValue(superClass.LOCAL_DATE(selectItems.getDateperemption().toString()));
-                        com_article.getSelectionModel().select(selectItems.getIdArticle());
+                     //   com_article.getSelectionModel().select(selectItems.getIdArticle());
         }
     }
 
@@ -213,6 +213,6 @@ public class VueBonCommandeController implements Initializable {
     
      private boolean controleEntrer(){
         
-        return !txt_prix.getText().isEmpty() && !txt_quantite.getText().isEmpty()&& !com_article.getId().isEmpty();
+        return !txt_prix.getText().isEmpty() && !txt_quantite.getText().isEmpty();
     }
 }

@@ -6,46 +6,32 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boutique.VueBonCommandeController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="636.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boutique.VueBonCommandeController">
    <children>
-      <Label layoutX="171.0" layoutY="7.0" text="BON DE COMMANDE">
+      <Label layoutX="224.0" layoutY="7.0" text="BON DE COMMANDE">
          <font>
             <Font name="Montague" size="26.0" />
          </font>
       </Label>
-      <HBox layoutX="2.0" layoutY="145.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="41.0" prefWidth="569.0" spacing="10.0">
+      <HBox layoutX="256.0" layoutY="145.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="41.0" prefWidth="369.0" spacing="10.0">
          <children>
-            <ComboBox fx:id="com_article" prefHeight="25.0" prefWidth="115.0" />
-            <TextField fx:id="txt_prix" prefHeight="25.0" prefWidth="119.0" />
+            <TextField fx:id="txt_prix" prefHeight="25.0" prefWidth="97.0" />
             <TextField fx:id="txt_quantite" prefHeight="25.0" prefWidth="99.0" />
             <DatePicker fx:id="txt_date" prefHeight="25.0" prefWidth="89.0" />
             <Button fx:id="btn_ajouter" mnemonicParsing="false" onMouseClicked="#btnAjouterModifierClicked" text="+" textFill="#2c03f8" />
-            <Button fx:id="btn_modifier" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" text="Mod" textFill="#e85602" />
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" />
          </padding>
       </HBox>
-      <HBox layoutX="136.0" layoutY="74.0" prefHeight="29.0" prefWidth="346.0" spacing="10.0">
-         <children>
-            <Label text="Fournisseur">
-               <font>
-                  <Font name="Droid Sans" size="14.0" />
-               </font></Label>
-            <ComboBox fx:id="com_fournisseur" prefWidth="150.0" />
-         </children>
+      <HBox layoutX="303.0" layoutY="92.0" prefHeight="29.0" prefWidth="162.0" spacing="10.0">
          <padding>
             <Insets bottom="5.0" />
          </padding>
       </HBox>
-      <HBox layoutX="4.0" layoutY="116.0" prefHeight="29.0" prefWidth="490.0" spacing="20.0">
+      <HBox layoutX="264.0" layoutY="116.0" prefHeight="29.0" prefWidth="349.0" spacing="20.0">
          <children>
-            <Label prefHeight="16.0" prefWidth="103.0" text="Produit">
-               <font>
-                  <Font name="DejaVu Sans Bold" size="13.0" />
-               </font>
-            </Label>
-            <Label prefHeight="16.0" prefWidth="119.0" text="Prix">
+            <Label prefHeight="16.0" prefWidth="76.0" text="Prix">
                <font>
                   <Font name="DejaVu Sans Bold" size="13.0" />
                </font>
@@ -57,7 +43,7 @@
                <HBox.margin>
                   <Insets />
                </HBox.margin></Label>
-            <Label prefHeight="15.0" prefWidth="115.0" text="Date Exp">
+            <Label prefHeight="16.0" prefWidth="102.0" text="Date Exp">
                <font>
                   <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                </font>
@@ -67,7 +53,7 @@
             <Insets left="10.0" right="10.0" top="5.0" />
          </padding>
       </HBox>
-      <TableView fx:id="tbl_produits_liste" layoutX="4.0" layoutY="193.0" onMouseClicked="#tableClicked" prefHeight="282.0" prefWidth="569.0">
+      <TableView fx:id="tbl_produits_liste" layoutX="4.0" layoutY="193.0" onMouseClicked="#tableClicked" prefHeight="282.0" prefWidth="628.0">
         <columns>
           <TableColumn fx:id="cln_index" prefWidth="283.0" text="N°" />
           <TableColumn fx:id="cln_produit_lib" prefWidth="284.0" text="Produit" />
@@ -81,7 +67,7 @@
       </TableView>
       <HBox layoutX="2.0" layoutY="491.0" prefHeight="25.0" prefWidth="134.0">
          <children>
-            <Button fx:id="btn_annuler" mnemonicParsing="false" onMouseClicked="#btnAnnulerClicked" prefHeight="26.0" prefWidth="78.0" text="Annuler" textFill="#f89509">
+            <Button fx:id="btn_modifier" mnemonicParsing="false" onMouseClicked="#btnAnnulerClicked" prefHeight="26.0" prefWidth="84.0" text="Modifier" textFill="#f89509">
                <font>
                   <Font name="DejaVu Sans Bold" size="13.0" />
                </font>
@@ -104,17 +90,37 @@
                </font></Button>
          </children>
       </HBox>
-      <TextField fx:id="txt_idBonCommande" layoutX="484.0" layoutY="19.0" prefHeight="25.0" prefWidth="69.0" />
-      <Label layoutX="454.0" layoutY="24.0" text="N°">
+      <TextField fx:id="txt_idBonCommande" layoutX="556.0" layoutY="12.0" prefHeight="25.0" prefWidth="69.0" />
+      <Label layoutX="528.0" layoutY="16.0" text="N°">
          <font>
             <Font name="DejaVu Sans Condensed Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="txt_lib_bonCommande" layoutX="223.0" layoutY="44.0" prefHeight="25.0" prefWidth="150.0" />
-      <Label layoutX="58.0" layoutY="45.0" prefHeight="24.0" prefWidth="157.0" text="LIbellé de la commande">
+      <TextField fx:id="txt_lib_bonCommande" layoutX="303.0" layoutY="44.0" prefHeight="25.0" prefWidth="150.0" />
+      <Label layoutX="264.0" layoutY="45.0" prefHeight="24.0" prefWidth="32.0" text="Titre">
          <font>
             <Font name="DejaVu Sans Condensed Bold" size="13.0" />
          </font>
       </Label>
+      <DatePicker fx:id="txt_date_now" layoutX="528.0" layoutY="44.0" prefHeight="25.0" prefWidth="97.0" />
+      <Label layoutX="488.0" layoutY="49.0" text="Date">
+         <font>
+            <Font name="DejaVu Sans Condensed Bold" size="13.0" />
+         </font>
+      </Label>
+      <TableView layoutX="4.0" layoutY="53.0" prefHeight="137.0" prefWidth="191.0">
+        <columns>
+          <TableColumn prefWidth="58.0" text="Code" />
+          <TableColumn prefWidth="125.0" text="Nom Produit" />
+        </columns>
+      </TableView>
+      <TextField layoutX="85.0" layoutY="25.0" prefHeight="25.0" prefWidth="96.0" />
+      <Label layoutX="14.0" layoutY="30.0" text="Recherche" />
+      <Label layoutX="252.0" layoutY="84.0" text="F/seur">
+         <font>
+            <Font name="DejaVu Sans Condensed Bold" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="com_fournisseur" layoutX="303.0" layoutY="80.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
