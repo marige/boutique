@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -232,6 +233,7 @@ public class VenteController extends SuperClass implements Initializable {
             if (matchesFilter(art)) {
                 artListFiltre.add(art);
             }
+           
         }
 
         // Must re-sort table after items changed
