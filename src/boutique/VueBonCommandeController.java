@@ -67,8 +67,6 @@ public class VueBonCommandeController implements Initializable {
     @FXML
     private TableColumn<DetailBonCommande, Integer> cln_quantite;
     @FXML
-    private Button btn_annuler;
-    @FXML
     private Button btn_sauvegarder;
     @FXML
     private Button btn_supprimer;
@@ -76,8 +74,7 @@ public class VueBonCommandeController implements Initializable {
     private TextField txt_idBonCommande;
     @FXML
     private TextField txt_lib_bonCommande;
-    @FXML
-    private ComboBox<Article> com_article;
+        private ComboBox<Article> com_article;
 
     /**
      * Initializes the controller class.
@@ -95,6 +92,8 @@ public class VueBonCommandeController implements Initializable {
     private TableColumn<DetailBonCommande, Date> cln_exp;
     @FXML
     private DatePicker txt_date;
+    @FXML
+    private DatePicker txt_date_now;
     
     
     @Override
