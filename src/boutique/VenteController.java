@@ -270,8 +270,5 @@ public class VenteController extends SuperClass implements Initializable {
         tvListProduit.getSortOrder().addAll(sortOrder);
     }
 
-
-
-
 }
 
