@@ -8,9 +8,10 @@ package boutique;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import superpackage.SuperClass;
 
 /**
  *
@@ -20,9 +21,8 @@ public class Boutique extends Application {
     SuperClass sc= new SuperClass();
     
          @Override
-    public void start(Stage stage) throws Exception {
-             AnchorPane root = FXMLLoader.load(VueBonCommandeController.class.getResource("vueBonCommande.fxml"));
-        
+      public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("Principale.fxml"));       
         Scene scene = new Scene(root);
         
         stage.setScene(scene);

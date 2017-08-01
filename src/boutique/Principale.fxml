@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="945.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boutique.PrincipaleController">
+   <children>
+      <Accordion />
+      <Accordion maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="202.0">
+        <panes>
+          <TitledPane animated="false" text="Vente">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnVendre" layoutY="2.0" mnemonicParsing="false" onAction="#clickVendre" prefHeight="25.0" prefWidth="202.0" text="Vendre" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" prefHeight="206.0" prefWidth="160.0" text="Ajouter">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnArticleAjouter" layoutX="-1.0" layoutY="2.0" mnemonicParsing="false" onAction="#clickArticle" prefHeight="25.0" prefWidth="202.0" text="Article" />
+                        <Button fx:id="btnFournisseur" layoutX="-1.0" layoutY="42.0" mnemonicParsing="false" onAction="#clickFournisseur" prefHeight="25.0" prefWidth="202.0" text="Fournisseur" />
+                     </children></AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" prefHeight="544.0" prefWidth="202.0" text="Commande">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnBonCommande" mnemonicParsing="false" onAction="#clickBonCommande" prefHeight="25.0" prefWidth="202.0" text="Bon de commande" />
+                     </children></AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+      <HBox fx:id="hbox" layoutX="202.0" layoutY="-2.0" prefHeight="500.0" prefWidth="416.0">
+         <children>
+            <AnchorPane fx:id="anchor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="621.0" prefWidth="706.0" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -6,19 +6,23 @@
 
 package boutique;
 
-import entities.Article;
-import entities.BonCommande;
-import entities.DetailBonCommande;
-import entities.Fournisseur;
-import entities.Utilisateur;
+import entitie.Article;
+import entitie.BonCommande;
+import entitie.DetailBonCommande;
+import entitie.Fournisseur;
 import java.net.URL;
+import java.time.Instant;
+import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -27,9 +31,12 @@ import javafx.scene.input.MouseEvent;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import jpaController.ArticleJpaController;
-import jpaControler.BonCommandeJpaController;
-import jpaControler.DetailBonCommandeJpaController;
-import jpaControler.FournisseurJpaController;
+import jpaController.BonCommandeJpaController;
+import jpaController.DetailBonCommandeJpaController;
+import jpaController.FournisseurJpaController;
+import jpaController.exceptions.IllegalOrphanException;
+import jpaController.exceptions.NonexistentEntityException;
+import superpackage.SuperClass;
 
 /**
  * FXML Controller class
@@ -41,15 +48,12 @@ public class VueBonCommandeController implements Initializable {
     private ObservableList<Fournisseur> les_fournisseurs=null;  
     private ObservableList<Article> les_produits=null;
     private ObservableList<DetailBonCommande> les_details=null;
-    
     SuperClass superClass =new SuperClass();
-        //private ComboBox<Article> com_produits;
+    
     @FXML
     private TextField txt_prix;
     @FXML
     private TextField txt_quantite;
-    @FXML
-    private Button btn_ajouter_modifier;
     @FXML
     private ComboBox<Fournisseur> com_fournisseur;
     @FXML
@@ -57,7 +61,7 @@ public class VueBonCommandeController implements Initializable {
     @FXML
     private TableColumn<DetailBonCommande, Integer> cln_index;
     @FXML
-    private TableColumn<DetailBonCommande, String> cln_produit_lib;
+    private TableColumn<DetailBonCommande, Article> cln_produit_lib;
     @FXML
     private TableColumn<DetailBonCommande, Integer> cln_prix;
     @FXML
@@ -70,70 +74,96 @@ public class VueBonCommandeController implements Initializable {
     private Button btn_supprimer;
     @FXML
     private TextField txt_idBonCommande;
-
-    
-    private final EntityManagerFactory emf= new Persistence().createEntityManagerFactory("BoutiquePU");
-    
-    
-    private final FournisseurJpaController fournisseurController= new FournisseurJpaController(emf);
-    private final ArticleJpaController articleController= new ArticleJpaController(emf);
-    private final DetailBonCommandeJpaController detailController= new DetailBonCommandeJpaController(emf);
-    private final  BonCommandeJpaController boncommandeController=new BonCommandeJpaController(emf);
-    @FXML
-    private TextField txt_lib_produit;
     @FXML
     private TextField txt_lib_bonCommande;
-    
+    @FXML
+    private ComboBox<Article> com_article;
+
     /**
      * Initializes the controller class.
      */
+    
+    private final FournisseurJpaController fournisseurController= new FournisseurJpaController();
+    private final ArticleJpaController articleController= new ArticleJpaController();
+    private final DetailBonCommandeJpaController detailController= new DetailBonCommandeJpaController();
+    private final  BonCommandeJpaController boncommandeController=new BonCommandeJpaController();
+    @FXML
+    private Button btn_ajouter;
+    @FXML
+    private Button btn_modifier;
+    @FXML
+    private TableColumn<DetailBonCommande, Date> cln_exp;
+    @FXML
+    private DatePicker txt_date;
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         
-       
        les_fournisseurs=FXCollections.observableArrayList(fournisseurController.findFournisseurEntities());
       com_fournisseur.getItems().addAll(les_fournisseurs);
       
-      //les_produits=FXCollections.observableArrayList(articleController.findArticleEntities());
-      //com_produits.getItems().addAll(les_produits);
+      les_produits=FXCollections.observableArrayList(articleController.findArticleEntities());
+      com_article.getItems().addAll(les_produits);
       
-      les_details=FXCollections.observableArrayList(detailController.findDetailBonCommandeEntities());
+       les_details=FXCollections.observableArrayList(detailController.findDetailBonCommandeEntities());
        tbl_produits_liste.setItems(les_details);
             
+       //les colonnes de la table
             cln_index.setCellValueFactory(new PropertyValueFactory<>("idDetailBonCommande"));
-            cln_prix.setCellValueFactory(new PropertyValueFactory<>("coutDetailBonCommande"));
-            cln_produit_lib.setCellValueFactory(new PropertyValueFactory<>("libDetailBonCommande"));
-      
+            cln_prix.setCellValueFactory(new PropertyValueFactory<>("puachat"));
+            cln_produit_lib.setCellValueFactory(new PropertyValueFactory<>("idArticle"));
+            cln_quantite.setCellValueFactory(new PropertyValueFactory<>("quantiteDetailBonCommande"));
+            cln_exp.setCellValueFactory(new PropertyValueFactory<>("dateperemption"));
+            //un id automatiquement génére pour le bon de commande
             txt_idBonCommande.setText(""+(boncommandeController.getBonCommandeCount()+1));
             txt_idBonCommande.setEditable(false);
             
+            //pour donner un nom par defaut au bon de commande
             txt_lib_bonCommande.setText("Commande N°"+txt_idBonCommande.getText());
-     
+            
+            //on cree un bon de commande en instance
+          /*  BonCommande bonCommandTemp= new BonCommande();
+            bonCommandTemp.setDateBonCommande(Date.from(Instant.EPOCH));
+            bonCommandTemp.setIdBonCommande(Integer.parseInt(txt_idBonCommande.getText()));
+            bonCommandTemp.setIdFournisseur(new Fournisseur(1));
+            
+            boncommandeController.create(bonCommandTemp);*/
     }    
-
+    
+    
+//pour l'insertion
     @FXML
     private void btnAjouterModifierClicked(MouseEvent event) {
-         
-          
-          Utilisateur utilisateur= new Utilisateur(1);
-          
           
         if(!controleEntrer()){
             superClass.alert("Valeurs", "Les champs ne sont pas remplit", "warning");
             
         }
-        else if(com_fournisseur.getSelectionModel().selectedItemProperty()!=null){
+        else if(!com_fournisseur.getId().isEmpty()){
             
             
-           
-            BonCommande bonCommand= new BonCommande(com_fournisseur.getValue().getIdFournisseur());
+           //Mise a jour de la commande créé temporairement
+            BonCommande bonCommand= new BonCommande(Integer.parseInt(txt_idBonCommande.getText()));
+            bonCommand.setLibBonCommande(txt_lib_bonCommande.getText());
+            bonCommand.setIdFournisseur(com_fournisseur.getValue());
+            //bonCommand.setDateBonCommande();
+            try {
+                boncommandeController.edit(bonCommand);
+            } catch (NonexistentEntityException ex) {
+                Logger.getLogger(VueBonCommandeController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception ex) {
+                Logger.getLogger(VueBonCommandeController.class.getName()).log(Level.SEVERE, null, ex);
+            }
             
+            Article articleSelectionne =new Article(com_article.getValue().getIdarticle());
             DetailBonCommande nouveau =new DetailBonCommande();
-            nouveau.setCoutDetailBonCommande(Integer.parseInt(txt_prix.getText()));
-            nouveau.setLibDetailBonCommande(txt_lib_produit.getText());
-            nouveau.setBonCommandeidBonCommande(bonCommand);
-            nouveau.setIdDetailBonCommande(detailController.getDetailBonCommandeCount()+1);
+            nouveau.setIdArticle(articleSelectionne);
+            nouveau.setIdBonCommande(bonCommand);
+            nouveau.setLibDetailBonCommande(txt_lib_bonCommande.getText());
+            nouveau.setPuachat(Integer.parseInt(txt_prix.getText()));
+            nouveau.setQuantiteDetailBonCommande(Double.parseDouble(txt_quantite.getText()));
+           // nouveau.setDateperemption();
             
             detailController.create(nouveau);
             actualiser();
@@ -146,8 +176,22 @@ public class VueBonCommandeController implements Initializable {
     }
 
     @FXML
-    private void btnAnnulerClicked(MouseEvent event) {
+    private void tableClicked(MouseEvent event) {
+         DetailBonCommande selectItems;
+         selectItems=tbl_produits_liste.getSelectionModel().getSelectedItem();
         
+        if(selectItems!=null){
+                       
+                        txt_prix.setText(""+selectItems.getPuachat());
+                        txt_quantite.setText(""+selectItems.getQuantiteDetailBonCommande());
+                       // txt_date.setValue(superClass.LOCAL_DATE(selectItems.getDateperemption().toString()));
+                        com_article.getSelectionModel().select(selectItems.getIdArticle());
+        }
+    }
+
+    @FXML
+    private void btnAnnulerClicked(MouseEvent event) throws IllegalOrphanException, NonexistentEntityException {
+        boncommandeController.destroy(Integer.parseInt(txt_idBonCommande.getText()));
     }
 
     @FXML
@@ -158,31 +202,17 @@ public class VueBonCommandeController implements Initializable {
     private void btnSupprimerClicked(MouseEvent event) {
     }
     
-     private boolean controleEntrer(){
-        
-        return !txt_prix.getText().isEmpty() && !txt_quantite.getText().isEmpty();
-    }
-     
-     
+    
      private void actualiser(){
         les_details.clear();
         les_details.addAll(detailController.findDetailBonCommandeEntities());
        txt_quantite.clear();
        txt_prix.clear();
-       txt_lib_produit.clear();
-       
-    }
-
-    @FXML
-    private void tableClicked(MouseEvent event) {
-        DetailBonCommande selectItems;
-         selectItems=tbl_produits_liste.getSelectionModel().getSelectedItem();
-        
-        if(selectItems!=null){
-                       
-                        txt_prix.setText(selectItems.getCoutDetailBonCommande().toString());
-                        txt_lib_produit.setText(selectItems.getLibDetailBonCommande());
-        }
+      
     }
     
+     private boolean controleEntrer(){
+        
+        return !txt_prix.getText().isEmpty() && !txt_quantite.getText().isEmpty()&& !com_article.getId().isEmpty();
+    }
 }
