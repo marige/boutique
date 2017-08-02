@@ -37,6 +37,8 @@ public class PrincipaleController extends Stage implements Initializable {
     private Button btnBonCommande;
     @FXML
     private Button btnFournisseur;
+    @FXML
+    private Button btnAjouterCategorie;
 
     /**
      * Initializes the controller class.
@@ -46,10 +48,11 @@ public class PrincipaleController extends Stage implements Initializable {
         // TODO
     } 
     private void newForm(String frmName) {
+         
         try {
+            anchor.getChildren().clear();
             AnchorPane anchorVente = FXMLLoader.load(getClass().getResource(frmName+".fxml"));
             //VenteController.stage=stage;
-            anchor.getChildren().clear();
             anchor.getChildren().add(anchorVente);
         } catch (IOException ex) {
             Logger.getLogger(PrincipaleController.class.getName()).log(Level.SEVERE, null, ex);
@@ -57,7 +60,7 @@ public class PrincipaleController extends Stage implements Initializable {
     }
     @FXML
     private void clickVendre(ActionEvent event) {
-       newForm("vente");
+       newForm("vueVente");
     }
     
     @FXML
@@ -72,6 +75,11 @@ public class PrincipaleController extends Stage implements Initializable {
     private void clickBonCommande(ActionEvent event) {
        newForm("vueBonCommande");
     }   
+
+    @FXML
+    private void clickBtnAjouterCategorie(ActionEvent event) {
+        newForm("vueCategorie");
+    }
       
 
 }

@@ -38,7 +38,7 @@ import report.REPORT;
  *
  * @author OBAM
  */
-public class VenteController extends SuperClass implements Initializable {
+public class VueVenteController extends SuperClass implements Initializable {
   
     private final ObservableList<Article> artList= FXCollections.observableArrayList();
     private final ObservableList<Article> artListFiltre=FXCollections.observableArrayList();
@@ -107,13 +107,6 @@ public class VenteController extends SuperClass implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       /* Article ar= new Article();
-        ar.setLibarticle("bonbon");
-        ar.setStock(10);
-        ar.setIdarticle(12);*/
-      
-        
-        
         //chargement 
         artList.addAll(ac.findArticleEntities());
         artListFiltre.addAll(artList);
@@ -195,7 +188,7 @@ public class VenteController extends SuperClass implements Initializable {
                 f.setClient(txtClient.getText());
                 factC.create(f);
             } catch (ParseException ex) {
-                Logger.getLogger(VenteController.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(VueVenteController.class.getName()).log(Level.SEVERE, null, ex);
             }
             for(DetailFacture d:factList){
                 ad=ac.findArticle(d.getId());
@@ -216,15 +209,12 @@ public class VenteController extends SuperClass implements Initializable {
             
             
         } catch (Exception ex) {
-            Logger.getLogger(VenteController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(VueVenteController.class.getName()).log(Level.SEVERE, null, ex);
         }
        
         
        
-    }
-
-    
-    
+    }       
      private void updateFilteredData() {
         artListFiltre.clear();
 

@@ -26,6 +26,7 @@
                      <children>
                         <Button fx:id="btnArticleAjouter" layoutX="-1.0" layoutY="2.0" mnemonicParsing="false" onAction="#clickArticle" prefHeight="25.0" prefWidth="202.0" text="Article" />
                         <Button fx:id="btnFournisseur" layoutX="-1.0" layoutY="42.0" mnemonicParsing="false" onAction="#clickFournisseur" prefHeight="25.0" prefWidth="202.0" text="Fournisseur" />
+                        <Button fx:id="btnAjouterCategorie" layoutX="-1.0" layoutY="88.0" mnemonicParsing="false" onAction="#clickBtnAjouterCategorie" prefHeight="25.0" prefWidth="202.0" text="Catégorie d'article" />
                      </children></AnchorPane>
             </content>
           </TitledPane>

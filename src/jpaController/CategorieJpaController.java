@@ -20,7 +20,7 @@ import superpackage.SuperClass;
  */
 public class CategorieJpaController extends SuperClass implements Serializable {
      EntityManager em=null;
-
+      
     public void create(Categorie categorie) {
         try {
             em=getEntityManager();

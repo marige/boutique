@@ -33,15 +33,9 @@ public class Categorie implements Serializable{
     
     public Categorie() {
     }
-     public Categorie(int idCategorie,String libcat) {
-       this.setIdCategorie(idCategorie);
-       this.setLibCategorie(libcat);
-    }
-    public Categorie(int idCategorie) {
-       // idCat.set(idCategorie);
-    }
+   
  
-    public Integer getIdCategorie() {
+    public int getIdCategorie() {
         return this.idcat;
     }
 
