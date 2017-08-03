@@ -110,8 +110,8 @@
       </Label>
       <TableView fx:id="tbl_produits" layoutX="4.0" layoutY="53.0" prefHeight="137.0" prefWidth="191.0">
         <columns>
-          <TableColumn fx:id="cln_lib_produit" prefWidth="58.0" text="Code" />
-          <TableColumn fx:id="cln_produit_code" prefWidth="125.0" text="Nom Produit" />
+          <TableColumn fx:id="cln_produit_stock" prefWidth="58.0" text="Stock" />
+          <TableColumn fx:id="cln_lib_produit" prefWidth="125.0" text="Nom Produit" />
         </columns>
       </TableView>
       <TextField fx:id="txt_recherche" layoutX="85.0" layoutY="25.0" onKeyTyped="#rechercheTyped" prefHeight="25.0" prefWidth="96.0" />

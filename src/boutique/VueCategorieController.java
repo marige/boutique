@@ -45,8 +45,8 @@ public class VueCategorieController extends SuperClass implements Initializable 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        cln_idcategorie.setCellValueFactory(new PropertyValueFactory<>("idcat"));
-        cln_libcategorie.setCellValueFactory(new PropertyValueFactory<>("libcat"));  
+        cln_idcategorie.setCellValueFactory(new PropertyValueFactory<>("idCategorie"));
+        cln_libcategorie.setCellValueFactory(new PropertyValueFactory<>("libCategorie"));  
         cate.addAll(catcon.findCategorieEntities());
         tableVcategorie.setItems(cate);
        
