@@ -47,7 +47,7 @@ public class VueBonCommandeController  implements Initializable {
     private ObservableList<Fournisseur> les_fournisseurs=null;  
     private ObservableList<Article> les_produits=null;
     private ObservableList<Article> les_produits_Filtre=FXCollections.observableArrayList();
-    private ObservableList<DetailBonCommande> les_details=null;
+    private ObservableList<DetailBonCommande> les_details=FXCollections.observableArrayList();
     SuperClass superClass =new SuperClass();
     
     @FXML
@@ -120,7 +120,7 @@ public class VueBonCommandeController  implements Initializable {
       cln_produit_stock.setCellValueFactory(new PropertyValueFactory<>("stock"));
       
       
-       les_details=FXCollections.observableArrayList(detailController.findDetailBonCommandeEntities());
+       //les_details=FXCollections.observableArrayList(detailController.findDetailBonCommandeEntities());
        tbl_produits_liste.setItems(les_details);
             
        //les colonnes de la table
@@ -129,6 +129,7 @@ public class VueBonCommandeController  implements Initializable {
             cln_produit_lib.setCellValueFactory(new PropertyValueFactory<>("idArticle"));
             cln_quantite.setCellValueFactory(new PropertyValueFactory<>("quantiteDetailBonCommande"));
             cln_exp.setCellValueFactory(new PropertyValueFactory<>("dateperemption"));
+            
             //un id automatiquement génére pour le bon de commande
             txt_idBonCommande.setText(""+(boncommandeController.getBonCommandeCount()+1));
             txt_idBonCommande.setEditable(false);
@@ -157,37 +158,19 @@ public class VueBonCommandeController  implements Initializable {
             superClass.alert("Valeurs", "Les champs ne sont pas remplit", "warning");
             
         }
-        else if(com_fournisseur.selectionModelProperty().getValue().isEmpty()){
-            superClass.alert(" Valeurs ", "Veuillez choisir un fournisseur", "warning");
+        
+        else if(tbl_produits.getSelectionModel().isEmpty()){
+            superClass.alert("Produit", "Veuillez choisir un Produit", "warning");
         }
         else{
-            
-            
-            //Mise a jour de la commande créé temporairement
-            BonCommande bonCommand= new BonCommande(Integer.parseInt(txt_idBonCommande.getText()));
-            bonCommand.setLibBonCommande(txt_lib_bonCommande.getText());
-            bonCommand.setIdFournisseur(com_fournisseur.getValue());
-            //bonCommand.setDateBonCommande();
-            /*
-            try {
-                boncommandeController.edit(bonCommand);
-            } catch (NonexistentEntityException ex) {
-                Logger.getLogger(VueBonCommandeController.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (Exception ex) {
-                Logger.getLogger(VueBonCommandeController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            */
-            
-            // Article articleSelectionne =new Article(com_article.getValue().getIdarticle());
+    
             DetailBonCommande nouveau =new DetailBonCommande();
-            //    nouveau.setIdArticle(articleSelectionne);
-            nouveau.setIdBonCommande(bonCommand);
-            nouveau.setLibDetailBonCommande(txt_lib_bonCommande.getText());
+            
+            nouveau.setIdArticle(tbl_produits.getSelectionModel().getSelectedItem());
             nouveau.setPuachat(Integer.parseInt(txt_prix.getText()));
             nouveau.setQuantiteDetailBonCommande(Double.parseDouble(txt_quantite.getText()));
             // nouveau.setDateperemption();
-            
-            //detailController.create(nouveau);
+            nouveau.setIdDetailBonCommande(les_details.size()+1);
             les_details.add(nouveau);
             actualiser();
             superClass.alert("Valeurs", "Données Bien enregistrées", "success");
@@ -217,6 +200,21 @@ public class VueBonCommandeController  implements Initializable {
 
     @FXML
     private void btnSauvegarderClicked(MouseEvent event) {
+        if(com_fournisseur.selectionModelProperty().getValue().isEmpty()){
+            superClass.alert(" Valeurs ", "Veuillez choisir un fournisseur", "warning");
+        }else{
+        BonCommande bonDeCommande = new BonCommande();
+        bonDeCommande.setIdBonCommande(Integer.parseInt(txt_idBonCommande.getText()));
+        bonDeCommande.setIdFournisseur(com_fournisseur.getSelectionModel().getSelectedItem());
+        bonDeCommande.setLibBonCommande(txt_lib_bonCommande.getText());
+       //bonDeCommande.setDateBonCommande(null);
+        bonDeCommande.setDetailBonCommandeList(les_details);
+        
+        
+        boncommandeController.create(bonDeCommande);
+        
+        superClass.alert("Fait", "BON DE COMMANDE BIEN CREE");
+        }
     }
 
     @FXML
