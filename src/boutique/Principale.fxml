@@ -38,11 +38,20 @@
                      </children></AnchorPane>
             </content>
           </TitledPane>
+            <TitledPane animated="false" text="Rapport">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnRptVente" layoutX="-1.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#btnRptVente" prefHeight="25.0" prefWidth="202.0" text="Rapports des ventes" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
         </panes>
       </Accordion>
       <HBox fx:id="hbox" layoutX="202.0" layoutY="-2.0" prefHeight="500.0" prefWidth="416.0">
          <children>
-            <AnchorPane fx:id="anchor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="621.0" prefWidth="706.0" />
+            <AnchorPane fx:id="anchor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#btnRptVente" prefHeight="621.0" prefWidth="706.0" />
          </children>
       </HBox>
    </children>

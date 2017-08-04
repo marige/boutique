@@ -36,7 +36,7 @@ public class Facture implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "idFacture")
-    private Integer idFacture;
+    private int idFacture;
     @Column(name = "dateFacture")
     @Temporal(TemporalType.DATE)
     private Date dateFacture;
@@ -84,29 +84,5 @@ public class Facture implements Serializable {
         this.client=client;
     }
     
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idFacture != null ? idFacture.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Facture)) {
-            return false;
-        }
-        Facture other = (Facture) object;
-        if ((this.idFacture == null && other.idFacture != null) || (this.idFacture != null && !this.idFacture.equals(other.idFacture))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "entite.Facture[ idFacture=" + idFacture + " ]";
-    }
     
 }

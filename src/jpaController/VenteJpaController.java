@@ -7,12 +7,12 @@ package jpaController;
 
 import entitie.Vente;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
-import javax.persistence.Persistence;
+import javax.persistence.TemporalType;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import jpaController.exceptions.NonexistentEntityException;
@@ -127,7 +127,15 @@ public class VenteJpaController extends SuperClass implements Serializable {
             em.close();
         }
     }
-    
-    
-    
+    //
+    public List<Vente> getListVenteParDate(Date dateDebut,Date dateFin){
+        em = getEntityManager();
+        List<Vente> l=  em.createNamedQuery("finListVenteDate")
+                .setParameter("dateFin",dateFin, TemporalType.DATE)
+                .setParameter("dateDebut",dateDebut,TemporalType.DATE)
+                .getResultList();
+        em.close();
+       return l;
+    }
+           
 }

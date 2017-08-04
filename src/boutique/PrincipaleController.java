@@ -15,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
@@ -39,6 +40,8 @@ public class PrincipaleController extends Stage implements Initializable {
     private Button btnFournisseur;
     @FXML
     private Button btnAjouterCategorie;
+    @FXML
+    private Button btnRptVente;
 
     /**
      * Initializes the controller class.
@@ -79,6 +82,11 @@ public class PrincipaleController extends Stage implements Initializable {
     @FXML
     private void clickBtnAjouterCategorie(ActionEvent event) {
         newForm("vueCategorie");
+    }
+
+    @FXML
+    private void btnRptVente(MouseEvent event) {
+          newForm("rapportVente");
     }
       
 

@@ -81,9 +81,9 @@ public class VueArticleController implements Initializable {
     //    System.out.println("valeur choisie "+cmbCategorie.getValue());
     }
     
+     ArticleJpaController d=new  ArticleJpaController();
     @FXML
-    private void action(ActionEvent event) {
-        ArticleJpaController d=new  ArticleJpaController();
+    private void action(ActionEvent event) {     
         Article a= new Article(1,txtLibarticle.getText(),Integer.parseInt(txtStock.getText()));
         Categorie c=cmbCategorie.getValue();
         a.setCategorie(c); 

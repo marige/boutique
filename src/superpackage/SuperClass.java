@@ -38,6 +38,11 @@ public class SuperClass {
           this.emf=Persistence.createEntityManagerFactory("BoutiquePU");
           return emf.createEntityManager();
     }
+    //formatage des dates
+    public String getDateFormatAffichage(Date dt){
+         SimpleDateFormat df= new SimpleDateFormat("dd/MM/yyyy");
+         return dt!=null?df.format(dt):null;
+    }
     
     
     public Date convertStringToDate(LocalDate localDate) throws ParseException{
