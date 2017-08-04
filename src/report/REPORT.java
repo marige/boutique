@@ -28,11 +28,7 @@ public class REPORT extends SuperClass {
             jd.setQuery(qd);
             JasperReport jsp=JasperCompileManager.compileReport(jd);
             JasperPrint jp= JasperFillManager.fillReport(jsp, hm,conn);
-            JasperViewer jv=new JasperViewer(jp,false);
-            JDialog dialog= new JDialog(new JFrame(),true);
-            dialog.setContentPane(jv.getContentPane());
-            dialog.setSize(jv.getSize());
-            dialog.setVisible(true);    
+            JasperViewer.viewReport(jp,false);
             conn.close();
     }
     
