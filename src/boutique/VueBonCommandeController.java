@@ -27,6 +27,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -95,6 +96,14 @@ public class VueBonCommandeController implements Initializable {
 
     @FXML
     private DatePicker txt_date_now;
+    @FXML
+    private TableView<Article> tbl_produits;
+    @FXML
+    private TableColumn<Article, String> cln_lib_produit;
+    @FXML
+    private TextField txt_recherche;
+    @FXML
+    private TableColumn<Article, String> cln_produit_stock;
     
     
     @Override
@@ -104,7 +113,10 @@ public class VueBonCommandeController implements Initializable {
       com_fournisseur.getItems().addAll(les_fournisseurs);
       
       les_produits=FXCollections.observableArrayList(articleController.findArticleEntities());
-      //com_article.getItems().addAll(les_produits);
+      tbl_produits.setItems(les_produits);
+      cln_lib_produit.setCellValueFactory(new PropertyValueFactory<>("libarticle"));
+      cln_produit_stock.setCellValueFactory(new PropertyValueFactory<>("stock"));
+      
       
        les_details=FXCollections.observableArrayList(detailController.findDetailBonCommandeEntities());
        tbl_produits_liste.setItems(les_details);
@@ -204,8 +216,8 @@ public class VueBonCommandeController implements Initializable {
     
     
      private void actualiser(){
-        les_details.clear();
-        les_details.addAll(detailController.findDetailBonCommandeEntities());
+        //les_details.clear();
+        //les_details.addAll(detailController.findDetailBonCommandeEntities());
        txt_quantite.clear();
        txt_prix.clear();
       
@@ -214,5 +226,9 @@ public class VueBonCommandeController implements Initializable {
      private boolean controleEntrer(){
         
         return !txt_prix.getText().isEmpty() && !txt_quantite.getText().isEmpty();
+    }
+
+    @FXML
+    private void rechercheTyped(KeyEvent event) {
     }
 }

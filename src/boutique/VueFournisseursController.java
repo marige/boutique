@@ -33,15 +33,10 @@ import jpaController.FournisseurJpaController;
 public class VueFournisseursController implements Initializable {
     
     private ObservableList<Fournisseur> les_fournisseurs=null;  
-    
-    @FXML
-    private Button btn_fermer;
     @FXML
     private TextField txt_recherche;
     @FXML
     private TableView<Fournisseur> tbl_fournisseurs;
-    @FXML
-    private TableColumn<Fournisseur, Integer> cln_ordre;
     @FXML
     private TableColumn<Fournisseur, String> cln_lib_fournisseurs;
     @FXML
@@ -68,6 +63,8 @@ public class VueFournisseursController implements Initializable {
      private final FournisseurJpaController fournisseurController= new FournisseurJpaController();
     @FXML
     private TextField txt_telephone;
+    @FXML
+    private TableColumn<Fournisseur, Integer> cln_telphone;
     
     /**
      * Initializes the controller class.
@@ -77,18 +74,14 @@ public class VueFournisseursController implements Initializable {
         
         les_fournisseurs=FXCollections.observableArrayList(fournisseurController.findFournisseurEntities());
         
-        cln_ifu.setCellValueFactory(new PropertyValueFactory<>("idDetailBonCommande"));
-            cln_lib_fournisseurs.setCellValueFactory(new PropertyValueFactory<>("puachat"));
-            cln_rcm.setCellValueFactory(new PropertyValueFactory<>("idArticle"));
-            cln_ordre.setCellValueFactory(new PropertyValueFactory<>("quantiteDetailBonCommande"));
+        cln_ifu.setCellValueFactory(new PropertyValueFactory<>("ifuFournisseur"));
+            cln_lib_fournisseurs.setCellValueFactory(new PropertyValueFactory<>("libFournisseur"));
+            cln_rcm.setCellValueFactory(new PropertyValueFactory<>("rcmFournisseur"));
+            cln_telphone.setCellValueFactory(new PropertyValueFactory<>("telFournisseur"));
            // cln_n_commande.setCellValueFactory(new PropertyValueFactory<>("dateperemption"));
         // TODO cln_n_commande, le nombres de commande deja passé, 
             tbl_fournisseurs.setItems(les_fournisseurs);
     }    
-
-    @FXML
-    private void fermerClicked(MouseEvent event) {
-    }
 
     @FXML
     private void rechercheFournisseur(KeyEvent event) {
@@ -96,6 +89,16 @@ public class VueFournisseursController implements Initializable {
 
     @FXML
     private void tableFournisseurClicked(MouseEvent event) {
+         Fournisseur selectItems;
+         selectItems=tbl_fournisseurs.getSelectionModel().getSelectedItem();
+         
+          if(selectItems!=null){
+         txt_details.setText(selectItems.getDetailsFournisseur());
+        txt_ifu.setText(selectItems.getIfuFournisseur());
+        txt_lib_fournisseur.setText(selectItems.getLibFournisseur());
+        txt_rcm.setText(selectItems.getRcmFournisseur());
+        txt_telephone.setText(selectItems.getTelFournisseur());
+          }
     }
 
     @FXML
@@ -105,14 +108,24 @@ public class VueFournisseursController implements Initializable {
     @FXML
     private void nouveauClicked(MouseEvent event) {
         Fournisseur nouveau =new Fournisseur();
+        nouveau.setLibFournisseur(txt_lib_fournisseur.getText());
         nouveau.setIfuFournisseur(txt_ifu.getText());
         nouveau.setRcmFournisseur(txt_rcm.getText());
         nouveau.setDetailsFournisseur(txt_details.getText());
         nouveau.setTelFournisseur(txt_telephone.getText());
         
         fournisseurController.create(nouveau);
-        
+        les_fournisseurs.add(nouveau);
+        EffacerText();
         
     }
+    
+    private void EffacerText(){
+        txt_details.clear();
+        txt_ifu.clear();
+        txt_lib_fournisseur.clear();
+        txt_rcm.clear();
+        txt_telephone.clear();
+}
     
 }
