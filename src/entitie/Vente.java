@@ -6,7 +6,6 @@
 package entitie;
 
 import java.io.Serializable;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +13,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -24,14 +25,17 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "vente")
 @XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "finListVenteDate", 
+            query = "SELECT v from Vente v,Facture f,Article a where v.factureV=f and v.articleV=a and  v.factureV.dateFacture BETWEEN :dateDebut and :dateFin order by v.factureV.dateFacture")})
+
 public class Vente implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "idvente")
     private int idVente;
-    
-   
+       
     @ManyToOne
     @JoinColumn(name = "idarticle") 
     private Article articleV;
@@ -61,9 +65,7 @@ public class Vente implements Serializable {
     
     public void setFacture(Facture f){
        this.factureV=f;
-    }
-    
-    
+    }    
     //les autres champs  de la table vente
     @Column(name = "qte")
     private Integer qte;
@@ -84,5 +86,5 @@ public class Vente implements Serializable {
     public int getPu(){
         return this.pu;
     }
-    
+ 
 }

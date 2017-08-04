@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="boutique.RapportVenteController">
+   <children>
+      <TableView fx:id="tvRapport" layoutX="11.0" layoutY="166.0" prefHeight="233.0" prefWidth="585.0">
+        <columns>
+          <TableColumn fx:id="cln_date" prefWidth="91.0" text="Date" />
+          <TableColumn fx:id="cln_article" prefWidth="188.0" text="Article" />
+            <TableColumn fx:id="cln_qte" prefWidth="46.0" text="Qté" />
+            <TableColumn fx:id="cln_pu" prefWidth="59.0" text="Pu" />
+            <TableColumn fx:id="cln_montant" prefWidth="84.0" text="Montant" />
+            <TableColumn fx:id="cln_client" prefWidth="116.0" text="Client" />
+        </columns>
+      </TableView>
+      <Text layoutX="63.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date début" />
+      <DatePicker fx:id="dtDebut" layoutX="130.0" layoutY="90.0" />
+      <DatePicker fx:id="dtFin" layoutX="375.0" layoutY="90.0" />
+      <Text layoutX="311.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date fin" />
+      <Button fx:id="btnAfficher" layoutX="255.0" layoutY="129.0" mnemonicParsing="false" onMouseClicked="#clickBtnAfficher" prefHeight="25.0" prefWidth="103.0" text="Afficher" />
+   </children>
+</AnchorPane>

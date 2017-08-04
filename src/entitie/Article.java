@@ -133,8 +133,7 @@ public class Article implements Serializable{
     public String toString(){
         return this.libarticle;
     }
-    
-
+ 
     
     
 }
