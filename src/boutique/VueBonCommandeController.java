@@ -11,6 +11,9 @@ import entitie.BonCommande;
 import entitie.DetailBonCommande;
 import entitie.Fournisseur;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -173,7 +176,7 @@ public class VueBonCommandeController  implements Initializable {
             nouveau.setIdDetailBonCommande(les_details.size()+1);
             les_details.add(nouveau);
             actualiser();
-            superClass.alert("Valeurs", "Données Bien enregistrées", "success");
+            
 
         }
     }
@@ -203,11 +206,12 @@ public class VueBonCommandeController  implements Initializable {
         if(com_fournisseur.selectionModelProperty().getValue().isEmpty()){
             superClass.alert(" Valeurs ", "Veuillez choisir un fournisseur", "warning");
         }else{
+            LocalDate date = txt_date_now.getValue();
         BonCommande bonDeCommande = new BonCommande();
         bonDeCommande.setIdBonCommande(Integer.parseInt(txt_idBonCommande.getText()));
         bonDeCommande.setIdFournisseur(com_fournisseur.getSelectionModel().getSelectedItem());
         bonDeCommande.setLibBonCommande(txt_lib_bonCommande.getText());
-       //bonDeCommande.setDateBonCommande(null);
+        bonDeCommande.setDateBonCommande(asDate(date));
         bonDeCommande.setDetailBonCommandeList(les_details);
         
         
@@ -271,5 +275,9 @@ public class VueBonCommandeController  implements Initializable {
 
     @FXML
     private void rechercheTyped(KeyEvent event) {
+    }
+    
+    public static Date asDate(LocalDate localDate){
+        return Date.from(localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
     }
 }
