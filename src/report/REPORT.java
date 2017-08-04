@@ -1,8 +1,6 @@
 package report;
 import java.sql.Connection;
 import java.util.HashMap;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
