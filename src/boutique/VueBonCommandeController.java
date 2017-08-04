@@ -11,11 +11,14 @@ import entitie.BonCommande;
 import entitie.DetailBonCommande;
 import entitie.Fournisseur;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -29,8 +32,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import jpaController.ArticleJpaController;
 import jpaController.BonCommandeJpaController;
 import jpaController.DetailBonCommandeJpaController;
@@ -44,11 +45,12 @@ import superpackage.SuperClass;
  *
  * @author geres
  */
-public class VueBonCommandeController implements Initializable {
+public class VueBonCommandeController  implements Initializable {
     
     private ObservableList<Fournisseur> les_fournisseurs=null;  
     private ObservableList<Article> les_produits=null;
-    private ObservableList<DetailBonCommande> les_details=null;
+    private ObservableList<Article> les_produits_Filtre=FXCollections.observableArrayList();
+    private ObservableList<DetailBonCommande> les_details=FXCollections.observableArrayList();
     SuperClass superClass =new SuperClass();
     
     @FXML
@@ -113,12 +115,15 @@ public class VueBonCommandeController implements Initializable {
       com_fournisseur.getItems().addAll(les_fournisseurs);
       
       les_produits=FXCollections.observableArrayList(articleController.findArticleEntities());
-      tbl_produits.setItems(les_produits);
+    //  tbl_produits.setItems(les_produits);
+      les_produits_Filtre.addAll(les_produits);
+      tbl_produits.setItems(les_produits_Filtre);
+      
       cln_lib_produit.setCellValueFactory(new PropertyValueFactory<>("libarticle"));
       cln_produit_stock.setCellValueFactory(new PropertyValueFactory<>("stock"));
       
       
-       les_details=FXCollections.observableArrayList(detailController.findDetailBonCommandeEntities());
+       //les_details=FXCollections.observableArrayList(detailController.findDetailBonCommandeEntities());
        tbl_produits_liste.setItems(les_details);
             
        //les colonnes de la table
@@ -127,6 +132,7 @@ public class VueBonCommandeController implements Initializable {
             cln_produit_lib.setCellValueFactory(new PropertyValueFactory<>("idArticle"));
             cln_quantite.setCellValueFactory(new PropertyValueFactory<>("quantiteDetailBonCommande"));
             cln_exp.setCellValueFactory(new PropertyValueFactory<>("dateperemption"));
+            
             //un id automatiquement génére pour le bon de commande
             txt_idBonCommande.setText(""+(boncommandeController.getBonCommandeCount()+1));
             txt_idBonCommande.setEditable(false);
@@ -134,13 +140,16 @@ public class VueBonCommandeController implements Initializable {
             //pour donner un nom par defaut au bon de commande
             txt_lib_bonCommande.setText("Commande N°"+txt_idBonCommande.getText());
             
-            //on cree un bon de commande en instance
-          /*  BonCommande bonCommandTemp= new BonCommande();
-            bonCommandTemp.setDateBonCommande(Date.from(Instant.EPOCH));
-            bonCommandTemp.setIdBonCommande(Integer.parseInt(txt_idBonCommande.getText()));
-            bonCommandTemp.setIdFournisseur(new Fournisseur(1));
+           
             
-            boncommandeController.create(bonCommandTemp);*/
+       txt_recherche.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable,
+                    String oldValue, String newValue) {
+                updateFilteredData();
+             
+            }
+        });
     }    
     
     
@@ -152,38 +161,23 @@ public class VueBonCommandeController implements Initializable {
             superClass.alert("Valeurs", "Les champs ne sont pas remplit", "warning");
             
         }
-        else if(!com_fournisseur.getId().isEmpty()){
-            
-            
-           //Mise a jour de la commande créé temporairement
-            BonCommande bonCommand= new BonCommande(Integer.parseInt(txt_idBonCommande.getText()));
-            bonCommand.setLibBonCommande(txt_lib_bonCommande.getText());
-            bonCommand.setIdFournisseur(com_fournisseur.getValue());
-            //bonCommand.setDateBonCommande();
-            try {
-                boncommandeController.edit(bonCommand);
-            } catch (NonexistentEntityException ex) {
-                Logger.getLogger(VueBonCommandeController.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (Exception ex) {
-                Logger.getLogger(VueBonCommandeController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-           // Article articleSelectionne =new Article(com_article.getValue().getIdarticle());
-            DetailBonCommande nouveau =new DetailBonCommande();
-        //    nouveau.setIdArticle(articleSelectionne);
-            nouveau.setIdBonCommande(bonCommand);
-            nouveau.setLibDetailBonCommande(txt_lib_bonCommande.getText());
-            nouveau.setPuachat(Integer.parseInt(txt_prix.getText()));
-            nouveau.setQuantiteDetailBonCommande(Double.parseDouble(txt_quantite.getText()));
-           // nouveau.setDateperemption();
-            
-            detailController.create(nouveau);
-            actualiser();
-            superClass.alert("Valeurs", "Données Bien enregistrées", "success");
-      
+        
+        else if(tbl_produits.getSelectionModel().isEmpty()){
+            superClass.alert("Produit", "Veuillez choisir un Produit", "warning");
         }
         else{
-            superClass.alert("Valeurs", "Veuillez choisir un fournisseur", "warning");
+    
+            DetailBonCommande nouveau =new DetailBonCommande();
+            
+            nouveau.setIdArticle(tbl_produits.getSelectionModel().getSelectedItem());
+            nouveau.setPuachat(Integer.parseInt(txt_prix.getText()));
+            nouveau.setQuantiteDetailBonCommande(Double.parseDouble(txt_quantite.getText()));
+            // nouveau.setDateperemption();
+            nouveau.setIdDetailBonCommande(les_details.size()+1);
+            les_details.add(nouveau);
+            actualiser();
+            
+
         }
     }
 
@@ -196,8 +190,9 @@ public class VueBonCommandeController implements Initializable {
                        
                         txt_prix.setText(""+selectItems.getPuachat());
                         txt_quantite.setText(""+selectItems.getQuantiteDetailBonCommande());
+                        txt_recherche.setText(selectItems.getIdArticle().toString());
                        // txt_date.setValue(superClass.LOCAL_DATE(selectItems.getDateperemption().toString()));
-                     //   com_article.getSelectionModel().select(selectItems.getIdArticle());
+                     
         }
     }
 
@@ -208,6 +203,22 @@ public class VueBonCommandeController implements Initializable {
 
     @FXML
     private void btnSauvegarderClicked(MouseEvent event) {
+        if(com_fournisseur.selectionModelProperty().getValue().isEmpty()){
+            superClass.alert(" Valeurs ", "Veuillez choisir un fournisseur", "warning");
+        }else{
+            LocalDate date = txt_date_now.getValue();
+        BonCommande bonDeCommande = new BonCommande();
+        bonDeCommande.setIdBonCommande(Integer.parseInt(txt_idBonCommande.getText()));
+        bonDeCommande.setIdFournisseur(com_fournisseur.getSelectionModel().getSelectedItem());
+        bonDeCommande.setLibBonCommande(txt_lib_bonCommande.getText());
+        bonDeCommande.setDateBonCommande(asDate(date));
+        bonDeCommande.setDetailBonCommandeList(les_details);
+        
+        
+        boncommandeController.create(bonDeCommande);
+        
+        superClass.alert("Fait", "BON DE COMMANDE BIEN CREE");
+        }
     }
 
     @FXML
@@ -216,8 +227,7 @@ public class VueBonCommandeController implements Initializable {
     
     
      private void actualiser(){
-        //les_details.clear();
-        //les_details.addAll(detailController.findDetailBonCommandeEntities());
+        
        txt_quantite.clear();
        txt_prix.clear();
       
@@ -228,7 +238,46 @@ public class VueBonCommandeController implements Initializable {
         return !txt_prix.getText().isEmpty() && !txt_quantite.getText().isEmpty();
     }
 
+     
+    private void updateFilteredData() {
+         les_produits_Filtre.clear();
+
+        for (Article art : les_produits) {
+            if (matchesFilter(art)) {
+                les_produits_Filtre.add(art);
+                
+            }
+           
+        }
+          trier();
+    }
+    
+     private boolean matchesFilter(Article article) {
+        String filterString = txt_recherche.getText();
+        if (filterString == null || filterString.isEmpty()) {
+            // No filter --> Add all.
+            return true;
+        }
+        String lowerCaseFilterString = filterString.toLowerCase();
+        if (article.getLibarticle().toLowerCase().indexOf(lowerCaseFilterString) != -1) {
+            return true;
+        } else if (String.valueOf(article.getIdarticle()).indexOf(lowerCaseFilterString) != -1) {
+            return true;
+        }
+        return false; // Does not match
+    }
+     
+      private void trier() {
+        ArrayList<TableColumn<Article, ?>> sortOrder = new ArrayList<>(tbl_produits.getSortOrder());
+        tbl_produits.getSortOrder().clear();
+        tbl_produits.getSortOrder().addAll(sortOrder);
+    }
+
     @FXML
     private void rechercheTyped(KeyEvent event) {
+    }
+    
+    public static Date asDate(LocalDate localDate){
+        return Date.from(localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
     }
 }
