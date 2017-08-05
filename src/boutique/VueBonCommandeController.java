@@ -91,8 +91,7 @@ public class VueBonCommandeController  implements Initializable {
     private Button btn_ajouter;
     @FXML
     private Button btn_modifier;
-    @FXML
-    private TableColumn<DetailBonCommande, Date> cln_exp;
+        private TableColumn<DetailBonCommande, Date> cln_exp;
 
     @FXML
     private DatePicker txt_date_now;
@@ -125,11 +124,11 @@ public class VueBonCommandeController  implements Initializable {
        tbl_produits_liste.setItems(les_details);
             
        //les colonnes de la table
-            cln_index.setCellValueFactory(new PropertyValueFactory<>("idDetailBonCommande"));
+            
             cln_prix.setCellValueFactory(new PropertyValueFactory<>("puachat"));
             cln_produit_lib.setCellValueFactory(new PropertyValueFactory<>("idArticle"));
             cln_quantite.setCellValueFactory(new PropertyValueFactory<>("quantiteDetailBonCommande"));
-            cln_exp.setCellValueFactory(new PropertyValueFactory<>("dateperemption"));
+            
             
             //un id automatiquement génére pour le bon de commande
             txt_idBonCommande.setText(""+(boncommandeController.getBonCommandeCount()+1));
