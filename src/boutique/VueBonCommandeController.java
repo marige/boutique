@@ -204,6 +204,7 @@ public class VueBonCommandeController  implements Initializable {
 
     @FXML
     private void btnSauvegarderClicked(MouseEvent event) {
+<<<<<<< HEAD
         try {
             BonCommande bonDeCommande = new BonCommande();
             if(com_fournisseur.selectionModelProperty().getValue().isEmpty()){
@@ -234,6 +235,25 @@ public class VueBonCommandeController  implements Initializable {
             r.editionReport("facture",sql, parameter);
         } catch (Exception ex) {
             Logger.getLogger(VueBonCommandeController.class.getName()).log(Level.SEVERE, null, ex);
+=======
+        if(com_fournisseur.selectionModelProperty().getValue().isEmpty()){
+            superClass.alert(" Valeurs ", "Veuillez choisir un fournisseur", "warning");
+            
+        }else {
+            
+            LocalDate date = txt_date_now.getValue();
+        BonCommande bonDeCommande = new BonCommande();
+       // bonDeCommande.setIdBonCommande(Integer.parseInt(txt_idBonCommande.getText()));
+        bonDeCommande.setIdFournisseur(com_fournisseur.getSelectionModel().getSelectedItem());
+        bonDeCommande.setLibBonCommande(txt_lib_bonCommande.getText());
+       // bonDeCommande.setDateBonCommande(asDate(date));
+        bonDeCommande.setDetailBonCommandeList(les_details);
+        
+        
+        boncommandeController.create(bonDeCommande);
+        
+        superClass.alert("Fait", "BON DE COMMANDE BIEN CREE");
+>>>>>>> c958ba9c7a15305262a72918e36992d9a0aa8102
         }
                 
     }
