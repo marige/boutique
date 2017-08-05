@@ -16,7 +16,10 @@ import java.time.ZoneId;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -38,6 +41,7 @@ import jpaController.DetailBonCommandeJpaController;
 import jpaController.FournisseurJpaController;
 import jpaController.exceptions.IllegalOrphanException;
 import jpaController.exceptions.NonexistentEntityException;
+import report.REPORT;
 import superpackage.SuperClass;
 
 /**
@@ -200,23 +204,41 @@ public class VueBonCommandeController  implements Initializable {
 
     @FXML
     private void btnSauvegarderClicked(MouseEvent event) {
-        if(com_fournisseur.selectionModelProperty().getValue().isEmpty()){
-            superClass.alert(" Valeurs ", "Veuillez choisir un fournisseur", "warning");
-        }else{
-            LocalDate date = txt_date_now.getValue();
-        BonCommande bonDeCommande = new BonCommande();
-       // bonDeCommande.setIdBonCommande(Integer.parseInt(txt_idBonCommande.getText()));
-        bonDeCommande.setIdFournisseur(com_fournisseur.getSelectionModel().getSelectedItem());
-        bonDeCommande.setLibBonCommande(txt_lib_bonCommande.getText());
-       // bonDeCommande.setDateBonCommande(asDate(date));
-        bonDeCommande.setDetailBonCommandeList(les_details);
-        
-        
-        boncommandeController.create(bonDeCommande);
-        
-        superClass.alert("Fait", "BON DE COMMANDE BIEN CREE");
+        try {
+            BonCommande bonDeCommande = new BonCommande();
+            if(com_fournisseur.selectionModelProperty().getValue().isEmpty()){
+                superClass.alert(" Valeurs ", "Veuillez choisir un fournisseur", "warning");
+            }else{
+                LocalDate date = txt_date_now.getValue();
+                
+                // bonDeCommande.setIdBonCommande(Integer.parseInt(txt_idBonCommande.getText()));
+                bonDeCommande.setIdFournisseur(com_fournisseur.getSelectionModel().getSelectedItem());
+                bonDeCommande.setLibBonCommande(txt_lib_bonCommande.getText());
+                // bonDeCommande.setDateBonCommande(asDate(date));
+                bonDeCommande.setDetailBonCommandeList(les_details);
+                
+                
+                boncommandeController.create(bonDeCommande);
+                
+                superClass.alert("Fait", "BON DE COMMANDE BIEN CREE");
+            }
+            //edition de l'etat
+            HashMap parameter= new HashMap();
+            parameter.put("idboncommande",bonDeCommande.getIdBonCommande());
+            parameter.put("fournisseur",com_fournisseur.getSelectionModel().getSelectedItem().getLibFournisseur());
+            REPORT r= new REPORT();
+            String sql="select article.libarticle,detailboncommande.quantitedetailboncommande,"+
+                    " detailboncommande.puachat from detailboncommande,article"+
+                    "  where article.idarticle=detailboncommande.idarticle and detailcommande.idboncommande="+bonDeCommande.getIdBonCommande();
+            
+            r.editionReport("facture",sql, parameter);
+        } catch (Exception ex) {
+            Logger.getLogger(VueBonCommandeController.class.getName()).log(Level.SEVERE, null, ex);
         }
+                
     }
+    
+    
 
     @FXML
     private void btnSupprimerClicked(MouseEvent event) {

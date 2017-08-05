@@ -204,8 +204,8 @@ public class VueVenteController extends SuperClass implements Initializable {
             parameter.put("idfacture",f.getIdFacture());
             parameter.put("client",f.getClient());
             REPORT r= new REPORT();            
-            r.editionReport("facture","select article.libarticle,vente.qte,vente.pu,facture.client from vente,article,facture where vente.idarticle=article.idarticle and vente.idfacture=facture.idfacture and vente.idfacture="+f.getIdFacture(), parameter);
-            
+            r.editionReport("facture","select article.libarticle,vente.qte,vente.pu,facture.client from vente,article,facture where vente.idarticle=article.idarticle and vente.idfacture=facture.idfacture and vente.idfacture="+f.getIdFacture(), parameter);//
+            r.editionReport("facture","", parameter);
             
             
         } catch (Exception ex) {

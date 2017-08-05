@@ -6,7 +6,8 @@
 	<parameter name="idfacture" class="java.lang.Integer"/>
 	<parameter name="client" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[select article.libarticle,vente.qte,vente.pu,vente.client from vente,article]]>
+		<![CDATA[select article.libarticle,vente.qte,vente.pu from vente,article
+where vente.idvente=article.idarticle]]>
 	</queryString>
 	<field name="libarticle" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
