@@ -205,10 +205,10 @@ public class VueBonCommandeController  implements Initializable {
         }else{
             LocalDate date = txt_date_now.getValue();
         BonCommande bonDeCommande = new BonCommande();
-        bonDeCommande.setIdBonCommande(Integer.parseInt(txt_idBonCommande.getText()));
+       // bonDeCommande.setIdBonCommande(Integer.parseInt(txt_idBonCommande.getText()));
         bonDeCommande.setIdFournisseur(com_fournisseur.getSelectionModel().getSelectedItem());
         bonDeCommande.setLibBonCommande(txt_lib_bonCommande.getText());
-        bonDeCommande.setDateBonCommande(asDate(date));
+       // bonDeCommande.setDateBonCommande(asDate(date));
         bonDeCommande.setDetailBonCommandeList(les_details);
         
         
