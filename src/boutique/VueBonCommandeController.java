@@ -93,8 +93,6 @@ public class VueBonCommandeController  implements Initializable {
     private Button btn_modifier;
     @FXML
     private TableColumn<DetailBonCommande, Date> cln_exp;
-    @FXML
-    private DatePicker txt_date;
 
     @FXML
     private DatePicker txt_date_now;
