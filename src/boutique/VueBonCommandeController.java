@@ -202,7 +202,9 @@ public class VueBonCommandeController  implements Initializable {
     private void btnSauvegarderClicked(MouseEvent event) {
         if(com_fournisseur.selectionModelProperty().getValue().isEmpty()){
             superClass.alert(" Valeurs ", "Veuillez choisir un fournisseur", "warning");
-        }else{
+            
+        }else {
+            
             LocalDate date = txt_date_now.getValue();
         BonCommande bonDeCommande = new BonCommande();
        // bonDeCommande.setIdBonCommande(Integer.parseInt(txt_idBonCommande.getText()));
