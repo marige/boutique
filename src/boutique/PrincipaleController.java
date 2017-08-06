@@ -81,7 +81,7 @@ public class PrincipaleController extends Stage implements Initializable {
 
     @FXML
     private void clickBtnAjouterCategorie(ActionEvent event) {
-        newForm("vueCategorie");
+        newForm("/categorie/vueCategorie");
     }
 
     @FXML

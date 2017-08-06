@@ -147,7 +147,7 @@ public class VueVenteController extends SuperClass implements Initializable {
     private void tvClicked(MouseEvent event) {
       art=tvListProduit.getSelectionModel().getSelectedItem();
       if(art!=null){
-          
+          txtQte.setText("");
           txtLibarticle.setText(art.getLibarticle());
           txtCode.setText(String.valueOf(art.getIdarticle()));
           txtPu.setText(String.valueOf(art.getPrixVente()));
@@ -158,25 +158,40 @@ public class VueVenteController extends SuperClass implements Initializable {
      
      @FXML
     private void clickPanier(MouseEvent event){
-      int montant=Integer.parseInt(txtQte.getText())*Integer.parseInt(txtPu.getText());
-      detail =new DetailFacture(Integer.parseInt(txtCode.getText()),txtLibarticle.getText(),Integer.parseInt(txtPu.getText()),Integer.parseInt(txtQte.getText()),montant);
-      factList.add(detail);
-      txtMontantTtc.setText(String.valueOf(Integer.parseInt("0"+txtMontantTtc.getText())+detail.getMontant()));      
-      tvDetailFacture.setItems(factList);
+       if(txtLibarticle.getText().isEmpty())
+           alert("notification","choisissez l\'article à vendre");
+        else if(txtQte.getText().isEmpty())
+           alert("notification","saisissez quantité article: "+txtLibarticle.getText());
+        else if(txtPu.getText().trim().equals("0"))
+           alert("notification","corrigez dans la base prix vente article: "+txtLibarticle.getText());       
+        else{
+            int montant=Integer.parseInt(txtQte.getText())*Integer.parseInt(txtPu.getText());
+            detail =new DetailFacture(Integer.parseInt(txtCode.getText()),txtLibarticle.getText(),Integer.parseInt(txtPu.getText()),Integer.parseInt(txtQte.getText()),montant);
+            factList.add(detail);
+            txtMontantTtc.setText(String.valueOf(Integer.parseInt("0"+txtMontantTtc.getText())+detail.getMontant()));      
+            tvDetailFacture.setItems(factList);
+        }
     }
 
     @FXML
     private void clickRetirer(MouseEvent event) {
+        if(tvDetailFacture.getSelectionModel().isEmpty())
+            alert("notification","choisissez une ligne à supprimer");
+        else{
          detF=tvDetailFacture.getSelectionModel().getSelectedItem();
         if(detF!=null){
             factList.remove(detF);   
             txtMontantTtc.setText(String.valueOf(Integer.parseInt("0"+txtMontantTtc.getText())-detF.getMontant()));
+        }
         }
     }
   
            
     @FXML
     private void btnFinCommande(MouseEvent event) {
+       if(tvDetailFacture.getItems().isEmpty())
+           alert("notification","Ajouter les articles  vendre");
+       else{
         try {
             Vente v= new Vente();
             Article ad=new Article();
@@ -186,6 +201,7 @@ public class VueVenteController extends SuperClass implements Initializable {
                 //enregistrement de la facture
                 f.setDateFacture(this.convertStringToDate(dtDateFacture.getValue()));
                 f.setClient(txtClient.getText());
+                f.setMontant(Integer.parseInt(txtMontantTtc.getText()));
                 factC.create(f);
             } catch (ParseException ex) {
                 Logger.getLogger(VueVenteController.class.getName()).log(Level.SEVERE, null, ex);
@@ -205,13 +221,11 @@ public class VueVenteController extends SuperClass implements Initializable {
             parameter.put("client",f.getClient());
             REPORT r= new REPORT();            
             r.editionReport("facture","select article.libarticle,vente.qte,vente.pu,facture.client from vente,article,facture where vente.idarticle=article.idarticle and vente.idfacture=facture.idfacture and vente.idfacture="+f.getIdFacture(), parameter);//
-            r.editionReport("facture","", parameter);
-            
-            
+                             
         } catch (Exception ex) {
             Logger.getLogger(VueVenteController.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
+       }
         
        
     }       

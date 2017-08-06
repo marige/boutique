@@ -43,7 +43,7 @@ public class DetailBonCommande implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "idDetailBonCommande")
-    private Integer idDetailBonCommande;
+    private int idDetailBonCommande;
     @Basic(optional = false)
     @Column(name = "puachat")
     private int puachat;
@@ -65,20 +65,20 @@ public class DetailBonCommande implements Serializable {
     public DetailBonCommande() {
     }
 
-    public DetailBonCommande(Integer idDetailBonCommande) {
+    public DetailBonCommande(int idDetailBonCommande) {
         this.idDetailBonCommande = idDetailBonCommande;
     }
 
-    public DetailBonCommande(Integer idDetailBonCommande, int puachat) {
+    public DetailBonCommande(int idDetailBonCommande, int puachat) {
         this.idDetailBonCommande = idDetailBonCommande;
         this.puachat = puachat;
     }
 
-    public Integer getIdDetailBonCommande() {
+    public int getIdDetailBonCommande() {
         return idDetailBonCommande;
     }
 
-    public void setIdDetailBonCommande(Integer idDetailBonCommande) {
+    public void setIdDetailBonCommande(int idDetailBonCommande) {
         this.idDetailBonCommande = idDetailBonCommande;
     }
 
@@ -128,31 +128,6 @@ public class DetailBonCommande implements Serializable {
 
     public void setIdArticle(Article idArticle) {
         this.idArticle = idArticle;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idDetailBonCommande != null ? idDetailBonCommande.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof DetailBonCommande)) {
-            return false;
-        }
-        DetailBonCommande other = (DetailBonCommande) object;
-        if ((this.idDetailBonCommande == null && other.idDetailBonCommande != null) || (this.idDetailBonCommande != null && !this.idDetailBonCommande.equals(other.idDetailBonCommande))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "entitie.DetailBonCommande[ idDetailBonCommande=" + idDetailBonCommande + " ]";
     }
     
 }

@@ -47,7 +47,7 @@ public class BonCommande implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "idBonCommande")
-    private Integer idBonCommande;
+    private int idBonCommande;
     @Column(name = "libBonCommande")
     private String libBonCommande;
     @Column(name = "dateBonCommande")
@@ -67,15 +67,15 @@ public class BonCommande implements Serializable {
     public BonCommande() {
     }
 
-    public BonCommande(Integer idBonCommande) {
+    public BonCommande(int idBonCommande) {
         this.idBonCommande = idBonCommande;
     }
 
-    public Integer getIdBonCommande() {
+    public int getIdBonCommande() {
         return idBonCommande;
     }
 
-    public void setIdBonCommande(Integer idBonCommande) {
+    public void setIdBonCommande(int idBonCommande) {
         this.idBonCommande = idBonCommande;
     }
 
@@ -128,29 +128,6 @@ public class BonCommande implements Serializable {
         this.idFournisseur = idFournisseur;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idBonCommande != null ? idBonCommande.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof BonCommande)) {
-            return false;
-        }
-        BonCommande other = (BonCommande) object;
-        if ((this.idBonCommande == null && other.idBonCommande != null) || (this.idBonCommande != null && !this.idBonCommande.equals(other.idBonCommande))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "entitie.BonCommande[ idBonCommande=" + idBonCommande + " ]";
-    }
+   
     
 }

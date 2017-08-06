@@ -5,6 +5,7 @@
  */
 package entitie;
 
+import categorie.Categorie;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Set;

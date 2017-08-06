@@ -56,6 +56,21 @@ public class SuperClass {
                   Connection cnt = DriverManager.getConnection(url,"root","mario");
              return cnt;
     }
+     //fonctoin de test si un entier est saisi
+    public boolean isInteger(String str){     
+     try  
+     {  
+       double d = Double.parseDouble(str);  
+     }  
+     catch(NumberFormatException nfe)  
+     {  
+       return false;  
+     }  
+     return true;  
+    }
+     
+     
+     
     public  void alert(String title, String message ){
         Label label= new Label();
         Button closeButton= new Button("Femer");
@@ -121,11 +136,8 @@ public class SuperClass {
         
         Scene scene =new Scene(content, 300, 250);
          window.setScene(scene);
-         window.showAndWait();
-         
-         
-         
-         
+         window.showAndWait();         
+                          
          
         
      }

@@ -60,9 +60,7 @@ public class RapportVenteController extends SuperClass implements Initializable 
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-      
-        
+    public void initialize(URL url, ResourceBundle rb) {       
         cln_date.setCellValueFactory(new PropertyValueFactory<>("date"));
         cln_article.setCellValueFactory(new PropertyValueFactory<>("libArticle"));
         cln_qte.setCellValueFactory(new PropertyValueFactory<>("qte"));
@@ -70,13 +68,18 @@ public class RapportVenteController extends SuperClass implements Initializable 
         cln_montant.setCellValueFactory(new PropertyValueFactory<>("montant"));
         cln_client.setCellValueFactory(new PropertyValueFactory<>("client"));
         tvRapport.setItems(listDetailFacture);
-        
-        
-        
+     
     }   
 
     @FXML
     private void clickBtnAfficher(MouseEvent event) {
+       if(dtDebut.getValue()==null){
+           this.alert("Erreur", "Choisissez la date début");
+       }
+       else if(dtFin.getValue()==null){
+           this.alert("Erreur", "Choisissez la date de fin");
+       }
+       else{
         //vider pour eviter les repetitions de données
        listDetailFacture.clear();
     
@@ -101,7 +104,7 @@ public class RapportVenteController extends SuperClass implements Initializable 
         } catch (ParseException ex) {
             Logger.getLogger(RapportVenteController.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
+       }
         
     }
 }

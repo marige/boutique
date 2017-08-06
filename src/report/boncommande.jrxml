@@ -5,17 +5,16 @@
 	<property name="ireport.y" value="0"/>
 	<parameter name="idboncommande" class="java.lang.Integer"/>
 	<parameter name="fournisseur" class="java.lang.String"/>
-	<parameter name="datebon" class="java.util.Date"/>
+	<parameter name="datebon" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[select article.libarticle,detailboncommande.quantitedetailboncommande,
 detailboncommande.puachat from detailboncommande,article
-where article.idarticle=detailboncommande.idarticle
- ]]>
+where article.idarticle=detailboncommande.idarticle]]>
 	</queryString>
 	<field name="libarticle" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="quantitedetailboncommande" class="java.lang.Double">
+	<field name="quantitedetailboncommande" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="puachat" class="java.lang.Integer">
@@ -30,7 +29,7 @@ where article.idarticle=detailboncommande.idarticle
 	<title>
 		<band height="35" splitType="Stretch">
 			<staticText>
-				<reportElement x="114" y="0" width="273" height="29" forecolor="#333333" backcolor="#CCCCFF" uuid="a92cccb4-32d6-400a-aa68-9adba273b4b5"/>
+				<reportElement x="114" y="1" width="273" height="29" forecolor="#333333" backcolor="#CCCCFF" uuid="a92cccb4-32d6-400a-aa68-9adba273b4b5"/>
 				<box>
 					<topPen lineWidth="0.5"/>
 					<leftPen lineWidth="2.0"/>
@@ -45,7 +44,7 @@ where article.idarticle=detailboncommande.idarticle
 		</band>
 	</title>
 	<pageHeader>
-		<band height="108" splitType="Stretch">
+		<band height="105" splitType="Stretch">
 			<textField>
 				<reportElement x="249" y="6" width="100" height="20" uuid="d1f53904-4c91-40b3-877d-2c9f9ad0bf07"/>
 				<textElement>
@@ -82,7 +81,7 @@ where article.idarticle=detailboncommande.idarticle
 				<text><![CDATA[DATE]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="86" y="68" width="100" height="20" uuid="e6733110-ec7a-4b14-aa59-df7a65b7d3f9"/>
+				<reportElement x="87" y="68" width="100" height="20" uuid="e6733110-ec7a-4b14-aa59-df7a65b7d3f9"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -91,45 +90,45 @@ where article.idarticle=detailboncommande.idarticle
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="25" splitType="Stretch">
+		<band height="30" splitType="Stretch">
 			<staticText>
-				<reportElement x="32" y="2" width="151" height="23" backcolor="#FFFFCC" uuid="11aa421f-1d56-4aeb-b1cf-fd748dcda168"/>
+				<reportElement x="41" y="0" width="185" height="30" uuid="cd2323c9-1cc8-484d-ab1d-68924fb7ae6a"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="14"/>
+					<font size="14" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Libellé]]></text>
+				<text><![CDATA[Désignation]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="183" y="2" width="79" height="23" backcolor="#FFFFCC" uuid="ef978b27-4e8f-42f6-8e54-e40fd05af9d4"/>
+				<reportElement x="226" y="0" width="61" height="30" uuid="ea40d377-3207-4b88-9f2f-4df24e23c8c5"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="14"/>
+					<font size="14" isBold="true"/>
 				</textElement>
-				<text><![CDATA[qte]]></text>
+				<text><![CDATA[Quantité	]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="262" y="2" width="71" height="23" backcolor="#FFFFCC" uuid="4d20da3b-1fc2-464c-8e7c-9be32cf39901"/>
+				<reportElement x="291" y="0" width="83" height="30" uuid="2e9cdfe6-e11a-4b52-a819-9c4c64acff6d"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="14"/>
+					<font size="14" isBold="true"/>
 				</textElement>
-				<text><![CDATA[pu]]></text>
+				<text><![CDATA[Prix unitaire]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="333" y="2" width="117" height="23" backcolor="#FFFFCC" uuid="2acc9f56-e0fc-4af1-80b8-7a6aa2dcc033"/>
+				<reportElement x="374" y="1" width="105" height="29" uuid="418a8384-8efe-4623-9aa4-481f8899e04c"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -137,19 +136,19 @@ where article.idarticle=detailboncommande.idarticle
 					<rightPen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="14"/>
+					<font size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Montant]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="2" width="32" height="22" backcolor="#FFFFCC" uuid="f060d953-4fe7-4385-8710-0372a10f5b54"/>
+				<reportElement x="0" y="0" width="41" height="30" uuid="6554d5f4-f2bb-470b-aebc-6fcf0a880a66"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="14" isBold="false"/>
+					<font size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[N°]]></text>
 			</staticText>
@@ -158,60 +157,50 @@ where article.idarticle=detailboncommande.idarticle
 	<detail>
 		<band height="30" splitType="Stretch">
 			<textField>
-				<reportElement x="262" y="1" width="71" height="27" uuid="76bca715-6ede-4c35-bab9-cbc019c4bee0"/>
-				<box>
+				<reportElement x="41" y="0" width="185" height="30" uuid="68beb7ae-f8b0-4ba3-8a20-519635917a3c"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
 					<leftPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{puachat}]]></textFieldExpression>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{libarticle}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="183" y="1" width="79" height="27" uuid="35574b01-2585-4e9c-b2b5-0be2be267449"/>
-				<box>
+				<reportElement x="226" y="0" width="64" height="30" uuid="e07a1a03-52bf-4de8-852d-51c9dea45c3a"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
 					<leftPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
-				</textElement>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{quantitedetailboncommande}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="333" y="1" width="117" height="27" uuid="a0aa3585-2257-4bae-84c3-49aa1c1a1d74"/>
-				<box>
+				<reportElement x="291" y="0" width="83" height="30" uuid="51ddd639-7e00-47d4-92c8-565b11d80540"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{puachat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="374" y="0" width="105" height="30" uuid="d7b2f73f-ccd0-4502-9a75-a65e31f5dd18"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
 					<leftPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
 					<rightPen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{quantitedetailboncommande}$F{puachat}]]></textFieldExpression>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{puachat}*$F{quantitedetailboncommande}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="32" y="0" width="151" height="28" uuid="3bcc564d-5b65-45b8-b1b5-99fa9bf9ffe6"/>
-				<box>
+				<reportElement x="0" y="0" width="41" height="30" uuid="844eb7dc-9512-4367-8e43-d50dfd6742d5"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
 					<leftPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{libarticle}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="0" y="1" width="32" height="29" uuid="68ae0454-ac3c-4353-b363-58c7661d4eb6"/>
-				<box>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{COLUMN_NUMBER}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -224,14 +213,14 @@ where article.idarticle=detailboncommande.idarticle
 	<summary>
 		<band height="42" splitType="Stretch">
 			<staticText>
-				<reportElement x="210" y="7" width="123" height="31" uuid="2e195564-7467-4b1c-98ea-ab81d8483cfe"/>
+				<reportElement x="221" y="7" width="123" height="31" uuid="2e195564-7467-4b1c-98ea-ab81d8483cfe"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
+					<font size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Total]]></text>
 			</staticText>
-			<textField pattern="#,##0;(#,##0)">
-				<reportElement x="360" y="7" width="153" height="31" uuid="b6bbd537-e752-4355-aaa8-be7b0581590c"/>
+			<textField>
+				<reportElement x="349" y="7" width="130" height="31" uuid="e7530326-3bff-467e-8667-40179ea6d60d"/>
 				<textElement verticalAlignment="Middle">
 					<font size="14" isBold="true"/>
 				</textElement>

@@ -2,7 +2,7 @@
 package boutique;
 
 import entitie.Article;
-import entitie.Categorie;
+import categorie.Categorie;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -18,7 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import jpaController.ArticleJpaController;
-import jpaController.CategorieJpaController;
+import categorie.CategorieJpaController;
 import superpackage.SuperClass;
 
 /**
@@ -27,10 +27,9 @@ import superpackage.SuperClass;
  * @author OBAM
  */
 
-public class VueArticleController implements Initializable {
+public class VueArticleController extends SuperClass implements Initializable {
     private ObservableList<Article> article=FXCollections.observableArrayList();
     private ObservableList<Categorie> categorie=null;
-    SuperClass sc= new SuperClass();
     CategorieJpaController cat=new CategorieJpaController();
     ArticleJpaController artcon=new ArticleJpaController();
     @FXML
@@ -81,15 +80,25 @@ public class VueArticleController implements Initializable {
     //    System.out.println("valeur choisie "+cmbCategorie.getValue());
     }
     
-     ArticleJpaController d=new  ArticleJpaController();
+    ArticleJpaController d=new  ArticleJpaController();
     @FXML
     private void action(ActionEvent event) {     
-        Article a= new Article(1,txtLibarticle.getText(),Integer.parseInt(txtStock.getText()));
-        Categorie c=cmbCategorie.getValue();
-        a.setCategorie(c); 
-        d.create(a);   
-        article.add(a);
-        sc.alert("notification","Article créé avec succès");        
+        if(cmbCategorie.getSelectionModel().isEmpty()){
+            alert("notification","Choisissez la catégorie de l\'article");
+        }
+        else if(txtLibarticle.getText().isEmpty()){
+            alert("notification","saisissez le libellé de l\'article");
+        }
+        else if(!this.isInteger(txtStock.getText()))
+            alert("notification","valeur de stock saisie incorrecte");
+        else{
+            Article a= new Article(1,txtLibarticle.getText(),Integer.parseInt(txtStock.getText()));
+            Categorie c=cmbCategorie.getValue();
+            a.setCategorie(c); 
+            d.create(a);   
+            article.add(a);
+            alert("notification","Article créé avec succès");        
+        }
     }
         
     

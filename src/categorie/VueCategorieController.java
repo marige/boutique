@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package boutique;
+package categorie;
 
-import entitie.Categorie;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -18,7 +17,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import jpaController.CategorieJpaController;
 import superpackage.SuperClass;
 
 /**
@@ -55,11 +53,14 @@ public class VueCategorieController extends SuperClass implements Initializable 
 
     @FXML
     private void btnAjouterClick(MouseEvent event) {
+        if(txtLibCategorie.getText().isEmpty())
+            alert("information","saisissez le libellé catégorie");
+        else{
         c.setLibCategorie(txtLibCategorie.getText());
         catcon.create(c);
         cate.add(c);
         this.alert("alert","Catégorie ajoutée avec succès");
-        
+        }
     }
 
     

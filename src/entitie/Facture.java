@@ -42,6 +42,8 @@ public class Facture implements Serializable {
     private Date dateFacture;
     @Column(name = "client")
     private String client;
+    @Column(name="montant")
+    private int montant;
     
    @OneToMany(mappedBy="factureV" ,cascade=CascadeType.ALL)
    private List<Vente> venteFacture=new ArrayList();
@@ -82,6 +84,12 @@ public class Facture implements Serializable {
     
     public void setClient(String client){
         this.client=client;
+    }
+    public void setMontant(int montant){
+        this.montant=montant;
+    }
+    public int getMontant(){
+        return this.montant;
     }
     
     

@@ -6,7 +6,7 @@
 package jpaController;
 
 import entitie.Article;
-import entitie.Categorie;
+import categorie.Categorie;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.EntityManager;
