@@ -6,8 +6,10 @@
 
 package boutique;
 
+import entitie.DetailBonCommande;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -28,15 +30,13 @@ public class VueReceptionCommandeController implements Initializable {
     @FXML
     private Text lab_libBonCommande;
     @FXML
-    private TableView<?> tbl_detail_commande;
+    private TableView<DetailBonCommande> tbl_detail_commande;
     @FXML
-    private TableColumn<?, ?> cln_libArcticle;
+    private TableColumn<DetailBonCommande, String> cln_libArcticle;
     @FXML
-    private TableColumn<?, ?> cln_quantite;
+    private TableColumn<DetailBonCommande, Integer> cln_quantite;
     @FXML
-    private TableColumn<?, ?> cln_prix;
-    @FXML
-    private TableColumn<?, ?> cln_exp;
+    private TableColumn<DetailBonCommande, Integer> cln_prix;
     @FXML
     private DatePicker txt_date_now;
     @FXML
@@ -53,7 +53,13 @@ public class VueReceptionCommandeController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+        
     }    
+
+    @FXML
+    private void search(ActionEvent event) {
+        
+    }
     
 }

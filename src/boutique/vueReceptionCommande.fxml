@@ -31,6 +31,6 @@
       <Label layoutX="414.0" layoutY="35.0" text="Date" />
       <Label layoutX="306.0" layoutY="126.0" text="PRIX" />
       <Label layoutX="433.0" layoutY="126.0" text="Date d'expiration" />
-      <Button fx:id="btn_valider" layoutX="253.0" layoutY="42.0" mnemonicParsing="false" text="Entrer" />
+      <Button fx:id="btn_valider" layoutX="253.0" layoutY="42.0" mnemonicParsing="false" onAction="#search" text="Entrer" />
    </children>
 </AnchorPane>
