@@ -12,11 +12,19 @@
     <class>article.Article</class>
     <properties>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/boutique?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value="mario"/>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
+=======
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3305/boutiqueG"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value=""/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+>>>>>>> cc01a73354f4616b6f5d732279df98e68737be25
 =======
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3305/boutiqueG"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

@@ -187,4 +187,12 @@ public class DetailBonCommandeJpaController extends SuperClass implements Serial
         }
     }
     
+     public List<DetailBonCommande> findDetailBonByIdBon(int id) {
+        em = getEntityManager();
+        List<DetailBonCommande> l=  em.createNamedQuery("DetailBonCommande.findByIdBon").setParameter("idBonCommande", id).getResultList();
+            em.close();
+            return l;
+        }
+    
+    
 }

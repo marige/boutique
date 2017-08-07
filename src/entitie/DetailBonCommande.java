@@ -33,6 +33,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "DetailBonCommande.findAll", query = "SELECT d FROM DetailBonCommande d"),
+<<<<<<< HEAD
+=======
+    @NamedQuery(name = "detailByIdBon", query = "SELECT d FROM DetailBonCommande d,BonCommande b where"),
+    @NamedQuery(name = "DetailBonCommande.findByIdBon", query = "SELECT d FROM DetailBonCommande d  WHERE d.idBonCommande = :idBonCommande"),
+>>>>>>> cc01a73354f4616b6f5d732279df98e68737be25
     @NamedQuery(name = "DetailBonCommande.findByIdDetailBonCommande", query = "SELECT d FROM DetailBonCommande d WHERE d.idDetailBonCommande = :idDetailBonCommande"),
     @NamedQuery(name = "DetailBonCommande.findByPuachat", query = "SELECT d FROM DetailBonCommande d WHERE d.puachat = :puachat"),
     @NamedQuery(name = "DetailBonCommande.findByLibDetailBonCommande", query = "SELECT d FROM DetailBonCommande d WHERE d.libDetailBonCommande = :libDetailBonCommande"),
