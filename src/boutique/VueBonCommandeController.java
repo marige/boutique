@@ -6,7 +6,7 @@
 
 package boutique;
 
-import entitie.Article;
+import article.Article;
 import entitie.BonCommande;
 import entitie.DetailBonCommande;
 import entitie.Fournisseur;
@@ -34,7 +34,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import jpaController.ArticleJpaController;
+import article.ArticleJpaController;
 import jpaController.BonCommandeJpaController;
 import jpaController.DetailBonCommandeJpaController;
 import jpaController.FournisseurJpaController;

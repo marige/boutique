@@ -12,7 +12,7 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import entitie.BonCommande;
-import entitie.Article;
+import article.Article;
 import entitie.DetailBonCommande;
 import java.util.List;
 import javax.persistence.EntityManager;

@@ -10,6 +10,8 @@ import java.time.LocalDate;
 import java.util.Date;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -71,7 +73,7 @@ public class SuperClass {
      
      
      
-    public  void alert(String title, String message ){
+   /* public  void alert(String title, String message ){
         Label label= new Label();
         Button closeButton= new Button("Femer");
         Stage window= new Stage();
@@ -96,6 +98,14 @@ public class SuperClass {
         Scene scene =new Scene(content, 300, 250);
          window.setScene(scene);
          window.showAndWait();
+    }*/
+    //mettre alertType en paramètre de la méthode
+    public void alert(String title,String message){
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(message);
+       // alert.setContentText(message);
+        alert.showAndWait();
     }
     
      public  void alert(String title, String message, String type ){

@@ -6,6 +6,7 @@
 
 package entitie;
 
+import article.Article;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;

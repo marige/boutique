@@ -6,6 +6,7 @@
 
 package entitie;
 
+import article.Article;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -32,6 +33,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "DetailBonCommande.findAll", query = "SELECT d FROM DetailBonCommande d"),
+    @NamedQuery(name = "detailByIdBon", query = "SELECT d FROM DetailBonCommande d,BonCommande b where"),
     @NamedQuery(name = "DetailBonCommande.findByIdDetailBonCommande", query = "SELECT d FROM DetailBonCommande d WHERE d.idDetailBonCommande = :idDetailBonCommande"),
     @NamedQuery(name = "DetailBonCommande.findByPuachat", query = "SELECT d FROM DetailBonCommande d WHERE d.puachat = :puachat"),
     @NamedQuery(name = "DetailBonCommande.findByLibDetailBonCommande", query = "SELECT d FROM DetailBonCommande d WHERE d.libDetailBonCommande = :libDetailBonCommande"),

@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entitie;
+package article;
 
 import categorie.Categorie;
+import entitie.DetailBonCommande;
+import entitie.Vente;
 import java.io.Serializable;
 import java.util.List;
-import java.util.Set;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -26,8 +27,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name= "article")
 //@XmlRootElement
 public class Article implements Serializable{
-    private static final long serialVersionUID = 1L;
-       
+    private static final long serialVersionUID = 1L;       
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
@@ -37,10 +37,11 @@ public class Article implements Serializable{
     private String libarticle;
     @Column(name = "stock")
     private int stock;
-    @Column(name = "prixachat")
-    private int prixachat;
     @Column(name = "prixvente")
     private int prixvente;
+    @Column(name = "stocksecurite")
+    private int stocksecurite;
+ 
  
     //gestion de 
     @ManyToOne
@@ -55,33 +56,22 @@ public class Article implements Serializable{
     private List<DetailBonCommande> detailBonCommandeList;
      
     public Article() {
-        super();
-    }
-     public Article(int id,String lib,int stock,Set factureSet){
-      this.setIdarticle(id);
-      this.setLibarticle(lib);
-      this.setStock(stock);
-     // this.factureSet=factureSet;
-    }
-     
-    public Article(int id,String lib,int stock){
-      this.setIdarticle(id);
-      this.setLibarticle(lib);
-      this.setStock(stock);
+       
     }
 
     public Article(int idarticle) {
       this.idArticle=idarticle;
     }
-    public int getPrixAchat(){
-        return this.prixachat;
+    public int getStockSecurite(){
+        return this.stocksecurite;
+    }
+    public void setStockSecurite(int secur){
+        this.stocksecurite=secur;
     }
     public int getPrixVente(){
         return this.prixvente;
     }
-    public void setPrixAchat(int prixachat){
-        this.prixachat=prixachat;
-    }
+  
     public void setPrixVente(int prixVente){
         this.prixvente=prixVente;
     }
@@ -112,7 +102,7 @@ public class Article implements Serializable{
     public void setCategorie(Categorie cat){
         this.categorie=cat;
     }
-    public Categorie getCategorie(Categorie cat){
+    public Categorie getCategorie(){
         return this.categorie;
     }
     public List<Vente> getVenteArticle(){

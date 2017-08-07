@@ -2,7 +2,7 @@
 package boutique;
 
 import superpackage.SuperClass;
-import entitie.Article;
+import article.Article;
 import entitie.Facture;
 import entitie.Vente;
 import entite.tableView.DetailFacture;
@@ -28,7 +28,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import jpaController.ArticleJpaController;
+import article.ArticleJpaController;
 import jpaController.FactureJpaController;
 import jpaController.VenteJpaController;
 import report.REPORT;

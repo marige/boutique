@@ -68,7 +68,7 @@ public class PrincipaleController extends Stage implements Initializable {
     
     @FXML
     private void clickArticle(ActionEvent event) {
-       newForm("vueArticle");
+       newForm("/article/vueArticle");
     }
     @FXML
     private void clickFournisseur(ActionEvent event) {
