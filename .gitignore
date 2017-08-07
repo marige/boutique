@@ -2,6 +2,3 @@
 /build/
 /dist/
 /META-INF/
-src/boutique/vueReceptionCommande.fxml
-src/boutique/VueReceptionCommandeController.java
-*.fxml
