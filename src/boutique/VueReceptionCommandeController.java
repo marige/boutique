@@ -10,6 +10,8 @@ import entitie.DetailBonCommande;
 import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -21,6 +23,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import jpaController.BonCommandeJpaController;
 import jpaController.DetailBonCommandeJpaController;
@@ -33,7 +36,7 @@ import superpackage.SuperClass;
  */
 public class VueReceptionCommandeController implements Initializable {
     
-    private ObservableList<DetailBonCommande> les_details;
+    private ObservableList<DetailBonCommande> les_details= FXCollections.observableArrayList();
      SuperClass superClass =new SuperClass();
    
     
@@ -75,15 +78,40 @@ public class VueReceptionCommandeController implements Initializable {
         cln_libArcticle.setCellValueFactory(new PropertyValueFactory<>("idArticle"));
         cln_quantite.setCellValueFactory(new PropertyValueFactory<>("quantiteDetailBonCommande"));
         cln_prix.setCellValueFactory(new PropertyValueFactory<>("puachat"));
-        cln_exp.setCellValueFactory(new PropertyValueFactory<>("dateperemption"));
+       // cln_exp.setCellValueFactory(new PropertyValueFactory<>("dateperemption"));
         
     }    
 
     @FXML
     private void search(ActionEvent event) {
-        les_details=FXCollections.observableArrayList(detailController.findDetailBonByIdBon(bcc.findBonCommande(Integer.parseInt(txt_id_bon_commande.getText()))));
+        les_details.addAll(detailController.findDetailBonByIdBon(bcc.findBonCommande(Integer.parseInt(txt_id_bon_commande.getText()))));
        // les_details.addAll(detailController.findDetailBonByIdBon(Integer.parseInt(txt_id_bon_commande.getText())));
         
+    }
+
+    @FXML
+    private void tableClicked(MouseEvent event) {
+         DetailBonCommande selectItems;
+         selectItems=tbl_detail_commande.getSelectionModel().getSelectedItem();
+        
+        if(selectItems!=null){
+                       
+                        txt_prix.setText(""+selectItems.getPuachat());
+                       // txt_date.setValue(superClass.LOCAL_DATE(selectItems.getDateperemption().toString()));          
+        }
+    }
+
+    @FXML
+    private void modifierClicked(ActionEvent event) {
+        
+         DetailBonCommande nouveau =new DetailBonCommande(tbl_detail_commande.getSelectionModel().getSelectedItem().getIdDetailBonCommande());
+
+            nouveau.setPuachat(Integer.parseInt(txt_prix.getText()));
+        try {
+            detailController.edit(nouveau);
+        } catch (Exception ex) {
+            Logger.getLogger(VueReceptionCommandeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }
