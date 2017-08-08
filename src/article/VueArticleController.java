@@ -48,8 +48,6 @@ public class VueArticleController extends SuperClass implements Initializable {
     @FXML
     private TableColumn<Article, Integer> cln_stocksecurite;   
     @FXML
-    private Button btn;
-    @FXML
     private TextField txtLibarticle;
     @FXML
     private TextField txtStock; 
@@ -63,6 +61,10 @@ public class VueArticleController extends SuperClass implements Initializable {
     private TextField txtStockSecurite;
     @FXML
     private Button btnModifier;
+    @FXML
+    private Button btnAjouter;
+    @FXML
+    private Button btnNouveau;
  
   
 
@@ -130,7 +132,8 @@ public class VueArticleController extends SuperClass implements Initializable {
             a.setCategorie(c); 
             d.create(a);   
             article.add(a);
-            alert("notification","Article créé avec succès");        
+            alert("notification","Article créé avec succès"); 
+            viderChamps();
         }
     }
      
@@ -142,6 +145,7 @@ public class VueArticleController extends SuperClass implements Initializable {
         txtStockSecurite.setText(String.valueOf(a.getStockSecurite()));
         cmbCategorie.setValue(a.getCategorie());
         txtPrixvente.setText(String.valueOf(a.getPrixVente()));
+        btnAjouter.setDisable(true);
     }
 
     @FXML
@@ -159,10 +163,25 @@ public class VueArticleController extends SuperClass implements Initializable {
                 d.edit(a);
                 article.add(a);        
                 alert("notification","Article modifié");
+                viderChamps();
             } catch (Exception ex) {
                 Logger.getLogger(VueArticleController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+    }
+    
+    private void viderChamps(){
+       // cmbCategorie.setSelectionModel(null);
+        txtLibarticle.setText("");
+        txtStock.setText("");
+        txtPrixvente.setText("");
+        txtStockSecurite.setText("");      
+    }
+
+    @FXML
+    private void btnNouveauClick(MouseEvent event) {
+        btnAjouter.setDisable(false);
+        viderChamps();
     }
         
     

@@ -8,11 +8,14 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.Optional;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -35,7 +38,7 @@ import javax.persistence.Persistence;
 public class SuperClass {
     
     private EntityManagerFactory emf=null;
-    
+    EntityManagerFactory managerFactory = null;
     public EntityManager getEntityManager(){
           this.emf=Persistence.createEntityManagerFactory("BoutiquePU");
           return emf.createEntityManager();
@@ -71,34 +74,6 @@ public class SuperClass {
      return true;  
     }
      
-     
-     
-   /* public  void alert(String title, String message ){
-        Label label= new Label();
-        Button closeButton= new Button("Femer");
-        Stage window= new Stage();
-        window.initModality(Modality.APPLICATION_MODAL);// fenetre modale
-        window.setTitle(title);
-        
-        label.setText(message);
-        closeButton.setOnAction(e ->window.close());
-        
-        HBox layoutButton   = new HBox(5); 
-        HBox layoutText     = new HBox(5);
-        VBox content        =new VBox(10);
-        
-        layoutButton.getChildren().addAll(closeButton);
-        layoutText.getChildren().addAll(label);
-
-        layoutButton.setAlignment(Pos.BOTTOM_RIGHT);
-        layoutText.setAlignment(Pos.CENTER);
-        
-        content.getChildren().addAll(layoutText,layoutButton);
-        
-        Scene scene =new Scene(content, 300, 250);
-         window.setScene(scene);
-         window.showAndWait();
-    }*/
     //mettre alertType en paramètre de la méthode
     public void alert(String title,String message){
         Alert alert = new Alert(AlertType.INFORMATION);
@@ -107,6 +82,23 @@ public class SuperClass {
        // alert.setContentText(message);
         alert.showAndWait();
     }
+    
+    public boolean confirmation(String titre,String message){
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle(titre);
+        alert.setHeaderText(message);
+        ButtonType btnOui = new ButtonType("Oui");
+        ButtonType btnNon = new ButtonType("Non",ButtonData.CANCEL_CLOSE);
+        //alert.setContentText("question");
+        alert.getButtonTypes().clear();
+        alert.getButtonTypes().addAll(btnNon,btnOui);
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() ==btnOui){
+            return true;
+        } 
+        return false;
+    }
+    
     
      public  void alert(String title, String message, String type ){
          

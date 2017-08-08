@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" onMouseClicked="#tvClicked" prefHeight="522.0" prefWidth="737.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boutique.VueVenteController">
+<AnchorPane id="AnchorPane" onMouseClicked="#tvClicked" prefHeight="522.0" prefWidth="737.0" stylesheets="@../design.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boutique.VueVenteController">
    <children>
       <Button fx:id="btnAjouterP" layoutX="593.0" layoutY="204.0" mnemonicParsing="false" onMouseClicked="#clickPanier" prefHeight="25.0" prefWidth="120.0" text="Ajouter" />
       <TableView id="table" fx:id="tvDetailFacture" layoutX="27.0" layoutY="243.0" prefHeight="232.0" prefWidth="682.0">
@@ -22,8 +23,8 @@
       <TableView id="table" fx:id="tvListProduit" layoutX="23.0" layoutY="47.0" onMouseClicked="#tvClicked" prefHeight="142.0" prefWidth="320.0">
          <columns>
             <TableColumn id="NOM" fx:id="idarticle" prefWidth="75.0" text="CodeProduit" />
-            <TableColumn id="PRENOMS" fx:id="libarticle" prefWidth="150.0" text="Libellé" />
-            <TableColumn fx:id="stock" prefWidth="105.0" text="Qté en stock" />
+            <TableColumn id="PRENOMS" fx:id="libarticle" prefWidth="181.0" text="Libellé" />
+            <TableColumn fx:id="stock" prefWidth="74.0" text="Stock" />
          </columns>
       </TableView>
       <TextField fx:id="txtRecherche" layoutX="145.0" layoutY="15.0" prefHeight="25.0" prefWidth="198.0" promptText="taper libellé ou code article" />

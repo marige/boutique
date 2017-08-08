@@ -214,14 +214,16 @@ public class VueVenteController extends SuperClass implements Initializable {
                 v.setFacture(f);
                 venteC.create(v);
             }
+            factList.clear();
+            if(this.confirmation("Information", "Vente effectué, \tAfficher la facture?")){
             
             //impression de la facture
             HashMap parameter= new HashMap();
             parameter.put("idfacture",f.getIdFacture());
             parameter.put("client",f.getClient());
             REPORT r= new REPORT();            
-            r.editionReport("facture","select article.libarticle,vente.qte,vente.pu,facture.client from vente,article,facture where vente.idarticle=article.idarticle and vente.idfacture=facture.idfacture and vente.idfacture="+f.getIdFacture(), parameter);//
-                             
+            r.editionReport("facture","select article.libarticle,vente.qte,vente.pu,facture.client from vente,article,facture where vente.idarticle=article.idarticle and vente.idfacture=facture.idfacture and vente.idfacture="+f.getIdFacture(), parameter);//                     
+         }
         } catch (Exception ex) {
             Logger.getLogger(VueVenteController.class.getName()).log(Level.SEVERE, null, ex);
         }

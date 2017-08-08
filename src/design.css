@@ -1,0 +1,44 @@
+.button {
+    -fx-background-radius: 12;
+    -fx-padding: 5;
+    -fx-shadow-highlight-color: f0f0f0;
+    -fx-body-color: linear-gradient(from 0em 0em to 0em 2.083333em, white, #D7D7D7, white);
+}
+
+.button:hover {
+ -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+ }
+ 
+.root{
+    -fx-text-base-color: black;
+    -fx-text-fill: -fx-text-base-color;
+
+    /* This is the default Windows-font */
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-size: 10.5;
+    
+    /* For debugging purposes*/
+    -fx-background-color: rgb(200,220,230);
+
+    -fx-disabled-opacity: 0.6;
+}
+.table-view{
+    -fx-border-color: rgb(130,135,144);
+    -fx-background-color: white;
+}
+
+.text-field{
+   /* If four values are used, the sides are top, right, bottom, left. */
+   -fx-border-color: rgb(170,170,178) rgb(218,220,230) rgb(226,231.0,239) rgb(226,224,234);
+   -fx-background-color: rgb(255,255,255);
+   -fx-padding: 0.0em;
+   -fx-cursor: text;
+   -fx-effect: null;
+   -fx-pref-height: 23px;
+}
+.text-field:focused{
+    -fx-border-color: rgb(61,123,173) rgb(164,201,227) rgb(183,217,237) rgb(181,207,231);
+    /* Remove the blue glow on focus */
+    -fx-background-insets: 0, 0, 0, 0;
+    -fx-effect: null;
+}
