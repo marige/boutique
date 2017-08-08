@@ -171,7 +171,7 @@ public class VueBonCommandeController  implements Initializable {
             
             nouveau.setIdArticle(tbl_produits.getSelectionModel().getSelectedItem());
             nouveau.setPuachat(Integer.parseInt(txt_prix.getText()));
-            nouveau.setQuantiteDetailBonCommande(Double.parseDouble(txt_quantite.getText()));
+            nouveau.setQuantiteDetailBonCommande(Integer.parseInt(txt_quantite.getText()));
             // nouveau.setDateperemption();
            // nouveau.setIdDetailBonCommande(les_details.size()+1);
             les_details.add(nouveau);
@@ -226,7 +226,7 @@ public class VueBonCommandeController  implements Initializable {
                 superClass.alert("Fait", "BON DE COMMANDE BIEN CREE");
             }
             //impression de la facture
-         /*   HashMap parameter= new HashMap();
+            HashMap parameter= new HashMap();
             System.out.println(bonDeCommande.getIdBonCommande());
             parameter.put("idboncommande",bonDeCommande.getIdBonCommande()); 
             parameter.put("datebon",superClass.getDateFormatAffichage(superClass.convertStringToDate(txt_date_now.getValue())));
@@ -235,7 +235,7 @@ public class VueBonCommandeController  implements Initializable {
             r.editionReport("boncommande","select article.libarticle,detailboncommande.quantitedetailboncommande," +
                     "detailboncommande.puachat from detailboncommande,article " +
                     "where article.idarticle=detailboncommande.idarticle and idboncommande="+bonDeCommande.getIdBonCommande(), parameter);//
-       */ } catch (Exception ex) {
+        } catch (Exception ex) {
             Logger.getLogger(VueBonCommandeController.class.getName()).log(Level.SEVERE, null, ex);
         }
           
