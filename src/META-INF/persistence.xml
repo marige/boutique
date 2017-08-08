@@ -4,18 +4,18 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>entite.tableView.DetailFacture</class>
     <class>entitie.Fournisseur</class>
-    <class>entitie.Categorie</class>
+    <class>categorie.Categorie</class>
     <class>entitie.Vente</class>
     <class>entitie.Facture</class>
     <class>entitie.BonCommande</class>
     <class>entitie.DetailBonCommande</class>
-    <class>entitie.Article</class>
+    <class>article.Article</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3305/boutiqueG"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value=""/>
-      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
     </properties>
   </persistence-unit>
 </persistence>

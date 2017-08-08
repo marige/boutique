@@ -52,9 +52,9 @@ public class VueBonCommandeController  implements Initializable {
     
     private ObservableList<Fournisseur> les_fournisseurs=null;  
     private ObservableList<Article> les_produits=null;
-    private ObservableList<Article> les_produits_Filtre=FXCollections.observableArrayList();
-    private ObservableList<DetailBonCommande> les_details=FXCollections.observableArrayList();
-    private ObservableList<DetailBonCommande> les_detailsTemp=FXCollections.observableArrayList();
+    private final ObservableList<Article> les_produits_Filtre=FXCollections.observableArrayList();
+    private final ObservableList<DetailBonCommande> les_details=FXCollections.observableArrayList();
+    private final ObservableList<DetailBonCommande> les_detailsTemp=FXCollections.observableArrayList();
     SuperClass superClass =new SuperClass();
     
     @FXML
@@ -227,7 +227,7 @@ public class VueBonCommandeController  implements Initializable {
                 superClass.alert("Fait", "BON DE COMMANDE BIEN CREE");
             }
             //impression de la facture
-            HashMap parameter= new HashMap();
+         /*   HashMap parameter= new HashMap();
             System.out.println(bonDeCommande.getIdBonCommande());
             parameter.put("idboncommande",bonDeCommande.getIdBonCommande()); 
             parameter.put("datebon",superClass.getDateFormatAffichage(superClass.convertStringToDate(txt_date_now.getValue())));
@@ -236,7 +236,7 @@ public class VueBonCommandeController  implements Initializable {
             r.editionReport("boncommande","select article.libarticle,detailboncommande.quantitedetailboncommande," +
                     "detailboncommande.puachat from detailboncommande,article " +
                     "where article.idarticle=detailboncommande.idarticle and idboncommande="+bonDeCommande.getIdBonCommande(), parameter);//
-        } catch (Exception ex) {
+       */ } catch (Exception ex) {
             Logger.getLogger(VueBonCommandeController.class.getName()).log(Level.SEVERE, null, ex);
         }
           
