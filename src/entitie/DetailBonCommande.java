@@ -54,7 +54,7 @@ public class DetailBonCommande implements Serializable {
     private String libDetailBonCommande;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "quantiteDetailBonCommande")
-    private Double quantiteDetailBonCommande;
+    private int quantiteDetailBonCommande;
     @Column(name = "dateperemption")
     @Temporal(TemporalType.DATE)
     private Date dateperemption;
@@ -101,11 +101,11 @@ public class DetailBonCommande implements Serializable {
         this.libDetailBonCommande = libDetailBonCommande;
     }
 
-    public Double getQuantiteDetailBonCommande() {
+    public int getQuantiteDetailBonCommande() {
         return quantiteDetailBonCommande;
     }
 
-    public void setQuantiteDetailBonCommande(Double quantiteDetailBonCommande) {
+    public void setQuantiteDetailBonCommande(int quantiteDetailBonCommande) {
         this.quantiteDetailBonCommande = quantiteDetailBonCommande;
     }
 

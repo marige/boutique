@@ -1,7 +1,16 @@
 
+<<<<<<< HEAD
+=======
+ /*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+>>>>>>> a036108cf5469f08d3a07816e33939934b1f4eef
 
 package boutique;
 
+import article.ArticleJpaController;
 import entitie.BonCommande;
 import entitie.DetailBonCommande;
 import java.net.URL;
@@ -66,6 +75,7 @@ public class VueReceptionCommandeController implements Initializable {
      */
     private  DetailBonCommandeJpaController detailController= new DetailBonCommandeJpaController();
     private BonCommandeJpaController bcc= new BonCommandeJpaController();
+    private ArticleJpaController articleC= new ArticleJpaController();
     
     @FXML
     private TableColumn<DetailBonCommande, Date> cln_exp;
@@ -114,9 +124,31 @@ public class VueReceptionCommandeController implements Initializable {
 
     @FXML
     private void validerClicked(ActionEvent event) {
+        for(int i=0;i<tbl_detail_commande.getItems().size();i++){
+            article.Article a = articleC.findArticle(tbl_detail_commande.getItems().get(i).getIdArticle().getIdarticle());
+            a.setStock(a.getStock()+tbl_detail_commande.getItems().get(i).getQuantiteDetailBonCommande());
+            try {
+                articleC.edit(a);
+            } catch (Exception ex) {
+                Logger.getLogger(VueReceptionCommandeController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                    
+                }   
+        
         BonCommande bonC= bcc.findBonCommande(Integer.parseInt(txt_id_bon_commande.getText()));
         bonC.setReception(Boolean.TRUE);
+        try {
+            bcc.edit(bonC);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(VueReceptionCommandeController.class.getName()).log(Level.INFO, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(VueReceptionCommandeController.class.getName()).log(Level.INFO, null, ex);
+        }
         
     }
     
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a036108cf5469f08d3a07816e33939934b1f4eef
