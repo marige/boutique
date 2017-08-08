@@ -11,17 +11,10 @@
     <class>entitie.Fournisseur</class>
     <class>entitie.Vente</class>
     <properties>
-<<<<<<< HEAD
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/boutique?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value="mario"/>
-=======
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3305/boutiqueG"/>
-      <property name="javax.persistence.jdbc.user" value="root"/>
-      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value=""/>
->>>>>>> b43598a36291fc38058e3dd572147689f7310889
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
     </properties>
   </persistence-unit>
