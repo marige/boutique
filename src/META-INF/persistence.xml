@@ -2,36 +2,20 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="BoutiquePU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>article.Article</class>
+    <class>categorie.Categorie</class>
     <class>entite.tableView.DetailFacture</class>
-    <class>entitie.Fournisseur</class>
-    <class>entitie.Vente</class>
-    <class>entitie.Facture</class>
     <class>entitie.BonCommande</class>
     <class>entitie.DetailBonCommande</class>
-    <class>categorie.Categorie</class>
-    <class>article.Article</class>
+    <class>entitie.Facture</class>
+    <class>entitie.Fournisseur</class>
+    <class>entitie.Vente</class>
     <properties>
-<<<<<<< HEAD
-<<<<<<< HEAD
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/boutique?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value="mario"/>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
-=======
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3305/boutiqueG"/>
-      <property name="javax.persistence.jdbc.user" value="root"/>
-      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value=""/>
-      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
->>>>>>> cc01a73354f4616b6f5d732279df98e68737be25
-=======
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3305/boutiqueG"/>
-      <property name="javax.persistence.jdbc.user" value="root"/>
-      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value=""/>
-      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
->>>>>>> cc01a73354f4616b6f5d732279df98e68737be25
     </properties>
   </persistence-unit>
 </persistence>
