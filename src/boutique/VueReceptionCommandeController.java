@@ -22,6 +22,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
+import jpaController.BonCommandeJpaController;
 import jpaController.DetailBonCommandeJpaController;
 import superpackage.SuperClass;
 
@@ -63,6 +64,8 @@ public class VueReceptionCommandeController implements Initializable {
      * Initializes the controller class.
      */
     private  DetailBonCommandeJpaController detailController= new DetailBonCommandeJpaController();
+    private BonCommandeJpaController bcc= new BonCommandeJpaController();
+    
     @FXML
     private TableColumn<DetailBonCommande, Date> cln_exp;
    
@@ -78,8 +81,8 @@ public class VueReceptionCommandeController implements Initializable {
 
     @FXML
     private void search(ActionEvent event) {
-        les_details=FXCollections.observableArrayList(detailController.findDetailBonByIdBon(Integer.parseInt(txt_id_bon_commande.getText())));
-        
+        les_details=FXCollections.observableArrayList(detailController.findDetailBonByIdBon(bcc.findBonCommande(Integer.parseInt(txt_id_bon_commande.getText()))));
+       // les_details.addAll(detailController.findDetailBonByIdBon(Integer.parseInt(txt_id_bon_commande.getText())));
         
     }
     
