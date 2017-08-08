@@ -54,8 +54,7 @@ public class VueBonCommandeController  implements Initializable {
     private ObservableList<Article> les_produits=null;
     private final ObservableList<Article> les_produits_Filtre=FXCollections.observableArrayList();
     private final ObservableList<DetailBonCommande> les_details=FXCollections.observableArrayList();
-    private final ObservableList<DetailBonCommande> les_detailsTemp=FXCollections.observableArrayList();
-    SuperClass superClass =new SuperClass();
+     SuperClass superClass =new SuperClass();
     
     @FXML
     private TextField txt_prix;
