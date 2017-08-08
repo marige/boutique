@@ -29,6 +29,7 @@
       <TextField fx:id="txt_prix" layoutX="261.0" layoutY="148.0" prefHeight="25.0" prefWidth="125.0" />
       <Button fx:id="btn_modifier" layoutX="35.0" layoutY="148.0" mnemonicParsing="false" onAction="#modifierClicked" text="Mettre à Jour" />
       <Button fx:id="btn_valider" layoutX="473.0" layoutY="67.0" mnemonicParsing="false" text="Valider le bon" />
+      <Button fx:id="btn_valider" layoutX="473.0" layoutY="67.0" mnemonicParsing="false" onAction="#validerClicked" text="Valider le bon" />
       <Label layoutX="414.0" layoutY="35.0" text="Date" />
       <Label layoutX="306.0" layoutY="126.0" text="PRIX" />
       <Label layoutX="433.0" layoutY="126.0" text="Date d'expiration" />
