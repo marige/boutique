@@ -6,6 +6,7 @@
 
 package boutique;
 
+import entitie.BonCommande;
 import entitie.DetailBonCommande;
 import java.net.URL;
 import java.util.Date;
@@ -27,6 +28,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import jpaController.BonCommandeJpaController;
 import jpaController.DetailBonCommandeJpaController;
+import jpaController.exceptions.NonexistentEntityException;
 import superpackage.SuperClass;
 
 /**
@@ -112,6 +114,13 @@ public class VueReceptionCommandeController implements Initializable {
         } catch (Exception ex) {
             Logger.getLogger(VueReceptionCommandeController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @FXML
+    private void validerClicked(ActionEvent event) {
+        BonCommande bonC= bcc.findBonCommande(Integer.parseInt(txt_id_bon_commande.getText()));
+        bonC.setReception(Boolean.TRUE);
+        
     }
     
 }
