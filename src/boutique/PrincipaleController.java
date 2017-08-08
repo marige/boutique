@@ -42,6 +42,8 @@ public class PrincipaleController extends Stage implements Initializable {
     private Button btnAjouterCategorie;
     @FXML
     private Button btnRptVente;
+    @FXML
+    private Button btnReceptionBonCommande;
 
     /**
      * Initializes the controller class.
@@ -72,7 +74,7 @@ public class PrincipaleController extends Stage implements Initializable {
     }
     @FXML
     private void clickFournisseur(ActionEvent event) {
-       newForm("vueFournisseurs");
+       newForm("/boutique/vueFournisseurs");
     }
     @FXML
     private void clickBonCommande(ActionEvent event) {
@@ -87,6 +89,11 @@ public class PrincipaleController extends Stage implements Initializable {
     @FXML
     private void btnRptVente(MouseEvent event) {
           newForm("rapportVente");
+    }
+
+    @FXML
+    private void clickedReceptionBon(ActionEvent event) {
+        newForm("vueReceptionCommande");
     }
       
 
