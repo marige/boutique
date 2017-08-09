@@ -5,9 +5,9 @@
  */
 package article;
 
+import detailboncommande.DetailBonCommande;
 import categorie.Categorie;
-import entitie.DetailBonCommande;
-import entitie.Vente;
+import vente.Vente;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
@@ -21,7 +21,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlTransient;
 
 @Entity
 @Table(name= "article")
@@ -52,16 +51,23 @@ public class Article implements Serializable{
     @OneToMany(mappedBy="articleV",cascade=CascadeType.ALL)
     private List<Vente> vente=null;    
     
-    @OneToMany(mappedBy = "idArticle",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "article",cascade = CascadeType.ALL)
     private List<DetailBonCommande> detailBonCommandeList;
      
     public Article() {
        
     }
-
+   
     public Article(int idarticle) {
       this.idArticle=idarticle;
     }
+    public void setDetailBonCommande(List<DetailBonCommande> detailBonCommandeList){
+        this.detailBonCommandeList=detailBonCommandeList;
+    }
+    public List<DetailBonCommande> getDetailBonCommandeList(){
+        return this.detailBonCommandeList;
+    }
+    
     public int getStockSecurite(){
         return this.stocksecurite;
     }
@@ -111,15 +117,7 @@ public class Article implements Serializable{
     public void addVenteToArticle(Vente v){
         this.vente.add(v);
     }
-       
-    @XmlTransient
-    public List<DetailBonCommande> getDetailBonCommandeList() {
-        return detailBonCommandeList;
-    }
-
-    public void setDetailBonCommandeList(List<DetailBonCommande> detailBonCommandeList) {
-        this.detailBonCommandeList = detailBonCommandeList;
-    }
+      
     @Override
     public String toString(){
         return this.libarticle;

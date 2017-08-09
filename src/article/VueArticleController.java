@@ -126,8 +126,7 @@ public class VueArticleController extends SuperClass implements Initializable {
             a.setLibarticle(txtLibarticle.getText());
             a.setStock(Integer.parseInt(txtStock.getText()));
             a.setPrixVente(Integer.parseInt(txtPrixvente.getText())); 
-            a.setStockSecurite(Integer.parseInt(txtStockSecurite.getText()));
-         
+            a.setStockSecurite(Integer.parseInt(txtStockSecurite.getText()));     
             Categorie c=cmbCategorie.getValue();
             a.setCategorie(c); 
             d.create(a);   

@@ -4,12 +4,12 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>article.Article</class>
     <class>categorie.Categorie</class>
-    <class>entite.tableView.DetailFacture</class>
-    <class>entitie.BonCommande</class>
-    <class>entitie.DetailBonCommande</class>
-    <class>entitie.Facture</class>
-    <class>entitie.Fournisseur</class>
-    <class>entitie.Vente</class>
+    <class>fournisseur.Fournisseur</class>
+    <class>boncommande.BonCommande</class>
+    <class>facture.Facture</class>
+    <class>vente.Vente</class>
+    <class>tableView.DetailFacture</class>
+    <class>detailboncommande.DetailBonCommande</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/boutique?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
