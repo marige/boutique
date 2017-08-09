@@ -65,7 +65,7 @@ public class PrincipaleController extends Stage implements Initializable {
     }
     @FXML
     private void clickVendre(ActionEvent event) {
-       newForm("vueVente");
+       newForm("/vente/vueVente");
     }
     
     @FXML
@@ -74,7 +74,7 @@ public class PrincipaleController extends Stage implements Initializable {
     }
     @FXML
     private void clickFournisseur(ActionEvent event) {
-       newForm("/boutique/vueFournisseurs");
+       newForm("/fournisseur/vueFournisseurs");
     }
     @FXML
     private void clickBonCommande(ActionEvent event) {

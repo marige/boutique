@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javax.persistence.EntityManager;
 import superpackage.SuperClass;
 
 /**
@@ -22,6 +23,11 @@ public class Boutique extends Application {
     
          @Override
       public void start(Stage stage) throws Exception {
+        //initialisation de la session de em pour faciliter le lancement des formulaire après
+        EntityManager em=sc.getEntityManager();
+        em.getTransaction().begin();
+        em.getTransaction().commit();
+        em.close();
         Parent root = FXMLLoader.load(getClass().getResource("Principale.fxml"));       
         Scene scene = new Scene(root);
         
