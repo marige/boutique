@@ -30,7 +30,6 @@ public class Boutique extends Application {
         em.close();
         Parent root = FXMLLoader.load(getClass().getResource("Principale.fxml"));       
         Scene scene = new Scene(root);
-        
         stage.setScene(scene);
         stage.show();
         
