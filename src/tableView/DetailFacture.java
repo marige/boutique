@@ -5,7 +5,6 @@
  */
 package tableView;
 
-import article.Article;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,7 +24,7 @@ public class DetailFacture extends SuperClass implements Serializable {
     private String date;
     private String libArticle;
     private String client;
-    private Article article;
+    
     public DetailFacture(){
     };
     
@@ -45,7 +44,6 @@ public class DetailFacture extends SuperClass implements Serializable {
         return this.date;
     }
     public int getMontant(){
-     setMOntant();
      return this.montant;
     }
     public int getPu(){
@@ -74,16 +72,10 @@ public class DetailFacture extends SuperClass implements Serializable {
   public void setClient(String client){
       this.client=client;
   }
-  public void setId(Integer id) {
+    public void setId(Integer id) {
         this.id = id;
     }
-  public void setArticle(Article a){
-      this.article=a;
-  }
-  public Article getArticle(){
-      return this.article;
-  }
-  
+
 
     @Override
     public String toString() {

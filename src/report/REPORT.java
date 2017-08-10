@@ -1,8 +1,5 @@
 package report;
-import boncommande.BonCommande;
-import fournisseur.Fournisseur;
 import java.sql.Connection;
-import java.util.Date;
 import java.util.HashMap;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -32,15 +29,7 @@ public class REPORT extends SuperClass {
             JasperViewer.viewReport(jp,false);
             conn.close();
     }
-    public void etatBonCommande(BonCommande bonDeCommande) throws Exception{
-            HashMap parameter= new HashMap();
-            parameter.put("idboncommande",bonDeCommande.getIdBonCommande()); 
-            parameter.put("datebon",getDateFormatAffichage(bonDeCommande.getDateBonCommande()));
-            parameter.put("fournisseur",bonDeCommande.getFournisseur().getLibFournisseur());           
-            editionReport("boncommande","select article.libarticle,detailboncommande.quantitedetailboncommande," +
-                    "detailboncommande.puachat from detailboncommande,article " +
-                    "where article.idarticle=detailboncommande.idarticle and idboncommande="+bonDeCommande.getIdBonCommande(), parameter);//
-    }
+    
    /* public HashMap getHashMap(String tableName) throws SQLException{
          HashMap hm= new HashMap();
             ResultSet rs=getResultSet("select * from "+tableName);
