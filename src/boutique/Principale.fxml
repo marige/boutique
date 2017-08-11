@@ -15,7 +15,7 @@
       <Accordion />
       <Accordion maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="202.0">
         <panes>
-          <TitledPane animated="false" text="Vente">
+          <TitledPane animated="false" styleClass="TitledPane" text="Vente">
             <content>
               <AnchorPane focusTraversable="true" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
