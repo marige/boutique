@@ -3,12 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package fournisseur;
-import fournisseur.Fournisseur;
-import fournisseur.FournisseurJpaController;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -21,6 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import superpackage.SuperClass;
 
 
 /**
@@ -28,7 +28,7 @@ import javafx.scene.input.MouseEvent;
  *
  * @author geres
  */
-public class VueFournisseursController implements Initializable {
+public class VueFournisseursController extends SuperClass implements Initializable {
     
     private ObservableList<Fournisseur> les_fournisseurs=null;  
     @FXML
@@ -55,28 +55,30 @@ public class VueFournisseursController implements Initializable {
     private TextArea txt_details;
     @FXML
     private Button btn_nouveau;
-
-    
-    
-     private final FournisseurJpaController fournisseurController= new FournisseurJpaController();
+    @FXML
+    private Button btn_ajouter;
     @FXML
     private TextField txt_telephone;
     @FXML
     private TableColumn<Fournisseur, Integer> cln_telphone;
+
+        
+    private final FournisseurJpaController fournisseurController= new FournisseurJpaController();
+   
     
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        btn_modifier.setDisable(true);
         les_fournisseurs=FXCollections.observableArrayList(fournisseurController.findFournisseurEntities());
         
         cln_ifu.setCellValueFactory(new PropertyValueFactory<>("ifuFournisseur"));
             cln_lib_fournisseurs.setCellValueFactory(new PropertyValueFactory<>("libFournisseur"));
             cln_rcm.setCellValueFactory(new PropertyValueFactory<>("rcmFournisseur"));
             cln_telphone.setCellValueFactory(new PropertyValueFactory<>("telFournisseur"));
-           // cln_n_commande.setCellValueFactory(new PropertyValueFactory<>("dateperemption"));
+         // cln_n_commande.setCellValueFactory(new PropertyValueFactory<>("dateperemption"));
         // TODO cln_n_commande, le nombres de commande deja passé, 
             tbl_fournisseurs.setItems(les_fournisseurs);
     }    
@@ -84,38 +86,59 @@ public class VueFournisseursController implements Initializable {
     @FXML
     private void rechercheFournisseur(KeyEvent event) {
     }
-
+    
+    Fournisseur amodifier=null;
     @FXML
     private void tableFournisseurClicked(MouseEvent event) {
-         Fournisseur selectItems;
-         selectItems=tbl_fournisseurs.getSelectionModel().getSelectedItem();
-         
-          if(selectItems!=null){
-         txt_details.setText(selectItems.getDetailsFournisseur());
-        txt_ifu.setText(selectItems.getIfuFournisseur());
-        txt_lib_fournisseur.setText(selectItems.getLibFournisseur());
-        txt_rcm.setText(selectItems.getRcmFournisseur());
-        txt_telephone.setText(selectItems.getTelFournisseur());
-          }
+        amodifier=tbl_fournisseurs.getSelectionModel().getSelectedItem();                 
+        if(amodifier!=null){
+            txt_details.setText(amodifier.getDetailsFournisseur());
+            txt_ifu.setText(amodifier.getIfuFournisseur());
+            txt_lib_fournisseur.setText(amodifier.getLibFournisseur());
+            txt_rcm.setText(amodifier.getRcmFournisseur());
+            txt_telephone.setText(amodifier.getTelFournisseur());
+         }
+        btn_ajouter.setDisable(true);
+        btn_modifier.setDisable(false);
+       
     }
 
     @FXML
     private void modifierFournisseurClicked(MouseEvent event) {
+        try {
+            if(controle()){
+            les_fournisseurs.remove(amodifier);
+            amodifier.setLibFournisseur(txt_lib_fournisseur.getText());
+            amodifier.setIfuFournisseur(txt_ifu.getText());
+            amodifier.setRcmFournisseur(txt_rcm.getText());
+            amodifier.setDetailsFournisseur(txt_details.getText());
+            amodifier.setTelFournisseur(txt_telephone.getText());
+            fournisseurController.edit(amodifier);
+            les_fournisseurs.add(amodifier);
+            tbl_fournisseurs.refresh();
+            this.alert("notification","modification réussie");
+            EffacerText();
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(VueFournisseursController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
     @FXML
-    private void nouveauClicked(MouseEvent event) {
-        Fournisseur nouveau =new Fournisseur();
-        nouveau.setLibFournisseur(txt_lib_fournisseur.getText());
-        nouveau.setIfuFournisseur(txt_ifu.getText());
-        nouveau.setRcmFournisseur(txt_rcm.getText());
-        nouveau.setDetailsFournisseur(txt_details.getText());
-        nouveau.setTelFournisseur(txt_telephone.getText());
-        
-        fournisseurController.create(nouveau);
-        les_fournisseurs.add(nouveau);
-        EffacerText();
-        
+    private void clickBtnAjouter(MouseEvent event) {
+        if(controle()){
+            Fournisseur nouveau =new Fournisseur();
+            nouveau.setLibFournisseur(txt_lib_fournisseur.getText());
+            nouveau.setIfuFournisseur(txt_ifu.getText());
+            nouveau.setRcmFournisseur(txt_rcm.getText());
+            nouveau.setDetailsFournisseur(txt_details.getText());
+            nouveau.setTelFournisseur(txt_telephone.getText());       
+            fournisseurController.create(nouveau);
+            les_fournisseurs.add(nouveau);
+            this.alert("notification","Fournisseur ajouté");
+            EffacerText();   
+        }    
     }
     
     private void EffacerText(){
@@ -124,6 +147,21 @@ public class VueFournisseursController implements Initializable {
         txt_lib_fournisseur.clear();
         txt_rcm.clear();
         txt_telephone.clear();
-}
+    }
+    @FXML
+    private void clickBtnNouveau(MouseEvent event){
+        btn_modifier.setDisable(true);
+        btn_ajouter.setDisable(false); 
+        EffacerText();
+    }
+    
+    private boolean controle(){
+        boolean ok=false;
+        if(txt_lib_fournisseur.getText().isEmpty())
+            alert("erreur","taper le nom du fournisseur");
+        else
+            ok=true;
+        return ok;
+    }
     
 }
