@@ -31,6 +31,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Detailboncommande.findAll", query = "SELECT d FROM DetailBonCommande d"),
     @NamedQuery(name = "Detailboncommande.findByIdDetailBonCommande", query = "SELECT d FROM DetailBonCommande d WHERE d.idDetailBonCommande = :idDetailBonCommande"),
+    @NamedQuery(name = "Detailboncommande.findByDateperemption", query = "SELECT d FROM DetailBonCommande d WHERE d.dateperemption = :dateperemption"),
+    @NamedQuery(name = "Detailboncommande.findByLibDetailBonCommande", query = "SELECT d FROM DetailBonCommande d WHERE d.libDetailBonCommande = :libDetailBonCommande"),
     @NamedQuery(name = "Detailboncommande.findByPuachat", query = "SELECT d FROM DetailBonCommande d WHERE d.puachat = :puachat"),
     @NamedQuery(name = "Detailboncommande.findByQuantiteDetailBonCommande", query = "SELECT d FROM DetailBonCommande d WHERE d.quantiteDetailBonCommande = :quantiteDetailBonCommande"),
     @NamedQuery(name = "Detailboncommande.findByIdArticle", query = "SELECT d FROM DetailBonCommande d WHERE d.article.idArticle = :idArticle")})
@@ -41,6 +43,11 @@ public class DetailBonCommande implements Serializable {
     @Basic(optional = false)
     @Column(name = "idDetailBonCommande")
     private Integer idDetailBonCommande;
+    @Column(name = "dateperemption")
+    @Temporal(TemporalType.DATE)
+    private Date dateperemption;
+    @Column(name = "libDetailBonCommande")
+    private String libDetailBonCommande;
     @Column(name = "puachat")
     private Integer puachat;
     @Column(name = "quantiteDetailBonCommande")
@@ -81,6 +88,22 @@ public class DetailBonCommande implements Serializable {
     
     public void setIdDetailBonCommande(Integer idDetailBonCommande) {
         this.idDetailBonCommande = idDetailBonCommande;
+    }
+
+    public Date getDateperemption() {
+        return dateperemption;
+    }
+
+    public void setDateperemption(Date dateperemption) {
+        this.dateperemption = dateperemption;
+    }
+
+    public String getLibDetailBonCommande() {
+        return libDetailBonCommande;
+    }
+
+    public void setLibDetailBonCommande(String libDetailBonCommande) {
+        this.libDetailBonCommande = libDetailBonCommande;
     }
 
     public Integer getPuachat() {
