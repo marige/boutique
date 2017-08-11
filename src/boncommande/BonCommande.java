@@ -58,6 +58,8 @@ public class BonCommande implements Serializable {
     private String libBonCommande;
     @Column(name = "reception")
     private Boolean reception;
+      @Column(name = "montant")
+    private int montant;
 
     @ManyToOne
       @JoinColumn(name="idFournisseur")
@@ -124,7 +126,11 @@ public class BonCommande implements Serializable {
     public void setReception(Boolean reception) {
         this.reception = reception;
     }
-
-  
+    public void setMontant(int montant){
+       this.montant=montant;
+    }
+    public int getMontant(){
+        return this.montant;
+    }
     
 }

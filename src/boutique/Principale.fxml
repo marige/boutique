@@ -15,7 +15,7 @@
       <Accordion />
       <Accordion maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="202.0">
         <panes>
-          <TitledPane animated="false" text="Vente">
+          <TitledPane animated="false" text="VENTE">
             <content>
               <AnchorPane focusTraversable="true" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -34,7 +34,7 @@
                   </AnchorPane>
             </content>
           </TitledPane>
-          <TitledPane animated="false" prefHeight="206.0" prefWidth="160.0" text="Ajouter">
+          <TitledPane animated="false" prefHeight="206.0" prefWidth="160.0" text="AJOUTER">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -65,7 +65,7 @@
                      </children></AnchorPane>
             </content>
           </TitledPane>
-          <TitledPane animated="false" prefHeight="544.0" prefWidth="202.0" text="Commande">
+          <TitledPane animated="false" prefHeight="544.0" prefWidth="202.0" text="ACHAT">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -88,7 +88,7 @@
                      </children></AnchorPane>
             </content>
           </TitledPane>
-            <TitledPane animated="false" text="Rapport">
+            <TitledPane animated="false" text="RAPPORT">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #f4f4f4;">
                      <children>

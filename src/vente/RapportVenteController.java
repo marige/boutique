@@ -83,7 +83,10 @@ public class RapportVenteController extends SuperClass implements Initializable 
     
         try {
             List<Vente> ventes=ventecon.getListVenteParDate(this.convertStringToDate(dtDebut.getValue()),this.convertStringToDate(dtFin.getValue()));
-           
+            if(ventes.isEmpty()){
+                alert("notification","Aucune vente dans la période spécifiée");
+            }
+            else{
             //chargement de detailfacture
            
             for(Vente o:ventes){  
@@ -96,6 +99,7 @@ public class RapportVenteController extends SuperClass implements Initializable 
                     df.setMOntant();   
                     df.setClient(o.getFacture().getClient());   
                     listDetailFacture.add(df);                            
+                }
             }
            
         //    System.out.println("taille de vente est "+(ventes.get(0)).getFacture().getDateFacture());

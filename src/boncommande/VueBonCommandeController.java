@@ -130,6 +130,10 @@ public class VueBonCommandeController extends SuperClass implements Initializabl
     }            
     @FXML
     private void btnSauvegarderClicked(MouseEvent event) {
+        if(tbl_produits_liste.getItems().isEmpty()){
+            this.alert("erreur","Ajouter des articles au bon");
+        }
+        else{
         try {
             BonCommande bonDeCommande = new BonCommande();
             if(com_fournisseur.selectionModelProperty().getValue().isEmpty()){
@@ -139,6 +143,7 @@ public class VueBonCommandeController extends SuperClass implements Initializabl
                 bonDeCommande.setLibBonCommande(txt_lib_bonCommande.getText());
                 bonDeCommande.setDateBonCommande(this.convertStringToDate(txt_date_bon.getValue()));
                 bonDeCommande.setReception(false);
+                bonDeCommande.setMontant(Integer.parseInt(txtMontantBon.getText()));
                 boncommandeController.create(bonDeCommande);
                 DetailBonCommande detailbon=new DetailBonCommande();
                 for(DetailFacture detail:les_details){                  
@@ -153,11 +158,11 @@ public class VueBonCommandeController extends SuperClass implements Initializabl
                 };
             }
             //impression de la facture
-            
-        } catch (Exception ex) {
-            Logger.getLogger(VueBonCommandeController.class.getName()).log(Level.SEVERE, null, ex);
+        
+            } catch (Exception ex) {
+                Logger.getLogger(VueBonCommandeController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-          
         
     }  
     
