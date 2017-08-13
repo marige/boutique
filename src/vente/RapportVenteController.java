@@ -1,11 +1,12 @@
-
 package vente;
 
 import tableView.DetailFacture;
 import java.net.URL;
+import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import superpackage.SuperClass;
@@ -51,6 +53,9 @@ public class RapportVenteController extends SuperClass implements Initializable 
     private TableColumn<DetailFacture, Integer> cln_montant;
      @FXML
     private TableColumn<DetailFacture, String> cln_client;
+    @FXML
+    private TextField txtSomme;
+
      Vente v = new Vente();
     
      
@@ -68,7 +73,7 @@ public class RapportVenteController extends SuperClass implements Initializable 
         tvRapport.setItems(listDetailFacture);
      
     }   
-
+  
     @FXML
     private void clickBtnAfficher(MouseEvent event) {
        if(dtDebut.getValue()==null){
@@ -88,7 +93,7 @@ public class RapportVenteController extends SuperClass implements Initializable 
             }
             else{
             //chargement de detailfacture
-           
+           int somme=0;
             for(Vente o:ventes){  
                     df=new DetailFacture();
                     //System.out.println("id vente: "+this.getDateFormatAffichage(o.getFacture().getDateFacture()));
@@ -98,8 +103,11 @@ public class RapportVenteController extends SuperClass implements Initializable 
                     df.setDate(this.getDateFormatAffichage(o.getFacture().getDateFacture()));          
                     df.setMOntant();   
                     df.setClient(o.getFacture().getClient());   
-                    listDetailFacture.add(df);                            
+                    listDetailFacture.add(df);      
+                    //incrementation de montant
+                    somme+=df.getMontant();
                 }
+            txtSomme.setText(this.formatageMontant(somme));
             }
            
         //    System.out.println("taille de vente est "+(ventes.get(0)).getFacture().getDateFacture());

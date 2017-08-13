@@ -28,9 +28,10 @@ public class Boutique extends Application {
         em.getTransaction().begin();
         em.getTransaction().commit();
         em.close();
-        Parent root = FXMLLoader.load(getClass().getResource("Principale.fxml"));       
+        Parent root = FXMLLoader.load(getClass().getResource("authentification.fxml"));       
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        AuthentificationController.stage=stage;
         stage.show();
         
     }

@@ -1,5 +1,6 @@
 -methode isInteger() dans superclass pour tester si une valeur est entière
 
+- formatageMontant() dans superclass pour afficher les montants avec separtateur de millier
 
 -----
 ici le lien vers dialog alert(notification)

@@ -9,7 +9,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vente.RapportVenteController">
    <children>
-      <TableView fx:id="tvRapport" layoutX="11.0" layoutY="166.0" prefHeight="233.0" prefWidth="585.0">
+      <TableView fx:id="tvRapport" layoutX="11.0" layoutY="143.0" prefHeight="256.0" prefWidth="585.0">
         <columns>
           <TableColumn fx:id="cln_date" prefWidth="91.0" text="Date" />
           <TableColumn fx:id="cln_article" prefWidth="188.0" text="Article" />
@@ -19,10 +19,16 @@
             <TableColumn fx:id="cln_client" prefWidth="116.0" text="Client" />
         </columns>
       </TableView>
-      <Text layoutX="63.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date début" />
-      <DatePicker fx:id="dtDebut" layoutX="130.0" layoutY="90.0" />
-      <DatePicker fx:id="dtFin" layoutX="375.0" layoutY="90.0" />
-      <Text layoutX="311.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date fin" />
-      <Button fx:id="btnAfficher" layoutX="255.0" layoutY="129.0" mnemonicParsing="false" onMouseClicked="#clickBtnAfficher" prefHeight="25.0" prefWidth="103.0" text="Afficher" />
+      <Text layoutX="14.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date début" />
+      <DatePicker fx:id="dtDebut" layoutX="81.0" layoutY="70.0" prefHeight="25.0" prefWidth="131.0" />
+      <DatePicker fx:id="dtFin" layoutX="267.0" layoutY="70.0" prefHeight="25.0" prefWidth="131.0" />
+      <Text layoutX="217.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date fin" />
+      <Button fx:id="btnAfficher" layoutX="216.0" layoutY="110.0" mnemonicParsing="false" onMouseClicked="#clickBtnAfficher" prefHeight="25.0" prefWidth="103.0" text="Afficher" />
+      <Text layoutX="410.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" wrappingWidth="41.6015625" />
+      <TextField fx:id="txtSomme" layoutX="452.0" layoutY="21.0" prefHeight="25.0" prefWidth="120.0" promptText="total du rapport" style="-fx-background-color: F3FA5C;">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>

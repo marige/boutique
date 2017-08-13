@@ -4,10 +4,12 @@ package superpackage;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Optional;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -47,6 +49,11 @@ public class SuperClass {
     public String getDateFormatAffichage(Date dt){
          SimpleDateFormat df= new SimpleDateFormat("dd/MM/yyyy");
          return dt!=null?df.format(dt):null;
+    }
+    
+    public String formatageMontant(int montant){
+         NumberFormat nf=NumberFormat.getInstance(Locale.FRENCH);
+         return nf.format(montant);
     }
     
     
@@ -139,8 +146,6 @@ public class SuperClass {
         Scene scene =new Scene(content, 300, 250);
          window.setScene(scene);
          window.showAndWait();         
-                          
-         
-        
+                                         
      }
 }

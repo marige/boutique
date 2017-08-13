@@ -98,7 +98,7 @@ public class VueVenteController extends SuperClass implements Initializable {
     private Button btnFinCommande;
     @FXML
     private TextField txtClient;
-
+   
 
     /**
      * Initializes the controller class.

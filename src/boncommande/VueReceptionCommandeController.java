@@ -100,6 +100,7 @@ public class VueReceptionCommandeController extends SuperClass implements Initia
         bonC.setReception(true);
         bonC.setDatereception(this.convertStringToDate(dt_date_reception.getValue()));
             bcc.edit(bonC);
+        alert("information","Bon de commande reçu");
         } catch (NonexistentEntityException ex) {
             Logger.getLogger(VueReceptionCommandeController.class.getName()).log(Level.INFO, null, ex);
         } catch (Exception ex) {

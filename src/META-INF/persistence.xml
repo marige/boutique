@@ -10,6 +10,7 @@
     <class>vente.Vente</class>
     <class>tableView.DetailFacture</class>
     <class>detailboncommande.DetailBonCommande</class>
+    <class>boutique.Utilisateur</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/boutique"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
