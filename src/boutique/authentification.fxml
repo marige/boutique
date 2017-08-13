@@ -7,19 +7,25 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
-<AnchorPane id="AnchorPane" prefHeight="236.0" prefWidth="442.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boutique.AuthentificationController">
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<AnchorPane id="AnchorPane" prefHeight="301.0" prefWidth="338.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boutique.AuthentificationController">
    <children>
-      <VBox layoutX="141.0" layoutY="140.0" />
-      <Button fx:id="btnEntrer" layoutX="143.0" layoutY="173.0" mnemonicParsing="false" onMouseClicked="#clickEntrer" prefHeight="25.0" prefWidth="197.0" text="Entrer" />
-      <Text layoutX="101.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" />
-      <ComboBox fx:id="cmbCompteUser" layoutX="148.0" layoutY="76.0" prefHeight="25.0" prefWidth="186.0" promptText="votre compte" />
-      <Text layoutX="65.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe" />
-      <PasswordField fx:id="txtPasse" layoutX="148.0" layoutY="115.0" prefHeight="25.0" prefWidth="186.0" promptText="votre mot de passe" />
-      <ImageView fitHeight="75.0" fitWidth="121.0" layoutX="367.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="296.0" fitWidth="302.0" layoutX="42.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../ressources/images.jpg" />
          </image>
       </ImageView>
+      <ImageView fitHeight="296.0" fitWidth="302.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../ressources/images.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutX="141.0" layoutY="140.0" />
+      <Button fx:id="btnEntrer" layoutX="172.0" layoutY="177.0" mnemonicParsing="false" onMouseClicked="#clickEntrer" prefHeight="25.0" prefWidth="155.0" stylesheets="@../design.css" text="Entrer">
+       <graphic>
+            <FontAwesomeIconView fill="BLUE" glyphName="LOCK" />
+         </graphic></Button>
+      <ComboBox fx:id="cmbCompteUser" layoutX="169.0" layoutY="82.0" prefHeight="25.0" prefWidth="155.0" promptText="votre compte" />
+      <PasswordField fx:id="txtPasse" layoutX="169.0" layoutY="128.0" prefHeight="25.0" prefWidth="155.0" promptText="votre mot de passe" style="-fx-background-radius: 10; -fx-border-radius: 10;" />
    </children>
 </AnchorPane>

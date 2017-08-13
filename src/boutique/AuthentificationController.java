@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package boutique;
-
+import de.jensd.fx.glyphs.GlyphsDude;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -47,6 +48,8 @@ public class AuthentificationController extends SuperClass implements Initializa
     public void initialize(URL url, ResourceBundle rb) {
         listUsers.addAll(uticon.findUtilisateurEntities());
         cmbCompteUser.getItems().addAll(listUsers);
+        GlyphsDude.setIcon(btnEntrer, FontAwesomeIcon.LOCK, "4em");
+       
     }    
 
     @FXML
