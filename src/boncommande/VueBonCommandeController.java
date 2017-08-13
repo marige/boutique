@@ -34,6 +34,7 @@ import detailboncommande.DetailBonCommande;
 import detailboncommande.DetailBonCommandeJpaController;
 import fournisseur.Fournisseur;
 import fournisseur.FournisseurJpaController;
+import java.text.ParseException;
 import report.REPORT;
 import superpackage.SuperClass;
 import tableView.DetailFacture;
@@ -143,7 +144,7 @@ public class VueBonCommandeController extends SuperClass implements Initializabl
                 bonDeCommande.setLibBonCommande(txt_lib_bonCommande.getText());
                 bonDeCommande.setDateBonCommande(this.convertStringToDate(txt_date_bon.getValue()));
                 bonDeCommande.setReception(false);
-                bonDeCommande.setMontant(Integer.parseInt(txtMontantBon.getText()));
+                bonDeCommande.setMontant(this.parseMontantFomatToInt(txtMontantBon.getText()));
                 boncommandeController.create(bonDeCommande);
                 DetailBonCommande detailbon=new DetailBonCommande();
                 for(DetailFacture detail:les_details){                  
@@ -178,10 +179,10 @@ public class VueBonCommandeController extends SuperClass implements Initializabl
             alert("erreur","choisissez le fournisseur");
             else if(txt_libarticle.getText().isEmpty())
             alert("erreur","choisissez l\'article");
-            else if(txt_prix.getText().isEmpty())
-            alert("erreur","taper le prix unitaire du produit");        
-            else if(txt_quantite.getText().isEmpty())
-            alert("erreur","taper la quatité à commander"); 
+            else if(!this.isInteger(txt_prix.getText()))
+            alert("erreur","prix unitaire du produit incorrect");        
+            else if(!this.isInteger(txt_quantite.getText()))
+            alert("erreur","quantité à commander incorrecte"); 
             else if(txt_date_bon.getValue()==null)
             alert("erreur","choisissez la date du bon de commander"); 
             else
@@ -225,17 +226,13 @@ public class VueBonCommandeController extends SuperClass implements Initializabl
     @FXML
     private void rechercheTyped(KeyEvent event) {
     }
-    
-    public static Date asDate(LocalDate localDate){
-        return Date.from(localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
-    }
 
     @FXML
     private void btnRetirer(MouseEvent event) {
         DetailFacture d=null;
         if(!tbl_produits_liste.getSelectionModel().isEmpty()){
             d=tbl_produits_liste.getSelectionModel().getSelectedItem();
-            txtMontantBon.setText(String.valueOf(Integer.parseInt(txtMontantBon.getText())-d.getMontant()));
+            txtMontantBon.setText(this.formatageMontant(Integer.parseInt(txtMontantBon.getText())-d.getMontant()));
             les_details.remove(d);
         }
     }
@@ -244,15 +241,19 @@ public class VueBonCommandeController extends SuperClass implements Initializabl
     private void btnAjouter(MouseEvent event) {         
         Article a=null;
         if(controleEntrer()){   
-            a=tbl_produits.getSelectionModel().getSelectedItem();
-            DetailFacture d =new DetailFacture();        
-            d.setLibArticle(a.getLibarticle());
-            d.setPu(Integer.parseInt(txt_prix.getText()));
-            d.setQte(Integer.parseInt(txt_quantite.getText()));
-            d.setArticle(a);
-            les_details.add(d);
-            txtMontantBon.setText(String.valueOf(Integer.parseInt(txtMontantBon.getText())+d.getMontant()));
-            viderChamps();
+            try {
+                a=tbl_produits.getSelectionModel().getSelectedItem();
+                DetailFacture d =new DetailFacture();
+                d.setLibArticle(a.getLibarticle());
+                d.setPu(this.parseMontantFomatToInt(txt_prix.getText()));
+                d.setQte(Integer.parseInt(txt_quantite.getText()));
+                d.setArticle(a);
+                les_details.add(d);
+                txtMontantBon.setText(this.formatageMontant(Integer.parseInt(txtMontantBon.getText())+d.getMontant()));
+                viderChamps();
+            } catch (ParseException ex) {
+                Logger.getLogger(VueBonCommandeController.class.getName()).log(Level.SEVERE, null, ex);
+            }
       }
     }
 

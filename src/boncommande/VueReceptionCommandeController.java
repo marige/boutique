@@ -85,7 +85,7 @@ public class VueReceptionCommandeController extends SuperClass implements Initia
          else{
          txtfournisseur.setText(bonC.getFournisseur().getLibFournisseur());
          txtlibcommande.setText(bonC.getLibBonCommande());
-         txtmontantbon.setText(String.valueOf(bonC.getMontant()));
+         txtmontantbon.setText(this.formatageMontant(bonC.getMontant()));
          dtdatebon.setText(this.getDateFormatAffichage(bonC.getDateBonCommande()));
          les_details.addAll(detailController.findDetailBonCommande(Integer.parseInt(txt_id_bon_commande.getText())));   
         }

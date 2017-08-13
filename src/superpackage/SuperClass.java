@@ -8,6 +8,7 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Currency;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Optional;
@@ -54,6 +55,10 @@ public class SuperClass {
     public String formatageMontant(int montant){
          NumberFormat nf=NumberFormat.getInstance(Locale.FRENCH);
          return nf.format(montant);
+    }
+    public int parseMontantFomatToInt(String montantString) throws ParseException{
+         NumberFormat nf=NumberFormat.getInstance(Locale.FRENCH);       
+         return nf.parse(montantString).intValue();
     }
     
     
