@@ -19,14 +19,14 @@
       </TableView>
       <Button fx:id="btnAjouter" layoutX="247.0" layoutY="175.0" mnemonicParsing="false" onAction="#action" prefHeight="25.0" prefWidth="102.0" text="Ajouter" />
       <ComboBox fx:id="cmbCategorie" layoutX="177.0" layoutY="26.0" prefHeight="25.0" prefWidth="294.0" />
-      <Label layoutX="116.0" layoutY="30.0" text="Categorie" />
+      <Label layoutX="59.0" layoutY="31.0" text="Categorie" />
       <TextField fx:id="txtLibarticle" layoutX="177.0" layoutY="57.0" prefHeight="25.0" prefWidth="294.0" />
-      <Label layoutX="99.0" layoutY="61.0" text="Libellé article" />
-      <Label layoutX="88.0" layoutY="94.0" text="Quantité stock" />
+      <Label layoutX="59.0" layoutY="61.0" text="Libellé article" />
+      <Label layoutX="59.0" layoutY="94.0" text="Quantité stock" />
       <TextField fx:id="txtStock" layoutX="175.0" layoutY="90.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="92.0" />
       <TextField fx:id="txtPrixvente" layoutX="369.0" layoutY="90.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="102.0" />
-      <Label layoutX="307.0" layoutY="94.0" text="Prix vente" />
-      <Label layoutX="267.0" layoutY="126.0" text="Stock de sécurité" />
+      <Label layoutX="287.0" layoutY="94.0" text="Prix vente" />
+      <Label layoutX="234.0" layoutY="126.0" text="Stock de sécurité" />
       <TextField fx:id="txtStockSecurite" layoutX="369.0" layoutY="122.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="102.0" />
       <Button fx:id="btnModifier" layoutX="380.0" layoutY="175.0" mnemonicParsing="false" onMouseClicked="#btnModifierClick" prefHeight="25.0" prefWidth="91.0" text="Modifier" />
       <Button fx:id="btnNouveau" layoutX="127.0" layoutY="175.0" mnemonicParsing="false" onMouseClicked="#btnNouveauClick" prefHeight="25.0" prefWidth="91.0" text="Nouveau" />
