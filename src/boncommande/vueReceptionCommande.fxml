@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -8,19 +9,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="429.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boncommande.VueReceptionCommandeController">
+<AnchorPane id="AnchorPane" prefHeight="429.0" prefWidth="688.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boncommande.VueReceptionCommandeController">
    <children>
       <Label layoutX="248.0" layoutY="1.0" text="Reception Bon" />
-      <Label layoutX="26.0" layoutY="36.0" text="Rechercher un bon" />
-      <TextField fx:id="txt_id_bon_commande" layoutX="140.0" layoutY="31.0" prefHeight="25.0" prefWidth="95.0" promptText="code bon" />
-      <DatePicker fx:id="dt_date_reception" editable="false" layoutX="433.0" layoutY="31.0" prefHeight="25.0" prefWidth="119.0" />
-      <Button fx:id="btn_valider" layoutX="4.0" layoutY="395.0" mnemonicParsing="false" onAction="#validerClicked" prefHeight="17.0" prefWidth="595.0" text="Recevoir le bon" textFill="#2c5c40">
+      <Label layoutX="63.0" layoutY="36.0" text="Rechercher un bon" />
+      <TextField fx:id="txt_id_bon_commande" layoutX="177.0" layoutY="31.0" prefHeight="25.0" prefWidth="95.0" promptText="code bon" />
+      <DatePicker fx:id="dt_date_reception" editable="false" layoutX="470.0" layoutY="31.0" prefHeight="25.0" prefWidth="119.0" />
+      <Button fx:id="btn_valider" layoutX="45.0" layoutY="385.0" mnemonicParsing="false" onAction="#validerClicked" prefHeight="17.0" prefWidth="595.0" text="Recevoir le bon" textFill="#2c5c40">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <Label layoutX="332.0" layoutY="36.0" text="Date de reception" />
-      <Button fx:id="btn_valider" layoutX="244.0" layoutY="31.0" mnemonicParsing="false" onAction="#search" text="trouver" />
-      <TitledPane animated="false" layoutX="2.0" layoutY="61.0" prefHeight="111.0" prefWidth="606.0" text="Information du bon de commande">
+      <Label layoutX="369.0" layoutY="36.0" text="Date de reception" />
+      <Button fx:id="btn_valider" layoutX="281.0" layoutY="31.0" mnemonicParsing="false" onAction="#search" text="trouver" />
+      <TitledPane animated="false" layoutX="41.0" layoutY="65.0" prefHeight="111.0" prefWidth="606.0" text="Information du bon de commande">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="89.0" prefWidth="604.0">
                <children>
@@ -36,14 +37,14 @@
             </AnchorPane>
         </content>
       </TitledPane>
-      <TitledPane animated="false" layoutX="2.0" layoutY="176.0" prefHeight="206.0" prefWidth="606.0" text="Détail des articles">
+      <TitledPane animated="false" layoutX="41.0" layoutY="176.0" prefHeight="206.0" prefWidth="606.0" text="Détail des articles">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="434.0">
                <children>
-                  <TableView fx:id="tbl_detail_commande" prefHeight="171.0" prefWidth="606.0">
+                  <TableView fx:id="tbl_detail_commande" layoutX="14.0" layoutY="-5.0" prefHeight="171.0" prefWidth="589.0">
                      <columns>
-                        <TableColumn fx:id="cln_libArcticle" prefWidth="349.0" text="NOM PRODUIT" />
-                        <TableColumn fx:id="cln_quantite" prefWidth="70.0" text="QTE" />
+                        <TableColumn fx:id="cln_libArcticle" prefWidth="314.0" text="NOM PRODUIT" />
+                        <TableColumn fx:id="cln_quantite" prefWidth="105.0" text="QTE" />
                         <TableColumn fx:id="cln_prix" prefWidth="105.0" text="PU" />
                      </columns>
                   </TableView>
@@ -52,4 +53,7 @@
         </content>
       </TitledPane>
    </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
 </AnchorPane>

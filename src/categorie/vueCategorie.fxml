@@ -6,16 +6,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="589.0" stylesheets="@../design.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="categorie.VueCategorieController">
+<AnchorPane id="AnchorPane" prefHeight="401.0" prefWidth="672.0" stylesheets="@../design.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="categorie.VueCategorieController">
    <children>
-      <TextField fx:id="txtLibCategorie" layoutX="163.0" layoutY="49.0" prefHeight="25.0" prefWidth="322.0" />
-      <Button fx:id="btnAjouter" layoutX="214.0" layoutY="88.0" mnemonicParsing="false" onMouseClicked="#btnAjouterClick" prefHeight="25.0" prefWidth="203.0" text="Ajouter" />
-      <TableView id="table" fx:id="tableVcategorie" layoutY="133.0" prefHeight="268.0" prefWidth="627.0">
+      <TextField fx:id="txtLibCategorie" layoutX="207.0" layoutY="50.0" prefHeight="25.0" prefWidth="322.0" />
+      <Button fx:id="btnAjouter" layoutX="262.0" layoutY="87.0" mnemonicParsing="false" onMouseClicked="#btnAjouterClick" prefHeight="25.0" prefWidth="203.0" text="Ajouter" />
+      <TableView id="table" fx:id="tableVcategorie" layoutX="97.0" layoutY="125.0" prefHeight="268.0" prefWidth="493.0">
          <columns>
-            <TableColumn id="NOM" fx:id="cln_idcategorie" prefWidth="75.0" text="code article" />
-            <TableColumn id="PRENOMS" fx:id="cln_libcategorie" prefWidth="486.0" text="Libellé Categorie" />
+            <TableColumn id="NOM" fx:id="cln_idcategorie" prefWidth="75.0" text="Code" />
+            <TableColumn id="PRENOMS" fx:id="cln_libcategorie" prefWidth="375.0" text="Libellé Categorie" />
          </columns>
       </TableView>
-      <Label layoutX="67.0" layoutY="53.0" text="Libellé Catégorie" />
+      <Label layoutX="105.0" layoutY="53.0" text="Libellé Catégorie" />
    </children>
 </AnchorPane>
