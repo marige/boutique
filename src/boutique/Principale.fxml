@@ -62,7 +62,14 @@
                               <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                            </font>
                         </JFXButton>
-                        <Button fx:id="Utilisateurs" layoutX="9.0" layoutY="306.0" mnemonicParsing="false" onMouseClicked="#clickUtilisateur" prefHeight="27.0" prefWidth="176.0" text="Utilisateur" />
+                        <JFXButton fx:id="Utilisateurs" buttonType="RAISED" defaultButton="true" layoutX="7.0" layoutY="280.0" onMouseClicked="#clickUtilisateur" prefHeight="25.0" prefWidth="188.0" ripplerFill="#9ca2d1" style="-fx-background-color: #d66700;" text="Utilisateur" textFill="#eeeeee">
+                           <effect>
+                              <Glow level="0.23" />
+                           </effect>
+                           <font>
+                              <Font name="DejaVu Sans Condensed Bold" size="13.0" />
+                           </font>
+                        </JFXButton>
                      </children></AnchorPane>
             </content>
           </TitledPane>
