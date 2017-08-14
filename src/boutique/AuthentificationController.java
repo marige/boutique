@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package boutique;
+import utilisateur.UtilisateurJpaController;
+import utilisateur.Utilisateur;
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import java.io.IOException;
@@ -21,6 +23,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import superpackage.SuperClass;
@@ -54,17 +58,28 @@ public class AuthentificationController extends SuperClass implements Initializa
 
     @FXML
     private void clickEntrer(MouseEvent event) {
-       if(cmbCompteUser.getValue().getMotpasse().equals(txtPasse.getText())){
+        if(txtPasse.getText().isEmpty())
+            alert("","taper le mot de passe");
+        else if(cmbCompteUser.getValue().getMotpasse().equals(txtPasse.getText())){
            try {
               // Stage s = new Stage();
                Parent root = FXMLLoader.load(getClass().getResource("Principale.fxml"));
                Scene scene = new Scene(root);
+               stage.setX(0);
+               stage.setY(0);
                stage.setScene(scene);
                stage.show();
            } catch (IOException ex) {
                Logger.getLogger(AuthentificationController.class.getName()).log(Level.SEVERE, null, ex);
            }
        }
+       else
+           alert("erreur","mot de passe incorrect");
     }
     
-}
+    @FXML
+    private void enterClavier(KeyEvent event) {
+        if(event.getCode()==KeyCode.ENTER)
+            clickEntrer(null);
+    }
+    }

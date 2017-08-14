@@ -37,7 +37,7 @@ where article.idarticle=detailboncommande.idarticle]]>
 					<rightPen lineWidth="0.5"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial Narrow" size="20" isBold="true" isItalic="true"/>
+					<font fontName="SansSerif" size="20" isBold="true" isItalic="true"/>
 				</textElement>
 				<text><![CDATA[SOCIETE SANS NOM]]></text>
 			</staticText>
@@ -69,7 +69,7 @@ where article.idarticle=detailboncommande.idarticle]]>
 			<textField>
 				<reportElement x="183" y="27" width="220" height="31" uuid="d185d77e-7e6a-4b4e-a4aa-657dd45798fd"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Lucida Sans Unicode" size="14" isItalic="true"/>
+					<font fontName="SansSerif" size="14" isItalic="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{fournisseur}]]></textFieldExpression>
 			</textField>

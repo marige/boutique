@@ -29,7 +29,7 @@ import superpackage.SuperClass;
  */
 
 public class VueArticleController extends SuperClass implements Initializable {
-    private final ObservableList<Article> article=FXCollections.observableArrayList();
+    private ObservableList<Article> article=FXCollections.observableArrayList();
     private ObservableList<Categorie> categorie=null;
     CategorieJpaController cat=new CategorieJpaController();
     ArticleJpaController artcon=new ArticleJpaController();
@@ -87,18 +87,9 @@ public class VueArticleController extends SuperClass implements Initializable {
         article.addAll(artcon.findArticleEntities());
         table.setItems(article);    
     }    
-    @FXML
-    private void chargement(){
-          //articleliste.add(a);
-          //cmbCategorie.getItems().clear();
-         //cmbCategorie.getItems().addAll("valeur 1","valeur 2","valeur 3");    
-    }
-    @FXML
-    private void indexChange(){
-    //    System.out.println("valeur choisie "+cmbCategorie.getValue());
-    }
     
     ArticleJpaController d=new  ArticleJpaController();
+    
     private boolean verification(){
        boolean ok=false;
      if(cmbCategorie.getValue()==null){

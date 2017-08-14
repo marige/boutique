@@ -62,6 +62,7 @@
                               <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                            </font>
                         </JFXButton>
+                        <Button fx:id="Utilisateurs" layoutX="9.0" layoutY="306.0" mnemonicParsing="false" onMouseClicked="#clickUtilisateur" prefHeight="27.0" prefWidth="176.0" text="Utilisateur" />
                      </children></AnchorPane>
             </content>
           </TitledPane>

@@ -73,8 +73,7 @@ public class VueVenteController extends SuperClass implements Initializable {
     private TableColumn<Article, String> libarticle;
     @FXML
     private TableColumn<Article, Integer> stock;
-    
-    
+        
     @FXML
     private TextField txtRecherche;
     @FXML
@@ -151,7 +150,9 @@ public class VueVenteController extends SuperClass implements Initializable {
           txtLibarticle.setText(art.getLibarticle());
           txtCode.setText(String.valueOf(art.getIdarticle()));
           txtPu.setText(this.formatageMontant(art.getPrixVente()));
-          dtDateFacture.setValue(LocalDate.now());               
+          dtDateFacture.setValue(LocalDate.now());     
+          dtDateFacture.setDisable(true);
+          
       }     
     }
      DetailFacture detail=null;

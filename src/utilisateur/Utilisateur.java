@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package boutique;
+package utilisateur;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
@@ -42,6 +42,12 @@ public class Utilisateur implements Serializable {
     @Basic(optional = false)
     @Column(name = "motpasse")
     private String motpasse;
+    @Column(name = "fonction")
+    private String fonction;
+    @Column(name = "typeuser")
+    private String typeuser;
+    @Column(name = "nom")
+    private String nom;
 
     public Utilisateur() {
     }
@@ -55,7 +61,25 @@ public class Utilisateur implements Serializable {
         this.login = login;
         this.motpasse = motpasse;
     }
-
+    public String getNom(){
+        return this.nom;
+    }
+    public void setNom(String nom){
+        this.nom=nom;
+    }
+    public void setFonction(String fonction){
+        this.fonction=fonction;
+    }
+    public String getFonction(){
+        return this.fonction;
+    }
+    public void setTypeUser(String type){
+        this.typeuser=type;
+    }
+    public String getTypeUser(){
+        return this.typeuser;
+    }
+    
     public Integer getIdutilisateur() {
         return idutilisateur;
     }

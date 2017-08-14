@@ -67,7 +67,7 @@ where vente.idvente=article.idarticle]]>
 			<textField>
 				<reportElement x="183" y="27" width="220" height="31" uuid="d185d77e-7e6a-4b4e-a4aa-657dd45798fd"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Lucida Sans Unicode" size="14" isItalic="true"/>
+					<font fontName="SansSerif" size="14" isItalic="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{client}]]></textFieldExpression>
 			</textField>
@@ -190,7 +190,7 @@ where vente.idvente=article.idarticle]]>
 				</textElement>
 				<text><![CDATA[Total]]></text>
 			</staticText>
-			<textField pattern="#,##0;(#,##0)">
+			<textField pattern="#,##0;(-#,##0)">
 				<reportElement x="360" y="7" width="153" height="31" uuid="b6bbd537-e752-4355-aaa8-be7b0581590c"/>
 				<textElement verticalAlignment="Middle">
 					<font size="14" isBold="true"/>

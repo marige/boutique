@@ -18,7 +18,7 @@
         </columns>
       </TableView>
       <Button fx:id="btnAjouter" layoutX="247.0" layoutY="175.0" mnemonicParsing="false" onAction="#action" prefHeight="25.0" prefWidth="102.0" text="Ajouter" />
-      <ComboBox fx:id="cmbCategorie" layoutX="177.0" layoutY="26.0" onAction="#indexChange" onShown="#chargement" prefHeight="25.0" prefWidth="294.0" />
+      <ComboBox fx:id="cmbCategorie" layoutX="177.0" layoutY="26.0" prefHeight="25.0" prefWidth="294.0" />
       <Label layoutX="116.0" layoutY="30.0" text="Categorie" />
       <TextField fx:id="txtLibarticle" layoutX="177.0" layoutY="57.0" prefHeight="25.0" prefWidth="294.0" />
       <Label layoutX="99.0" layoutY="61.0" text="Libellé article" />

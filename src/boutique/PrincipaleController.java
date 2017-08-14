@@ -95,6 +95,11 @@ public class PrincipaleController extends Stage implements Initializable {
     private void clickedReceptionBon(ActionEvent event) {
         newForm("/boncommande/vueReceptionCommande");
     }
-      
+     @FXML
+    private void clickUtilisateur(MouseEvent event) {
+        newForm("/utilisateur/nouvelutilisateur");
+    }
+        
+    
 
 }
