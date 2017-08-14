@@ -5,6 +5,7 @@
  */
 package boutique;
 
+import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,6 +15,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -44,13 +46,17 @@ public class PrincipaleController extends Stage implements Initializable {
     private Button btnRptVente;
     @FXML
     private Button btnReceptionBonCommande;
+    @FXML
+    private JFXButton Utilisateurs;
+    @FXML
+    private Accordion accordion;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+      //  accordion.setVisible(false);
     } 
     private void newForm(String frmName) {
          
@@ -98,6 +104,19 @@ public class PrincipaleController extends Stage implements Initializable {
      @FXML
     private void clickUtilisateur(MouseEvent event) {
         newForm("/utilisateur/nouvelutilisateur");
+    }
+
+ 
+
+    @FXML
+    private void sortieSouri(MouseEvent event) {
+      //  System.out.println("sortie de la zone");
+       accordion.setVisible(false);
+    }
+
+    @FXML
+    private void entreSouriPrincipale(MouseEvent event) {
+         accordion.setVisible(true);
     }
         
     
