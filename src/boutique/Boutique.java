@@ -6,6 +6,7 @@
 
 package boutique;
 
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,17 +23,29 @@ public class Boutique extends Application {
     SuperClass sc= new SuperClass();
     
          @Override
-      public void start(Stage stage) throws Exception {
+      public void start(Stage stage) throws IOException {
         //initialisation de la session de em pour faciliter le lancement des formulaire après
-        EntityManager em=sc.getEntityManager();
-        em.getTransaction().begin();
-        em.getTransaction().commit();
-        em.close();
+       try{
+           EntityManager em=sc.getEntityManager();
+           em.getTransaction().begin();
+           em.getTransaction().commit();
+           em.close();      
         Parent root = FXMLLoader.load(getClass().getResource("authentification.fxml"));       
         Scene scene = new Scene(root);
         stage.setScene(scene);
         AuthentificationController.stage=stage;
         stage.show();
+       }catch(NullPointerException ex){
+          if(sc.confirmation("configuration","Accès impossible à la BDD\t Voulez-vous configurer?"))
+          {
+               Parent root = FXMLLoader.load(getClass().getResource("/configuration/connectDbb.fxml"));
+               Scene scene = new Scene(root);
+               stage.setX(0);
+               stage.setY(0);
+               stage.setScene(scene);
+               stage.show();
+          }
+        }
         
     }
 

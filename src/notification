@@ -10,3 +10,6 @@ ici le lien vers dialog alert(notification)
 la modification llors de la reception est un dur 
 car il peut arriver qu on demande de supprimer un article
 donc il faut un article complet
+
+//les option de requete hql fonctions et divers
+http://docs.jboss.org/hibernate/stable/entitymanager/reference/en/html/queryhql.html

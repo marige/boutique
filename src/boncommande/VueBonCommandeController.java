@@ -7,8 +7,6 @@ package boncommande;
 
 import article.Article;
 import java.net.URL;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -138,7 +136,7 @@ public class VueBonCommandeController extends SuperClass implements Initializabl
         try {
             BonCommande bonDeCommande = new BonCommande();
             if(com_fournisseur.selectionModelProperty().getValue().isEmpty()){
-                alert(" Valeurs ", "Veuillez choisir un fournisseur", "warning");                
+                alert(" Valeurs ", "Veuillez choisir un fournisseur");                
             }else {                  
                 bonDeCommande.setFournisseur(com_fournisseur.getSelectionModel().getSelectedItem());
                 bonDeCommande.setLibBonCommande(txt_lib_bonCommande.getText());
