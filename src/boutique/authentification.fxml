@@ -26,6 +26,13 @@
       <Button fx:id="btnEntrer" layoutX="74.0" layoutY="177.0" mnemonicParsing="false" onMouseClicked="#clickEntrer" prefHeight="25.0" prefWidth="155.0" stylesheets="@../design.css" text="Entrer">
        <graphic>
             <!--FontAwesomeIconView fill="BLUE" glyphName="LOCK" /-->
+         </graphic>
+         <graphic>
+            <ImageView fitHeight="46.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/boutique_ico/logo.png" />
+               </image>
+            </ImageView>
          </graphic></Button>
       <ComboBox fx:id="cmbCompteUser" layoutX="71.0" layoutY="82.0" prefHeight="25.0" prefWidth="155.0" promptText="votre compte" />
       <PasswordField fx:id="txtPasse" layoutX="71.0" layoutY="128.0" prefHeight="25.0" prefWidth="155.0" promptText="votre mot de passe" style="-fx-background-radius: 10; -fx-border-radius: 10;" />
