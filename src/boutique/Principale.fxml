@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.effect.*?>
@@ -26,6 +27,13 @@
                            <effect>
                               <Glow level="0.23" />
                            </effect>
+                           <graphic>
+                              <ImageView fitHeight="41.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/boutique_ico/vente.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </JFXButton>
                      </children>
                      <cursor>
@@ -45,14 +53,28 @@
                            <font>
                               <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="39.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/boutique_ico/lineamientos.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </JFXButton>
-                        <JFXButton fx:id="btnReceptionBonCommande" buttonType="RAISED" defaultButton="true" layoutX="6.0" layoutY="86.0" onAction="#clickedReceptionBon" prefHeight="25.0" prefWidth="188.0" ripplerFill="#9ca2d1" style="-fx-background-color: #5164ae;" text="Reception Commande" textFill="#eeeeee">
+                        <JFXButton fx:id="btnReceptionBonCommande" buttonType="RAISED" defaultButton="true" layoutX="6.0" layoutY="113.0" onAction="#clickedReceptionBon" prefHeight="25.0" prefWidth="188.0" ripplerFill="#9ca2d1" style="-fx-background-color: #5164ae;" text="Reception Commande" textFill="#eeeeee">
                            <effect>
                               <Glow level="0.23" />
                            </effect>
                            <font>
                               <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="39.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/boutique_ico/Button-Ok.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </JFXButton>
                      </children>
                   </AnchorPane>
@@ -69,6 +91,13 @@
                            <font>
                               <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="46.0" fitWidth="36.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/boutique_ico/Actions-help-about-icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </JFXButton>
                      </children>
                   </AnchorPane>
@@ -78,13 +107,20 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <JFXButton fx:id="btnArticleAjouter" buttonType="RAISED" defaultButton="true" layoutX="6.0" layoutY="46.0" onAction="#clickArticle" prefHeight="25.0" prefWidth="188.0" ripplerFill="#9ca2d1" style="-fx-background-color: #5164ae;" text="Article" textFill="#eeeeee">
+                        <JFXButton fx:id="btnArticleAjouter" buttonType="RAISED" defaultButton="true" layoutX="6.0" layoutY="25.0" onAction="#clickArticle" prefHeight="25.0" prefWidth="188.0" ripplerFill="#9ca2d1" style="-fx-background-color: #5164ae;" text="Article" textFill="#eeeeee">
                            <effect>
                               <Glow level="0.23" />
                            </effect>
                            <font>
                               <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="38.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/boutique_ico/unnamed.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </JFXButton>
                         <JFXButton fx:id="btnFournisseur" buttonType="RAISED" defaultButton="true" layoutX="6.0" layoutY="97.0" onAction="#clickFournisseur" prefHeight="25.0" prefWidth="188.0" ripplerFill="#9ca2d1" style="-fx-background-color: #5164ae;" text="Fournisseur" textFill="#eeeeee">
                            <effect>
@@ -93,14 +129,28 @@
                            <font>
                               <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="34.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/boutique_ico/fourn.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </JFXButton>
-                        <JFXButton fx:id="btnAjouterCategorie" buttonType="RAISED" defaultButton="true" layoutX="6.0" layoutY="144.0" onAction="#clickBtnAjouterCategorie" prefHeight="25.0" prefWidth="188.0" ripplerFill="#9ca2d1" style="-fx-background-color: #5164ae;" text="Catégorie d'article" textFill="#eeeeee">
+                        <JFXButton fx:id="btnAjouterCategorie" buttonType="RAISED" defaultButton="true" layoutX="6.0" layoutY="176.0" onAction="#clickBtnAjouterCategorie" prefHeight="25.0" prefWidth="188.0" ripplerFill="#9ca2d1" style="-fx-background-color: #5164ae;" text="Catégorie d'article" textFill="#eeeeee">
                            <effect>
                               <Glow level="0.23" />
                            </effect>
                            <font>
                               <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="49.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/boutique_ico/categorie.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </JFXButton>
                         <JFXButton fx:id="Utilisateurs" buttonType="RAISED" defaultButton="true" layoutX="7.0" layoutY="280.0" onMouseClicked="#clickUtilisateur" prefHeight="25.0" prefWidth="188.0" ripplerFill="#9ca2d1" style="-fx-background-color: #d66700;" text="Utilisateur" textFill="#eeeeee">
                            <effect>
@@ -109,6 +159,13 @@
                            <font>
                               <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="51.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/boutique_ico/users.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </JFXButton>
                      </children></AnchorPane>
             </content>
@@ -130,12 +187,40 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </HBox>
-      <Button layoutX="3.0" layoutY="2.0" mnemonicParsing="false" onMouseEntered="#entreSouriPrincipale" opacity="0.45" prefHeight="37.0" prefWidth="190.0" text="Menu principal" wrapText="true" />
+      <Button layoutX="3.0" layoutY="2.0" mnemonicParsing="false" onMouseEntered="#entreSouriPrincipale" opacity="0.45" prefHeight="45.0" prefWidth="190.0" text="Menu principal" wrapText="true">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/boutique_ico/home.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
       <ToolBar layoutX="214.0" layoutY="1.0" prefHeight="28.0" prefWidth="471.0">
         <items>
-          <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
+          <Button mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="74.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/boutique_ico/vente.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="73.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/boutique_ico/lineamientos.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="67.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/boutique_ico/Button-Ok.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
             <Button mnemonicParsing="false" text="Button" />
             <Button mnemonicParsing="false" text="Button" />
             <Button mnemonicParsing="false" text="Button" />
