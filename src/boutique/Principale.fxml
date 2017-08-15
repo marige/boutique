@@ -94,7 +94,7 @@
                            <graphic>
                               <ImageView fitHeight="46.0" fitWidth="36.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../ressources/boutique_ico/Actions-help-about-icon.png" />
+                                    <Image url="@../ressources/boutique_ico/report.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -115,9 +115,9 @@
                               <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                            </font>
                            <graphic>
-                              <ImageView fitHeight="38.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="38.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../ressources/boutique_ico/unnamed.png" />
+                                    <Image url="@../ressources/boutique_ico/article.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -199,15 +199,15 @@
         <items>
           <Button mnemonicParsing="false">
                <graphic>
-                  <ImageView fitHeight="74.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="47.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../ressources/boutique_ico/vente.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button mnemonicParsing="false">
+            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="66.0">
                <graphic>
-                  <ImageView fitHeight="73.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="40.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../ressources/boutique_ico/lineamientos.png" />
                      </image>
@@ -215,14 +215,12 @@
                </graphic></Button>
             <Button mnemonicParsing="false">
                <graphic>
-                  <ImageView fitHeight="67.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="45.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../ressources/boutique_ico/Button-Ok.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
             <Button mnemonicParsing="false" text="Button" />
             <Button mnemonicParsing="false" text="Button" />
             <Button mnemonicParsing="false" text="Button" />
