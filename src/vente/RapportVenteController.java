@@ -2,11 +2,9 @@ package vente;
 
 import tableView.DetailFacture;
 import java.net.URL;
-import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;

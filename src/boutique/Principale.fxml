@@ -110,6 +110,7 @@
                               <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                            </font>
                         </JFXButton>
+                        <Button layoutX="10.0" layoutY="183.0" mnemonicParsing="false" onMouseClicked="#clickInfoSociete" prefHeight="27.0" prefWidth="178.0" text="info société" />
                      </children></AnchorPane>
             </content>
           </TitledPane>

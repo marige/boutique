@@ -3,15 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vente;
+package societe;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
-import javax.persistence.TemporalType;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import exceptions.NonexistentEntityException;
@@ -21,14 +19,14 @@ import superpackage.SuperClass;
  *
  * @author OBAM
  */
-public class VenteJpaController extends SuperClass implements Serializable {
-    EntityManager em=null;
-    
-    public void create(Vente vente) {
+public class SocieteJpaController extends SuperClass implements Serializable {
+
+    public void create(Societe societe) {
+        EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            em.persist(vente);
+            em.persist(societe);
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -37,19 +35,19 @@ public class VenteJpaController extends SuperClass implements Serializable {
         }
     }
 
-    public void edit(Vente vente) throws NonexistentEntityException, Exception {
-   
+    public void edit(Societe societe) throws NonexistentEntityException, Exception {
+        EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            vente = em.merge(vente);
+            societe = em.merge(societe);
             em.getTransaction().commit();
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                int id = vente.getIdVente();
-                if (findVente(id) == null) {
-                    throw new NonexistentEntityException("The vente with id " + id + " no longer exists.");
+                Integer id = societe.getIdsociete();
+                if (findSociete(id) == null) {
+                    throw new NonexistentEntityException("The societe with id " + id + " no longer exists.");
                 }
             }
             throw ex;
@@ -60,19 +58,19 @@ public class VenteJpaController extends SuperClass implements Serializable {
         }
     }
 
-    public void destroy(int id) throws NonexistentEntityException {
-       
+    public void destroy(Integer id) throws NonexistentEntityException {
+        EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Vente vente;
+            Societe societe;
             try {
-                vente = em.getReference(Vente.class, id);
-                vente.getIdVente();
+                societe = em.getReference(Societe.class, id);
+                societe.getIdsociete();
             } catch (EntityNotFoundException enfe) {
-                throw new NonexistentEntityException("The vente with id " + id + " no longer exists.", enfe);
+                throw new NonexistentEntityException("The societe with id " + id + " no longer exists.", enfe);
             }
-            em.remove(vente);
+            em.remove(societe);
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -81,19 +79,19 @@ public class VenteJpaController extends SuperClass implements Serializable {
         }
     }
 
-    public List<Vente> findVenteEntities() {
-        return findVenteEntities(true, -1, -1);
+    public List<Societe> findSocieteEntities() {
+        return findSocieteEntities(true, -1, -1);
     }
 
-    public List<Vente> findVenteEntities(int maxResults, int firstResult) {
-        return findVenteEntities(false, maxResults, firstResult);
+    public List<Societe> findSocieteEntities(int maxResults, int firstResult) {
+        return findSocieteEntities(false, maxResults, firstResult);
     }
 
-    private List<Vente> findVenteEntities(boolean all, int maxResults, int firstResult) {
-        em = getEntityManager();
+    private List<Societe> findSocieteEntities(boolean all, int maxResults, int firstResult) {
+        EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(Vente.class));
+            cq.select(cq.from(Societe.class));
             Query q = em.createQuery(cq);
             if (!all) {
                 q.setMaxResults(maxResults);
@@ -105,20 +103,20 @@ public class VenteJpaController extends SuperClass implements Serializable {
         }
     }
 
-    public Vente findVente(int id) {
-        em = getEntityManager();
+    public Societe findSociete(Integer id) {
+        EntityManager em = getEntityManager();
         try {
-            return em.find(Vente.class, id);
+            return em.find(Societe.class, id);
         } finally {
             em.close();
         }
     }
 
-    public int getVenteCount() {
-        em = getEntityManager();
+    public int getSocieteCount() {
+        EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            Root<Vente> rt = cq.from(Vente.class);
+            Root<Societe> rt = cq.from(Societe.class);
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();
@@ -126,15 +124,5 @@ public class VenteJpaController extends SuperClass implements Serializable {
             em.close();
         }
     }
-    //
-    public List<Vente> getListVenteParDate(Date dateDebut,Date dateFin){
-        em = getEntityManager();
-        List<Vente> l=  em.createNamedQuery("finListVenteDate")
-                .setParameter("dateFin",dateFin, TemporalType.DATE)
-                .setParameter("dateDebut",dateDebut,TemporalType.DATE)
-                .getResultList();
-        em.close();
-       return l;
-    }
-           
+    
 }
