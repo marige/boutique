@@ -29,6 +29,5 @@
          </graphic></Button>
       <ComboBox fx:id="cmbCompteUser" layoutX="71.0" layoutY="82.0" prefHeight="25.0" prefWidth="155.0" promptText="votre compte" />
       <PasswordField fx:id="txtPasse" layoutX="71.0" layoutY="128.0" prefHeight="25.0" prefWidth="155.0" promptText="votre mot de passe" style="-fx-background-radius: 10; -fx-border-radius: 10;" />
-      <Button layoutX="18.0" layoutY="238.0" mnemonicParsing="false" onMouseClicked="#clickConfig" prefHeight="25.0" prefWidth="252.0" text="Configuration" />
    </children>
 </AnchorPane>

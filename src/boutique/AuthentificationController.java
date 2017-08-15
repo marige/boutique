@@ -82,15 +82,4 @@ public class AuthentificationController extends SuperClass implements Initializa
         if(event.getCode()==KeyCode.ENTER)
             clickEntrer(null);
     }
-
-    @FXML
-    private void clickConfig(MouseEvent event) throws IOException {
-              Stage stage = new Stage();
-               Parent root = FXMLLoader.load(getClass().getResource("/configuration/connectDbb.fxml"));
-               Scene scene = new Scene(root);
-               stage.setX(0);
-               stage.setY(0);
-               stage.setScene(scene);
-               stage.showAndWait();
-    }
     }
