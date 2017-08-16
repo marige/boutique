@@ -2,9 +2,12 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6598a6c4-4503-47a0-a646-bbce641f6c6e">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="28"/>
 	<parameter name="idfacture" class="java.lang.Integer"/>
 	<parameter name="client" class="java.lang.String"/>
+	<parameter name="nomsociete" class="java.lang.String"/>
+	<parameter name="entete" class="java.lang.String"/>
+	<parameter name="pieds" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[select article.libarticle,vente.qte,vente.pu from vente,article
 where vente.idvente=article.idarticle]]>
@@ -25,51 +28,52 @@ where vente.idvente=article.idarticle]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="54" splitType="Stretch">
-			<staticText>
-				<reportElement x="114" y="0" width="273" height="41" forecolor="#333333" backcolor="#CCCCFF" uuid="a92cccb4-32d6-400a-aa68-9adba273b4b5"/>
-				<box>
-					<topPen lineWidth="0.5"/>
-					<leftPen lineWidth="2.0"/>
-					<bottomPen lineWidth="2.0"/>
-					<rightPen lineWidth="0.5"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial Narrow" size="20" isBold="true" isItalic="true"/>
+		<band height="55" splitType="Stretch">
+			<textField>
+				<reportElement x="101" y="2" width="349" height="42" uuid="8a8de707-8fa4-48a2-bed5-69cde54d6735"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
 				</textElement>
-				<text><![CDATA[SOCIETE SANS NOM]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$P{nomsociete}]]></textFieldExpression>
+			</textField>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="64" splitType="Stretch">
+		<band height="90" splitType="Stretch">
 			<textField>
-				<reportElement x="249" y="6" width="100" height="20" uuid="d1f53904-4c91-40b3-877d-2c9f9ad0bf07"/>
+				<reportElement x="465" y="50" width="87" height="29" uuid="d1f53904-4c91-40b3-877d-2c9f9ad0bf07"/>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font size="14" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{idfacture}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="73" y="6" width="173" height="20" uuid="73946a94-bc05-42b5-bf96-70da7c710ead"/>
+				<reportElement x="387" y="52" width="75" height="20" uuid="73946a94-bc05-42b5-bf96-70da7c710ead"/>
 				<textElement textAlignment="Right">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[FACTURE N°]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="73" y="33" width="100" height="20" uuid="1a453571-bfac-4c17-9713-453c51816d12"/>
+				<reportElement x="3" y="65" width="47" height="20" uuid="1a453571-bfac-4c17-9713-453c51816d12"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Client]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="183" y="27" width="220" height="31" uuid="d185d77e-7e6a-4b4e-a4aa-657dd45798fd"/>
+				<reportElement x="56" y="61" width="220" height="24" uuid="d185d77e-7e6a-4b4e-a4aa-657dd45798fd"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="SansSerif" size="14" isItalic="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{client}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="5" width="356" height="38" uuid="658e7bc6-5909-4541-919f-d9c3e6f5a202"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{entete}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
@@ -176,15 +180,23 @@ where vente.idvente=article.idarticle]]>
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="45" splitType="Stretch"/>
+		<band height="30" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="3" y="12" width="552" height="28" uuid="0480dae3-c492-4bbb-8e98-81e868ebf3da"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{pieds}]]></textFieldExpression>
+			</textField>
+		</band>
 	</pageFooter>
 	<summary>
 		<band height="42" splitType="Stretch">
 			<staticText>
-				<reportElement x="210" y="7" width="123" height="31" uuid="2e195564-7467-4b1c-98ea-ab81d8483cfe"/>
+				<reportElement x="233" y="7" width="123" height="31" uuid="2e195564-7467-4b1c-98ea-ab81d8483cfe"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>

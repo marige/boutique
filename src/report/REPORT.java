@@ -1,5 +1,6 @@
 package report;
 import boncommande.BonCommande;
+import facture.Facture;
 import fournisseur.Fournisseur;
 import java.sql.Connection;
 import java.util.Date;
@@ -12,14 +13,18 @@ import net.sf.jasperreports.engine.design.JRDesignQuery;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
+import societe.Societe;
+import societe.SocieteJpaController;
 import superpackage.SuperClass;
 
 
 public class REPORT extends SuperClass {
-  
+    public REPORT(){
+        sc=new SocieteJpaController().findSociete(1);
+    }
     public static String reportPath=System.getProperty("user.dir")+"\\src\\report\\";
   //  public static String reportPath=System.getProperty("user.dir")+"\\";
-    
+    Societe sc=null;
     public void editionReport(String reportName,String query, HashMap hm) throws Exception{
             Connection conn=getConnection();
             String reportSource=reportPath+reportName+".jrxml";
@@ -36,10 +41,23 @@ public class REPORT extends SuperClass {
             HashMap parameter= new HashMap();
             parameter.put("idboncommande",bonDeCommande.getIdBonCommande()); 
             parameter.put("datebon",getDateFormatAffichage(bonDeCommande.getDateBonCommande()));
-            parameter.put("fournisseur",bonDeCommande.getFournisseur().getLibFournisseur());           
+            parameter.put("fournisseur",bonDeCommande.getFournisseur().getLibFournisseur());   
+            parameter.put("nomsociete",sc.getLibelle());
+            parameter.put("entete",sc.getEntetedocument());
+            parameter.put("pieds",sc.getPiedsdocument());
             editionReport("boncommande","select article.libarticle,detailboncommande.quantitedetailboncommande," +
                     "detailboncommande.puachat from detailboncommande,article " +
                     "where article.idarticle=detailboncommande.idarticle and idboncommande="+bonDeCommande.getIdBonCommande(), parameter);//
+    }
+    
+    public void etatFacture(Facture f) throws Exception{
+         HashMap parameter= new HashMap();
+           parameter.put("idfacture",f.getIdFacture());
+           parameter.put("client",f.getClient()); 
+           parameter.put("nomsociete",sc.getLibelle());
+           parameter.put("entete",sc.getEntetedocument());
+           parameter.put("pieds",sc.getPiedsdocument());
+            editionReport("facture","select article.libarticle,vente.qte,vente.pu,facture.client from vente,article,facture where vente.idarticle=article.idarticle and vente.idfacture=facture.idfacture and vente.idfacture="+f.getIdFacture(), parameter);//         
     }
    /* public HashMap getHashMap(String tableName) throws SQLException{
          HashMap hm= new HashMap();
