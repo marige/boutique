@@ -6,7 +6,6 @@
 package facture;
 
 import vente.Vente;
-import vente.Vente;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
@@ -18,6 +17,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -31,6 +32,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "facture")
 @XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "finListFactureDate", 
+            query = "SELECT f from Facture f where f.dateFacture BETWEEN :dateDebut and :dateFin order by f.dateFacture desc,f.client asc")})
 public class Facture implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id

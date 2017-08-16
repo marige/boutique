@@ -5,15 +5,14 @@
  */
 package facture;
 
-import facture.Facture;
 import exceptions.NonexistentEntityException;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
-import javax.persistence.Persistence;
+import javax.persistence.TemporalType;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import superpackage.SuperClass;
@@ -128,6 +127,16 @@ public class FactureJpaController extends SuperClass implements Serializable {
         } finally {
             em.close();
         }
+    }
+    
+     public List<Facture> getListFactureParDate(Date dateDebut,Date dateFin){
+        em = getEntityManager();
+        List<Facture> l=  em.createNamedQuery("finListFactureDate")
+                .setParameter("dateFin",dateFin, TemporalType.DATE)
+                .setParameter("dateDebut",dateDebut,TemporalType.DATE)
+                .getResultList();
+        em.close();
+       return l;
     }
     
 }
