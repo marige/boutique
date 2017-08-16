@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.effect.*?>
@@ -26,8 +27,29 @@
                            <effect>
                               <Glow level="0.23" />
                            </effect>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/Resources_icones/up_arrow.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </JFXButton>
-                        <Button layoutX="11.0" layoutY="75.0" mnemonicParsing="false" onAction="#clickListeVente" prefHeight="27.0" prefWidth="153.0" text="Liste des ventes" />
+                        <JFXButton fx:id="btnVendre1" buttonType="RAISED" defaultButton="true" layoutX="6.0" layoutY="102.0" onAction="#clickListeVente" prefHeight="25.0" prefWidth="188.0" ripplerFill="#42b3eb" style="-fx-background-color: #5164ae;" text="Liste des ventes" textFill="#eeeeee">
+                           <effect>
+                              <Glow level="0.23" />
+                           </effect>
+                           <font>
+                              <Font name="DejaVu Sans Condensed Bold" size="13.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/Resources_icones/list-icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
                      </children>
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
@@ -46,6 +68,13 @@
                            <font>
                               <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/Resources_icones/details-icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </JFXButton>
                         <JFXButton fx:id="btnReceptionBonCommande" buttonType="RAISED" defaultButton="true" layoutX="6.0" layoutY="86.0" onAction="#clickedReceptionBon" prefHeight="25.0" prefWidth="188.0" ripplerFill="#9ca2d1" style="-fx-background-color: #5164ae;" text="Reception Commande" textFill="#eeeeee">
                            <effect>
@@ -54,6 +83,13 @@
                            <font>
                               <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/Resources_icones/Favorites12.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </JFXButton>
                      </children>
                   </AnchorPane>
@@ -70,6 +106,13 @@
                            <font>
                               <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/Resources_icones/msoffice_chart.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </JFXButton>
                      </children>
                   </AnchorPane>
@@ -86,6 +129,13 @@
                            <font>
                               <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/Resources_icones/insert2.gif" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </JFXButton>
                         <JFXButton fx:id="btnFournisseur" buttonType="RAISED" defaultButton="true" layoutX="6.0" layoutY="97.0" onAction="#clickFournisseur" prefHeight="25.0" prefWidth="188.0" ripplerFill="#9ca2d1" style="-fx-background-color: #5164ae;" text="Fournisseur" textFill="#eeeeee">
                            <effect>
@@ -94,6 +144,13 @@
                            <font>
                               <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/boutique_ico/lineamientos.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </JFXButton>
                         <JFXButton fx:id="btnAjouterCategorie" buttonType="RAISED" defaultButton="true" layoutX="6.0" layoutY="144.0" onAction="#clickBtnAjouterCategorie" prefHeight="25.0" prefWidth="188.0" ripplerFill="#9ca2d1" style="-fx-background-color: #5164ae;" text="Catégorie d'article" textFill="#eeeeee">
                            <effect>
@@ -102,6 +159,13 @@
                            <font>
                               <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/Resources_icones/msoffice_Bookmark.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </JFXButton>
                         <JFXButton fx:id="Utilisateurs" buttonType="RAISED" defaultButton="true" layoutX="7.0" layoutY="280.0" onMouseClicked="#clickUtilisateur" prefHeight="25.0" prefWidth="188.0" ripplerFill="#9ca2d1" style="-fx-background-color: #d66700;" text="Utilisateur" textFill="#eeeeee">
                            <effect>
@@ -110,8 +174,29 @@
                            <font>
                               <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/boutique_ico/users.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </JFXButton>
-                        <Button layoutX="10.0" layoutY="183.0" mnemonicParsing="false" onMouseClicked="#clickInfoSociete" prefHeight="27.0" prefWidth="178.0" text="info société" />
+                        <JFXButton fx:id="btnAjouterCategorie1" buttonType="RAISED" defaultButton="true" layoutX="6.0" layoutY="223.0" onAction="#clickBtnAjouterCategorie" onMouseClicked="#clickInfoSociete" prefHeight="25.0" prefWidth="188.0" ripplerFill="#9ca2d1" style="-fx-background-color: #5164ae;" text="info société" textFill="#eeeeee">
+                           <effect>
+                              <Glow level="0.23" />
+                           </effect>
+                           <font>
+                              <Font name="DejaVu Sans Condensed Bold" size="13.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/Resources_icones/about_paint.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
                      </children></AnchorPane>
             </content>
           </TitledPane>
@@ -121,7 +206,7 @@
                      <children>
                         <Button layoutX="11.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickCreerUtilsateur" prefHeight="27.0" prefWidth="168.0" text="Créer utilisateur" />
                         <Button layoutX="11.0" layoutY="51.0" mnemonicParsing="false" onAction="#clickAjouterControler" prefHeight="27.0" prefWidth="168.0" text="Ajouter Controler" />
-                        <Button layoutX="11.0" layoutY="100.0" mnemonicParsing="false" onAction="#clickDroitAcces" prefHeight="27.0" prefWidth="167.0" text="Gestion des droits accès" />
+                        <Button layoutX="11.0" layoutY="100.0" mnemonicParsing="false" onAction="#clickDroitAcces" prefHeight="27.0" prefWidth="173.0" text="Gestion des droits accès" />
                      </children>
                   </AnchorPane>
               </content>
