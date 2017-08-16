@@ -109,6 +109,10 @@ public class PrincipaleController extends Stage implements Initializable {
     private void clickInfoSociete(MouseEvent event) {
         newForm("/societe/Societe");
     }
+    @FXML
+    private void clickListeVente(ActionEvent event) {
+           newForm("/vente/listeVente");
+    }
  
 
     @FXML
@@ -121,6 +125,8 @@ public class PrincipaleController extends Stage implements Initializable {
     private void entreSouriPrincipale(MouseEvent event) {
          accordion.setVisible(true);
     }
+
+  
     
     
         
