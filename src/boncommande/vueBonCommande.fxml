@@ -64,7 +64,7 @@
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../ressources/boutique_ico/pluss.png" />
+                        <Image url="@../ressources/Resources_icones/BindingNavigatorAddNewItem.Image.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
