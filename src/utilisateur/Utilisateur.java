@@ -5,8 +5,11 @@
  */
 package utilisateur;
 
+import autorisation.Autorisation;
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +17,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -48,10 +52,18 @@ public class Utilisateur implements Serializable {
     private String typeuser;
     @Column(name = "nom")
     private String nom;
-
+   
+    @OneToMany(mappedBy="utilisateur",cascade=CascadeType.ALL)
+     private List<Autorisation> autorisation;
+     
     public Utilisateur() {
     }
-
+   public void setAutorisation(List<Autorisation> autorisation){
+       this.autorisation=autorisation;
+   }
+   public List<Autorisation> getAutorisation(){
+       return this.autorisation;
+   }
     public Utilisateur(Integer idutilisateur) {
         this.idutilisateur = idutilisateur;
     }

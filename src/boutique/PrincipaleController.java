@@ -101,10 +101,6 @@ public class PrincipaleController extends Stage implements Initializable {
     private void clickedReceptionBon(ActionEvent event) {
         newForm("/boncommande/vueReceptionCommande");
     }
-     @FXML
-    private void clickUtilisateur(MouseEvent event) {
-        newForm("/utilisateur/nouvelutilisateur");
-    }
     @FXML
     private void clickInfoSociete(MouseEvent event) {
         newForm("/societe/Societe");
@@ -125,11 +121,23 @@ public class PrincipaleController extends Stage implements Initializable {
     private void entreSouriPrincipale(MouseEvent event) {
          accordion.setVisible(true);
     }
+    @FXML
+    private void clickCreerUtilsateur(ActionEvent event) {
+            newForm("/utilisateur/nouvelutilisateur");
+    }
 
+    @FXML
+    private void clickUtilisateur(MouseEvent event) {
+         
+    }
+
+    @FXML
+    private void clickAjouterControler(ActionEvent event) {
+         newForm("/utilisateur/ajoutcontroler");
+    }
+   
   
     
     
-        
-    
-
+       
 }
