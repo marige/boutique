@@ -45,9 +45,9 @@
                   <Font name="DejaVu Sans Condensed Bold" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="btn_retirer" layoutX="530.0" layoutY="192.0" mnemonicParsing="false" onMouseClicked="#btnRetirer" prefHeight="14.0" prefWidth="101.0" text="Retirer">
+            <Button fx:id="btn_retirer" layoutX="525.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#btnRetirer" prefHeight="30.0" prefWidth="101.0" text="Retirer">
                <graphic>
-                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../ressources/boutique_ico/Remove-icon.png" />
                      </image>
@@ -60,11 +60,11 @@
                   <Font name="DejaVu Sans Bold" size="13.0" />
                </font>
             </Label>
-            <Button fx:id="btn_ajouter" layoutX="404.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#btnAjouter" prefHeight="9.0" prefWidth="100.0" text="Ajouter">
+            <Button fx:id="btn_ajouter" layoutX="404.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#btnAjouter" prefHeight="15.0" prefWidth="100.0" text="Ajouter">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../ressources/boutique_ico/plus.png" />
+                        <Image url="@../ressources/boutique_ico/pluss.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
