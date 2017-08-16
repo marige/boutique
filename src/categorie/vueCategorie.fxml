@@ -10,9 +10,9 @@
 <AnchorPane id="AnchorPane" prefHeight="401.0" prefWidth="672.0" stylesheets="@../design.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="categorie.VueCategorieController">
    <children>
       <TextField fx:id="txtLibCategorie" layoutX="229.0" layoutY="51.0" prefHeight="25.0" prefWidth="229.0" />
-      <Button fx:id="btnAjouter" layoutX="294.0" layoutY="90.0" mnemonicParsing="false" onMouseClicked="#btnAjouterClick" prefHeight="35.0" prefWidth="112.0" text="Ajouter">
+      <Button fx:id="btnAjouter" layoutX="288.0" layoutY="81.0" mnemonicParsing="false" onMouseClicked="#btnAjouterClick" prefHeight="23.0" prefWidth="112.0" text="Ajouter">
          <graphic>
-            <ImageView fitHeight="25.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../ressources/boutique_ico/plus.png" />
                </image>
@@ -20,8 +20,22 @@
          </graphic></Button>
       <TableView id="table" fx:id="tableVcategorie" layoutX="97.0" layoutY="125.0" prefHeight="268.0" prefWidth="493.0">
          <columns>
-            <TableColumn id="NOM" fx:id="cln_idcategorie" prefWidth="75.0" text="Code" />
-            <TableColumn id="PRENOMS" fx:id="cln_libcategorie" prefWidth="375.0" text="Libellé Categorie" />
+            <TableColumn id="NOM" fx:id="cln_idcategorie" prefWidth="75.0" text="Code">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/Resources_icones/msoffice_menu_encryptdocument.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
+            <TableColumn id="PRENOMS" fx:id="cln_libcategorie" prefWidth="375.0" text="Libellé Categorie">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/Resources_icones/msoffice_Footer1.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
          </columns>
       </TableView>
       <Label layoutX="97.0" layoutY="55.0" text="Libellé Catégorie" />

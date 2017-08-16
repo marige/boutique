@@ -60,7 +60,7 @@
                   <Font name="DejaVu Sans Bold" size="13.0" />
                </font>
             </Label>
-            <Button fx:id="btn_ajouter" layoutX="404.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#btnAjouter" prefHeight="15.0" prefWidth="100.0" text="Ajouter">
+            <Button fx:id="btn_ajouter" layoutX="404.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#btnAjouter" prefHeight="19.0" prefWidth="100.0" text="Ajouter">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -78,9 +78,30 @@
       </Group>
       <TableView fx:id="tbl_produits" layoutX="18.0" layoutY="84.0" onMouseClicked="#clickTableArticle" prefHeight="123.0" prefWidth="318.0">
         <columns>
-            <TableColumn fx:id="cln_code" prefWidth="90.0" text="code" />
-          <TableColumn fx:id="cln_lib_produit" prefWidth="146.0" text="Nom Produit" />
-          <TableColumn fx:id="cln_produit_stock" prefWidth="79.0" text="Stock" />
+            <TableColumn fx:id="cln_code" prefWidth="90.0" text="code">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/Resources_icones/msoffice_menu_encryptdocument.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
+          <TableColumn fx:id="cln_lib_produit" prefWidth="146.0" text="Nom Produit">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/Resources_icones/msoffice_QuickParts.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
+          <TableColumn fx:id="cln_produit_stock" prefWidth="79.0" text="Stock">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/Resources_icones/SplineArea.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
         </columns>
       </TableView>
       <TextField fx:id="txt_recherche" layoutX="132.0" layoutY="53.0" onKeyTyped="#rechercheTyped" prefHeight="25.0" prefWidth="143.0" promptText="code ou libellé article" />
