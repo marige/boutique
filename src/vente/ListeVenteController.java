@@ -6,14 +6,18 @@
 package vente;
 
 import article.Article;
+import exceptions.NonexistentEntityException;
 import facture.Facture;
 import facture.FactureJpaController;
 import java.net.URL;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
@@ -21,6 +25,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import report.REPORT;
 import superpackage.SuperClass;
 
 /**
@@ -36,8 +41,6 @@ public class ListeVenteController extends SuperClass implements Initializable {
     @FXML
     private TableView<Vente> tbv_detailfacture;
 
-    @FXML
-    private TableColumn<Vente,Integer> cln_code_article;
 
     @FXML
     private TableColumn<Vente,Integer> cln_qte;
@@ -54,8 +57,6 @@ public class ListeVenteController extends SuperClass implements Initializable {
     @FXML
     private TableColumn<Facture, Date> cln_date;
 
-    @FXML
-    private TableColumn<Facture,Integer> cln_montant;
 
     @FXML
     private TableColumn<Facture,Integer> cln_montant_facture;
@@ -105,9 +106,41 @@ public class ListeVenteController extends SuperClass implements Initializable {
 
     @FXML
     private void clickFacture(MouseEvent event) {
+        //renseigenement de article en vue de maj après
+        f=tbv_facture.getSelectionModel().getSelectedItem();
         //liste de vente dans une facture
         listVente.clear();
-        listVente.addAll(tbv_facture.getSelectionModel().getSelectedItem().getVenteFacture());
+        listVente.addAll(f.getVenteFacture());
+    }
+    @FXML
+    void clickAnnulerVente(MouseEvent event) {
+        if(tbv_detailfacture.getItems().isEmpty()||f==null){
+         alert("notification","Choisissez une facture à annuler");
+        }
+        else if(this.confirmation("Attention","L\'annulation vente va supprimer la facture\nEtes-vous prêt?")){
+            try {
+                fcon.destroy(f.getIdFacture());
+                 alert("notification","Annulation réussie");
+                 listFacture.remove(f);
+                 f=null;
+            } catch (NonexistentEntityException ex) {
+               alert("notification","Suppression impossible");
+            }
+        };
+    }
+
+    @FXML
+    void clickReimpression(MouseEvent event) {
+         if(tbv_detailfacture.getItems().isEmpty()||f==null){
+         alert("notification","Choisissez une facture à annuler");
+        }
+         else{
+        try {
+            new REPORT().etatFacture(f);
+        } catch (Exception ex) {
+           alert("error","Facture non chargeable");
+        }
+        }
     }
     
 }
