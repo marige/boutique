@@ -83,7 +83,7 @@
           <TableColumn fx:id="cln_produit_stock" prefWidth="79.0" text="Stock" />
         </columns>
       </TableView>
-      <TextField fx:id="txt_recherche" layoutX="98.0" layoutY="53.0" onKeyTyped="#rechercheTyped" prefHeight="25.0" prefWidth="143.0" promptText="code ou libellé article" />
+      <TextField fx:id="txt_recherche" layoutX="132.0" layoutY="53.0" onKeyTyped="#rechercheTyped" prefHeight="25.0" prefWidth="143.0" promptText="code ou libellé article" />
       <Label layoutX="39.0" layoutY="58.0" text="Recherche" />
       <Button fx:id="btn_sauvegarder" layoutX="17.0" layoutY="482.0" mnemonicParsing="false" onMouseClicked="#btnSauvegarderClicked" prefHeight="29.0" prefWidth="662.0" text="Sauvegarder" textFill="#159a06">
          <font>
