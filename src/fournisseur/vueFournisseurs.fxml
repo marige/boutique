@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -22,7 +23,14 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Button fx:id="btn_modifier" layoutX="439.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#modifierFournisseurClicked" text="Modifier" wrapText="true" />
+      <Button fx:id="btn_modifier" layoutX="424.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#modifierFournisseurClicked" text="Modifier" wrapText="true">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/boutique_ico/edit.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
       <HBox layoutX="101.0" layoutY="122.0" prefHeight="32.0" prefWidth="523.0" spacing="7.0">
          <children>
             <TextField fx:id="txt_lib_fournisseur" prefHeight="25.0" prefWidth="112.0" />
@@ -45,8 +53,22 @@
          </children>
       </HBox>
       <Label layoutX="401.0" layoutY="67.0" text="Details" />
-      <Button fx:id="btnNouveau" layoutX="248.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#clickBtnNouveau" text="Nouveau" wrapText="true" />
-      <Button fx:id="btn_ajouter" layoutX="340.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#clickBtnAjouter" prefHeight="25.0" prefWidth="76.0" text="Ajouter" />
+      <Button fx:id="btnNouveau" layoutX="199.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#clickBtnNouveau" text="Nouveau" wrapText="true">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/boutique_ico/new.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="btn_ajouter" layoutX="316.0" layoutY="161.0" mnemonicParsing="false" onMouseClicked="#clickBtnAjouter" prefHeight="35.0" prefWidth="93.0" text="Ajouter">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/boutique_ico/plus.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
       <Label layoutX="125.0" layoutY="66.0" text="Recherche" textFill="#5f0de4">
          <font>
             <Font name="DejaVu Sans Condensed Bold" size="13.0" />
