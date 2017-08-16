@@ -149,7 +149,7 @@ public class VueVenteController extends SuperClass implements Initializable {
           txtQte.setText("");
           txtLibarticle.setText(art.getLibarticle());
           txtCode.setText(String.valueOf(art.getIdarticle()));
-          txtPu.setText(this.formatageMontant(art.getPrixVente()));
+          txtPu.setText(this.formatageMontant(art.getPrixvente()));
           dtDateFacture.setValue(LocalDate.now());     
           dtDateFacture.setDisable(true);
           

@@ -22,7 +22,12 @@ import javax.persistence.Table;
 @Table(name= "article")
 //@XmlRootElement
 public class Article implements Serializable{
-    private static final long serialVersionUID = 1L;       
+    @Column(name = "stock")
+    private Integer stock;
+    @Column(name = "prixvente")
+    private Integer prixvente;
+    @Column(name = "stocksecurite")
+    private Integer stocksecurite;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
@@ -30,12 +35,6 @@ public class Article implements Serializable{
     private int idArticle;
     @Column(name = "libarticle")
     private String libarticle;
-    @Column(name = "stock")
-    private int stock;
-    @Column(name = "prixvente")
-    private int prixvente;
-    @Column(name = "stocksecurite")
-    private int stocksecurite;
  
  
     //gestion de 
@@ -49,34 +48,7 @@ public class Article implements Serializable{
     
     @OneToMany(mappedBy = "article",cascade = CascadeType.ALL)
     private List<DetailBonCommande> detailBonCommandeList;
-     
-    public Article() {
-       
-    }
-   
-    public Article(int idarticle) {
-      this.idArticle=idarticle;
-    }
-    public void setDetailBonCommande(List<DetailBonCommande> detailBonCommandeList){
-        this.detailBonCommandeList=detailBonCommandeList;
-    }
-    public List<DetailBonCommande> getDetailBonCommandeList(){
-        return this.detailBonCommandeList;
-    }
-    
-    public int getStockSecurite(){
-        return this.stocksecurite;
-    }
-    public void setStockSecurite(int secur){
-        this.stocksecurite=secur;
-    }
-    public int getPrixVente(){
-        return this.prixvente;
-    }
-  
-    public void setPrixVente(int prixVente){
-        this.prixvente=prixVente;
-    }
+
    
     public int getIdarticle() {
         return this.idArticle;
@@ -94,13 +66,6 @@ public class Article implements Serializable{
         this.libarticle=libarticle;
     }
    
-    public int getStock() {
-       return this.stock;
-    }
-
-    public void setStock(int stock) {
-      this.stock=stock;
-    }
     public void setCategorie(Categorie cat){
         this.categorie=cat;
     }
@@ -113,10 +78,43 @@ public class Article implements Serializable{
     public void addVenteToArticle(Vente v){
         this.vente.add(v);
     }
-      
+    public void setDetailBonCommande(List<DetailBonCommande> detailBonCommandeList){
+        this.detailBonCommandeList=detailBonCommandeList;
+    }
+    public List<DetailBonCommande> getDetailBonCommandeList(){
+        return this.detailBonCommandeList;
+    }
+    
     @Override
     public String toString(){
         return this.libarticle;
+    }
+
+    public Article() {
+    }
+
+    public Integer getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public Integer getPrixvente() {
+        return prixvente;
+    }
+
+    public void setPrixvente(int prixvente) {
+        this.prixvente = prixvente;
+    }
+
+    public Integer getStocksecurite() {
+        return stocksecurite;
+    }
+
+    public void setStocksecurite(int stocksecurite) {
+        this.stocksecurite = stocksecurite;
     }
  
     
