@@ -116,8 +116,8 @@ public class VueArticleController extends SuperClass implements Initializable {
             Article a= new Article();
             a.setLibarticle(txtLibarticle.getText());
             a.setStock(Integer.parseInt(txtStock.getText()));
-            a.setPrixVente(Integer.parseInt(txtPrixvente.getText())); 
-            a.setStockSecurite(Integer.parseInt(txtStockSecurite.getText()));     
+            a.setPrixvente(Integer.parseInt(txtPrixvente.getText())); 
+            a.setStocksecurite(Integer.parseInt(txtStockSecurite.getText()));     
             Categorie c=cmbCategorie.getValue();
             a.setCategorie(c); 
             d.create(a);   
@@ -132,9 +132,9 @@ public class VueArticleController extends SuperClass implements Initializable {
         a = table.getSelectionModel().getSelectedItem();
         txtLibarticle.setText(a.getLibarticle());
         txtStock.setText(String.valueOf(a.getStock()));
-        txtStockSecurite.setText(String.valueOf(a.getStockSecurite()));
+        txtStockSecurite.setText(String.valueOf(a.getStocksecurite()));
         cmbCategorie.setValue(a.getCategorie());
-        txtPrixvente.setText(String.valueOf(a.getPrixVente()));
+        txtPrixvente.setText(String.valueOf(a.getPrixvente()));
         btnAjouter.setDisable(true);
     }
 
@@ -146,8 +146,8 @@ public class VueArticleController extends SuperClass implements Initializable {
                 article.remove(a);
                 a.setLibarticle(txtLibarticle.getText());
                 a.setStock(Integer.parseInt(txtStock.getText()));
-                a.setPrixVente(Integer.parseInt(txtPrixvente.getText()));
-                a.setStockSecurite(Integer.parseInt(txtStockSecurite.getText()));
+                a.setPrixvente(Integer.parseInt(txtPrixvente.getText()));
+                a.setStocksecurite(Integer.parseInt(txtStockSecurite.getText()));
                 Categorie c=cmbCategorie.getValue();
                 a.setCategorie(c);
                 d.edit(a);
