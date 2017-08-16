@@ -52,7 +52,7 @@
       <TextField fx:id="txtQte" layoutX="444.0" layoutY="126.0" prefHeight="20.0" prefWidth="67.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
       <TextField fx:id="txtMontantTtc" editable="false" layoutX="282.0" layoutY="204.0" prefHeight="20.0" prefWidth="139.0" promptText="0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
       <Label layoutX="189.0" layoutY="209.0" styleClass="label-text-success" text="Montant TTC" />
-      <TextField fx:id="txtPu" editable="false" layoutX="596.0" layoutY="115.0" prefHeight="20.0" prefWidth="120.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
+      <TextField fx:id="txtPu" editable="false" layoutX="588.0" layoutY="126.0" prefHeight="20.0" prefWidth="120.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
       <Label layoutX="516.0" layoutY="130.0" styleClass="label-text" text="P Unitaire" />
       <Button fx:id="btnRetirer" layoutX="451.0" layoutY="194.0" mnemonicParsing="false" onMouseClicked="#clickRetirer" prefHeight="25.0" prefWidth="120.0" text="Retirer">
          <graphic>
