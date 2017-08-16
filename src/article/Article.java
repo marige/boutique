@@ -20,22 +20,20 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name= "article")
-//@XmlRootElement
 public class Article implements Serializable{
-    @Column(name = "stock")
-    private Integer stock;
-    @Column(name = "prixvente")
-    private Integer prixvente;
-    @Column(name = "stocksecurite")
-    private Integer stocksecurite;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "idarticle")
     private int idArticle;
+    @Column(name = "stock")
+    private Integer stock;
+    @Column(name = "prixvente")
+    private Integer prixvente;
+    @Column(name = "stocksecurite")
+    private Integer stocksecurite; 
     @Column(name = "libarticle")
     private String libarticle;
- 
  
     //gestion de 
     @ManyToOne
@@ -90,8 +88,6 @@ public class Article implements Serializable{
         return this.libarticle;
     }
 
-    public Article() {
-    }
 
     public Integer getStock() {
         return stock;
@@ -116,7 +112,8 @@ public class Article implements Serializable{
     public void setStocksecurite(int stocksecurite) {
         this.stocksecurite = stocksecurite;
     }
- 
-    
+
+    public Article() {
+    }
     
 }

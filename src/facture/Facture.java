@@ -56,20 +56,20 @@ public class Facture implements Serializable {
     
     public Facture() {
     } 
-    public Facture(Integer idFacture) {
+    public Facture(int idFacture) {
         this.idFacture = idFacture;
     }
   
-    public Integer getIdFacture() {
-        return idFacture;
+    public int getIdFacture() {
+        return this.idFacture;
     }
 
-    public void setIdFacture(Integer idFacture) {
+    public void setIdFacture(int idFacture) {
         this.idFacture = idFacture;
     }
 
     public Date getDateFacture() {
-        return dateFacture;
+        return this.dateFacture;
     }
 
     public void setDateFacture(Date dateFacture) {
