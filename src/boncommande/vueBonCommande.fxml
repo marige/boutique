@@ -45,7 +45,7 @@
                   <Font name="DejaVu Sans Condensed Bold" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="btn_retirer" layoutX="530.0" layoutY="192.0" mnemonicParsing="false" onMouseClicked="#btnRetirer" prefHeight="14.0" prefWidth="101.0" text="Retirer" textFill="#2c03f8">
+            <Button fx:id="btn_retirer" layoutX="530.0" layoutY="192.0" mnemonicParsing="false" onMouseClicked="#btnRetirer" prefHeight="14.0" prefWidth="101.0" text="Retirer">
                <graphic>
                   <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -60,7 +60,7 @@
                   <Font name="DejaVu Sans Bold" size="13.0" />
                </font>
             </Label>
-            <Button fx:id="btn_ajouter" layoutX="404.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#btnAjouter" prefHeight="9.0" prefWidth="100.0" text="Ajouter" textFill="#2c03f8">
+            <Button fx:id="btn_ajouter" layoutX="404.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#btnAjouter" prefHeight="9.0" prefWidth="100.0" text="Ajouter">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -85,7 +85,7 @@
       </TableView>
       <TextField fx:id="txt_recherche" layoutX="132.0" layoutY="53.0" onKeyTyped="#rechercheTyped" prefHeight="25.0" prefWidth="143.0" promptText="code ou libellé article" />
       <Label layoutX="39.0" layoutY="58.0" text="Recherche" />
-      <Button fx:id="btn_sauvegarder" layoutX="17.0" layoutY="482.0" mnemonicParsing="false" onMouseClicked="#btnSauvegarderClicked" prefHeight="29.0" prefWidth="662.0" text="Sauvegarder" textFill="#159a06">
+      <Button fx:id="btn_sauvegarder" layoutX="17.0" layoutY="482.0" mnemonicParsing="false" onMouseClicked="#btnSauvegarderClicked" prefHeight="29.0" prefWidth="662.0" text="Sauvegarder">
          <font>
             <Font name="DejaVu Sans Bold" size="13.0" />
          </font>
