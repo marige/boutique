@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
@@ -12,15 +13,29 @@
 <AnchorPane id="AnchorPane" prefHeight="429.0" prefWidth="688.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boncommande.VueReceptionCommandeController">
    <children>
       <Label layoutX="248.0" layoutY="1.0" text="Reception Bon" />
-      <Label layoutX="63.0" layoutY="36.0" text="Rechercher un bon" />
+      <Label layoutX="45.0" layoutY="36.0" text="Rechercher un bon" />
       <TextField fx:id="txt_id_bon_commande" layoutX="177.0" layoutY="31.0" prefHeight="25.0" prefWidth="95.0" promptText="code bon" />
-      <DatePicker fx:id="dt_date_reception" editable="false" layoutX="470.0" layoutY="31.0" prefHeight="25.0" prefWidth="119.0" />
+      <DatePicker fx:id="dt_date_reception" editable="false" layoutX="534.0" layoutY="31.0" prefHeight="25.0" prefWidth="119.0" />
       <Button fx:id="btn_valider" layoutX="45.0" layoutY="385.0" mnemonicParsing="false" onAction="#validerClicked" prefHeight="17.0" prefWidth="595.0" text="Recevoir le bon" textFill="#2c5c40">
          <font>
             <Font size="14.0" />
-         </font></Button>
-      <Label layoutX="369.0" layoutY="36.0" text="Date de reception" />
-      <Button fx:id="btn_valider" layoutX="281.0" layoutY="31.0" mnemonicParsing="false" onAction="#search" text="trouver" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/boutique_ico/ok.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Label layoutX="406.0" layoutY="36.0" text="Date de reception" />
+      <Button fx:id="btn_search" layoutX="281.0" layoutY="31.0" mnemonicParsing="false" onAction="#search" text="trouver">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/boutique_ico/blue-play-button-icon-17903.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
       <TitledPane animated="false" layoutX="41.0" layoutY="65.0" prefHeight="111.0" prefWidth="606.0" text="Information du bon de commande">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="89.0" prefWidth="604.0">
