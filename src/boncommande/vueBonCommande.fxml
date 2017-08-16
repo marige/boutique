@@ -45,9 +45,9 @@
                   <Font name="DejaVu Sans Condensed Bold" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="btn_retirer" layoutX="539.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#btnRetirer" prefHeight="9.0" prefWidth="101.0" text="Retirer" textFill="#2c03f8">
+            <Button fx:id="btn_retirer" layoutX="539.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#btnRetirer" prefHeight="35.0" prefWidth="101.0" text="Retirer" textFill="#2c03f8">
                <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../ressources/boutique_ico/Remove-icon.png" />
                      </image>
@@ -60,9 +60,9 @@
                   <Font name="DejaVu Sans Bold" size="13.0" />
                </font>
             </Label>
-            <Button fx:id="btn_ajouter" layoutX="404.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#btnAjouter" prefHeight="7.0" prefWidth="100.0" text="Ajouter" textFill="#2c03f8">
+            <Button fx:id="btn_ajouter" layoutX="404.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#btnAjouter" prefHeight="35.0" prefWidth="100.0" text="Ajouter" textFill="#2c03f8">
                <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="25.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../ressources/boutique_ico/plus.png" />
                      </image>
@@ -90,7 +90,7 @@
             <Font name="DejaVu Sans Bold" size="13.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="26.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="26.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../ressources/boutique_ico/ok.png" />
                </image>
