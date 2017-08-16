@@ -204,9 +204,30 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button layoutX="11.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickCreerUtilsateur" prefHeight="27.0" prefWidth="168.0" text="Créer utilisateur" />
-                        <Button layoutX="11.0" layoutY="51.0" mnemonicParsing="false" onAction="#clickAjouterControler" prefHeight="27.0" prefWidth="168.0" text="Ajouter Controler" />
-                        <Button layoutX="11.0" layoutY="100.0" mnemonicParsing="false" onAction="#clickDroitAcces" prefHeight="27.0" prefWidth="173.0" text="Gestion des droits accès" />
+                        <Button layoutX="11.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickCreerUtilsateur" prefHeight="27.0" prefWidth="168.0" text="Créer utilisateur">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/Resources_icones/AnneDodsworth.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Button layoutX="11.0" layoutY="51.0" mnemonicParsing="false" onAction="#clickAjouterControler" prefHeight="27.0" prefWidth="168.0" text="Ajouter Controler">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/Resources_icones/Candlestick.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Button layoutX="11.0" layoutY="100.0" mnemonicParsing="false" onAction="#clickDroitAcces" prefHeight="27.0" prefWidth="173.0" text="Gestion des droits accès">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/Resources_icones/backstage_my_templates.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
                      </children>
                   </AnchorPane>
               </content>
