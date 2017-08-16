@@ -133,9 +133,13 @@ public class PrincipaleController extends Stage implements Initializable {
 
     @FXML
     private void clickAjouterControler(ActionEvent event) {
-         newForm("/utilisateur/ajoutcontroler");
+         newForm("/controller/ajoutcontroler");
     }
-   
+    @FXML
+    private void clickDroitAcces(ActionEvent event){
+         newForm("/autorisation/autorisation");
+    }
+    
   
     
     

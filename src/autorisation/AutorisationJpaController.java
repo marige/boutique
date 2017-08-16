@@ -13,6 +13,7 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import superpackage.SuperClass;
+import utilisateur.Utilisateur;
 import utilisateur.exceptions.NonexistentEntityException;
 
 /**
@@ -33,6 +34,28 @@ public class AutorisationJpaController extends SuperClass implements Serializabl
             }
         }
     }
+    
+     public void updateAttribut(List<Autorisation> ancienneAutoList ,List<Autorisation> newautoList) throws NonexistentEntityException {
+        EntityManager em = null;
+        try {
+            em = getEntityManager();
+            em.getTransaction().begin();
+            //destruction des anciennes permissions
+            if(!ancienneAutoList.isEmpty())
+            this.destroyListAutorisation(ancienneAutoList);
+            //inscription de la nouvelle liste 
+            if(!newautoList.isEmpty())
+            for(Autorisation a:newautoList){             
+                em.persist(a);
+            }
+            em.getTransaction().commit();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+    }
+    
 
     public void edit(Autorisation autorisation) throws NonexistentEntityException, Exception {
         EntityManager em = null;
@@ -77,7 +100,28 @@ public class AutorisationJpaController extends SuperClass implements Serializabl
             }
         }
     }
-
+   
+     public void destroyListAutorisation(List<Autorisation> ancienneAutoList) throws NonexistentEntityException {
+        EntityManager em = null;
+        try {
+            em = getEntityManager();
+            em.getTransaction().begin();
+            for(Autorisation a:ancienneAutoList){
+            try {
+                a = em.getReference(Autorisation.class, a.getIdautorisation());
+                a.getIdautorisation();
+            } catch (EntityNotFoundException enfe) {
+                throw new NonexistentEntityException("The autorisation with id " + a.getIdautorisation() + " no longer exists.", enfe);
+            }
+            em.remove(a);
+            }
+            em.getTransaction().commit();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+    }
     public List<Autorisation> findAutorisationEntities() {
         return findAutorisationEntities(true, -1, -1);
     }
@@ -122,6 +166,13 @@ public class AutorisationJpaController extends SuperClass implements Serializabl
         } finally {
             em.close();
         }
+    }
+    public List<Autorisation> getUserAutorisation(Utilisateur user){
+        EntityManager em=getEntityManager();
+        List<Autorisation> auto= em.createNamedQuery("findUserAutorisation")
+                                   .setParameter("utilisateur",user)
+                                   .getResultList();
+                return auto;
     }
     
 }

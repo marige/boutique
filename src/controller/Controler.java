@@ -90,7 +90,7 @@ public class Controler implements Serializable {
 
     @Override
     public String toString() {
-        return "utilisateur.Controler[ nomcontroler=" + nomcontroler + " ]";
+        return this.description;
     }
     
 }

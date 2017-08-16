@@ -121,6 +121,7 @@
                      <children>
                         <Button layoutX="11.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickCreerUtilsateur" prefHeight="27.0" prefWidth="168.0" text="Créer utilisateur" />
                         <Button layoutX="11.0" layoutY="51.0" mnemonicParsing="false" onAction="#clickAjouterControler" prefHeight="27.0" prefWidth="168.0" text="Ajouter Controler" />
+                        <Button layoutX="11.0" layoutY="100.0" mnemonicParsing="false" onAction="#clickDroitAcces" prefHeight="27.0" prefWidth="167.0" text="Gestion des droits accès" />
                      </children>
                   </AnchorPane>
               </content>
