@@ -10,6 +10,11 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="704.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boncommande.VueBonCommandeController">
    <children>
+      <ImageView fitHeight="522.0" fitWidth="924.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../ressources/116033.jpg" />
+         </image>
+      </ImageView>
       <Label layoutX="99.0" layoutY="14.0" prefHeight="30.0" prefWidth="228.0" text="BON DE COMMANDE" textAlignment="CENTER">
          <font>
             <Font size="20.0" />
