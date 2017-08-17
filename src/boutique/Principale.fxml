@@ -14,6 +14,11 @@
 
 <AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="942.0" stylesheets="@../design.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boutique.PrincipaleController">
    <children>
+      <ImageView fitHeight="608.0" fitWidth="964.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../ressources/116033.jpg" />
+         </image>
+      </ImageView>
       <Accordion fx:id="accordion" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseExited="#sortieSouri" prefHeight="500.0" prefWidth="202.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="35.0">
         <panes>
           <TitledPane animated="false" styleClass="TitledPane" text="VENTE">
@@ -234,9 +239,9 @@
             </TitledPane>
         </panes>
       </Accordion>
-      <HBox fx:id="hbox" layoutX="202.0" layoutY="-1.0" prefHeight="600.0" prefWidth="689.0" AnchorPane.leftAnchor="202.0" AnchorPane.topAnchor="30.0">
+      <HBox fx:id="hbox" layoutX="202.0" layoutY="-1.0" prefHeight="714.0" prefWidth="744.0" AnchorPane.leftAnchor="202.0" AnchorPane.topAnchor="30.0">
          <children>
-            <AnchorPane fx:id="anchor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onMouseExited="#sortieSouri" prefHeight="684.0" prefWidth="731.0" style="-fx-background-color: #FBFBF2;">
+            <AnchorPane fx:id="anchor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onMouseExited="#sortieSouri" prefHeight="684.0" prefWidth="731.0">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
