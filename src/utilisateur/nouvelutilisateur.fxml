@@ -13,9 +13,30 @@
    <children>
       <TableView fx:id="tableView" layoutX="42.0" layoutY="236.0" prefHeight="133.0" prefWidth="488.0">
         <columns>
-          <TableColumn fx:id="cln_login" prefWidth="129.0" text="login" />
-          <TableColumn fx:id="cln_nom_prenoms" prefWidth="227.0" text="nom et prénoms" />
-            <TableColumn fx:id="cln_fonction" prefWidth="131.0" text="fonction" />
+          <TableColumn fx:id="cln_login" prefWidth="129.0" text="login">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/Resources_icones/msoffice_menu_encryptdocument.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
+          <TableColumn fx:id="cln_nom_prenoms" prefWidth="227.0" text="nom et prénoms">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/Resources_icones/msoffice_ChangeStyles32.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
+            <TableColumn fx:id="cln_fonction" prefWidth="131.0" text="fonction">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/Resources_icones/splitcon_firstlook_categorize_big.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
         </columns>
       </TableView>
       <GridPane layoutX="71.0" layoutY="14.0" prefHeight="179.0" prefWidth="401.0" vgap="3.0">
@@ -53,13 +74,14 @@
             <Insets right="1.0" top="1.0" />
          </padding>
       </GridPane>
-      <Button layoutX="251.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#clickAjouter" prefHeight="35.0" prefWidth="107.0" text="Ajouter">
+      <Button layoutX="256.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#clickAjouter" prefHeight="15.0" prefWidth="107.0" text="Ajouter">
          <graphic>
-            <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../ressources/boutique_ico/plus.png" />
                </image>
             </ImageView>
          </graphic></Button>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
