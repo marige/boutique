@@ -9,6 +9,11 @@
 
 <AnchorPane id="AnchorPane" fx:id="frmArticle" prefHeight="417.0" prefWidth="698.0" stylesheets="@../design.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="article.VueArticleController">
    <children>
+      <ImageView fitHeight="572.0" fitWidth="704.0" pickOnBounds="true">
+         <image>
+            <Image url="@../ressources/bg_article.jpg" />
+         </image>
+      </ImageView>
       <TableView id="table" fx:id="table" layoutX="32.0" layoutY="200.0" onMouseClicked="#clickTable" prefHeight="209.0" prefWidth="614.0">
         <columns>
           <TableColumn id="NOM" fx:id="cln_idarticle" prefWidth="75.0" text="code article" />
