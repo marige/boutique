@@ -11,6 +11,11 @@
 
 <AnchorPane id="AnchorPane" onMouseClicked="#tvClicked" prefHeight="522.0" prefWidth="836.0" stylesheets="@../design.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vente.VueVenteController">
    <children>
+      <ImageView blendMode="SRC_ATOP" fitHeight="522.0" fitWidth="968.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../ressources/arrier_vente.jpg" />
+         </image>
+      </ImageView>
       <Button fx:id="btnAjouterP" layoutX="588.0" layoutY="201.0" mnemonicParsing="false" onMouseClicked="#clickPanier" prefHeight="23.0" prefWidth="120.0" text="Ajouter">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
@@ -69,7 +74,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Label layoutX="381.0" layoutY="132.0" styleClass="label-text" text="Quantité" />
+      <Label layoutX="373.0" layoutY="130.0" styleClass="label-text" text="Quantité" />
       <TextField fx:id="txtQte" layoutX="444.0" layoutY="126.0" prefHeight="20.0" prefWidth="67.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
       <TextField fx:id="txtMontantTtc" editable="false" layoutX="282.0" layoutY="204.0" prefHeight="20.0" prefWidth="139.0" promptText="0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
       <Label layoutX="189.0" layoutY="209.0" styleClass="label-text-success" text="Montant TTC" />
