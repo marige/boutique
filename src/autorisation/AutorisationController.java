@@ -19,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TitledPane;
 import javafx.scene.control.cell.PropertyValueFactory;
 import superpackage.SuperClass;
 import utilisateur.Utilisateur;
@@ -40,7 +41,9 @@ public class AutorisationController extends SuperClass implements Initializable 
     @FXML
     private TableColumn<Autorisation, Controler> cln_fonctional_user;
     @FXML
-    private TableColumn<Controler, String> cln_fonctionalite_exist;
+    private TableColumn<Controler, String> cln_fonctionalite_exist;   
+    @FXML
+    private TitledPane panneauUser;
     
     AutorisationJpaController autocon= new AutorisationJpaController();
     ControlerJpaController concon= new ControlerJpaController();
@@ -73,9 +76,11 @@ public class AutorisationController extends SuperClass implements Initializable 
     private void clickComboUser(ActionEvent event) {
         listAutorisaUser.clear();
         userSelect=cmbUtilisateur.getValue();
+        if(userSelect!=null){
         ancienneAutorisation=autocon.getUserAutorisation(userSelect);
         listAutorisaUser.addAll(ancienneAutorisation);
-        
+        panneauUser.setText("Fonctions autorisées à "+userSelect.getNom());
+        }
     }
      
     @FXML

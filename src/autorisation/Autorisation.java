@@ -29,7 +29,8 @@ import utilisateur.Utilisateur;
 @Table(name = "autorisation")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "findUserAutorisation", query = "SELECT a FROM Autorisation a where a.utilisateur=:utilisateur"),})
+    @NamedQuery(name = "findUserAutorisation", query = "SELECT a FROM Autorisation a where a.utilisateur=:utilisateur"),
+    @NamedQuery(name = "isAuthorized", query = "SELECT a FROM Autorisation a where a.utilisateur.idutilisateur=:iduser and a.controler.nomcontroler=:controlerName"),})
 public class Autorisation implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id

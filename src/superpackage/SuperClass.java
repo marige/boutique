@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
@@ -21,6 +22,7 @@ import javafx.scene.control.ButtonType;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import utilisateur.Utilisateur;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -37,6 +39,7 @@ public class SuperClass {
     private EntityManagerFactory emf=null;
     EntityManagerFactory managerFactory = null;
     public static  BddInfo bi;
+    public static Utilisateur user;
     
     public SuperClass(){
           bi=new BddInfo().getObjet();   
@@ -50,6 +53,25 @@ public class SuperClass {
           this.emf= Persistence.createEntityManagerFactory("BoutiquePU", persistenceMap);
           return emf.createEntityManager();
     }
+    //pour controler lautorisation sur le formulaire  
+    public boolean isAuthorized(Utilisateur user,String controler){
+      try{
+          EntityManager em=getEntityManager();   
+          List auto= em.createNamedQuery("isAuthorized")
+                                   .setParameter("iduser",user.getIdutilisateur())
+                                   .setParameter("controlerName", controler.toLowerCase())
+                                   .getResultList();
+           if(auto.size()==0)
+              return false;
+           else    
+             return true;
+          }catch(Exception ex){
+             alert("",ex.toString());
+              // return false;
+          }       
+      return false;
+    }
+     
     //formatage des dates
     public String getDateFormatAffichage(Date dt){
          SimpleDateFormat df= new SimpleDateFormat("dd/MM/yyyy");

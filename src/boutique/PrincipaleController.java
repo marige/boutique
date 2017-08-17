@@ -21,6 +21,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import superpackage.SuperClass;
 
 /**
  * FXML Controller class
@@ -28,6 +29,7 @@ import javafx.stage.Stage;
  * @author OBAM
  */
 public class PrincipaleController extends Stage implements Initializable {
+    
     @FXML
     private Button btnVendre;
     @FXML
@@ -50,7 +52,9 @@ public class PrincipaleController extends Stage implements Initializable {
     private JFXButton Utilisateurs;
     @FXML
     private Accordion accordion;
-
+    
+      superpackage.SuperClass sc= new SuperClass();
+    
     /**
      * Initializes the controller class.
      */
@@ -58,56 +62,60 @@ public class PrincipaleController extends Stage implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
       //  accordion.setVisible(false);
     } 
-    private void newForm(String frmName) {
-         
-        try {
+    
+    
+    private void newForm(String packag,String frmName) {
+         if(sc.isAuthorized(SuperClass.user, frmName)||SuperClass.user.getTypeUser().equalsIgnoreCase("administrateur")||SuperClass.user.getTypeUser().equalsIgnoreCase("superutilisateur"))
+         {try {
             anchor.getChildren().clear();
-            AnchorPane anchorVente = FXMLLoader.load(getClass().getResource(frmName+".fxml"));
+            AnchorPane anchorVente = FXMLLoader.load(getClass().getResource("/"+packag+"/"+frmName+".fxml"));
             //VenteController.stage=stage;
             anchor.getChildren().add(anchorVente);
         } catch (IOException ex) {
             Logger.getLogger(PrincipaleController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        }else
+             sc.alert("notification","vous n\'avez pas droit à ce formulaire");
     }
     @FXML
     private void clickVendre(ActionEvent event) {
-       newForm("/vente/vueVente");
+       newForm("vente","vueVente");
     }
     
     @FXML
     private void clickArticle(ActionEvent event) {
-       newForm("/article/vueArticle");
+       newForm("article","vueArticle");
     }
     @FXML
     private void clickFournisseur(ActionEvent event) {
-       newForm("/fournisseur/vueFournisseurs");
+       newForm("fournisseur","vueFournisseurs");
     }
     @FXML
     private void clickBonCommande(ActionEvent event) {
-       newForm("/boncommande/vueBonCommande");
+       newForm("boncommande","vueBonCommande");
     }   
 
     @FXML
     private void clickBtnAjouterCategorie(ActionEvent event) {
-        newForm("/categorie/vueCategorie");
+        newForm("categorie","vueCategorie");
     }
 
     @FXML
     private void btnRptVente(MouseEvent event) {
-          newForm("/vente/rapportVente");
+          newForm("vente","rapportVente");
     }
 
     @FXML
     private void clickedReceptionBon(ActionEvent event) {
-        newForm("/boncommande/vueReceptionCommande");
+        newForm("boncommande","vueReceptionCommande");
     }
     @FXML
     private void clickInfoSociete(MouseEvent event) {
-        newForm("/societe/Societe");
+        newForm("societe","Societe");
     }
     @FXML
     private void clickListeVente(ActionEvent event) {
-           newForm("/vente/listeVente");
+           newForm("vente","listeVente");
     }
  
 
@@ -123,7 +131,7 @@ public class PrincipaleController extends Stage implements Initializable {
     }
     @FXML
     private void clickCreerUtilsateur(ActionEvent event) {
-            newForm("/utilisateur/nouvelutilisateur");
+            newForm("utilisateur","nouvelutilisateur");
     }
 
     @FXML
@@ -133,11 +141,11 @@ public class PrincipaleController extends Stage implements Initializable {
 
     @FXML
     private void clickAjouterControler(ActionEvent event) {
-         newForm("/controller/ajoutcontroler");
+         newForm("controller","ajoutcontroler");
     }
     @FXML
     private void clickDroitAcces(ActionEvent event){
-         newForm("/autorisation/autorisation");
+         newForm("autorisation","autorisation");
     }
     
   

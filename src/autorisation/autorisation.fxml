@@ -7,22 +7,22 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="autorisation.AutorisationController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="autorisation.AutorisationController">
    <children>
-      <ComboBox fx:id="cmbUtilisateur" layoutX="134.0" layoutY="19.0" onAction="#clickComboUser" prefHeight="25.0" prefWidth="200.0" />
-      <Text layoutX="69.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Utilisateur" />
-      <TableView fx:id="tbv_fonction_dispo" layoutX="14.0" layoutY="81.0" prefHeight="308.0" prefWidth="200.0">
+      <ComboBox fx:id="cmbUtilisateur" layoutX="195.0" layoutY="14.0" onAction="#clickComboUser" prefHeight="25.0" prefWidth="200.0" />
+      <Text layoutX="130.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Utilisateur" />
+      <TableView fx:id="tbv_fonction_dispo" layoutX="14.0" layoutY="81.0" prefHeight="308.0" prefWidth="282.0">
         <columns>
-          <TableColumn fx:id="cln_fonctionalite_exist" prefWidth="199.0" text="Fonctionalité" />
+          <TableColumn fx:id="cln_fonctionalite_exist" prefWidth="281.0" text="Fonctionalités disponibles" />
         </columns>
       </TableView>
-      <Button layoutX="227.0" layoutY="184.0" mnemonicParsing="false" onAction="#clickAjouterFonc" text="Ajouter" />
-      <Button layoutX="227.0" layoutY="224.0" mnemonicParsing="false" onAction="#clickRetirer" prefHeight="25.0" prefWidth="55.0" text="Retirer" />
-      <TitledPane animated="false" layoutX="296.0" layoutY="78.0" prefHeight="308.0" prefWidth="317.0" text="Fonctionalités de ">
+      <Button layoutX="307.0" layoutY="182.0" mnemonicParsing="false" onAction="#clickAjouterFonc" text="Ajouter" />
+      <Button layoutX="307.0" layoutY="222.0" mnemonicParsing="false" onAction="#clickRetirer" prefHeight="25.0" prefWidth="55.0" text="Retirer" />
+      <TitledPane fx:id="panneauUser" animated="false" layoutX="388.0" layoutY="81.0" prefHeight="308.0" prefWidth="317.0" text="Fonctionalités de " textFill="#11b59f">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="285.0" prefWidth="302.0">
                <children>
-                  <TableView fx:id="tbv_fonction_user" layoutX="1.0" layoutY="7.0" prefHeight="274.0" prefWidth="304.0">
+                  <TableView fx:id="tbv_fonction_user" layoutX="1.0" layoutY="7.0" prefHeight="267.0" prefWidth="304.0">
                      <columns>
                         <TableColumn fx:id="cln_fonctional_user" prefWidth="303.0" text="Autorisations" />
                      </columns>
@@ -30,6 +30,9 @@
                </children>
             </AnchorPane>
         </content>
+         <font>
+            <Font size="14.0" />
+         </font>
       </TitledPane>
       <Button layoutX="425.0" layoutY="44.0" mnemonicParsing="false" onAction="#clickValidConfig" prefHeight="25.0" prefWidth="158.0" text="Valider les configurations" />
    </children>

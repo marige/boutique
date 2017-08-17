@@ -175,4 +175,5 @@ public class AutorisationJpaController extends SuperClass implements Serializabl
                 return auto;
     }
     
+    
 }

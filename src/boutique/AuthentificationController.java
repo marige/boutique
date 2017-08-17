@@ -6,8 +6,6 @@
 package boutique;
 import utilisateur.UtilisateurJpaController;
 import utilisateur.Utilisateur;
-//import de.jensd.fx.glyphs.GlyphsDude;
-//import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -61,7 +59,9 @@ public class AuthentificationController extends SuperClass implements Initializa
         if(txtPasse.getText().isEmpty())
             alert("","taper le mot de passe");
         else if(cmbCompteUser.getValue().getMotpasse().equals(txtPasse.getText())){
-           try {
+            //porter en memoir l'utilisateur pour toutes l'application
+            SuperClass.user=cmbCompteUser.getValue();
+            try {
               // Stage s = new Stage();
                Parent root = FXMLLoader.load(getClass().getResource("Principale.fxml"));
                Scene scene = new Scene(root);
