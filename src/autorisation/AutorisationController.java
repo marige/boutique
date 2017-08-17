@@ -74,13 +74,14 @@ public class AutorisationController extends SuperClass implements Initializable 
      Utilisateur userSelect=null;
     @FXML
     private void clickComboUser(ActionEvent event) {
-        listAutorisaUser.clear();
+       try{ listAutorisaUser.clear();
         userSelect=cmbUtilisateur.getValue();
         if(userSelect!=null){
         ancienneAutorisation=autocon.getUserAutorisation(userSelect);
         listAutorisaUser.addAll(ancienneAutorisation);
         panneauUser.setText("Fonctions autorisées à "+userSelect.getNom());
         }
+       }catch(Exception ex){}
     }
      
     @FXML

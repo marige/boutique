@@ -8,20 +8,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<<<<<<< HEAD
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="autorisation.AutorisationController">
-   <children>
-      <ComboBox fx:id="cmbUtilisateur" layoutX="195.0" layoutY="14.0" onAction="#clickComboUser" prefHeight="25.0" prefWidth="200.0" />
-      <Text layoutX="130.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Utilisateur" />
-      <TableView fx:id="tbv_fonction_dispo" layoutX="14.0" layoutY="81.0" prefHeight="308.0" prefWidth="282.0">
-        <columns>
-          <TableColumn fx:id="cln_fonctionalite_exist" prefWidth="281.0" text="Fonctionalités disponibles" />
-        </columns>
-      </TableView>
-      <Button layoutX="307.0" layoutY="182.0" mnemonicParsing="false" onAction="#clickAjouterFonc" text="Ajouter" />
-      <Button layoutX="307.0" layoutY="222.0" mnemonicParsing="false" onAction="#clickRetirer" prefHeight="25.0" prefWidth="55.0" text="Retirer" />
-      <TitledPane fx:id="panneauUser" animated="false" layoutX="388.0" layoutY="81.0" prefHeight="308.0" prefWidth="317.0" text="Fonctionalités de " textFill="#11b59f">
-=======
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="autorisation.AutorisationController">
    <children>
       <ComboBox fx:id="cmbUtilisateur" layoutX="134.0" layoutY="19.0" onAction="#clickComboUser" prefHeight="25.0" prefWidth="200.0" />
@@ -55,7 +41,6 @@
             </ImageView>
          </graphic></Button>
       <TitledPane animated="false" layoutX="325.0" layoutY="81.0" prefHeight="308.0" prefWidth="317.0" text="Fonctionalités de ">
->>>>>>> 3960c22eacf260c65fd86f31329f8eddb44b034c
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="285.0" prefWidth="302.0">
                <children>
