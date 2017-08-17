@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,20 +8,33 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="252.0" prefWidth="295.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="configuration.ConnectDbbController">
+<AnchorPane id="AnchorPane" prefHeight="252.0" prefWidth="295.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="configuration.ConnectDbbController">
    <children>
-      <Text layoutX="33.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse Ip" />
+      <Text layoutX="14.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse Ip" />
       <TextField fx:id="txtIp" layoutX="91.0" layoutY="36.0" prefHeight="25.0" prefWidth="169.0" />
       <TextField fx:id="txtBdd" layoutX="91.0" layoutY="69.0" prefHeight="25.0" prefWidth="169.0" />
-      <Text layoutX="35.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom bdd" />
+      <Text layoutX="14.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom bdd" />
       <TextField fx:id="txtPort" layoutX="91.0" layoutY="100.0" prefHeight="25.0" prefWidth="169.0" />
-      <Text layoutX="61.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Port" />
+      <Text layoutX="14.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Port" />
       <TextField fx:id="txtUser" layoutX="91.0" layoutY="132.0" prefHeight="25.0" prefWidth="169.0" />
-      <Text layoutX="33.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Utilisateur" />
+      <Text layoutX="10.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Utilisateur" />
       <PasswordField fx:id="txtPass" layoutX="91.0" layoutY="164.0" prefHeight="25.0" prefWidth="169.0" />
-      <Text layoutX="14.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe" />
-      <Button layoutX="96.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#clickAppliquer" prefHeight="25.0" prefWidth="71.0" text="Appliquer" />
-      <Button layoutX="182.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#clickTester" prefHeight="25.0" prefWidth="55.0" text="Tester" />
+      <Text layoutX="5.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe" />
+      <Button layoutX="52.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#clickAppliquer" prefHeight="25.0" prefWidth="115.0" text="Appliquer">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/boutique_ico/ok.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button layoutX="182.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#clickTester" prefHeight="30.0" prefWidth="87.0" text="Tester">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/Resources_icones/ribbon_help_big.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
    </children>
 </AnchorPane>
