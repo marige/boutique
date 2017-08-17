@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,6 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<<<<<<< HEAD
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="autorisation.AutorisationController">
    <children>
       <ComboBox fx:id="cmbUtilisateur" layoutX="195.0" layoutY="14.0" onAction="#clickComboUser" prefHeight="25.0" prefWidth="200.0" />
@@ -19,12 +21,54 @@
       <Button layoutX="307.0" layoutY="182.0" mnemonicParsing="false" onAction="#clickAjouterFonc" text="Ajouter" />
       <Button layoutX="307.0" layoutY="222.0" mnemonicParsing="false" onAction="#clickRetirer" prefHeight="25.0" prefWidth="55.0" text="Retirer" />
       <TitledPane fx:id="panneauUser" animated="false" layoutX="388.0" layoutY="81.0" prefHeight="308.0" prefWidth="317.0" text="Fonctionalités de " textFill="#11b59f">
+=======
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="autorisation.AutorisationController">
+   <children>
+      <ComboBox fx:id="cmbUtilisateur" layoutX="134.0" layoutY="19.0" onAction="#clickComboUser" prefHeight="25.0" prefWidth="200.0" />
+      <Text layoutX="47.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Utilisateur" />
+      <TableView fx:id="tbv_fonction_dispo" layoutX="14.0" layoutY="81.0" prefHeight="308.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="cln_fonctionalite_exist" prefWidth="199.0" text="Fonctionalité">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/Resources_icones/list-icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
+        </columns>
+      </TableView>
+      <Button layoutX="227.0" layoutY="171.0" mnemonicParsing="false" onAction="#clickAjouterFonc" text="Ajouter">
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/boutique_ico/plus.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button layoutX="227.0" layoutY="224.0" mnemonicParsing="false" onAction="#clickRetirer" prefHeight="30.0" prefWidth="89.0" text="Retirer">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/boutique_ico/Remove-icon.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <TitledPane animated="false" layoutX="325.0" layoutY="81.0" prefHeight="308.0" prefWidth="317.0" text="Fonctionalités de ">
+>>>>>>> 3960c22eacf260c65fd86f31329f8eddb44b034c
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="285.0" prefWidth="302.0">
                <children>
                   <TableView fx:id="tbv_fonction_user" layoutX="1.0" layoutY="7.0" prefHeight="267.0" prefWidth="304.0">
                      <columns>
-                        <TableColumn fx:id="cln_fonctional_user" prefWidth="303.0" text="Autorisations" />
+                        <TableColumn fx:id="cln_fonctional_user" prefWidth="303.0" text="Autorisations">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/Resources_icones/Exclamation.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></TableColumn>
                      </columns>
                   </TableView>
                </children>
@@ -34,6 +78,13 @@
             <Font size="14.0" />
          </font>
       </TitledPane>
-      <Button layoutX="425.0" layoutY="44.0" mnemonicParsing="false" onAction="#clickValidConfig" prefHeight="25.0" prefWidth="158.0" text="Valider les configurations" />
+      <Button layoutX="394.0" layoutY="44.0" mnemonicParsing="false" onAction="#clickValidConfig" prefHeight="29.0" prefWidth="215.0" text="Valider les configurations">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/boutique_ico/ok.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
    </children>
 </AnchorPane>

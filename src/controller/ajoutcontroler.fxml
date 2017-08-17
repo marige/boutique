@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -9,18 +10,46 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="424.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AjoutcontrolerController">
    <children>
-      <Button fx:id="btnAjouter" layoutX="145.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#clickAjouter" prefHeight="25.0" prefWidth="60.0" text="Ajouter" />
+      <Button fx:id="btnAjouter" layoutX="111.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#clickAjouter" prefHeight="30.0" prefWidth="94.0" text="Ajouter">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/boutique_ico/plus.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
       <TableView fx:id="tbvListControler" layoutX="12.0" layoutY="150.0" onMouseClicked="#clickTableV" prefHeight="200.0" prefWidth="480.0">
         <columns>
-          <TableColumn fx:id="cln_nomcontroler" prefWidth="179.0" text="Nom controler" />
+          <TableColumn fx:id="cln_nomcontroler" prefWidth="179.0" text="Nom controler">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/Resources_icones/pdf_xps_doc.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
           <TableColumn fx:id="cln_description" prefWidth="293.0" text="Description" />
         </columns>
       </TableView>
       <TextField fx:id="txtNomControler" layoutX="147.0" layoutY="38.0" prefHeight="25.0" prefWidth="265.0" />
-      <Text layoutX="59.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom controler" />
-      <Text layoutX="76.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
       <TextField fx:id="txtdescription" layoutX="145.0" layoutY="71.0" prefHeight="25.0" prefWidth="265.0" />
-      <Button fx:id="btnSupprimer" layoutX="227.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#clickSuppression" prefHeight="25.0" prefWidth="78.0" text="Supprimer" />
-      <Button fx:id="btnModifier" layoutX="325.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#clickModification" prefHeight="25.0" prefWidth="78.0" text="Modifier" />
+      <Button fx:id="btnSupprimer" layoutX="217.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#clickSuppression" prefHeight="30.0" prefWidth="115.0" text="Supprimer">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/Resources_icones/splitcon_firstlook_Delete.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="btnModifier" layoutX="351.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#clickModification" prefHeight="30.0" prefWidth="105.0" text="Modifier">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/boutique_ico/edit.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Label layoutX="39.0" layoutY="43.0" text="Nom controler" />
+      <Label layoutX="58.0" layoutY="76.0" text="Description" />
    </children>
 </AnchorPane>

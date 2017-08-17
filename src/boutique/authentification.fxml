@@ -28,7 +28,7 @@
             <!--FontAwesomeIconView fill="BLUE" glyphName="LOCK" /-->
          </graphic>
          <graphic>
-            <ImageView fitHeight="46.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="46.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../ressources/boutique_ico/logo.png" />
                </image>

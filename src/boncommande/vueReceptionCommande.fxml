@@ -21,7 +21,7 @@
             <Font size="14.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="26.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="26.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../ressources/boutique_ico/ok.png" />
                </image>
@@ -30,9 +30,9 @@
       <Label layoutX="406.0" layoutY="36.0" text="Date de reception" />
       <Button fx:id="btn_search" layoutX="281.0" layoutY="31.0" mnemonicParsing="false" onAction="#search" text="trouver">
          <graphic>
-            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../ressources/boutique_ico/blue-play-button-icon-17903.png" />
+                  <Image url="@../ressources/Resources_icones/search3.png" />
                </image>
             </ImageView>
          </graphic></Button>
@@ -40,14 +40,14 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="89.0" prefWidth="604.0">
                <children>
-                  <TextField fx:id="txtlibcommande" editable="false" layoutX="72.0" layoutY="15.0" prefHeight="25.0" prefWidth="226.0" />
+                  <TextField fx:id="txtlibcommande" editable="false" layoutX="83.0" layoutY="14.0" prefHeight="25.0" prefWidth="226.0" />
                   <Label layoutX="6.0" layoutY="19.0" text="Libellé bon" />
                   <Label layoutX="7.0" layoutY="50.0" text="Fournisseur" />
-                  <TextField fx:id="txtfournisseur" editable="false" layoutX="72.0" layoutY="44.0" prefHeight="25.0" prefWidth="226.0" />
-                  <Label layoutX="322.0" layoutY="20.0" text="Date bon" />
-                  <TextField fx:id="dtdatebon" editable="false" layoutX="386.0" layoutY="16.0" prefHeight="25.0" prefWidth="172.0" />
-                  <Label layoutX="312.0" layoutY="49.0" text="Montant bon" />
-                  <TextField fx:id="txtmontantbon" editable="false" layoutX="386.0" layoutY="45.0" prefHeight="25.0" prefWidth="172.0" />
+                  <TextField fx:id="txtfournisseur" editable="false" layoutX="83.0" layoutY="44.0" prefHeight="25.0" prefWidth="226.0" />
+                  <Label layoutX="324.0" layoutY="19.0" text="Date bon" />
+                  <TextField fx:id="dtdatebon" editable="false" layoutX="411.0" layoutY="14.0" prefHeight="25.0" prefWidth="172.0" />
+                  <Label layoutX="324.0" layoutY="49.0" text="Montant bon" />
+                  <TextField fx:id="txtmontantbon" editable="false" layoutX="411.0" layoutY="45.0" prefHeight="25.0" prefWidth="172.0" />
                </children>
             </AnchorPane>
         </content>
