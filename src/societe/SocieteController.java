@@ -39,6 +39,7 @@ public class SocieteController extends SuperClass implements Initializable {
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+       try{
         sc=sccon.findSociete(1);
         txtAdresse.setText(sc.getAdresse());
         txtEntete.setText(sc.getEntetedocument());
@@ -46,7 +47,9 @@ public class SocieteController extends SuperClass implements Initializable {
         txtNom.setText(sc.getLibelle());
         txtPieds.setText(sc.getPiedsdocument());
         txtRegis.setText(sc.getRcm());
-       
+       }catch(Exception ex){
+           
+       }
     }    
     
     @FXML
