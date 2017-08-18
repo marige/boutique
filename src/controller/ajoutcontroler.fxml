@@ -10,12 +10,12 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="424.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AjoutcontrolerController">
    <children>
-      <ImageView fitHeight="489.0" fitWidth="670.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="570.0" fitWidth="750.0" pickOnBounds="true">
          <image>
             <Image url="@../ressources/bg.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="btnAjouter" layoutX="194.0" layoutY="144.0" mnemonicParsing="false" onMouseClicked="#clickAjouter" prefHeight="30.0" prefWidth="94.0" text="Ajouter">
+      <Button fx:id="btnAjouter" layoutX="190.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#clickAjouter" prefHeight="30.0" prefWidth="94.0" text="Ajouter">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -23,7 +23,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <TableView fx:id="tbvListControler" layoutX="95.0" layoutY="179.0" onMouseClicked="#clickTableV" prefHeight="200.0" prefWidth="480.0">
+      <TableView fx:id="tbvListControler" layoutX="91.0" layoutY="235.0" onMouseClicked="#clickTableV" prefHeight="200.0" prefWidth="480.0">
         <columns>
           <TableColumn fx:id="cln_nomcontroler" prefWidth="179.0" text="Nom controler">
                <graphic>
@@ -36,9 +36,9 @@
           <TableColumn fx:id="cln_description" prefWidth="293.0" text="Description" />
         </columns>
       </TableView>
-      <TextField fx:id="txtNomControler" layoutX="230.0" layoutY="67.0" prefHeight="25.0" prefWidth="265.0" />
-      <TextField fx:id="txtdescription" layoutX="228.0" layoutY="100.0" prefHeight="25.0" prefWidth="265.0" />
-      <Button fx:id="btnSupprimer" layoutX="300.0" layoutY="144.0" mnemonicParsing="false" onMouseClicked="#clickSuppression" prefHeight="30.0" prefWidth="115.0" text="Supprimer">
+      <TextField fx:id="txtNomControler" layoutX="226.0" layoutY="123.0" prefHeight="25.0" prefWidth="265.0" />
+      <TextField fx:id="txtdescription" layoutX="224.0" layoutY="156.0" prefHeight="25.0" prefWidth="265.0" />
+      <Button fx:id="btnSupprimer" layoutX="296.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#clickSuppression" prefHeight="30.0" prefWidth="115.0" text="Supprimer">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -46,7 +46,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button fx:id="btnModifier" layoutX="434.0" layoutY="144.0" mnemonicParsing="false" onMouseClicked="#clickModification" prefHeight="30.0" prefWidth="105.0" text="Modifier">
+      <Button fx:id="btnModifier" layoutX="430.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#clickModification" prefHeight="30.0" prefWidth="105.0" text="Modifier">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -54,7 +54,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Label layoutX="122.0" layoutY="72.0" text="Nom controler" />
-      <Label layoutX="141.0" layoutY="105.0" text="Description" />
+      <Label layoutX="118.0" layoutY="128.0" text="Nom controler" />
+      <Label layoutX="137.0" layoutY="161.0" text="Description" />
    </children>
 </AnchorPane>

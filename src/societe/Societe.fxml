@@ -10,18 +10,15 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="460.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="societe.SocieteController">
    <children>
-      <ImageView fitHeight="471.0" fitWidth="714.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="570.0" fitWidth="750.0" pickOnBounds="true">
          <image>
             <Image url="@../ressources/bg4.jpg" />
          </image>
       </ImageView>
-      <TextField fx:id="txtNom" layoutX="177.0" layoutY="29.0" prefHeight="25.0" prefWidth="233.0" />
-      <TextField fx:id="txtAdresse" layoutX="177.0" layoutY="114.0" prefHeight="25.0" prefWidth="233.0" />
-      <TextField fx:id="txtRegis" layoutX="177.0" layoutY="86.0" prefHeight="25.0" prefWidth="233.0" />
     <AnchorPane layoutX="169.0" layoutY="149.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="0.0" />
-      <TitledPane layoutX="88.0" layoutY="149.0" prefHeight="180.0" prefWidth="370.0" text="FACTURES ET IMPRIMES">
+      <TitledPane layoutX="110.0" layoutY="239.0" prefHeight="180.0" prefWidth="370.0" text="FACTURES ET IMPRIMES">
          <content>
-            <Pane prefHeight="153.0" prefWidth="368.0">
+            <Pane prefHeight="154.0" prefWidth="427.0">
                <children>
                   <Text layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entête de page" />
                   <Text layoutX="26.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pieds de page" />
@@ -31,7 +28,7 @@
             </Pane>
          </content>
       </TitledPane>
-      <Button layoutX="167.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#clickAppliquer" prefHeight="25.0" prefWidth="266.0" text="Appliquer">
+      <Button layoutX="191.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#clickAppliquer" prefHeight="25.0" prefWidth="266.0" text="Appliquer">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -39,10 +36,21 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <TextField fx:id="txtIfu" layoutX="177.0" layoutY="58.0" prefHeight="25.0" prefWidth="233.0" />
-      <Label layoutX="83.0" layoutY="34.0" text="Nom Société" />
-      <Label layoutX="133.0" layoutY="63.0" text="IFU" />
-      <Label layoutX="125.0" layoutY="91.0" text="RCM" />
-      <Label layoutX="106.0" layoutY="119.0" text="Adresse" />
+      <TitledPane animated="false" layoutX="110.0" layoutY="36.0" prefHeight="192.0" prefWidth="400.0" text="Enseigne Entreprise">
+         <content>
+            <Pane prefHeight="166.0" prefWidth="427.0">
+               <children>
+                  <TextField fx:id="txtNom" layoutX="178.0" layoutY="14.0" prefHeight="25.0" prefWidth="233.0" />
+                  <Label layoutX="32.0" layoutY="19.0" text="Nom Société" />
+                  <TextField fx:id="txtIfu" layoutX="178.0" layoutY="46.0" prefHeight="25.0" prefWidth="233.0" />
+                  <Label layoutX="92.0" layoutY="51.0" text="IFU" />
+                  <TextField fx:id="txtRegis" layoutX="178.0" layoutY="82.0" prefHeight="25.0" prefWidth="233.0" />
+                  <Label layoutX="87.0" layoutY="87.0" text="RCM" />
+                  <TextField fx:id="txtAdresse" layoutX="178.0" layoutY="114.0" prefHeight="25.0" prefWidth="233.0" />
+                  <Label layoutX="61.0" layoutY="119.0" text="Adresse" />
+               </children>
+            </Pane>
+         </content>
+      </TitledPane>
    </children>
 </AnchorPane>

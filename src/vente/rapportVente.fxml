@@ -10,12 +10,12 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vente.RapportVenteController">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="752.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="570.0" fitWidth="750.0" pickOnBounds="true">
          <image>
             <Image url="@../ressources/bg4.jpg" />
          </image>
       </ImageView>
-      <TableView fx:id="tvRapport" layoutX="11.0" layoutY="143.0" prefHeight="256.0" prefWidth="585.0">
+      <TableView fx:id="tvRapport" layoutX="48.0" layoutY="203.0" prefHeight="256.0" prefWidth="585.0">
         <columns>
           <TableColumn fx:id="cln_date" prefWidth="91.0" text="Date" />
           <TableColumn fx:id="cln_article" prefWidth="188.0" text="Article" />
@@ -25,11 +25,11 @@
             <TableColumn fx:id="cln_client" prefWidth="116.0" text="Client" />
         </columns>
       </TableView>
-      <Text layoutX="32.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date début" />
-      <DatePicker fx:id="dtDebut" layoutX="114.0" layoutY="70.0" prefHeight="25.0" prefWidth="131.0" />
-      <DatePicker fx:id="dtFin" layoutX="326.0" layoutY="70.0" prefHeight="25.0" prefWidth="131.0" />
-      <Text layoutX="268.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date fin" />
-      <Button fx:id="btnAfficher" layoutX="216.0" layoutY="110.0" mnemonicParsing="false" onMouseClicked="#clickBtnAfficher" prefHeight="25.0" prefWidth="103.0" text="Afficher">
+      <Text layoutX="69.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date début" />
+      <DatePicker fx:id="dtDebut" layoutX="151.0" layoutY="130.0" prefHeight="25.0" prefWidth="131.0" />
+      <DatePicker fx:id="dtFin" layoutX="363.0" layoutY="130.0" prefHeight="25.0" prefWidth="131.0" />
+      <Text layoutX="305.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date fin" />
+      <Button fx:id="btnAfficher" layoutX="253.0" layoutY="170.0" mnemonicParsing="false" onMouseClicked="#clickBtnAfficher" prefHeight="25.0" prefWidth="103.0" text="Afficher">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -37,8 +37,8 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Text layoutX="410.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" wrappingWidth="41.6015625" />
-      <TextField fx:id="txtSomme" layoutX="452.0" layoutY="21.0" prefHeight="25.0" prefWidth="120.0" promptText="total du rapport" style="-fx-background-color: F3FA5C;">
+      <Text layoutX="447.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" wrappingWidth="41.6015625" />
+      <TextField fx:id="txtSomme" layoutX="489.0" layoutY="81.0" prefHeight="25.0" prefWidth="120.0" promptText="total du rapport" style="-fx-background-color: F3FA5C;">
          <font>
             <Font size="11.0" />
          </font>

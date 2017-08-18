@@ -9,12 +9,12 @@
 
 <AnchorPane id="AnchorPane" fx:id="frmArticle" prefHeight="417.0" prefWidth="698.0" stylesheets="@../design.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="article.VueArticleController">
    <children>
-      <ImageView fitHeight="572.0" fitWidth="704.0" pickOnBounds="true">
+      <ImageView fitHeight="572.0" fitWidth="750.0" pickOnBounds="true">
          <image>
             <Image url="@../ressources/bg_article.jpg" />
          </image>
       </ImageView>
-      <TableView id="table" fx:id="table" layoutX="32.0" layoutY="200.0" onMouseClicked="#clickTable" prefHeight="209.0" prefWidth="614.0">
+      <TableView id="table" fx:id="table" layoutX="55.0" layoutY="228.0" onMouseClicked="#clickTable" prefHeight="209.0" prefWidth="614.0">
         <columns>
           <TableColumn id="NOM" fx:id="cln_idarticle" prefWidth="75.0" text="code article" />
           <TableColumn id="PRENOMS" fx:id="cln_libarticle" prefWidth="294.0" text="Libellé article" />
@@ -23,7 +23,7 @@
             <TableColumn fx:id="cln_stocksecurite" prefWidth="98.0" text="Stock securité" />
         </columns>
       </TableView>
-      <Button fx:id="btnAjouter" layoutX="281.0" layoutY="157.0" mnemonicParsing="false" onAction="#action" prefHeight="23.0" prefWidth="102.0" text="Ajouter">
+      <Button fx:id="btnAjouter" layoutX="304.0" layoutY="185.0" mnemonicParsing="false" onAction="#action" prefHeight="23.0" prefWidth="102.0" text="Ajouter">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -31,17 +31,17 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <ComboBox fx:id="cmbCategorie" layoutX="249.0" layoutY="26.0" prefHeight="25.0" prefWidth="294.0" />
-      <Label layoutX="128.0" layoutY="31.0" text="Categorie" textAlignment="RIGHT" />
-      <TextField fx:id="txtLibarticle" layoutX="249.0" layoutY="56.0" prefHeight="25.0" prefWidth="294.0" />
-      <Label layoutX="128.0" layoutY="60.0" text="Libellé article" textAlignment="RIGHT" />
-      <Label layoutX="128.0" layoutY="93.0" text="Quantité stock" textAlignment="RIGHT" />
-      <TextField fx:id="txtStock" layoutX="249.0" layoutY="91.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="92.0" />
-      <TextField fx:id="txtPrixvente" layoutX="441.0" layoutY="89.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="102.0" />
-      <Label layoutX="359.0" layoutY="94.0" text="Prix vente" textAlignment="RIGHT" />
-      <Label layoutX="295.0" layoutY="126.0" text="Stock de sécurité" textAlignment="RIGHT" />
-      <TextField fx:id="txtStockSecurite" layoutX="441.0" layoutY="122.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="102.0" />
-      <Button fx:id="btnModifier" layoutX="459.0" layoutY="155.0" mnemonicParsing="false" onMouseClicked="#btnModifierClick" prefHeight="23.0" prefWidth="108.0" text="Modifier">
+      <ComboBox fx:id="cmbCategorie" layoutX="272.0" layoutY="54.0" prefHeight="25.0" prefWidth="294.0" />
+      <Label layoutX="151.0" layoutY="59.0" text="Categorie" textAlignment="RIGHT" />
+      <TextField fx:id="txtLibarticle" layoutX="272.0" layoutY="84.0" prefHeight="25.0" prefWidth="294.0" />
+      <Label layoutX="151.0" layoutY="88.0" text="Libellé article" textAlignment="RIGHT" />
+      <Label layoutX="151.0" layoutY="121.0" text="Quantité stock" textAlignment="RIGHT" />
+      <TextField fx:id="txtStock" layoutX="272.0" layoutY="119.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="92.0" />
+      <TextField fx:id="txtPrixvente" layoutX="464.0" layoutY="117.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="102.0" />
+      <Label layoutX="382.0" layoutY="122.0" text="Prix vente" textAlignment="RIGHT" />
+      <Label layoutX="318.0" layoutY="154.0" text="Stock de sécurité" textAlignment="RIGHT" />
+      <TextField fx:id="txtStockSecurite" layoutX="464.0" layoutY="150.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="102.0" />
+      <Button fx:id="btnModifier" layoutX="482.0" layoutY="183.0" mnemonicParsing="false" onMouseClicked="#btnModifierClick" prefHeight="23.0" prefWidth="108.0" text="Modifier">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -49,7 +49,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button fx:id="btnNouveau" layoutX="121.0" layoutY="157.0" mnemonicParsing="false" onMouseClicked="#btnNouveauClick" prefHeight="23.0" prefWidth="108.0" text="Nouveau">
+      <Button fx:id="btnNouveau" layoutX="144.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#btnNouveauClick" prefHeight="23.0" prefWidth="108.0" text="Nouveau">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>

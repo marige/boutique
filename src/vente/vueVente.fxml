@@ -9,9 +9,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" onMouseClicked="#tvClicked" prefHeight="522.0" prefWidth="836.0" stylesheets="@../design.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vente.VueVenteController">
+<AnchorPane id="AnchorPane" onMouseClicked="#tvClicked" prefHeight="570.0" prefWidth="713.0" stylesheets="@../design.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vente.VueVenteController">
    <children>
-      <ImageView blendMode="SRC_ATOP" fitHeight="522.0" fitWidth="968.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView blendMode="SRC_ATOP" fitHeight="570.0" fitWidth="750.0" pickOnBounds="true">
          <image>
             <Image url="@../ressources/arrier_vente.jpg" />
          </image>

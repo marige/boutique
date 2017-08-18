@@ -12,7 +12,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="462.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boncommande.VueReceptionCommandeController">
    <children>
-      <ImageView fitHeight="504.0" fitWidth="820.0" pickOnBounds="true">
+      <ImageView fitHeight="570.0" fitWidth="820.0" pickOnBounds="true">
          <image>
             <Image url="@../ressources/mountainsday.png" />
          </image>

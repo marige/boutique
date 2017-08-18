@@ -11,7 +11,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="518.0" prefWidth="707.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fournisseur.VueFournisseursController">
    <children>
-      <ImageView fitHeight="528.0" fitWidth="955.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="570.0" fitWidth="750.0" pickOnBounds="true">
          <image>
             <Image url="@../ressources/bg3.jpg" />
          </image>
