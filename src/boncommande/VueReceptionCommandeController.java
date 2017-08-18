@@ -87,7 +87,7 @@ public class VueReceptionCommandeController extends SuperClass implements Initia
          txtlibcommande.setText(bonC.getLibBonCommande());
          txtmontantbon.setText(this.formatageMontant(bonC.getMontant()));
          dtdatebon.setText(this.getDateFormatAffichage(bonC.getDateBonCommande()));
-         les_details.addAll(detailController.findDetailBonCommande(Integer.parseInt(txt_id_bon_commande.getText())));   
+         les_details.addAll(bonC.getLisBonCommande());   
         }
     }
    
@@ -100,6 +100,13 @@ public class VueReceptionCommandeController extends SuperClass implements Initia
         bonC.setReception(true);
         bonC.setDatereception(this.convertStringToDate(dt_date_reception.getValue()));
             bcc.edit(bonC);
+        //mise a jour du stock
+         Article a=null;
+         for(DetailBonCommande d:bonC.getLisBonCommande()){
+             a=d.getArticle();
+              a.setStock(a.getStock()+d.getQuantiteDetailBonCommande());
+             articleC.edit(a);
+         }
         alert("information","Bon de commande reçu");
         } catch (NonexistentEntityException ex) {
             Logger.getLogger(VueReceptionCommandeController.class.getName()).log(Level.INFO, null, ex);
