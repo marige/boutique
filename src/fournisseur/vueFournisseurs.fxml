@@ -11,6 +11,11 @@
 
 <AnchorPane id="AnchorPane" prefHeight="518.0" prefWidth="707.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fournisseur.VueFournisseursController">
    <children>
+      <ImageView fitHeight="528.0" fitWidth="955.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../ressources/bg3.jpg" />
+         </image>
+      </ImageView>
       <Label layoutX="292.0" layoutY="20.0" text="MES FOURNISSEURS" />
       <TableView fx:id="tbl_fournisseurs" layoutX="33.0" layoutY="195.0" onMouseClicked="#tableFournisseurClicked" prefHeight="317.0" prefWidth="654.0">
         <columns>
