@@ -36,7 +36,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <TitledPane animated="false" layoutX="110.0" layoutY="36.0" prefHeight="192.0" prefWidth="400.0" text="Enseigne Entreprise">
+      <TitledPane animated="false" layoutX="110.0" layoutY="36.0" prefHeight="192.0" prefWidth="426.0" text="Enseigne Entreprise">
          <content>
             <Pane prefHeight="166.0" prefWidth="426.0">
                <children>
