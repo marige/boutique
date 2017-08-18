@@ -53,7 +53,11 @@ public class PrincipaleController extends Stage implements Initializable {
     @FXML
     private Accordion accordion;
     
-      superpackage.SuperClass sc= new SuperClass();
+    superpackage.SuperClass sc= new SuperClass();
+    @FXML
+    private JFXButton btnVendre1;
+    @FXML
+    private JFXButton btnAjouterCategorie1;
     
     /**
      * Initializes the controller class.
@@ -147,7 +151,10 @@ public class PrincipaleController extends Stage implements Initializable {
     private void clickDroitAcces(ActionEvent event){
          newForm("autorisation","autorisation");
     }
-    
+    @FXML
+    private void clickListeBon(ActionEvent event){
+        newForm("boncommande","listeBoncommande");
+    }
   
     
     

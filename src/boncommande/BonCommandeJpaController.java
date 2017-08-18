@@ -7,10 +7,12 @@ package boncommande;
 
 import exceptions.NonexistentEntityException;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.TemporalType;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import superpackage.SuperClass;
@@ -123,6 +125,16 @@ public class BonCommandeJpaController extends SuperClass implements Serializable
         } finally {
             em.close();
         }
+    }
+    
+     public List<BonCommande> getListBonCommandeParDate(Date dateDebut,Date dateFin){
+       EntityManager em = getEntityManager();
+        List<BonCommande> l=  em.createNamedQuery("Boncommande.bonParPeriode")
+                .setParameter("dateFin",dateFin, TemporalType.DATE)
+                .setParameter("dateDebut",dateDebut,TemporalType.DATE)
+                .getResultList();
+        em.close();
+       return l;
     }
     
 }

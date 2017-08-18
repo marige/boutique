@@ -88,7 +88,7 @@ public class VueReceptionCommandeController extends SuperClass implements Initia
          txtlibcommande.setText(bonC.getLibBonCommande());
          txtmontantbon.setText(this.formatageMontant(bonC.getMontant()));
          dtdatebon.setText(this.getDateFormatAffichage(bonC.getDateBonCommande()));
-         les_details.addAll(bonC.getLisBonCommande());   
+         les_details.addAll(bonC.getDetailBonCommande());   
         }
     }
    
@@ -103,7 +103,7 @@ public class VueReceptionCommandeController extends SuperClass implements Initia
             bcc.edit(bonC);
         //mise a jour du stock
          Article a=null;
-         for(DetailBonCommande d:bonC.getLisBonCommande()){
+         for(DetailBonCommande d:bonC.getDetailBonCommande()){
              a=d.getArticle();
               a.setStock(a.getStock()+d.getQuantiteDetailBonCommande());
              articleC.edit(a);

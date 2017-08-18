@@ -103,11 +103,13 @@ public class ListeVenteController extends SuperClass implements Initializable {
 
     @FXML
     private void clickFacture(MouseEvent event) {
+        if(!tbv_facture.getSelectionModel().isEmpty()){
         //renseigenement de article en vue de maj après
         f=tbv_facture.getSelectionModel().getSelectedItem();
         //liste de vente dans une facture
         listVente.clear();
         listVente.addAll(f.getVenteFacture());
+        }
     }
     @FXML
     void clickAnnulerVente(MouseEvent event) {

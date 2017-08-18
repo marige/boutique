@@ -36,7 +36,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Boncommande.findAll", query = "SELECT b FROM BonCommande b"),
-    @NamedQuery(name = "Boncommande.findByIdBonCommande", query = "SELECT b FROM BonCommande b WHERE b.idBonCommande = :idBonCommande"),
+    @NamedQuery(name = "Boncommande.bonParPeriode", query =  "SELECT b from BonCommande b where b.dateBonCommande BETWEEN :dateDebut and :dateFin order by b.dateBonCommande desc,b.libBonCommande asc"),
+  
     @NamedQuery(name = "Boncommande.findByDateBonCommande", query = "SELECT b FROM BonCommande b WHERE b.dateBonCommande = :dateBonCommande"),
     @NamedQuery(name = "Boncommande.findByDatereception", query = "SELECT b FROM BonCommande b WHERE b.datereception = :datereception"),
     @NamedQuery(name = "Boncommande.findByLibBonCommande", query = "SELECT b FROM BonCommande b WHERE b.libBonCommande = :libBonCommande"),
@@ -78,7 +79,7 @@ public class BonCommande implements Serializable {
     public void setDetailBonCommande(List<DetailBonCommande> d){
         this.detail=d;
     }
-    public List<DetailBonCommande> getLisBonCommande(){
+    public List<DetailBonCommande> getDetailBonCommande(){
         return this.detail;
     }
     

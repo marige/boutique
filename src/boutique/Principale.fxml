@@ -96,6 +96,7 @@
                               </ImageView>
                            </graphic>
                         </JFXButton>
+                        <Button layoutX="16.0" layoutY="186.0" mnemonicParsing="false" onAction="#clickListeBon" prefHeight="27.0" prefWidth="174.0" text="Liste bon de commande" />
                      </children>
                   </AnchorPane>
             </content>
