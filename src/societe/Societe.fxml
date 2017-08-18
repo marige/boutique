@@ -16,7 +16,7 @@
          </image>
       </ImageView>
     <AnchorPane layoutX="169.0" layoutY="149.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="0.0" />
-      <TitledPane layoutX="110.0" layoutY="239.0" prefHeight="180.0" prefWidth="370.0" text="FACTURES ET IMPRIMES">
+      <TitledPane layoutX="110.0" layoutY="239.0" prefHeight="180.0" prefWidth="426.0" text="FACTURES ET IMPRIMES">
          <content>
             <Pane prefHeight="154.0" prefWidth="427.0">
                <children>
