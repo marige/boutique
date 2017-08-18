@@ -1,9 +1,7 @@
 package report;
 import boncommande.BonCommande;
 import facture.Facture;
-import fournisseur.Fournisseur;
 import java.sql.Connection;
-import java.util.Date;
 import java.util.HashMap;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -49,6 +47,22 @@ public class REPORT extends SuperClass {
                     "detailboncommande.puachat from detailboncommande,article " +
                     "where article.idarticle=detailboncommande.idarticle and idboncommande="+bonDeCommande.getIdBonCommande(), parameter);//
     }
+    
+    public void etatBordereau(BonCommande bonDeCommande) throws Exception{
+            HashMap parameter= new HashMap();
+            parameter.put("idboncommande",bonDeCommande.getIdBonCommande()); 
+            parameter.put("datebon",getDateFormatAffichage(bonDeCommande.getDateBonCommande()));
+            parameter.put("fournisseur",bonDeCommande.getFournisseur().getLibFournisseur());   
+            parameter.put("nomsociete",sc.getLibelle());
+            parameter.put("entete",sc.getEntetedocument());
+            parameter.put("pieds",sc.getPiedsdocument());
+            parameter.put("datereception",getDateFormatAffichage(bonDeCommande.getDatereception()));
+            
+            editionReport("bordereau_reception","select article.libarticle,detailboncommande.quantitedetailboncommande," +
+                    "detailboncommande.puachat from detailboncommande,article " +
+                    "where article.idarticle=detailboncommande.idarticle and idboncommande="+bonDeCommande.getIdBonCommande(), parameter);//
+    }
+    
     
     public void etatFacture(Facture f) throws Exception{
          HashMap parameter= new HashMap();

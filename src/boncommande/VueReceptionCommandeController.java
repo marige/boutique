@@ -21,6 +21,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import detailboncommande.DetailBonCommandeJpaController;
 import exceptions.NonexistentEntityException;
+import report.REPORT;
 import superpackage.SuperClass;
 
 /**
@@ -56,7 +57,7 @@ public class VueReceptionCommandeController extends SuperClass implements Initia
     private TextField dtdatebon;
     @FXML
     private TextField txtmontantbon;
-   
+    REPORT r= new REPORT();
 
     /**
      * Initializes the controller class.
@@ -107,7 +108,9 @@ public class VueReceptionCommandeController extends SuperClass implements Initia
               a.setStock(a.getStock()+d.getQuantiteDetailBonCommande());
              articleC.edit(a);
          }
-        alert("information","Bon de commande reçu");
+        if(confirmation("information","Bon de commande reçu \n Imprimer le bordereau?")){
+            r.etatBordereau(bonC);
+        }
         } catch (NonexistentEntityException ex) {
             Logger.getLogger(VueReceptionCommandeController.class.getName()).log(Level.INFO, null, ex);
         } catch (Exception ex) {
