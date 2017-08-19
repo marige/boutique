@@ -25,7 +25,7 @@
             <content>
               <AnchorPane focusTraversable="true" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <JFXButton fx:id="btnVendre" buttonType="RAISED" defaultButton="true" layoutX="6.0" layoutY="7.0" onAction="#clickVendre" prefHeight="25.0" prefWidth="188.0" ripplerFill="#42b3eb" style="-fx-background-color: #5164ae;" text="Vendre" textFill="#eeeeee">
+                        <JFXButton fx:id="btnVendre" defaultButton="true" layoutX="6.0" layoutY="21.0" onAction="#clickVendre" prefHeight="25.0" prefWidth="188.0" text="Vendre">
                            <font>
                               <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                            </font>
@@ -39,8 +39,11 @@
                                  </image>
                               </ImageView>
                            </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </JFXButton>
-                        <JFXButton fx:id="btnVendre1" buttonType="RAISED" defaultButton="true" layoutX="6.0" layoutY="102.0" onAction="#clickListeVente" prefHeight="25.0" prefWidth="188.0" ripplerFill="#42b3eb" style="-fx-background-color: #5164ae;" text="Liste des ventes" textFill="#eeeeee">
+                        <JFXButton fx:id="btnVendre1" defaultButton="true" layoutX="6.0" layoutY="102.0" onAction="#clickListeVente" prefHeight="25.0" prefWidth="188.0" ripplerFill="#42b3eb" text="Liste des ventes">
                            <effect>
                               <Glow level="0.23" />
                            </effect>

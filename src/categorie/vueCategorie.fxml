@@ -11,7 +11,7 @@
    <children>
       <ImageView fitHeight="570.0" fitWidth="750.0" pickOnBounds="true">
          <image>
-            <Image url="@../ressources/bgCathegorie.png" />
+            <Image url="@../ressources/bg.jpg" />
          </image>
       </ImageView>
       <TextField fx:id="txtLibCategorie" layoutX="251.0" layoutY="150.0" prefHeight="25.0" prefWidth="229.0" />
@@ -44,5 +44,6 @@
          </columns>
       </TableView>
       <Label layoutX="119.0" layoutY="154.0" text="Libellé Catégorie" />
+      <Pane layoutX="1.0" prefHeight="38.0" prefWidth="750.0" style="-fx-background-color: grey;" />
    </children>
 </AnchorPane>
