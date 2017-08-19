@@ -9,11 +9,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" onMouseClicked="#tvClicked" prefHeight="570.0" prefWidth="713.0" stylesheets="@../design.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vente.VueVenteController">
+<AnchorPane id="AnchorPane" onMouseClicked="#tvClicked" prefHeight="570.0" prefWidth="773.0" stylesheets="@../design.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vente.VueVenteController">
    <children>
       <ImageView blendMode="SRC_ATOP" fitHeight="570.0" fitWidth="750.0" pickOnBounds="true">
          <image>
-            <Image url="@../ressources/arrier_vente.jpg" />
+            <Image url="@../ressources/116033.jpg" />
          </image>
       </ImageView>
       <Button fx:id="btnAjouterP" layoutX="588.0" layoutY="201.0" mnemonicParsing="false" onMouseClicked="#clickPanier" prefHeight="23.0" prefWidth="120.0" text="Ajouter">
@@ -26,11 +26,46 @@
          </graphic></Button>
       <TableView id="table" fx:id="tvDetailFacture" layoutX="27.0" layoutY="243.0" prefHeight="232.0" prefWidth="682.0">
          <columns>
-            <TableColumn id="NOM" fx:id="cln_code" prefWidth="111.0" text="CodeProduit" />
-            <TableColumn id="PRENOMS" fx:id="cln_libarticle" prefWidth="225.0" text="Libellé produits" />
-            <TableColumn fx:id="cln_qte" prefWidth="101.0" text="Qté" />
-            <TableColumn fx:id="cln_pu" prefWidth="101.0" text="Pu" />
-            <TableColumn fx:id="cln_montant" prefWidth="142.0" text="Montant" />
+            <TableColumn id="NOM" fx:id="cln_code" prefWidth="111.0" text="Code">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/Resources_icones/msoffice_menu_encryptdocument.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
+            <TableColumn id="PRENOMS" fx:id="cln_libarticle" prefWidth="225.0" text="Libellé produits">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/Resources_icones/msoffice_Footer.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
+            <TableColumn fx:id="cln_qte" prefWidth="101.0" text="Qté">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/boutique_ico/stock.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
+            <TableColumn fx:id="cln_pu" prefWidth="101.0" text="Pu">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/boutique_ico/money.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
+            <TableColumn fx:id="cln_montant" prefWidth="142.0" text="Montant">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/Resources_icones/properties.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
          </columns>
       </TableView>
       <TableView id="table" fx:id="tvListProduit" layoutX="23.0" layoutY="47.0" onMouseClicked="#tvClicked" prefHeight="142.0" prefWidth="331.0">
@@ -55,7 +90,7 @@
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../ressources/Resources_icones/SplineArea.png" />
+                        <Image url="@../ressources/boutique_ico/stock.png" />
                      </image>
                   </ImageView>
                </graphic></TableColumn>
@@ -77,14 +112,13 @@
       <Label layoutX="373.0" layoutY="130.0" styleClass="label-text" text="Quantité" />
       <TextField fx:id="txtQte" layoutX="444.0" layoutY="126.0" prefHeight="20.0" prefWidth="67.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
       <TextField fx:id="txtMontantTtc" editable="false" layoutX="282.0" layoutY="204.0" prefHeight="20.0" prefWidth="139.0" promptText="0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
-      <Label layoutX="189.0" layoutY="209.0" styleClass="label-text-success" text="Montant TTC" />
       <TextField fx:id="txtPu" editable="false" layoutX="588.0" layoutY="126.0" prefHeight="20.0" prefWidth="120.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
       <Label layoutX="516.0" layoutY="130.0" styleClass="label-text" text="P Unitaire" />
       <Button fx:id="btnRetirer" layoutX="451.0" layoutY="201.0" mnemonicParsing="false" onMouseClicked="#clickRetirer" prefHeight="17.0" prefWidth="120.0" text="Retirer">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../ressources/Resources_icones/splitcon_firstlook_Delete.png" />
+                  <Image url="@../ressources/Resources_icones/stop.png" />
                </image>
             </ImageView>
          </graphic></Button>
@@ -123,5 +157,10 @@
             </HBox>
          </children>
       </VBox>
+      <HBox layoutX="28.0" layoutY="166.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label styleClass="label-text-success" text="Montant TTC" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -12,23 +13,23 @@
    <children>
       <ImageView fitHeight="570.0" fitWidth="750.0" pickOnBounds="true">
          <image>
-            <Image url="@../ressources/bg4.jpg" />
+            <Image url="@../ressources/bg.jpg" />
          </image>
       </ImageView>
     <AnchorPane layoutX="169.0" layoutY="149.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="0.0" />
-      <TitledPane layoutX="110.0" layoutY="239.0" prefHeight="180.0" prefWidth="426.0" text="FACTURES ET IMPRIMES">
+      <TitledPane layoutX="121.0" layoutY="314.0" prefHeight="180.0" prefWidth="426.0" text="FACTURES ET IMPRIMES">
          <content>
             <Pane prefHeight="154.0" prefWidth="427.0">
                <children>
-                  <Text layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entête de page" />
-                  <Text layoutX="26.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pieds de page" />
-                  <TextArea fx:id="txtEntete" layoutX="121.0" layoutY="9.0" prefHeight="60.0" prefWidth="239.0" />
-                  <TextArea fx:id="txtPieds" layoutX="121.0" layoutY="75.0" prefHeight="56.0" prefWidth="241.0" />
+                  <Text layoutX="50.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entête de page" />
+                  <Text layoutX="54.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pieds de page" wrappingWidth="102.45703125" />
+                  <TextArea fx:id="txtEntete" layoutX="157.0" layoutY="8.0" prefHeight="60.0" prefWidth="239.0" />
+                  <TextArea fx:id="txtPieds" layoutX="156.0" layoutY="78.0" prefHeight="56.0" prefWidth="241.0" />
                </children>
             </Pane>
          </content>
       </TitledPane>
-      <Button layoutX="191.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#clickAppliquer" prefHeight="25.0" prefWidth="266.0" text="Appliquer">
+      <Button layoutX="202.0" layoutY="505.0" mnemonicParsing="false" onMouseClicked="#clickAppliquer" prefHeight="25.0" prefWidth="266.0" text="Appliquer">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -36,21 +37,37 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <TitledPane animated="false" layoutX="110.0" layoutY="36.0" prefHeight="192.0" prefWidth="426.0" text="Enseigne Entreprise">
+      <TitledPane animated="false" layoutX="121.0" layoutY="111.0" prefHeight="192.0" prefWidth="426.0" text="Enseigne Entreprise">
          <content>
             <Pane prefHeight="166.0" prefWidth="426.0">
                <children>
-                  <TextField fx:id="txtNom" layoutX="178.0" layoutY="14.0" prefHeight="25.0" prefWidth="233.0" />
-                  <Label layoutX="32.0" layoutY="19.0" text="Nom Société" />
-                  <TextField fx:id="txtIfu" layoutX="178.0" layoutY="46.0" prefHeight="25.0" prefWidth="233.0" />
-                  <Label layoutX="92.0" layoutY="51.0" text="IFU" />
-                  <TextField fx:id="txtRegis" layoutX="178.0" layoutY="82.0" prefHeight="25.0" prefWidth="233.0" />
-                  <Label layoutX="87.0" layoutY="87.0" text="RCM" />
-                  <TextField fx:id="txtAdresse" layoutX="178.0" layoutY="114.0" prefHeight="25.0" prefWidth="233.0" />
-                  <Label layoutX="61.0" layoutY="119.0" text="Adresse" />
+                  <HBox layoutX="13.0" layoutY="7.0" prefHeight="148.0" prefWidth="397.0">
+                     <children>
+                        <VBox alignment="TOP_RIGHT" prefHeight="148.0" prefWidth="153.0" spacing="15.0">
+                           <children>
+                              <Label text="Nom Société" />
+                              <Label text="IFU" />
+                              <Label text="RCM" />
+                              <Label text="Adresse" />
+                           </children>
+                           <padding>
+                              <Insets right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="148.0" prefWidth="207.0" spacing="5.0">
+                           <children>
+                              <TextField fx:id="txtNom" prefHeight="25.0" prefWidth="233.0" />
+                              <TextField fx:id="txtIfu" prefHeight="25.0" prefWidth="233.0" />
+                              <TextField fx:id="txtRegis" prefHeight="25.0" prefWidth="233.0" />
+                              <TextField fx:id="txtAdresse" prefHeight="25.0" prefWidth="233.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
                </children>
             </Pane>
          </content>
       </TitledPane>
+      <Pane layoutX="3.0" prefHeight="38.0" prefWidth="744.0" style="-fx-background-color: grey;" />
    </children>
 </AnchorPane>

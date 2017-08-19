@@ -17,11 +17,46 @@
       </ImageView>
       <TableView id="table" fx:id="table" layoutX="38.0" layoutY="276.0" onMouseClicked="#clickTable" prefHeight="268.0" prefWidth="670.0">
         <columns>
-          <TableColumn id="NOM" fx:id="cln_idarticle" prefWidth="75.0" text="code article" />
-          <TableColumn id="PRENOMS" fx:id="cln_libarticle" prefWidth="294.0" text="Libellé article" />
-            <TableColumn fx:id="cln_stock" prefWidth="58.0" text="Stock" />
-            <TableColumn fx:id="cln_prixvente" prefWidth="89.0" text="Prix vente" />
-            <TableColumn fx:id="cln_stocksecurite" prefWidth="98.0" text="Stock securité" />
+          <TableColumn id="NOM" fx:id="cln_idarticle" prefWidth="75.0" text="code ">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/Resources_icones/msoffice_menu_encryptdocument.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
+          <TableColumn id="PRENOMS" fx:id="cln_libarticle" prefWidth="294.0" text="Libellé article">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/Resources_icones/msoffice_Footer.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
+            <TableColumn fx:id="cln_stock" prefWidth="58.0" text="Stock">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/boutique_ico/stock.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
+            <TableColumn fx:id="cln_prixvente" prefWidth="89.0" text="Prix vente">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/boutique_ico/money.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
+            <TableColumn fx:id="cln_stocksecurite" prefWidth="98.0" text="Stock securité">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/Resources_icones/Exclamation.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
