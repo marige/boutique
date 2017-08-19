@@ -54,6 +54,8 @@ public class SocieteController extends SuperClass implements Initializable {
     
     @FXML
     private void clickAppliquer(MouseEvent event) {
+        if(sc==null)
+            sc= new Societe();
         sc.setIdsociete(1);
         sc.setEntetedocument(txtEntete.getText());
         sc.setIfu(txtIfu.getText());

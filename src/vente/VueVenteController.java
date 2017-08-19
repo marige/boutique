@@ -9,7 +9,6 @@ import java.net.URL;
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -219,7 +218,14 @@ public class VueVenteController extends SuperClass implements Initializable {
                 v.setArticle(ad);
                 v.setFacture(f);
                 venteC.create(v);
+                //mise à jour du stock de article
+                //dans un catch afin de pouvoir eviter les erreurs de - dans la boucle et sortier inopinée
+                try{
+                    ad.setStock(ad.getStock()-d.getQte());
+                    ac.edit(ad);
+                }catch(Exception ex){}
             }
+            
             txtMontantTtc.clear();
             factList.clear();
             txtClient.clear();

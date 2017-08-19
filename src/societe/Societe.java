@@ -50,6 +50,7 @@ public class Societe implements Serializable {
     private String adresse;
 
     public Societe() {
+        this.adresse=this.entetedocument=this.ifu=this.libelle=this.piedsdocument=this.rcm=" ";
     }
 
     public Societe(Integer idsociete) {
