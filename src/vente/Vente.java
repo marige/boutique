@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package vente;
 
 import facture.Facture;
@@ -37,7 +33,12 @@ public class Vente implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "idvente")
     private int idVente;
-       
+    //les autres champs  de la table vente
+    @Column(name = "qte")
+    private Integer qte;
+    @Column(name = "pu")
+    private Integer pu;
+   
     @ManyToOne
     @JoinColumn(name = "idarticle") 
     private Article articleV;
@@ -68,12 +69,6 @@ public class Vente implements Serializable {
     public void setFacture(Facture f){
        this.factureV=f;
     }    
-    //les autres champs  de la table vente
-    @Column(name = "qte")
-    private Integer qte;
-    @Column(name = "pu")
-    private Integer pu;
-
     public Vente() {
     }
     public void setQte(int qte){

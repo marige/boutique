@@ -14,6 +14,7 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -50,7 +51,7 @@ public class Facture implements Serializable {
     @Column(name="montant")
     private int montant;
     
-   @OneToMany(mappedBy="factureV" ,cascade=CascadeType.ALL)
+   @OneToMany(mappedBy="factureV" ,cascade=CascadeType.ALL,fetch=FetchType.LAZY)
    private List<Vente> venteFacture=new ArrayList();
    
     

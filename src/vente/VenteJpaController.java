@@ -22,11 +22,10 @@ import superpackage.SuperClass;
  * @author OBAM
  */
 public class VenteJpaController extends SuperClass implements Serializable {
-    EntityManager em=null;
     
     public void create(Vente vente) {
-        try {
-            em = getEntityManager();
+          EntityManager  em = getEntityManager();
+        try {        
             em.getTransaction().begin();
             em.persist(vente);
             em.getTransaction().commit();
@@ -38,9 +37,8 @@ public class VenteJpaController extends SuperClass implements Serializable {
     }
 
     public void edit(Vente vente) throws NonexistentEntityException, Exception {
-   
-        try {
-            em = getEntityManager();
+         EntityManager em = getEntityManager();
+        try {           
             em.getTransaction().begin();
             vente = em.merge(vente);
             em.getTransaction().commit();
@@ -61,9 +59,8 @@ public class VenteJpaController extends SuperClass implements Serializable {
     }
 
     public void destroy(int id) throws NonexistentEntityException {
-       
-        try {
-            em = getEntityManager();
+        EntityManager em = getEntityManager();
+        try {    
             em.getTransaction().begin();
             Vente vente;
             try {
@@ -90,7 +87,7 @@ public class VenteJpaController extends SuperClass implements Serializable {
     }
 
     private List<Vente> findVenteEntities(boolean all, int maxResults, int firstResult) {
-        em = getEntityManager();
+          EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
             cq.select(cq.from(Vente.class));
@@ -106,7 +103,7 @@ public class VenteJpaController extends SuperClass implements Serializable {
     }
 
     public Vente findVente(int id) {
-        em = getEntityManager();
+          EntityManager em = getEntityManager();
         try {
             return em.find(Vente.class, id);
         } finally {
@@ -115,7 +112,7 @@ public class VenteJpaController extends SuperClass implements Serializable {
     }
 
     public int getVenteCount() {
-        em = getEntityManager();
+         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
             Root<Vente> rt = cq.from(Vente.class);
@@ -128,7 +125,7 @@ public class VenteJpaController extends SuperClass implements Serializable {
     }
     //
     public List<Vente> getListVenteParDate(Date dateDebut,Date dateFin){
-        em = getEntityManager();
+        EntityManager  em = getEntityManager();
         List<Vente> l=  em.createNamedQuery("finListVenteDate")
                 .setParameter("dateFin",dateFin, TemporalType.DATE)
                 .setParameter("dateDebut",dateDebut,TemporalType.DATE)
