@@ -120,7 +120,7 @@
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </TextField>
-            <Label alignment="CENTER_RIGHT" prefHeight="16.0" prefWidth="76.0" text="Date">
+            <Label alignment="CENTER_RIGHT" prefHeight="16.0" prefWidth="69.0" text="Date">
                <font>
                   <Font name="DejaVu Sans Condensed Bold" size="13.0" />
                </font>

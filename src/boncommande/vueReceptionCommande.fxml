@@ -12,15 +12,11 @@
 
 <AnchorPane id="AnchorPane" prefHeight="462.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boncommande.VueReceptionCommandeController">
    <children>
-      <ImageView fitHeight="570.0" fitWidth="820.0" pickOnBounds="true">
+      <ImageView fitHeight="570.0" fitWidth="750.0" pickOnBounds="true">
          <image>
-            <Image url="@../ressources/mountainsday.png" />
+            <Image url="@../ressources/116033.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="274.0" layoutY="36.0" text="Reception Bon">
-         <font>
-            <Font name="Montague" size="27.0" />
-         </font></Label>
       <Label layoutX="31.0" layoutY="83.0" text="Rechercher un bon" />
       <TextField fx:id="txt_id_bon_commande" layoutX="176.0" layoutY="78.0" prefHeight="25.0" prefWidth="95.0" promptText="code bon" />
       <DatePicker fx:id="dt_date_reception" editable="false" layoutX="535.0" layoutY="78.0" prefHeight="25.0" prefWidth="119.0" />
@@ -66,14 +62,36 @@
                <children>
                   <TableView fx:id="tbl_detail_commande" layoutX="14.0" layoutY="-5.0" prefHeight="171.0" prefWidth="589.0">
                      <columns>
-                        <TableColumn fx:id="cln_libArcticle" prefWidth="314.0" text="NOM PRODUIT" />
-                        <TableColumn fx:id="cln_quantite" prefWidth="105.0" text="QTE" />
-                        <TableColumn fx:id="cln_prix" prefWidth="105.0" text="PU" />
+                        <TableColumn fx:id="cln_libArcticle" prefWidth="314.0" text="NOM PRODUIT">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/Resources_icones/msoffice_Footer.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></TableColumn>
+                        <TableColumn fx:id="cln_quantite" prefWidth="105.0" text="QTE">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/boutique_ico/stock.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></TableColumn>
+                        <TableColumn fx:id="cln_prix" prefWidth="105.0" text="PU">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/boutique_ico/money.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></TableColumn>
                      </columns>
                   </TableView>
                </children>
             </AnchorPane>
         </content>
       </TitledPane>
+      <Pane layoutX="3.0" prefHeight="38.0" prefWidth="744.0" style="-fx-background-color: grey;" />
    </children>
 </AnchorPane>
