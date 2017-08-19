@@ -109,11 +109,11 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Label layoutX="373.0" layoutY="130.0" styleClass="label-text" text="Quantité" />
-      <TextField fx:id="txtQte" layoutX="444.0" layoutY="126.0" prefHeight="20.0" prefWidth="67.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
+      <Label layoutX="375.0" layoutY="170.0" styleClass="label-text" text="Quantité" />
+      <TextField fx:id="txtQte" layoutX="446.0" layoutY="166.0" prefHeight="20.0" prefWidth="67.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
       <TextField fx:id="txtMontantTtc" editable="false" layoutX="282.0" layoutY="204.0" prefHeight="20.0" prefWidth="139.0" promptText="0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
-      <TextField fx:id="txtPu" editable="false" layoutX="588.0" layoutY="126.0" prefHeight="20.0" prefWidth="120.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
-      <Label layoutX="516.0" layoutY="130.0" styleClass="label-text" text="P Unitaire" />
+      <TextField fx:id="txtPu" editable="false" layoutX="590.0" layoutY="166.0" prefHeight="20.0" prefWidth="120.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
+      <Label layoutX="518.0" layoutY="170.0" styleClass="label-text" text="P Unitaire" />
       <Button fx:id="btnRetirer" layoutX="451.0" layoutY="201.0" mnemonicParsing="false" onMouseClicked="#clickRetirer" prefHeight="17.0" prefWidth="120.0" text="Retirer">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
@@ -122,32 +122,37 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <TextField fx:id="txtClient" layoutX="519.0" layoutY="165.0" prefHeight="20.0" prefWidth="189.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center">
-         <font>
-            <Font size="11.0" />
-         </font>
-      </TextField>
-      <Label layoutX="438.0" layoutY="169.0" text="Client">
-         <font>
-            <Font name="DejaVu Sans Condensed Bold" size="13.0" />
-         </font></Label>
-      <VBox layoutX="458.0" layoutY="15.0" prefHeight="98.0" prefWidth="354.0">
+      <VBox layoutX="439.0" layoutY="15.0" prefHeight="142.0" prefWidth="254.0">
          <children>
-            <HBox prefHeight="33.0" prefWidth="320.0" spacing="10.0">
+            <HBox prefHeight="33.0" prefWidth="237.0">
                <children>
-                  <Label prefHeight="15.0" prefWidth="100.0" styleClass="label-text" text="Date Facture" />
+                  <Label prefHeight="23.0" prefWidth="105.0" text="Client">
+                     <font>
+                        <Font name="DejaVu Sans Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtClient" prefHeight="20.0" prefWidth="144.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="35.0" prefWidth="254.0" spacing="10.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="99.0" styleClass="label-text" text="Date Facture" />
                   <DatePicker fx:id="dtDateFacture" prefHeight="25.0" prefWidth="146.0" styleClass="jfx-list-cell-container-center" />
                </children>
             </HBox>
             <HBox prefHeight="33.0" prefWidth="320.0" spacing="10.0">
                <children>
-                  <Label prefHeight="15.0" prefWidth="100.0" styleClass="label-text" text="Code article" />
+                  <Label prefHeight="23.0" prefWidth="98.0" styleClass="label-text" text="Code article" />
                   <TextField fx:id="txtCode" editable="false" prefHeight="25.0" prefWidth="146.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
                </children>
             </HBox>
             <HBox prefHeight="33.0" prefWidth="337.0" spacing="10.0">
                <children>
-                  <Label prefHeight="15.0" prefWidth="100.0" styleClass="label-text" text="Libellé article" />
+                  <Label prefHeight="24.0" prefWidth="100.0" styleClass="label-text" text="Libellé article" />
                   <TextField fx:id="txtLibarticle" editable="false" prefHeight="20.0" prefWidth="145.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center">
                      <font>
                         <Font size="11.0" />
