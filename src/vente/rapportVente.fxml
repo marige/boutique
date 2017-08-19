@@ -12,10 +12,10 @@
    <children>
       <ImageView fitHeight="570.0" fitWidth="750.0" pickOnBounds="true">
          <image>
-            <Image url="@../ressources/bg4.jpg" />
+            <Image url="@../ressources/116033.jpg" />
          </image>
       </ImageView>
-      <TableView fx:id="tvRapport" layoutX="48.0" layoutY="203.0" prefHeight="256.0" prefWidth="585.0">
+      <TableView fx:id="tvRapport" layoutX="38.0" layoutY="177.0" prefHeight="256.0" prefWidth="585.0">
         <columns>
           <TableColumn fx:id="cln_date" prefWidth="91.0" text="Date" />
           <TableColumn fx:id="cln_article" prefWidth="188.0" text="Article" />
@@ -25,11 +25,11 @@
             <TableColumn fx:id="cln_client" prefWidth="116.0" text="Client" />
         </columns>
       </TableView>
-      <Text layoutX="69.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date début" />
-      <DatePicker fx:id="dtDebut" layoutX="151.0" layoutY="130.0" prefHeight="25.0" prefWidth="131.0" />
-      <DatePicker fx:id="dtFin" layoutX="363.0" layoutY="130.0" prefHeight="25.0" prefWidth="131.0" />
-      <Text layoutX="305.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date fin" />
-      <Button fx:id="btnAfficher" layoutX="253.0" layoutY="170.0" mnemonicParsing="false" onMouseClicked="#clickBtnAfficher" prefHeight="25.0" prefWidth="103.0" text="Afficher">
+      <Text layoutX="38.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date début" />
+      <DatePicker fx:id="dtDebut" layoutX="120.0" layoutY="141.0" prefHeight="25.0" prefWidth="131.0" />
+      <DatePicker fx:id="dtFin" layoutX="332.0" layoutY="141.0" prefHeight="25.0" prefWidth="131.0" />
+      <Text layoutX="274.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date fin" />
+      <Button fx:id="btnAfficher" layoutX="488.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#clickBtnAfficher" prefHeight="25.0" prefWidth="103.0" text="Afficher">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -37,8 +37,8 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Text layoutX="447.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" wrappingWidth="41.6015625" />
-      <TextField fx:id="txtSomme" layoutX="489.0" layoutY="81.0" prefHeight="25.0" prefWidth="120.0" promptText="total du rapport" style="-fx-background-color: F3FA5C;">
+      <Text layoutX="453.0" layoutY="492.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" wrappingWidth="41.6015625" />
+      <TextField fx:id="txtSomme" layoutX="495.0" layoutY="475.0" prefHeight="25.0" prefWidth="120.0" promptText="total du rapport" style="-fx-background-color: F3FA5C;">
          <font>
             <Font size="11.0" />
          </font>

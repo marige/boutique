@@ -13,9 +13,9 @@
    <children>
       <ImageView fitHeight="570.0" fitWidth="750.0" pickOnBounds="true">
          <image>
-            <Image url="@../ressources/bg_utilisateur.jpg" />
+            <Image url="@../ressources/bg.jpg" />
          </image></ImageView>
-      <TableView fx:id="tableView" layoutX="118.0" layoutY="311.0" prefHeight="133.0" prefWidth="488.0">
+      <TableView fx:id="tableView" layoutX="113.0" layoutY="343.0" prefHeight="133.0" prefWidth="488.0">
         <columns>
           <TableColumn fx:id="cln_login" prefWidth="129.0" text="login">
                <graphic>
@@ -43,9 +43,9 @@
                </graphic></TableColumn>
         </columns>
       </TableView>
-      <GridPane layoutX="163.0" layoutY="62.0" prefHeight="180.0" prefWidth="398.0" vgap="3.0">
+      <GridPane layoutX="158.0" layoutY="94.0" prefHeight="180.0" prefWidth="398.0" vgap="3.0">
          <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="253.0" minWidth="10.0" prefWidth="171.0" />
+            <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" maxWidth="253.0" minWidth="10.0" prefWidth="171.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="278.0" minWidth="10.0" prefWidth="250.0" />
          </columnConstraints>
          <rowConstraints>
@@ -58,9 +58,9 @@
          </rowConstraints>
          <children>
             <TextField fx:id="txtLogin" layoutX="156.0" layoutY="107.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Text layoutX="95.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fonction" textAlignment="RIGHT" wrappingWidth="59.630859375" GridPane.rowIndex="1" />
-            <Text layoutX="65.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom et prénom" textAlignment="RIGHT" wrappingWidth="108.630859375" />
-            <Text layoutX="69.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passse" textAlignment="RIGHT" wrappingWidth="97.630859375" GridPane.rowIndex="4" />
+            <Text layoutX="95.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="gras" text="Fonction" textAlignment="RIGHT" wrappingWidth="59.630859375" GridPane.rowIndex="1" />
+            <Text layoutX="65.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="gras" text="Nom et prénom" textAlignment="RIGHT" wrappingWidth="108.630859375" />
+            <Text layoutX="69.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="gras" text="Mot de passse" textAlignment="RIGHT" wrappingWidth="97.630859375" GridPane.rowIndex="4" />
             <TextField fx:id="txtNom" layoutX="156.0" layoutY="14.0" prefHeight="25.0" prefWidth="261.0" GridPane.columnIndex="1" />
             <ComboBox fx:id="cmbTypeUser" layoutX="156.0" layoutY="78.0" prefHeight="25.0" prefWidth="273.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
@@ -68,17 +68,17 @@
                </GridPane.margin>
             </ComboBox>
             <PasswordField fx:id="txtPass" layoutX="156.0" layoutY="139.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Text layoutX="96.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" textAlignment="RIGHT" wrappingWidth="37.630859375" GridPane.rowIndex="3" />
+            <Text layoutX="96.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="gras" text="Login" textAlignment="RIGHT" wrappingWidth="37.630859375" GridPane.rowIndex="3" />
             <TextField fx:id="txtFontion" layoutX="156.0" layoutY="46.0" prefHeight="25.0" prefWidth="261.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Text layoutX="63.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type utilisateur" textAlignment="RIGHT" wrappingWidth="109.630859375" GridPane.rowIndex="2" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Retaper mot de passse" textAlignment="RIGHT" wrappingWidth="153.630859375" GridPane.rowIndex="5" />
+            <Text layoutX="63.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="gras" text="Type utilisateur" textAlignment="RIGHT" wrappingWidth="109.630859375" GridPane.rowIndex="2" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="gras" text="Retaper mot de passse" textAlignment="RIGHT" wrappingWidth="153.630859375" GridPane.rowIndex="5" />
             <PasswordField fx:id="txtPassConfirmation" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
          <padding>
             <Insets right="1.0" top="1.0" />
          </padding>
       </GridPane>
-      <Button layoutX="292.0" layoutY="262.0" mnemonicParsing="false" onMouseClicked="#clickAjouter" prefHeight="15.0" prefWidth="107.0" text="Ajouter">
+      <Button layoutX="287.0" layoutY="294.0" mnemonicParsing="false" onMouseClicked="#clickAjouter" prefHeight="15.0" prefWidth="107.0" text="Ajouter">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
