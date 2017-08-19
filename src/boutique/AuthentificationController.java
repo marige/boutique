@@ -65,8 +65,8 @@ public class AuthentificationController extends SuperClass implements Initializa
               // Stage s = new Stage();
                Parent root = FXMLLoader.load(getClass().getResource("Principale.fxml"));
                Scene scene = new Scene(root);
-               stage.setX(0);
-               stage.setY(0);
+               stage.setX(10);
+               stage.setY(10);
                stage.setScene(scene);
                stage.show();
            } catch (IOException ex) {

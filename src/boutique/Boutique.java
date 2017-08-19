@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javax.persistence.EntityManager;
+import societe.SocieteJpaController;
 import superpackage.SuperClass;
 
 /**
@@ -29,19 +30,32 @@ public class Boutique extends Application {
            EntityManager em=sc.getEntityManager();
            em.getTransaction().begin();
            em.getTransaction().commit();
-           em.close();      
-        Parent root = FXMLLoader.load(getClass().getResource("authentification.fxml"));       
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        AuthentificationController.stage=stage;
-        stage.show();
+           em.close();   
+        //test de remplissage des info de sociéte
+            if(new SocieteJpaController().findSociete(1)==null){
+                 if(sc.confirmation("configuration","Société non trouvée\t Voulez-vous créer?"))
+                    {
+                    Parent root = FXMLLoader.load(getClass().getResource("/societe/Societe.fxml"));
+                    Scene scene = new Scene(root);
+                    stage.setX(20);
+                    stage.setY(20);
+                    stage.setScene(scene);
+                    stage.show();
+                    }
+            }else{          
+                Parent root = FXMLLoader.load(getClass().getResource("authentification.fxml"));       
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                AuthentificationController.stage=stage;
+                stage.show();
+            }
        }catch(NullPointerException ex){
           if(sc.confirmation("configuration","Accès impossible à la BDD\t Voulez-vous configurer?"))
           {
                Parent root = FXMLLoader.load(getClass().getResource("/configuration/connectDbb.fxml"));
                Scene scene = new Scene(root);
-               stage.setX(0);
-               stage.setY(0);
+               stage.setX(20);
+               stage.setY(20);
                stage.setScene(scene);
                stage.show();
           }
