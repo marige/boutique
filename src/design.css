@@ -1,4 +1,6 @@
-
+.read-only{
+    -fx-background-color:#e6e6e6;
+}
 
 .button {
     -fx-background-radius: 12;
