@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "finListFactureDate", 
-            query = "SELECT f from Facture f where f.dateFacture BETWEEN :dateDebut and :dateFin order by f.dateFacture desc,f.client asc")})
+            query = "SELECT f from Facture f where f.dateFacture BETWEEN :dateDebut and :dateFin order by f.idFacture desc,f.client asc")})
 public class Facture implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id

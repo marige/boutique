@@ -29,7 +29,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "finListVenteDate", 
-            query = "SELECT v from Vente v,Facture f,Article a where v.factureV=f and v.articleV=a and  v.factureV.dateFacture BETWEEN :dateDebut and :dateFin order by v.factureV.dateFacture")})
+            query = "SELECT v from Vente v where v.factureV.dateFacture BETWEEN :dateDebut and :dateFin order by v.factureV.idFacture desc")})
 
 public class Vente implements Serializable {
     private static final long serialVersionUID = 1L;

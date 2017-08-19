@@ -109,7 +109,6 @@ public class ListeVenteController extends SuperClass implements Initializable {
         //liste de vente dans une facture
         listVente.clear();
         listVente.addAll(f.getVenteFacture());
-        System.out.print("nombre de ligne est "+listVente.size());
        // tbv_detailfacture.refresh();
         }
     }
