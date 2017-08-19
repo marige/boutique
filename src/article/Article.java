@@ -10,6 +10,7 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -38,13 +39,13 @@ public class Article implements Serializable{
     //gestion de 
     @ManyToOne
     //integration des identifiants de champs de après
-    @JoinColumn (name="idcategorie")
+    @JoinColumn(name="idcategorie")
     private Categorie categorie;
     
-    @OneToMany(mappedBy="articleV",cascade=CascadeType.ALL)
+    @OneToMany(mappedBy="articleV",cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private List<Vente> vente=null;    
     
-    @OneToMany(mappedBy = "article",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy="article",cascade=CascadeType.ALL)
     private List<DetailBonCommande> detailBonCommandeList;
 
    

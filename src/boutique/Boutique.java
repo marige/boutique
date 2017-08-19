@@ -30,7 +30,7 @@ public class Boutique extends Application {
            EntityManager em=sc.getEntityManager();
            em.getTransaction().begin();
            em.getTransaction().commit();
-           em.close();   
+           em.close();
         //test de remplissage des info de sociéte
             if(new SocieteJpaController().findSociete(1)==null){
                  if(sc.confirmation("configuration","Société non trouvée\t Voulez-vous créer?"))
