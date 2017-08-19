@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6598a6c4-4503-47a0-a646-bbce641f6c6e">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="20"/>
 	<parameter name="idboncommande" class="java.lang.Integer"/>
 	<parameter name="fournisseur" class="java.lang.String"/>
 	<parameter name="datebon" class="java.lang.String"/>
@@ -33,67 +33,74 @@ where article.idarticle=detailboncommande.idarticle]]>
 	<title>
 		<band height="53" splitType="Stretch">
 			<textField>
-				<reportElement x="51" y="6" width="428" height="36" uuid="5388f732-a6a7-4924-8b05-5459567e3db4"/>
+				<reportElement x="51" y="6" width="428" height="28" uuid="5388f732-a6a7-4924-8b05-5459567e3db4"/>
 				<textElement textAlignment="Center">
 					<font size="18" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{nomsociete}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="33" width="555" height="20" backcolor="#CCCCFF" uuid="cde8dbff-3c3e-4d9b-b3bc-b32e2915726c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>
 		<band height="193" splitType="Stretch">
 			<textField>
-				<reportElement x="441" y="139" width="100" height="20" uuid="d1f53904-4c91-40b3-877d-2c9f9ad0bf07"/>
+				<reportElement x="441" y="136" width="100" height="20" forecolor="#FF0033" uuid="d1f53904-4c91-40b3-877d-2c9f9ad0bf07"/>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font size="14" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{idboncommande}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="265" y="139" width="173" height="20" uuid="73946a94-bc05-42b5-bf96-70da7c710ead"/>
 				<textElement textAlignment="Right">
-					<font size="12" isBold="true"/>
+					<font size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[BON DE COMMANDE N°]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="20" y="164" width="100" height="20" uuid="1a453571-bfac-4c17-9713-453c51816d12"/>
+				<reportElement x="34" y="164" width="100" height="20" uuid="1a453571-bfac-4c17-9713-453c51816d12"/>
 				<textElement verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
+					<font size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[FOURNISSEUR]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="124" y="164" width="220" height="20" uuid="d185d77e-7e6a-4b4e-a4aa-657dd45798fd"/>
+				<reportElement x="138" y="164" width="220" height="20" uuid="d185d77e-7e6a-4b4e-a4aa-657dd45798fd"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="SansSerif" size="12" isItalic="true"/>
+					<font fontName="SansSerif" size="14" isBold="true" isItalic="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{fournisseur}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="353" y="111" width="95" height="20" uuid="9435fa64-01be-4c02-8db7-b5766934627e"/>
+				<reportElement x="353" y="108" width="95" height="20" uuid="9435fa64-01be-4c02-8db7-b5766934627e"/>
 				<textElement verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
+					<font size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Date commande ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="41" y="5" width="427" height="46" uuid="2fc428b0-3eca-4b99-adad-c7e4d90e1ded"/>
+				<reportElement x="55" y="5" width="427" height="46" uuid="2fc428b0-3eca-4b99-adad-c7e4d90e1ded"/>
 				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{entete}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="92" y="55" width="342" height="34" uuid="ec8d2b43-7861-4c8c-a4a7-8ee137f00fc6"/>
+				<reportElement x="92" y="62" width="342" height="22" uuid="ec8d2b43-7861-4c8c-a4a7-8ee137f00fc6"/>
 				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[BORDEREAU DE RECEPTION DE COMMMANDE]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement x="188" y="93" width="103" height="20" uuid="292df7a4-b40e-4069-bd20-1f33718d2c7c"/>
+				<reportElement x="188" y="94" width="103" height="20" uuid="292df7a4-b40e-4069-bd20-1f33718d2c7c"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -102,7 +109,7 @@ where article.idarticle=detailboncommande.idarticle]]>
 			<staticText>
 				<reportElement x="92" y="93" width="96" height="20" uuid="61f4ad02-0ffb-4c32-bc21-0509bb643926"/>
 				<textElement verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
+					<font size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Date reception ]]></text>
 			</staticText>
@@ -118,7 +125,7 @@ where article.idarticle=detailboncommande.idarticle]]>
 	<columnHeader>
 		<band height="30" splitType="Stretch">
 			<staticText>
-				<reportElement x="41" y="0" width="185" height="30" uuid="cd2323c9-1cc8-484d-ab1d-68924fb7ae6a"/>
+				<reportElement x="74" y="0" width="185" height="30" uuid="cd2323c9-1cc8-484d-ab1d-68924fb7ae6a"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -130,7 +137,7 @@ where article.idarticle=detailboncommande.idarticle]]>
 				<text><![CDATA[Désignation]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="226" y="0" width="61" height="30" uuid="ea40d377-3207-4b88-9f2f-4df24e23c8c5"/>
+				<reportElement x="259" y="0" width="65" height="30" uuid="ea40d377-3207-4b88-9f2f-4df24e23c8c5"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -142,7 +149,7 @@ where article.idarticle=detailboncommande.idarticle]]>
 				<text><![CDATA[Quantité	]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="291" y="0" width="83" height="30" uuid="2e9cdfe6-e11a-4b52-a819-9c4c64acff6d"/>
+				<reportElement x="324" y="0" width="83" height="30" uuid="2e9cdfe6-e11a-4b52-a819-9c4c64acff6d"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -154,7 +161,7 @@ where article.idarticle=detailboncommande.idarticle]]>
 				<text><![CDATA[Prix unitaire]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="374" y="1" width="105" height="29" uuid="418a8384-8efe-4623-9aa4-481f8899e04c"/>
+				<reportElement x="407" y="0" width="105" height="30" uuid="418a8384-8efe-4623-9aa4-481f8899e04c"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -167,7 +174,7 @@ where article.idarticle=detailboncommande.idarticle]]>
 				<text><![CDATA[Montant]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="0" width="41" height="30" uuid="6554d5f4-f2bb-470b-aebc-6fcf0a880a66"/>
+				<reportElement x="33" y="0" width="41" height="30" uuid="6554d5f4-f2bb-470b-aebc-6fcf0a880a66"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -183,7 +190,7 @@ where article.idarticle=detailboncommande.idarticle]]>
 	<detail>
 		<band height="30" splitType="Stretch">
 			<textField>
-				<reportElement x="41" y="0" width="185" height="30" uuid="68beb7ae-f8b0-4ba3-8a20-519635917a3c"/>
+				<reportElement stretchType="RelativeToTallestObject" x="74" y="0" width="185" height="30" uuid="68beb7ae-f8b0-4ba3-8a20-519635917a3c"/>
 				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
 					<leftPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
@@ -192,40 +199,40 @@ where article.idarticle=detailboncommande.idarticle]]>
 				<textFieldExpression><![CDATA[$F{libarticle}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="226" y="0" width="64" height="30" uuid="e07a1a03-52bf-4de8-852d-51c9dea45c3a"/>
+				<reportElement stretchType="RelativeToTallestObject" x="259" y="0" width="64" height="30" uuid="e07a1a03-52bf-4de8-852d-51c9dea45c3a"/>
 				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
 					<leftPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{quantitedetailboncommande}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="291" y="0" width="83" height="30" uuid="51ddd639-7e00-47d4-92c8-565b11d80540"/>
+			<textField pattern="#,##0">
+				<reportElement stretchType="RelativeToTallestObject" x="324" y="0" width="83" height="30" uuid="51ddd639-7e00-47d4-92c8-565b11d80540"/>
 				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
 					<leftPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{puachat}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="374" y="0" width="105" height="30" uuid="d7b2f73f-ccd0-4502-9a75-a65e31f5dd18"/>
+			<textField pattern="#,##0">
+				<reportElement stretchType="RelativeToTallestObject" x="407" y="0" width="105" height="30" uuid="d7b2f73f-ccd0-4502-9a75-a65e31f5dd18"/>
 				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
 					<leftPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
 					<rightPen lineWidth="1.0"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{puachat}*$F{quantitedetailboncommande}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="0" width="41" height="30" uuid="844eb7dc-9512-4367-8e43-d50dfd6742d5"/>
+				<reportElement stretchType="RelativeToTallestObject" x="33" y="0" width="41" height="30" uuid="844eb7dc-9512-4367-8e43-d50dfd6742d5"/>
 				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
 					<leftPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
 				</box>
-				<textElement verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$V{COLUMN_NUMBER}]]></textFieldExpression>
 			</textField>
 		</band>
@@ -271,8 +278,8 @@ where article.idarticle=detailboncommande.idarticle]]>
 				</textElement>
 				<text><![CDATA[Total]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="349" y="7" width="130" height="31" uuid="e7530326-3bff-467e-8667-40179ea6d60d"/>
+			<textField pattern="#,##0">
+				<reportElement x="349" y="7" width="192" height="31" uuid="e7530326-3bff-467e-8667-40179ea6d60d"/>
 				<textElement verticalAlignment="Middle">
 					<font size="14" isBold="true"/>
 				</textElement>

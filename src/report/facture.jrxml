@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6598a6c4-4503-47a0-a646-bbce641f6c6e">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="28"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="idfacture" class="java.lang.Integer"/>
 	<parameter name="client" class="java.lang.String"/>
 	<parameter name="nomsociete" class="java.lang.String"/>
@@ -30,7 +30,7 @@ where vente.idvente=article.idarticle]]>
 	<title>
 		<band height="55" splitType="Stretch">
 			<textField>
-				<reportElement x="101" y="2" width="349" height="42" uuid="8a8de707-8fa4-48a2-bed5-69cde54d6735"/>
+				<reportElement x="50" y="2" width="463" height="35" uuid="8a8de707-8fa4-48a2-bed5-69cde54d6735"/>
 				<textElement textAlignment="Center">
 					<font size="18" isBold="true"/>
 				</textElement>
@@ -41,35 +41,35 @@ where vente.idvente=article.idarticle]]>
 	<pageHeader>
 		<band height="90" splitType="Stretch">
 			<textField>
-				<reportElement x="465" y="50" width="87" height="29" uuid="d1f53904-4c91-40b3-877d-2c9f9ad0bf07"/>
+				<reportElement x="465" y="52" width="87" height="29" forecolor="#FF0066" uuid="d1f53904-4c91-40b3-877d-2c9f9ad0bf07"/>
 				<textElement>
 					<font size="14" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{idfacture}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="387" y="52" width="75" height="20" uuid="73946a94-bc05-42b5-bf96-70da7c710ead"/>
+				<reportElement x="387" y="55" width="75" height="20" uuid="73946a94-bc05-42b5-bf96-70da7c710ead"/>
 				<textElement textAlignment="Right">
-					<font size="12" isBold="true"/>
+					<font size="12" isBold="false"/>
 				</textElement>
-				<text><![CDATA[FACTURE N°]]></text>
+				<text><![CDATA[Facture N°]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="3" y="65" width="47" height="20" uuid="1a453571-bfac-4c17-9713-453c51816d12"/>
+				<reportElement x="33" y="64" width="47" height="20" uuid="1a453571-bfac-4c17-9713-453c51816d12"/>
 				<textElement verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
+					<font size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Client]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="56" y="61" width="220" height="24" uuid="d185d77e-7e6a-4b4e-a4aa-657dd45798fd"/>
+				<reportElement x="83" y="61" width="220" height="24" uuid="d185d77e-7e6a-4b4e-a4aa-657dd45798fd"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="SansSerif" size="14" isItalic="true"/>
+					<font fontName="SansSerif" size="14" isBold="true" isItalic="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{client}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="50" y="5" width="356" height="38" uuid="658e7bc6-5909-4541-919f-d9c3e6f5a202"/>
+				<reportElement x="53" y="5" width="356" height="38" uuid="658e7bc6-5909-4541-919f-d9c3e6f5a202"/>
 				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -80,7 +80,7 @@ where vente.idvente=article.idarticle]]>
 	<columnHeader>
 		<band height="25" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="2" width="151" height="23" backcolor="#FFFFCC" uuid="11aa421f-1d56-4aeb-b1cf-fd748dcda168"/>
+				<reportElement x="22" y="2" width="219" height="23" backcolor="#FFFFCC" uuid="11aa421f-1d56-4aeb-b1cf-fd748dcda168"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -92,7 +92,7 @@ where vente.idvente=article.idarticle]]>
 				<text><![CDATA[Libellé]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="151" y="2" width="111" height="23" backcolor="#FFFFCC" uuid="ef978b27-4e8f-42f6-8e54-e40fd05af9d4"/>
+				<reportElement x="241" y="2" width="111" height="23" backcolor="#FFFFCC" uuid="ef978b27-4e8f-42f6-8e54-e40fd05af9d4"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -104,7 +104,7 @@ where vente.idvente=article.idarticle]]>
 				<text><![CDATA[qte]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="262" y="2" width="71" height="23" backcolor="#FFFFCC" uuid="4d20da3b-1fc2-464c-8e7c-9be32cf39901"/>
+				<reportElement x="352" y="2" width="71" height="23" backcolor="#FFFFCC" uuid="4d20da3b-1fc2-464c-8e7c-9be32cf39901"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -116,7 +116,7 @@ where vente.idvente=article.idarticle]]>
 				<text><![CDATA[pu]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="333" y="2" width="117" height="23" backcolor="#FFFFCC" uuid="2acc9f56-e0fc-4af1-80b8-7a6aa2dcc033"/>
+				<reportElement x="423" y="2" width="117" height="23" backcolor="#FFFFCC" uuid="2acc9f56-e0fc-4af1-80b8-7a6aa2dcc033"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -132,8 +132,8 @@ where vente.idvente=article.idarticle]]>
 	</columnHeader>
 	<detail>
 		<band height="30" splitType="Stretch">
-			<textField>
-				<reportElement x="262" y="1" width="71" height="27" uuid="76bca715-6ede-4c35-bab9-cbc019c4bee0"/>
+			<textField pattern="#,##0">
+				<reportElement stretchType="RelativeToTallestObject" x="352" y="1" width="71" height="29" uuid="76bca715-6ede-4c35-bab9-cbc019c4bee0"/>
 				<box>
 					<leftPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
@@ -144,7 +144,7 @@ where vente.idvente=article.idarticle]]>
 				<textFieldExpression><![CDATA[$F{pu}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="151" y="1" width="111" height="27" uuid="35574b01-2585-4e9c-b2b5-0be2be267449"/>
+				<reportElement stretchType="RelativeToTallestObject" x="241" y="1" width="111" height="29" uuid="35574b01-2585-4e9c-b2b5-0be2be267449"/>
 				<box>
 					<leftPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
@@ -154,8 +154,8 @@ where vente.idvente=article.idarticle]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{qte}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="333" y="1" width="117" height="27" uuid="a0aa3585-2257-4bae-84c3-49aa1c1a1d74"/>
+			<textField pattern="#,##0">
+				<reportElement stretchType="RelativeToTallestObject" x="423" y="1" width="117" height="29" uuid="a0aa3585-2257-4bae-84c3-49aa1c1a1d74"/>
 				<box>
 					<leftPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
@@ -167,7 +167,7 @@ where vente.idvente=article.idarticle]]>
 				<textFieldExpression><![CDATA[$F{pu}*$F{qte}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="0" width="151" height="28" uuid="3bcc564d-5b65-45b8-b1b5-99fa9bf9ffe6"/>
+				<reportElement stretchType="RelativeToTallestObject" x="22" y="0" width="219" height="30" uuid="3bcc564d-5b65-45b8-b1b5-99fa9bf9ffe6"/>
 				<box>
 					<leftPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
@@ -187,7 +187,7 @@ where vente.idvente=article.idarticle]]>
 			<textField>
 				<reportElement x="3" y="12" width="552" height="28" uuid="0480dae3-c492-4bbb-8e98-81e868ebf3da"/>
 				<textElement textAlignment="Center">
-					<font size="12" isBold="true"/>
+					<font size="12" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{pieds}]]></textFieldExpression>
 			</textField>
@@ -203,7 +203,7 @@ where vente.idvente=article.idarticle]]>
 				<text><![CDATA[Total]]></text>
 			</staticText>
 			<textField pattern="#,##0;(-#,##0)">
-				<reportElement x="360" y="7" width="153" height="31" uuid="b6bbd537-e752-4355-aaa8-be7b0581590c"/>
+				<reportElement x="360" y="7" width="180" height="31" uuid="b6bbd537-e752-4355-aaa8-be7b0581590c"/>
 				<textElement verticalAlignment="Middle">
 					<font size="14" isBold="true"/>
 				</textElement>
