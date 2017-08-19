@@ -26,6 +26,7 @@ public class REPORT extends SuperClass {
     public void editionReport(String reportName,String query, HashMap hm) throws Exception{
             Connection conn=getConnection();
             String reportSource=reportPath+reportName+".jrxml";
+           // String reportSource=reportPath+reportName+".jasper";
             JasperDesign jd=JRXmlLoader.load(reportSource);   
             JRDesignQuery qd=new JRDesignQuery();
             qd.setText(query);

@@ -223,7 +223,9 @@ public class VueVenteController extends SuperClass implements Initializable {
                 try{
                     ad.setStock(ad.getStock()-d.getQte());
                     ac.edit(ad);
-                }catch(Exception ex){}
+                }catch(Exception ex){
+                
+                }
             }
             
             txtMontantTtc.clear();

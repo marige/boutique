@@ -61,7 +61,7 @@ public class ListeVenteController extends SuperClass implements Initializable {
     @FXML
     private TableColumn<Vente,Article> cln_libarticle;
     
-    Facture f= null;
+    Facture f= new Facture();
     Vente v= null;
     VenteJpaController ventecon= new VenteJpaController();
     private final ObservableList<Vente> listVente=FXCollections.observableArrayList();
@@ -109,6 +109,7 @@ public class ListeVenteController extends SuperClass implements Initializable {
         //liste de vente dans une facture
         listVente.clear();
         listVente.addAll(f.getVenteFacture());
+       // tbv_detailfacture.refresh();
         }
     }
     @FXML
