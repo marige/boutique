@@ -16,7 +16,7 @@
             <Image url="@../ressources/116033.jpg" />
          </image>
       </ImageView>
-      <TableView id="table" fx:id="tvDetailFacture" layoutX="24.0" layoutY="285.0" prefHeight="232.0" prefWidth="682.0">
+      <TableView id="table" fx:id="tvDetailFacture" layoutX="23.0" layoutY="273.0" prefHeight="232.0" prefWidth="682.0">
          <columns>
             <TableColumn id="NOM" fx:id="cln_code" prefWidth="111.0" text="Code">
                <graphic>
@@ -60,7 +60,7 @@
                </graphic></TableColumn>
          </columns>
       </TableView>
-      <TableView id="table" fx:id="tvListProduit" layoutX="26.0" layoutY="89.0" onMouseClicked="#tvClicked" prefHeight="142.0" prefWidth="331.0">
+      <TableView id="table" fx:id="tvListProduit" layoutX="25.0" layoutY="77.0" onMouseClicked="#tvClicked" prefHeight="142.0" prefWidth="331.0">
          <columns>
             <TableColumn id="NOM" fx:id="idarticle" prefWidth="70.0" text="Code">
                <graphic>
@@ -88,12 +88,12 @@
                </graphic></TableColumn>
          </columns>
       </TableView>
-      <TextField fx:id="txtRecherche" layoutX="142.0" layoutY="57.0" prefHeight="25.0" prefWidth="198.0" promptText="taper libellé ou code article" style="-fx-border-radius: 10px; -fx-background-radius: 10px;" styleClass="jfx-list-cell-container-center" />
-      <Label layoutX="46.0" layoutY="60.0" prefHeight="17.0" prefWidth="79.0" text="Recherche ">
+      <TextField fx:id="txtRecherche" layoutX="141.0" layoutY="45.0" prefHeight="25.0" prefWidth="198.0" promptText="taper libellé ou code article" style="-fx-border-radius: 10px; -fx-background-radius: 10px;" styleClass="jfx-list-cell-container-center" />
+      <Label layoutX="45.0" layoutY="48.0" prefHeight="17.0" prefWidth="79.0" text="Recherche ">
          <font>
             <Font name="DejaVu Sans Condensed Bold" size="13.0" />
          </font></Label>
-      <Button fx:id="btnFinCommande" layoutX="232.0" layoutY="527.0" mnemonicParsing="false" onAction="#action" onMouseClicked="#btnFinCommande" prefHeight="16.0" prefWidth="342.0" text="Finaliser la commande">
+      <Button fx:id="btnFinCommande" layoutX="231.0" layoutY="515.0" mnemonicParsing="false" onAction="#action" onMouseClicked="#btnFinCommande" prefHeight="16.0" prefWidth="342.0" text="Finaliser la commande">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -101,11 +101,11 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Label layoutX="460.0" layoutY="181.0" styleClass="label-text" text="Quantité" />
-      <TextField fx:id="txtQte" layoutX="544.0" layoutY="177.0" prefHeight="20.0" prefWidth="143.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
-      <TextField fx:id="txtPu" editable="false" layoutX="544.0" layoutY="209.0" prefHeight="20.0" prefWidth="143.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
-      <Label layoutX="448.0" layoutY="212.0" styleClass="label-text" text="P Unitaire" />
-      <Button fx:id="btnRetirer" layoutX="241.0" layoutY="254.0" mnemonicParsing="false" onMouseClicked="#clickRetirer" prefHeight="17.0" prefWidth="120.0" text="Retirer">
+      <Label layoutX="459.0" layoutY="169.0" styleClass="label-text" text="Quantité" />
+      <TextField fx:id="txtQte" layoutX="543.0" layoutY="165.0" prefHeight="20.0" prefWidth="143.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
+      <TextField fx:id="txtPu" editable="false" layoutX="543.0" layoutY="197.0" prefHeight="20.0" prefWidth="143.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
+      <Label layoutX="447.0" layoutY="200.0" styleClass="label-text" text="P Unitaire" />
+      <Button fx:id="btnRetirer" layoutX="240.0" layoutY="242.0" mnemonicParsing="false" onMouseClicked="#clickRetirer" prefHeight="17.0" prefWidth="120.0" text="Retirer">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -113,7 +113,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <VBox layoutX="436.0" layoutY="57.0" prefHeight="106.0" prefWidth="254.0" spacing="5.0">
+      <VBox layoutX="435.0" layoutY="45.0" prefHeight="106.0" prefWidth="254.0" spacing="5.0">
          <children>
             <HBox prefHeight="24.0" prefWidth="254.0" spacing="5.0">
                <children>
@@ -161,7 +161,7 @@
             </HBox>
          </children>
       </VBox>
-      <HBox layoutX="460.0" layoutY="255.0" prefHeight="29.0" prefWidth="228.0">
+      <HBox layoutX="459.0" layoutY="243.0" prefHeight="29.0" prefWidth="228.0">
          <children>
             <Label prefHeight="27.0" prefWidth="119.0" styleClass="label-text-success" text="Montant Total" />
             <TextField fx:id="txtMontantTtc" editable="false" prefHeight="20.0" prefWidth="126.0" promptText="0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;">
@@ -171,7 +171,7 @@
                </styleClass></TextField>
          </children>
       </HBox>
-      <Button fx:id="btnAjouterP" layoutX="26.0" layoutY="254.0" mnemonicParsing="false" onMouseClicked="#clickPanier" prefHeight="23.0" prefWidth="120.0" text="Ajouter">
+      <Button fx:id="btnAjouterP" layoutX="25.0" layoutY="242.0" mnemonicParsing="false" onMouseClicked="#clickPanier" prefHeight="23.0" prefWidth="120.0" text="Ajouter">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -180,6 +180,6 @@
             </ImageView>
          </graphic>
       </Button>
-      <Pane layoutX="3.0" prefHeight="38.0" prefWidth="744.0" style="-fx-background-color: grey;" />
+      <Pane layoutX="-3.0" prefHeight="38.0" prefWidth="750.0" style="-fx-background-color: grey;" />
    </children>
 </AnchorPane>
