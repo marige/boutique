@@ -83,15 +83,6 @@
             <Image url="@../ressources/Resources_icones/search3.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnNouveau" layoutX="108.0" layoutY="174.0" mnemonicParsing="false" onMouseClicked="#clickBtnNouveau" text="Nouveau" wrapText="true">
-         <graphic>
-            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../ressources/boutique_ico/new.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
       <HBox layoutX="375.0" layoutY="63.0" prefHeight="172.0" prefWidth="288.0">
          <children>
             <VBox alignment="TOP_RIGHT" prefHeight="172.0" prefWidth="146.0" spacing="15.0">
@@ -125,5 +116,18 @@
          </children>
       </HBox>
       <Pane layoutX="3.0" prefHeight="38.0" prefWidth="744.0" style="-fx-background-color: grey;" />
+      <HBox layoutX="109.0" layoutY="175.0" prefHeight="51.0" prefWidth="100.0">
+         <children>
+            <Button fx:id="btnNouveau" mnemonicParsing="false" onMouseClicked="#clickBtnNouveau" text="Nouveau" wrapText="true">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/boutique_ico/new.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
