@@ -35,7 +35,7 @@
                            <graphic>
                               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../ressources/Resources_icones/up_arrow.png" />
+                                    <Image url="@../ressources/boutique_ico/vendre.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -79,7 +79,7 @@
                            <graphic>
                               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../ressources/Resources_icones/details-icon.png" />
+                                    <Image url="@../ressources/boutique_ico/liste.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -94,7 +94,7 @@
                            <graphic>
                               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../ressources/Resources_icones/Favorites12.png" />
+                                    <Image url="@../ressources/boutique_ico/receive.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -246,15 +246,49 @@
       <Button layoutX="3.0" layoutY="2.0" mnemonicParsing="false" onMouseEntered="#entreSouriPrincipale" opacity="0.45" prefHeight="37.0" prefWidth="190.0" text="Menu principal" wrapText="true" />
       <ToolBar layoutX="214.0" layoutY="1.0" prefHeight="28.0" prefWidth="471.0">
         <items>
-          <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
+            <HBox prefHeight="41.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                <Button mnemonicParsing="false" onAction="#clickVendre" prefHeight="38.0" prefWidth="50.0">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../ressources/boutique_ico/vendre.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#btnRptVente">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../ressources/Resources_icones/msoffice_chart.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#clickBonCommande">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../ressources/boutique_ico/liste.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#clickedReceptionBon">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../ressources/boutique_ico/receive.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="3.0" />
+               </padding>
+            </HBox>
         </items>
       </ToolBar>
    </children>
