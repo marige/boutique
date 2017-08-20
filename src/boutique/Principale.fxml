@@ -289,6 +289,11 @@
                   <Insets left="3.0" />
                </padding>
             </HBox>
+            <Pane fx:id="parentPane" prefHeight="41.0" prefWidth="206.0">
+               <children>
+                  <Text fx:id="node" layoutX="22.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="XXXX est une application quivous facillite la gestion" />
+               </children>
+            </Pane>
         </items>
       </ToolBar>
    </children>

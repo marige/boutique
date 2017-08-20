@@ -11,16 +11,27 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.animation.Interpolator;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
+import javafx.animation.TranslateTransitionBuilder;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import superpackage.SuperClass;
 
 /**
@@ -49,8 +60,6 @@ public class PrincipaleController extends Stage implements Initializable {
     @FXML
     private Button btnReceptionBonCommande;
     @FXML
-    private JFXButton Utilisateurs;
-    @FXML
     private Accordion accordion;
     
     superpackage.SuperClass sc= new SuperClass();
@@ -59,12 +68,33 @@ public class PrincipaleController extends Stage implements Initializable {
     @FXML
     private JFXButton btnAjouterCategorie1;
     
+    @FXML
+private Text node; // text to marquee
+
+@FXML
+private Pane parentPane; // pane on which text is placed
+    
+ TranslateTransition transition;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-      //  accordion.setVisible(false);
+        
+    double sceneWidth = parentPane.getWidth();
+    double msgWidth = node.getLayoutBounds().getWidth();
+
+        KeyValue initKeyValue = new KeyValue(node.translateXProperty(), sceneWidth);
+        KeyFrame initFrame = new KeyFrame(Duration.ZERO, initKeyValue);
+
+    KeyValue endKeyValue = new KeyValue(node.translateXProperty(), -1.0
+        * msgWidth);
+    KeyFrame endFrame = new KeyFrame(Duration.seconds(3), endKeyValue);
+
+        Timeline timeline = new Timeline(initFrame, endFrame);
+
+    timeline.setCycleCount(Timeline.INDEFINITE);
+    timeline.play();
     } 
     
     
@@ -139,11 +169,6 @@ public class PrincipaleController extends Stage implements Initializable {
     }
 
     @FXML
-    private void clickUtilisateur(MouseEvent event) {
-         
-    }
-
-    @FXML
     private void clickAjouterControler(ActionEvent event) {
          newForm("controller","ajoutcontroler");
     }
@@ -156,7 +181,20 @@ public class PrincipaleController extends Stage implements Initializable {
         newForm("boncommande","listeBoncommande");
     }
   
+    private void rerunAnimation() {
+    //transition.stop();
+    // if needed set different text on "node"
+    //recalculateTransition();
+    transition.playFromStart();
+}
     
+    private void recalculateTransition() {
+    transition.setToX(node.getBoundsInLocal().getMaxX() * -1 - 100);
+    transition.setFromX(parentPane.widthProperty().get() + 100);
+
+    double distance = parentPane.widthProperty().get() + 2 * node.getBoundsInLocal().getMaxX();
+    transition.setDuration(new Duration(distance / 5));
+}
     
        
 }
