@@ -244,7 +244,7 @@
          </padding>
       </HBox>
       <Button layoutX="3.0" layoutY="2.0" mnemonicParsing="false" onMouseEntered="#entreSouriPrincipale" opacity="0.45" prefHeight="37.0" prefWidth="190.0" text="Menu principal" wrapText="true" />
-      <ToolBar layoutX="214.0" layoutY="1.0" prefHeight="53.0" prefWidth="724.0">
+      <ToolBar layoutX="214.0" layoutY="1.0" prefHeight="53.0" prefWidth="873.0">
         <items>
             <HBox prefHeight="41.0" prefWidth="200.0" spacing="10.0">
                <children>
@@ -289,9 +289,9 @@
                   <Insets left="3.0" />
                </padding>
             </HBox>
-            <Pane fx:id="parentPane" prefHeight="41.0" prefWidth="468.0">
+            <Pane fx:id="parentPane" prefHeight="41.0" prefWidth="610.0">
                <children>
-                  <Text fx:id="node" layoutX="22.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="XXXX est une application quivous facillite la gestion" />
+                  <Text fx:id="node" layoutX="343.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="XXXX est une application qui vous facillite la gestion" />
                </children>
             </Pane>
         </items>

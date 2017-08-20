@@ -89,7 +89,7 @@ private Pane parentPane; // pane on which text is placed
 
     KeyValue endKeyValue = new KeyValue(node.translateXProperty(), -1.0
         * msgWidth);
-    KeyFrame endFrame = new KeyFrame(Duration.seconds(3), endKeyValue);
+    KeyFrame endFrame = new KeyFrame(Duration.seconds(5), endKeyValue);
 
         Timeline timeline = new Timeline(initFrame, endFrame);
 
