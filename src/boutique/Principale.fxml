@@ -243,7 +243,6 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </HBox>
-      <Button layoutX="3.0" layoutY="2.0" mnemonicParsing="false" onMouseEntered="#entreSouriPrincipale" opacity="0.45" prefHeight="37.0" prefWidth="190.0" text="Menu principal" wrapText="true" />
       <ToolBar layoutX="214.0" layoutY="1.0" prefHeight="53.0" prefWidth="873.0">
         <items>
             <HBox prefHeight="41.0" prefWidth="200.0" spacing="10.0">
@@ -296,5 +295,13 @@
             </Pane>
         </items>
       </ToolBar>
+      <ImageView fitHeight="37.0" fitWidth="115.0" layoutX="29.0" layoutY="-1.0" onMouseEntered="#entreSouriPrincipale" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../ressources/icons8_Pull_Down_96px.png" />
+         </image>
+         <effect>
+            <Glow level="0.97" />
+         </effect>
+      </ImageView>
    </children>
 </AnchorPane>
