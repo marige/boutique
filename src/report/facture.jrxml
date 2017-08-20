@@ -36,6 +36,13 @@ where vente.idvente=article.idarticle]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{nomsociete}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="35" width="555" height="20" backcolor="#CCCCFF" uuid="1b838a3f-da6f-421e-b38c-52977bf158b7"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>
