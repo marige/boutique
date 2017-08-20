@@ -86,6 +86,14 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Pane prefHeight="38.0" prefWidth="750.0" style="-fx-background-color: grey;" />
+      <Pane prefHeight="38.0" prefWidth="751.0" style="-fx-background-color: #3a5898;">
+         <children>
+            <Text fill="WHITE" layoutX="238.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREATION D'UTILISATEURS">
+               <font>
+                  <Font name="Montague" size="25.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

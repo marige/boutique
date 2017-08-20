@@ -68,6 +68,14 @@
             </Pane>
          </content>
       </TitledPane>
-      <Pane layoutX="3.0" prefHeight="38.0" prefWidth="744.0" style="-fx-background-color: grey;" />
+      <Pane prefHeight="38.0" prefWidth="751.0" style="-fx-background-color: #3a5898;">
+         <children>
+            <Text fill="WHITE" layoutX="218.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INFORMATIONS DE LA SOCIETE">
+               <font>
+                  <Font name="Montague" size="25.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

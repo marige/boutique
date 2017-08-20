@@ -88,7 +88,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Pane layoutX="-3.0" prefHeight="38.0" prefWidth="750.0" style="-fx-background-color: #3a5898;">
+      <Pane layoutX="-3.0" prefHeight="38.0" prefWidth="758.0" style="-fx-background-color: #3a5898;">
          <children>
             <Text fill="WHITE" layoutX="262.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: white;" text="AJOUTER UN ARTICLE">
                <font>

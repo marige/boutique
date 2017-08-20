@@ -176,21 +176,6 @@
                               </ImageView>
                            </graphic>
                         </JFXButton>
-                        <JFXButton fx:id="Utilisateurs" buttonType="RAISED" defaultButton="true" layoutX="7.0" layoutY="280.0" onMouseClicked="#clickUtilisateur" prefHeight="25.0" prefWidth="188.0" ripplerFill="#9ca2d1" style="-fx-background-color: #d66700;" text="Utilisateur" textFill="#eeeeee">
-                           <effect>
-                              <Glow level="0.23" />
-                           </effect>
-                           <font>
-                              <Font name="DejaVu Sans Condensed Bold" size="13.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../ressources/boutique_ico/users.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </JFXButton>
                         <JFXButton fx:id="btnAjouterCategorie1" buttonType="RAISED" defaultButton="true" layoutX="6.0" layoutY="223.0" onAction="#clickBtnAjouterCategorie" onMouseClicked="#clickInfoSociete" prefHeight="25.0" prefWidth="188.0" ripplerFill="#9ca2d1" style="-fx-background-color: #5164ae;" text="info société" textFill="#eeeeee">
                            <effect>
                               <Glow level="0.23" />
@@ -213,7 +198,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button layoutX="11.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickCreerUtilsateur" prefHeight="27.0" prefWidth="168.0" text="Créer utilisateur">
+                        <Button layoutX="11.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickCreerUtilsateur" prefHeight="27.0" prefWidth="168.0" styleClass="flat" text="Créer utilisateur">
                            <graphic>
                               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -221,7 +206,7 @@
                                  </image>
                               </ImageView>
                            </graphic></Button>
-                        <Button layoutX="11.0" layoutY="51.0" mnemonicParsing="false" onAction="#clickAjouterControler" prefHeight="27.0" prefWidth="168.0" text="Ajouter Controler">
+                        <Button layoutX="11.0" layoutY="51.0" mnemonicParsing="false" onAction="#clickAjouterControler" prefHeight="27.0" prefWidth="168.0" styleClass="FLAT" text="Ajouter Controler">
                            <graphic>
                               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

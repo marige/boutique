@@ -56,5 +56,14 @@
          </graphic></Button>
       <Label layoutX="118.0" layoutY="128.0" text="Nom controler" />
       <Label layoutX="137.0" layoutY="161.0" text="Description" />
+      <Pane prefHeight="38.0" prefWidth="751.0" style="-fx-background-color: #3a5898;">
+         <children>
+            <Text fill="WHITE" layoutX="238.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREATION DE CONTROLEUR">
+               <font>
+                  <Font name="Montague" size="25.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

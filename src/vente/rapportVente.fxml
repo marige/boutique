@@ -25,11 +25,9 @@
             <TableColumn fx:id="cln_client" prefWidth="116.0" text="Client" />
         </columns>
       </TableView>
-      <Text layoutX="38.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date début" />
       <DatePicker fx:id="dtDebut" layoutX="120.0" layoutY="141.0" prefHeight="25.0" prefWidth="131.0" />
-      <DatePicker fx:id="dtFin" layoutX="332.0" layoutY="141.0" prefHeight="25.0" prefWidth="131.0" />
-      <Text layoutX="274.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date fin" />
-      <Button fx:id="btnAfficher" layoutX="488.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#clickBtnAfficher" prefHeight="25.0" prefWidth="103.0" text="Afficher">
+      <DatePicker fx:id="dtFin" layoutX="354.0" layoutY="141.0" prefHeight="25.0" prefWidth="131.0" />
+      <Button fx:id="btnAfficher" layoutX="520.0" layoutY="139.0" mnemonicParsing="false" onMouseClicked="#clickBtnAfficher" prefHeight="25.0" prefWidth="103.0" text="Afficher">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -37,11 +35,22 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Text layoutX="453.0" layoutY="492.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" wrappingWidth="41.6015625" />
       <TextField fx:id="txtSomme" layoutX="495.0" layoutY="475.0" prefHeight="25.0" prefWidth="120.0" promptText="total du rapport" style="-fx-background-color: F3FA5C;">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
+      <Pane prefHeight="38.0" prefWidth="751.0" style="-fx-background-color: #3a5898;">
+         <children>
+            <Text fill="WHITE" layoutX="278.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RAPPORT DES VENTES">
+               <font>
+                  <Font name="Montague" size="25.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Label layoutX="38.0" layoutY="146.0" text="Date début" />
+      <Label layoutX="293.0" layoutY="146.0" text="Date fin" />
+      <Label layoutX="442.0" layoutY="480.0" text="TOTAL" />
    </children>
 </AnchorPane>

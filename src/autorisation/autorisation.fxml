@@ -28,17 +28,17 @@
                </graphic></TableColumn>
         </columns>
       </TableView>
-      <Button layoutX="255.0" layoutY="268.0" mnemonicParsing="false" onAction="#clickAjouterFonc" text="Ajouter">
+      <Button layoutX="260.0" layoutY="285.0" mnemonicParsing="false" onAction="#clickAjouterFonc">
          <graphic>
-            <ImageView fitHeight="19.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="20.0" fitWidth="50.0" pickOnBounds="true">
                <image>
                   <Image url="@../ressources/boutique_ico/droite.png" />
                </image>
             </ImageView>
          </graphic></Button>
-      <Button layoutX="255.0" layoutY="321.0" mnemonicParsing="false" onAction="#clickRetirer" prefHeight="30.0" prefWidth="89.0" text="Retirer">
+      <Button layoutX="260.0" layoutY="355.0" mnemonicParsing="false" onAction="#clickRetirer" prefHeight="30.0" prefWidth="68.0">
          <graphic>
-            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="20.0" fitWidth="50.0" pickOnBounds="true">
                <image>
                   <Image url="@../ressources/boutique_ico/gauche.png" />
                </image>
@@ -82,7 +82,6 @@
                   <Font name="Montague" size="25.0" />
                </font>
             </Text>
-            <Label text="Label" />
          </children></Pane>
       <Label layoutX="153.0" layoutY="119.0" text="Utilisateur" />
    </children>

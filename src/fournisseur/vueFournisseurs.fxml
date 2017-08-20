@@ -115,7 +115,6 @@
             </VBox>
          </children>
       </HBox>
-      <Pane layoutX="3.0" prefHeight="38.0" prefWidth="744.0" style="-fx-background-color: grey;" />
       <HBox layoutX="109.0" layoutY="175.0" prefHeight="51.0" prefWidth="100.0">
          <children>
             <Button fx:id="btnNouveau" mnemonicParsing="false" onMouseClicked="#clickBtnNouveau" text="Nouveau" wrapText="true">
@@ -129,5 +128,14 @@
             </Button>
          </children>
       </HBox>
+      <Pane prefHeight="38.0" prefWidth="751.0" style="-fx-background-color: #3a5898;">
+         <children>
+            <Text fill="WHITE" layoutX="228.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GESTION DES FOURNISSEURS">
+               <font>
+                  <Font name="Montague" size="25.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
