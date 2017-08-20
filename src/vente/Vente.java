@@ -6,6 +6,7 @@ import article.Article;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,8 +26,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "finListVenteDate", 
-            query = "SELECT v from Vente v where v.factureV.dateFacture BETWEEN :dateDebut and :dateFin order by v.factureV.idFacture desc")})
-
+            query = "SELECT v from Vente v where v.factureV.dateFacture BETWEEN :dateDebut and :dateFin order by v.factureV.idFacture desc"),
+    @NamedQuery(name = "findListVenteFacture", 
+            query = "SELECT v from Vente v where v.factureV.idFacture=:idfacture order by v.idVente asc")
+})
+     
 public class Vente implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id

@@ -5,7 +5,9 @@
  */
 package detailboncommande;
 
+import boncommande.BonCommande;
 import exceptions.NonexistentEntityException;
+import facture.Facture;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -14,6 +16,7 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import superpackage.SuperClass;
+import vente.Vente;
 
 public class DetailBonCommandeJpaController extends SuperClass implements Serializable {
 
@@ -120,5 +123,16 @@ public class DetailBonCommandeJpaController extends SuperClass implements Serial
             em.close();
         }
     }
+    
+     public List<DetailBonCommande> getListDetailParBon(BonCommande b){
+        EntityManager  em = getEntityManager();
+        List<DetailBonCommande> l=  em.createNamedQuery("listDetailParCommande")
+                .setParameter("idboncommande",b.getIdBonCommande())
+                .getResultList();
+        em.close();
+       return l;
+    }
+    
+    
     
 }

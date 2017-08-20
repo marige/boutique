@@ -108,7 +108,7 @@ public class ListeVenteController extends SuperClass implements Initializable {
         f=tbv_facture.getSelectionModel().getSelectedItem();
         //liste de vente dans une facture
         listVente.clear();
-        listVente.addAll(f.getVenteFacture());
+        listVente.addAll(vcon.getListVenteParFacture(f));
         }
     }
     @FXML

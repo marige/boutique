@@ -15,6 +15,7 @@ import javax.persistence.TemporalType;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import exceptions.NonexistentEntityException;
+import facture.Facture;
 import superpackage.SuperClass;
 
 /**
@@ -133,5 +134,16 @@ public class VenteJpaController extends SuperClass implements Serializable {
         em.close();
        return l;
     }
+    
+    public List<Vente> getListVenteParFacture(Facture f){
+        EntityManager  em = getEntityManager();
+        List<Vente> l=  em.createNamedQuery("findListVenteFacture")
+                .setParameter("idfacture",f.getIdFacture())
+                .getResultList();
+        em.close();
+       return l;
+    }
+    
+    
            
 }
