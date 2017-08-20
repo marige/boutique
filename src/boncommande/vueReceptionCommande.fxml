@@ -92,6 +92,13 @@
             </AnchorPane>
         </content>
       </TitledPane>
-      <Pane layoutX="-3.0" prefHeight="38.0" prefWidth="750.0" style="-fx-background-color: grey;" />
+      <Pane layoutX="-3.0" prefHeight="38.0" prefWidth="750.0" style="-fx-background-color: #3a5898;">
+         <children>
+            <Text fill="WHITE" layoutX="321.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RECEPTION BON">
+               <font>
+                  <Font name="Montague" size="25.0" />
+               </font>
+            </Text>
+         </children></Pane>
    </children>
 </AnchorPane>

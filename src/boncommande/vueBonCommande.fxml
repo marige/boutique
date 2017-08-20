@@ -203,6 +203,13 @@
             <Image url="@../ressources/boutique_ico/stock.png" />
          </image>
       </ImageView>
-      <Pane prefHeight="38.0" prefWidth="744.0" style="-fx-background-color: grey;" />
+      <Pane prefHeight="38.0" prefWidth="744.0" style="-fx-background-color: #3a5898;">
+         <children>
+            <Text fill="WHITE" layoutX="273.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BON DE COMMANDE">
+               <font>
+                  <Font name="Montague" size="25.0" />
+               </font>
+            </Text>
+         </children></Pane>
    </children>
 </AnchorPane>

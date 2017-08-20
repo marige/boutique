@@ -114,10 +114,17 @@
             </ImageView>
          </graphic>
       </Button>
-      <Text layoutX="35.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date début" />
       <DatePicker fx:id="dtDateDebut" layoutX="117.0" layoutY="72.0" prefHeight="25.0" prefWidth="130.0" />
-      <Text layoutX="274.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date fin" />
       <DatePicker fx:id="dtDateFin" layoutX="331.0" layoutY="72.0" prefHeight="25.0" prefWidth="130.0" />
-      <Pane prefHeight="38.0" prefWidth="750.0" style="-fx-background-color: grey;" />
+      <Pane prefHeight="38.0" prefWidth="750.0" style="-fx-background-color: #3a5898;">
+         <children>
+            <Text fill="WHITE" layoutX="198.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LISTE DES BONS DE COMMANDES ">
+               <font>
+                  <Font name="Montague" size="25.0" />
+               </font>
+            </Text>
+         </children></Pane>
+      <Label layoutX="36.0" layoutY="77.0" text="date début" />
+      <Label layoutX="275.0" layoutY="77.0" text="date fin" />
    </children>
 </AnchorPane>

@@ -16,7 +16,6 @@
          </image>
       </ImageView>
       <ComboBox fx:id="cmbUtilisateur" layoutX="243.0" layoutY="114.0" onAction="#clickComboUser" prefHeight="25.0" prefWidth="200.0" />
-      <Text layoutX="156.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Utilisateur" />
       <TableView fx:id="tbv_fonction_dispo" layoutX="42.0" layoutY="178.0" prefHeight="308.0" prefWidth="200.0">
         <columns>
           <TableColumn fx:id="cln_fonctionalite_exist" prefWidth="199.0" text="Fonctionalité">
@@ -76,6 +75,15 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Pane prefHeight="38.0" prefWidth="750.0" style="-fx-background-color: grey;" />
+      <Pane prefHeight="38.0" prefWidth="750.0" style="-fx-background-color: #3a5898;">
+         <children>
+            <Text fill="WHITE" layoutX="273.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LES AUTORISATIONS" wrappingWidth="204.92501831054688">
+               <font>
+                  <Font name="Montague" size="25.0" />
+               </font>
+            </Text>
+            <Label text="Label" />
+         </children></Pane>
+      <Label layoutX="153.0" layoutY="119.0" text="Utilisateur" />
    </children>
 </AnchorPane>

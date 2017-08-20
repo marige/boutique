@@ -96,6 +96,6 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Pane layoutX="3.0" prefHeight="38.0" prefWidth="744.0" style="-fx-background-color: grey;" />
+      <Pane layoutX="-3.0" prefHeight="38.0" prefWidth="750.0" style="-fx-background-color: grey;" />
    </children>
 </AnchorPane>
