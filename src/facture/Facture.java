@@ -51,7 +51,7 @@ public class Facture implements Serializable {
     @Column(name="montant")
     private int montant;
     
-   @OneToMany(mappedBy="factureV" ,cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+   @OneToMany(mappedBy="factureV" ,cascade=CascadeType.ALL)
    private List<Vente> venteFacture=new ArrayList();
    
     
@@ -81,7 +81,9 @@ public class Facture implements Serializable {
         this.venteFacture.add(vente);
     }
     public List<Vente>  getVenteFacture(){
+        //System.out.println("je suis execute");
         return this.venteFacture;
+        
     }
     
     public String getClient(){

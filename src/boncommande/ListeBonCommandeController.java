@@ -2,7 +2,7 @@
 package boncommande;
 
 import detailboncommande.DetailBonCommande;
-import vente.*;
+import detailboncommande.DetailBonCommandeJpaController;
 import exceptions.NonexistentEntityException;
 import java.net.URL;
 import java.text.ParseException;
@@ -17,9 +17,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import report.REPORT;
 import superpackage.SuperClass;
+import vente.VenteJpaController;
 
 /**
  * FXML Controller class
@@ -64,6 +66,7 @@ public class ListeBonCommandeController extends SuperClass implements Initializa
     private final ObservableList<BonCommande> listBon=FXCollections.observableArrayList();
     private BonCommandeJpaController bcon= new BonCommandeJpaController();
     private DetailBonCommande dcon=new DetailBonCommande();
+    private DetailBonCommandeJpaController dconcon= new DetailBonCommandeJpaController();
     REPORT r=new REPORT();
     
     @Override
@@ -81,6 +84,8 @@ public class ListeBonCommandeController extends SuperClass implements Initializa
        
        tbv_bonCommande.setItems(listBon);
        tbv_detailBOn.setItems(listDetailBon); 
+       
+       txtEtat.setText("");
     }   
     
     @FXML
@@ -101,11 +106,16 @@ public class ListeBonCommandeController extends SuperClass implements Initializa
         b=tbv_bonCommande.getSelectionModel().getSelectedItem();
         //liste de vente dans une facture
         listDetailBon.clear();
-        listDetailBon.addAll(b.getDetailBonCommande());
-        if(b.getReception())
-           txtEtat.setText("Réception effectuée déjà");
-        else if(!b.getReception())
+        listDetailBon.addAll(dconcon.getListDetailParBon(b));
+        if(b.getReception()){
+            txtEtat.setFill(Color.RED);
+            txtEtat.setText("Réception effectuée déjà");
+         
+        }
+        else if(!b.getReception()){
            txtEtat.setText("Réception non effectuée");
+            txtEtat.setFill(Color.GREEN);
+        }
        }
     }
     @FXML
