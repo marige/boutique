@@ -82,9 +82,9 @@
          </graphic></Button>
       <Pane prefHeight="38.0" prefWidth="751.0" style="-fx-background-color: #3a5898;">
          <children>
-            <Text fill="WHITE" layoutX="278.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LISTE DES VENTES">
+            <Text fill="WHITE" layoutX="278.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des ventes">
                <font>
-                  <Font name="Montague" size="25.0" />
+                  <Font name="Arial Bold" size="20.0" />
                </font>
             </Text>
          </children>

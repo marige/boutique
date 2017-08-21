@@ -8,19 +8,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="252.0" prefWidth="295.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="configuration.ConnectDbbController">
+<AnchorPane id="AnchorPane" prefHeight="281.0" prefWidth="295.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="configuration.ConnectDbbController">
    <children>
-      <Text layoutX="14.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse Ip" />
-      <TextField fx:id="txtIp" layoutX="91.0" layoutY="36.0" prefHeight="25.0" prefWidth="169.0" />
-      <TextField fx:id="txtBdd" layoutX="91.0" layoutY="69.0" prefHeight="25.0" prefWidth="169.0" />
-      <Text layoutX="14.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom bdd" />
-      <TextField fx:id="txtPort" layoutX="91.0" layoutY="100.0" prefHeight="25.0" prefWidth="169.0" />
-      <Text layoutX="14.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Port" />
-      <TextField fx:id="txtUser" layoutX="91.0" layoutY="132.0" prefHeight="25.0" prefWidth="169.0" />
-      <Text layoutX="10.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Utilisateur" />
-      <PasswordField fx:id="txtPass" layoutX="91.0" layoutY="164.0" prefHeight="25.0" prefWidth="169.0" />
-      <Text layoutX="5.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe" />
-      <Button layoutX="52.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#clickAppliquer" prefHeight="25.0" prefWidth="115.0" text="Appliquer">
+      <Text layoutX="14.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse Ip" />
+      <TextField fx:id="txtIp" layoutX="91.0" layoutY="52.0" prefHeight="25.0" prefWidth="169.0" />
+      <TextField fx:id="txtBdd" layoutX="91.0" layoutY="85.0" prefHeight="25.0" prefWidth="169.0" />
+      <Text layoutX="14.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom bdd" />
+      <TextField fx:id="txtPort" layoutX="91.0" layoutY="116.0" prefHeight="25.0" prefWidth="169.0" />
+      <Text layoutX="14.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Port" />
+      <TextField fx:id="txtUser" layoutX="91.0" layoutY="148.0" prefHeight="25.0" prefWidth="169.0" />
+      <Text layoutX="10.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Utilisateur" />
+      <PasswordField fx:id="txtPass" layoutX="91.0" layoutY="180.0" prefHeight="25.0" prefWidth="169.0" />
+      <Text layoutX="5.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe" />
+      <Button layoutX="52.0" layoutY="222.0" mnemonicParsing="false" onMouseClicked="#clickAppliquer" prefHeight="25.0" prefWidth="115.0" text="Appliquer">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -28,7 +28,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button layoutX="182.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#clickTester" prefHeight="30.0" prefWidth="87.0" text="Tester">
+      <Button layoutX="182.0" layoutY="222.0" mnemonicParsing="false" onMouseClicked="#clickTester" prefHeight="30.0" prefWidth="87.0" text="Tester">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -36,5 +36,14 @@
                </image>
             </ImageView>
          </graphic></Button>
+      <Pane layoutY="-5.0" prefHeight="44.0" prefWidth="295.0" style="-fx-background-color: #3a5898;">
+         <children>
+            <Text fill="WHITE" layoutX="32.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Config. base de données" wrappingWidth="237.0">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

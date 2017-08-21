@@ -12,12 +12,12 @@
 
 <AnchorPane id="AnchorPane" fx:id="frmArticle" prefHeight="417.0" prefWidth="698.0" stylesheets="@../design.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="article.VueArticleController">
    <children>
-      <ImageView fitHeight="572.0" fitWidth="750.0" pickOnBounds="true">
+      <ImageView fitHeight="572.0" fitWidth="750.0" layoutX="2.0" pickOnBounds="true">
          <image>
             <Image url="@../ressources/bg.jpg" />
          </image>
       </ImageView>
-      <TableView id="table" fx:id="table" layoutX="38.0" layoutY="276.0" onMouseClicked="#clickTable" prefHeight="268.0" prefWidth="670.0">
+      <TableView id="table" fx:id="table" layoutX="8.0" layoutY="246.0" onMouseClicked="#clickTable" prefHeight="298.0" prefWidth="736.0">
         <columns>
           <TableColumn id="NOM" fx:id="cln_idarticle" prefWidth="75.0" text="code ">
                <graphic>
@@ -64,7 +64,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Button fx:id="btnAjouter" layoutX="319.0" layoutY="234.0" mnemonicParsing="false" onAction="#action" prefHeight="23.0" prefWidth="102.0" text="Ajouter">
+      <Button fx:id="btnAjouter" layoutX="324.0" layoutY="204.0" mnemonicParsing="false" onAction="#action" prefHeight="23.0" prefWidth="102.0" text="Ajouter">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -72,7 +72,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button fx:id="btnModifier" layoutX="497.0" layoutY="232.0" mnemonicParsing="false" onMouseClicked="#btnModifierClick" prefHeight="23.0" prefWidth="108.0" text="Modifier">
+      <Button fx:id="btnModifier" layoutX="502.0" layoutY="202.0" mnemonicParsing="false" onMouseClicked="#btnModifierClick" prefHeight="23.0" prefWidth="108.0" text="Modifier">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -80,7 +80,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button fx:id="btnNouveau" layoutX="159.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#btnNouveauClick" prefHeight="23.0" prefWidth="108.0" text="Nouveau">
+      <Button fx:id="btnNouveau" layoutX="164.0" layoutY="204.0" mnemonicParsing="false" onMouseClicked="#btnNouveauClick" prefHeight="23.0" prefWidth="108.0" text="Nouveau">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -90,13 +90,13 @@
          </graphic></Button>
       <Pane layoutX="-3.0" prefHeight="38.0" prefWidth="758.0" style="-fx-background-color: #3a5898;">
          <children>
-            <Text fill="WHITE" layoutX="262.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: white;" text="AJOUTER UN ARTICLE">
+            <Text fill="WHITE" layoutX="262.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: white;" text="Gestion des articles">
                <font>
-                  <Font name="Montague" size="25.0" />
+                  <Font name="Arial Bold" size="20.0" />
                </font>
             </Text>
          </children></Pane>
-      <HBox layoutX="23.0" layoutY="73.0" prefHeight="73.0" prefWidth="688.0">
+      <HBox layoutX="23.0" layoutY="73.0" prefHeight="67.0" prefWidth="688.0">
          <children>
             <VBox alignment="TOP_RIGHT" prefHeight="82.0" prefWidth="128.0" spacing="15.0">
                <children>
@@ -131,19 +131,12 @@
             <VBox prefHeight="72.0" prefWidth="170.0" spacing="10.0">
                <children>
                   <TextField fx:id="txtPrixvente" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="102.0" />
-                  <TextField fx:id="txtStock" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="92.0" />
+                  <TextField fx:id="txtStock" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="142.0" />
                </children>
             </VBox>
          </children>
       </HBox>
-      <HBox layoutX="244.0" layoutY="146.0" prefHeight="38.0" prefWidth="296.0" spacing="5.0">
-         <children>
-            <Label prefHeight="24.0" prefWidth="128.0" text="Stock de sécurité" textAlignment="RIGHT" />
-            <TextField fx:id="txtStockSecurite" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="160.0" />
-         </children>
-         <opaqueInsets>
-            <Insets top="5.0" />
-         </opaqueInsets>
-      </HBox>
+      <Label contentDisplay="RIGHT" graphicTextGap="1.0" layoutX="415.0" layoutY="140.0" prefHeight="24.0" prefWidth="108.0" text="Stock de sécurité" textAlignment="RIGHT" />
+      <TextField fx:id="txtStockSecurite" layoutX="531.0" layoutY="140.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="143.0" />
    </children>
 </AnchorPane>

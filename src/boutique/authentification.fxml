@@ -10,20 +10,15 @@
 
 <!--?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?-->
 
-<AnchorPane id="AnchorPane" onKeyPressed="#enterClavier" prefHeight="301.0" prefWidth="338.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boutique.AuthentificationController">
+<AnchorPane id="AnchorPane" onKeyPressed="#enterClavier" prefHeight="268.0" prefWidth="343.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boutique.AuthentificationController">
    <children>
-      <ImageView fitHeight="296.0" fitWidth="302.0" layoutX="42.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../ressources/images.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="296.0" fitWidth="302.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="245.0" fitWidth="94.0" layoutX="241.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../ressources/images.jpg" />
          </image>
       </ImageView>
       <VBox layoutX="141.0" layoutY="140.0" />
-      <Button fx:id="btnEntrer" layoutX="74.0" layoutY="177.0" mnemonicParsing="false" onMouseClicked="#clickEntrer" prefHeight="25.0" prefWidth="155.0" stylesheets="@../design.css" text="Entrer">
+      <Button fx:id="btnEntrer" layoutX="81.0" layoutY="177.0" mnemonicParsing="false" onMouseClicked="#clickEntrer" prefHeight="25.0" prefWidth="155.0" stylesheets="@../design.css" text="Entrer">
        <graphic>
             <!--FontAwesomeIconView fill="BLUE" glyphName="LOCK" /-->
          </graphic>
@@ -34,7 +29,16 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <ComboBox fx:id="cmbCompteUser" layoutX="71.0" layoutY="82.0" prefHeight="25.0" prefWidth="155.0" promptText="votre compte" />
-      <PasswordField fx:id="txtPasse" layoutX="71.0" layoutY="128.0" prefHeight="25.0" prefWidth="155.0" promptText="votre mot de passe" style="-fx-background-radius: 10; -fx-border-radius: 10;" />
+      <ComboBox fx:id="cmbCompteUser" layoutX="66.0" layoutY="82.0" prefHeight="25.0" prefWidth="167.0" promptText="votre compte" />
+      <PasswordField fx:id="txtPasse" layoutX="66.0" layoutY="128.0" prefHeight="25.0" prefWidth="167.0" promptText="votre mot de passe" style="-fx-background-radius: 10; -fx-border-radius: 10;" />
+      <Pane prefHeight="38.0" prefWidth="343.0" style="-fx-background-color: #3a5898;">
+         <children>
+            <Text fill="WHITE" layoutX="83.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Authentification">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

@@ -47,9 +47,9 @@
       <Label layoutX="119.0" layoutY="154.0" text="Libellé Catégorie" />
       <Pane prefHeight="38.0" prefWidth="751.0" style="-fx-background-color: #3a5898;">
          <children>
-            <Text fill="WHITE" layoutX="248.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREATION DE CATEGORIE">
+            <Text fill="WHITE" layoutX="248.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Catégorie des articles">
                <font>
-                  <Font name="Montague" size="25.0" />
+                  <Font name="Arial Bold" size="20.0" />
                </font>
             </Text>
          </children></Pane>

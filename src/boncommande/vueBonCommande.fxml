@@ -205,9 +205,9 @@
       </ImageView>
       <Pane prefHeight="38.0" prefWidth="744.0" style="-fx-background-color: #3a5898;">
          <children>
-            <Text fill="WHITE" layoutX="273.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BON DE COMMANDE">
+            <Text fill="WHITE" layoutX="273.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bon de commande">
                <font>
-                  <Font name="Montague" size="25.0" />
+                  <Font name="Arial Bold" size="20.0" />
                </font>
             </Text>
          </children></Pane>

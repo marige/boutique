@@ -8,15 +8,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="autorisation.AutorisationController">
+<AnchorPane id="AnchorPane" prefHeight="542.0" prefWidth="705.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="autorisation.AutorisationController">
    <children>
       <ImageView fitHeight="570.0" fitWidth="750.0" pickOnBounds="true">
          <image>
             <Image url="@../ressources/116033.jpg" />
          </image>
       </ImageView>
-      <ComboBox fx:id="cmbUtilisateur" layoutX="243.0" layoutY="114.0" onAction="#clickComboUser" prefHeight="25.0" prefWidth="200.0" />
-      <TableView fx:id="tbv_fonction_dispo" layoutX="42.0" layoutY="178.0" prefHeight="308.0" prefWidth="200.0">
+      <ComboBox fx:id="cmbUtilisateur" layoutX="434.0" layoutY="91.0" onAction="#clickComboUser" prefHeight="25.0" prefWidth="200.0" />
+      <TableView fx:id="tbv_fonction_dispo" layoutX="74.0" layoutY="131.0" prefHeight="308.0" prefWidth="224.0">
         <columns>
           <TableColumn fx:id="cln_fonctionalite_exist" prefWidth="199.0" text="Fonctionalité">
                <graphic>
@@ -28,7 +28,7 @@
                </graphic></TableColumn>
         </columns>
       </TableView>
-      <Button layoutX="260.0" layoutY="285.0" mnemonicParsing="false" onAction="#clickAjouterFonc">
+      <Button layoutX="307.0" layoutY="264.0" mnemonicParsing="false" onAction="#clickAjouterFonc" prefHeight="28.0" prefWidth="66.0">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="50.0" pickOnBounds="true">
                <image>
@@ -36,7 +36,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button layoutX="260.0" layoutY="355.0" mnemonicParsing="false" onAction="#clickRetirer" prefHeight="30.0" prefWidth="68.0">
+      <Button layoutX="308.0" layoutY="302.0" mnemonicParsing="false" onAction="#clickRetirer" prefHeight="30.0" prefWidth="54.0">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="50.0" pickOnBounds="true">
                <image>
@@ -44,7 +44,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <TitledPane animated="false" layoutX="353.0" layoutY="178.0" prefHeight="308.0" prefWidth="317.0" text="Fonctionalités de ">
+      <TitledPane animated="false" layoutX="375.0" layoutY="131.0" prefHeight="308.0" prefWidth="317.0" text="Fonctionalités de ">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="285.0" prefWidth="302.0">
                <children>
@@ -67,7 +67,7 @@
             <Font size="14.0" />
          </font>
       </TitledPane>
-      <Button layoutX="186.0" layoutY="501.0" mnemonicParsing="false" onAction="#clickValidConfig" prefHeight="29.0" prefWidth="215.0" text="Valider les configurations">
+      <Button layoutX="233.0" layoutY="454.0" mnemonicParsing="false" onAction="#clickValidConfig" prefHeight="29.0" prefWidth="215.0" text="Valider les configurations">
          <graphic>
             <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -77,12 +77,12 @@
          </graphic></Button>
       <Pane prefHeight="38.0" prefWidth="750.0" style="-fx-background-color: #3a5898;">
          <children>
-            <Text fill="WHITE" layoutX="273.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LES AUTORISATIONS" wrappingWidth="204.92501831054688">
+            <Text fill="WHITE" layoutX="205.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Configuration des droits d'accès" wrappingWidth="339.9250183105469">
                <font>
-                  <Font name="Montague" size="25.0" />
+                  <Font name="Arial Bold" size="20.0" />
                </font>
             </Text>
          </children></Pane>
-      <Label layoutX="153.0" layoutY="119.0" text="Utilisateur" />
+      <Label layoutX="373.0" layoutY="95.0" text="Utilisateur" />
    </children>
 </AnchorPane>

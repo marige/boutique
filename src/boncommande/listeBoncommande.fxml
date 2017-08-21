@@ -118,9 +118,9 @@
       <DatePicker fx:id="dtDateFin" layoutX="331.0" layoutY="72.0" prefHeight="25.0" prefWidth="130.0" />
       <Pane prefHeight="38.0" prefWidth="750.0" style="-fx-background-color: #3a5898;">
          <children>
-            <Text fill="WHITE" layoutX="198.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LISTE DES BONS DE COMMANDES ">
+            <Text fill="WHITE" layoutX="198.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des bons de commandes">
                <font>
-                  <Font name="Montague" size="25.0" />
+                  <Font name="Arial Bold" size="20.0" />
                </font>
             </Text>
          </children></Pane>

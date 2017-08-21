@@ -43,7 +43,7 @@
                </graphic></TableColumn>
         </columns>
       </TableView>
-      <GridPane layoutX="158.0" layoutY="94.0" prefHeight="180.0" prefWidth="398.0" vgap="3.0">
+      <GridPane hgap="3.0" layoutX="158.0" layoutY="94.0" prefHeight="180.0" prefWidth="398.0" vgap="3.0">
          <columnConstraints>
             <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" maxWidth="253.0" minWidth="10.0" prefWidth="171.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="278.0" minWidth="10.0" prefWidth="250.0" />
@@ -88,9 +88,9 @@
          </graphic></Button>
       <Pane prefHeight="38.0" prefWidth="751.0" style="-fx-background-color: #3a5898;">
          <children>
-            <Text fill="WHITE" layoutX="238.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREATION D'UTILISATEURS">
+            <Text fill="WHITE" layoutX="238.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Création des utilisateurs">
                <font>
-                  <Font name="Montague" size="25.0" />
+                  <Font name="Arial" size="20.0" />
                </font>
             </Text>
          </children>

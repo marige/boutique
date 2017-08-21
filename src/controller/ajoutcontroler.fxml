@@ -58,9 +58,9 @@
       <Label layoutX="137.0" layoutY="161.0" text="Description" />
       <Pane prefHeight="38.0" prefWidth="751.0" style="-fx-background-color: #3a5898;">
          <children>
-            <Text fill="WHITE" layoutX="238.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREATION DE CONTROLEUR">
+            <Text fill="WHITE" layoutX="238.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Création des controlleurs">
                <font>
-                  <Font name="Montague" size="25.0" />
+                  <Font name="Arial Bold" size="20.0" />
                </font>
             </Text>
          </children>
