@@ -99,7 +99,19 @@
                               </ImageView>
                            </graphic>
                         </JFXButton>
-                        <Button layoutX="16.0" layoutY="186.0" mnemonicParsing="false" onAction="#clickListeBon" prefHeight="27.0" prefWidth="174.0" text="Liste bon de commande" />
+                        <ImageView fitHeight="69.0" fitWidth="78.0" layoutX="53.0" layoutY="155.0" onMouseClicked="#clickListeBon" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../ressources/Lunchbox.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Text layoutX="41.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des bons " wrappingWidth="97.13671875">
+                           <font>
+                              <Font name="Arial Italic" size="14.0" />
+                           </font>
+                        </Text>
                      </children>
                   </AnchorPane>
             </content>

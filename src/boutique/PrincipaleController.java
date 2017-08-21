@@ -22,16 +22,19 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import jxl.format.Border;
 import superpackage.SuperClass;
 
 /**
@@ -100,10 +103,12 @@ private Pane parentPane; // pane on which text is placed
     
     private void newForm(String packag,String frmName) {
          if(sc.isAuthorized(SuperClass.user, frmName)||SuperClass.user.getTypeUser().equalsIgnoreCase("administrateur")||SuperClass.user.getTypeUser().equalsIgnoreCase("superutilisateur"))
-         {try {
+         {
+             try 
+         {
             anchor.getChildren().clear();
+            anchor.setPadding(new Insets(3, 3, 3, 3));
             AnchorPane anchorVente = FXMLLoader.load(getClass().getResource("/"+packag+"/"+frmName+".fxml"));
-            //VenteController.stage=stage;
             anchor.getChildren().add(anchorVente);
         } catch (IOException ex) {
             Logger.getLogger(PrincipaleController.class.getName()).log(Level.SEVERE, null, ex);
@@ -176,10 +181,6 @@ private Pane parentPane; // pane on which text is placed
     private void clickDroitAcces(ActionEvent event){
          newForm("autorisation","autorisation");
     }
-    @FXML
-    private void clickListeBon(ActionEvent event){
-        newForm("boncommande","listeBoncommande");
-    }
   
     private void rerunAnimation() {
     //transition.stop();
@@ -195,6 +196,11 @@ private Pane parentPane; // pane on which text is placed
     double distance = parentPane.widthProperty().get() + 2 * node.getBoundsInLocal().getMaxX();
     transition.setDuration(new Duration(distance / 5));
 }
+
+    @FXML
+    private void clickListeBon(MouseEvent event) {
+         newForm("boncommande","listeBoncommande");
+    }
     
        
 }
