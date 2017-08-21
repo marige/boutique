@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javax.persistence.EntityManager;
 import societe.SocieteJpaController;
 import superpackage.SuperClass;
@@ -47,6 +48,7 @@ public class Boutique extends Application {
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 AuthentificationController.stage=stage;
+                stage.initStyle(StageStyle.UTILITY);
                 stage.show();
             }
        }catch(NullPointerException ex){

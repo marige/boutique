@@ -50,6 +50,7 @@ public class AuthentificationController extends SuperClass implements Initializa
     public void initialize(URL url, ResourceBundle rb) {
         listUsers.addAll(uticon.findUtilisateurEntities());
         cmbCompteUser.getItems().addAll(listUsers);
+     
        // GlyphsDude.setIcon(btnEntrer, FontAwesomeIcon.LOCK, "4em");
        
     }    

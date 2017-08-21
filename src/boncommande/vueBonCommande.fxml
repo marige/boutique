@@ -137,7 +137,7 @@
                         <Font name="DejaVu Sans Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="20.0" prefWidth="88.0" text="Fournisseur">
+                  <Label prefHeight="20.0" prefWidth="78.0" text="Fournisseur">
                      <font>
                         <Font name="DejaVu Sans Condensed Bold" size="14.0" />
                      </font>
