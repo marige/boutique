@@ -167,20 +167,12 @@
                               </ImageView>
                            </graphic>
                         </JFXButton>
-                        <JFXButton fx:id="btnAjouterCategorie1" buttonType="RAISED" defaultButton="true" layoutX="6.0" layoutY="223.0" onAction="#clickBtnAjouterCategorie" onMouseClicked="#clickInfoSociete" prefHeight="25.0" prefWidth="188.0" ripplerFill="#9ca2d1" style="-fx-background-color: #5164ae;" text="info société" textFill="#eeeeee">
-                           <effect>
-                              <Glow level="0.23" />
-                           </effect>
-                           <font>
-                              <Font name="DejaVu Sans Condensed Bold" size="13.0" />
-                           </font>
-                        </JFXButton>
-                        <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="45.0" layoutY="266.0" onMouseClicked="#clickBtnAjouterCategorie" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="70.0" layoutY="221.0" onMouseClicked="#clickBtnAjouterCategorie" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../ressources/boutique_ico/Actions-help-about-icon.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="120.0" layoutY="281.0" onMouseClicked="#clickBtnAjouterCategorie" text="info société" />
+                        <Label layoutX="57.0" layoutY="281.0" onMouseClicked="#clickBtnAjouterCategorie" text="info société" />
                      </children></AnchorPane>
             </content>
           </TitledPane>
@@ -188,30 +180,45 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button layoutX="11.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickCreerUtilsateur" prefHeight="27.0" prefWidth="168.0" styleClass="flat" text="Créer utilisateur">
-                           <graphic>
-                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../ressources/Resources_icones/AnneDodsworth.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic></Button>
-                        <Button layoutX="11.0" layoutY="51.0" mnemonicParsing="false" onAction="#clickAjouterControler" prefHeight="27.0" prefWidth="168.0" styleClass="FLAT" text="Ajouter Controler">
-                           <graphic>
-                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../ressources/Resources_icones/Candlestick.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic></Button>
-                        <Button layoutX="11.0" layoutY="100.0" mnemonicParsing="false" onAction="#clickDroitAcces" prefHeight="27.0" prefWidth="173.0" text="Gestion des droits accès">
-                           <graphic>
-                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../ressources/Resources_icones/backstage_my_templates.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic></Button>
+                        <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="74.0" layoutY="14.0" onMouseClicked="#clickCreerUtilsateur" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../ressources/Resources_icones/AnneDodsworth.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label layoutX="47.0" layoutY="72.0" onMouseClicked="#clickCreerUtilsateur" text="Créer utilisateur">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="78.0" layoutY="115.0" onMouseClicked="#clickAjouterControler" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../ressources/Resources_icones/Candlestick.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label layoutX="55.0" layoutY="158.0" onMouseClicked="#clickAjouterControler" text="Ajouter Controler">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="78.0" layoutY="208.0" onMouseClicked="#clickDroitAcces" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../ressources/Resources_icones/backstage_my_templates.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label layoutX="18.0" layoutY="268.0" onMouseClicked="#clickDroitAcces" text="Gestion des droits accès">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
                      </children>
                   </AnchorPane>
               </content>
