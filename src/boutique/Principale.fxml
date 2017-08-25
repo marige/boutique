@@ -14,7 +14,7 @@
 
 <AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="942.0" stylesheets="@../design.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boutique.PrincipaleController">
    <children>
-      <ImageView fitHeight="615.0" fitWidth="1199.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="615.0" fitWidth="942.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../ressources/bg-prin.jpg" />
          </image>
@@ -33,7 +33,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <Label layoutX="81.0" layoutY="107.0" onMouseClicked="#clickVendre" text="Vendre">
+                        <Label layoutX="81.0" layoutY="107.0" text="Vendre">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -46,7 +46,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <Label layoutX="48.0" layoutY="247.0" onMouseClicked="#clickListeVente" text="Liste des ventes">
+                        <Label layoutX="48.0" layoutY="247.0" text="Liste des ventes">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Label>
@@ -61,7 +61,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="78.0" onMouseClicked="#clickBonCommande" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="66.0" onMouseClicked="#clickBonCommande" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../ressources/Lunchbox.png" />
                            </image>
@@ -69,12 +69,12 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <Label layoutX="54.0" layoutY="279.0" onMouseClicked="#clickListeBon" text="Liste des bons ">
+                        <Label layoutX="54.0" layoutY="279.0" text="Liste des bons ">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Label>
-                        <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="81.0" layoutY="88.0" onMouseClicked="#clickedReceptionBon" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="65.0" layoutY="88.0" onMouseClicked="#clickedReceptionBon" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../ressources/boutique_ico/receive.png" />
                            </image>
@@ -82,16 +82,16 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <Label layoutX="30.0" layoutY="150.0" onMouseClicked="#clickedReceptionBon" text="Reception Commande">
+                        <Label layoutX="30.0" layoutY="150.0" text="Reception Commande">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Label>
-                        <Label layoutX="41.0" layoutY="56.0" onMouseClicked="#clickBonCommande" text="Bon de commande">
+                        <Label layoutX="41.0" layoutY="56.0" text="Bon de commande">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Label>
-                        <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="78.0" layoutY="220.0" onMouseClicked="#clickListeBon" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="70.0" layoutY="220.0" onMouseClicked="#clickListeBon" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../ressources/boutique_ico/liste.png" />
                            </image>
@@ -115,7 +115,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <Label layoutX="26.0" layoutY="118.0" onMouseClicked="#btnRptVente" text="Rapports des ventes">
+                        <Label layoutX="43.0" layoutY="118.0" text="Rapports des ventes">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -128,7 +128,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="12.0" layoutY="243.0" onMouseClicked="#clickBtnAjouterCategorie" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="12.0" layoutY="243.0" onMouseClicked="#clickBtnSociete" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../ressources/boutique_ico/Actions-help-about-icon.png" />
                            </image>
@@ -136,7 +136,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <Label layoutX="75.0" layoutY="265.0" onMouseClicked="#clickBtnAjouterCategorie" text="info société">
+                        <Label layoutX="75.0" layoutY="265.0" text="info société">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Label>
@@ -148,7 +148,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <Label layoutX="83.0" layoutY="30.0" onMouseClicked="#clickArticle" text="Article">
+                        <Label layoutX="83.0" layoutY="30.0" text="Article">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -161,7 +161,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <Label layoutX="74.0" layoutY="118.0" onMouseClicked="#clickFournisseur" text="Fournisseur">
+                        <Label layoutX="74.0" layoutY="118.0" text="Fournisseur">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -174,7 +174,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <Label layoutX="64.0" layoutY="195.0" onMouseClicked="#clickBtnAjouterCategorie" text="Catégorie d'article">
+                        <Label layoutX="64.0" layoutY="195.0" text="Catégorie d'article">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -194,7 +194,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <Label layoutX="47.0" layoutY="72.0" onMouseClicked="#clickCreerUtilsateur" text="Créer utilisateur">
+                        <Label layoutX="47.0" layoutY="72.0" text="Créer utilisateur">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -207,7 +207,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <Label layoutX="55.0" layoutY="158.0" onMouseClicked="#clickAjouterControler" text="Ajouter Controler">
+                        <Label layoutX="55.0" layoutY="158.0" text="Ajouter Controler">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -220,7 +220,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <Label layoutX="18.0" layoutY="268.0" onMouseClicked="#clickDroitAcces" text="Gestion des droits accès">
+                        <Label layoutX="26.0" layoutY="268.0" text="Gestion des droits accès">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -246,11 +246,11 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </HBox>
-      <ToolBar layoutX="214.0" layoutY="1.0" prefHeight="53.0" prefWidth="873.0">
+      <ToolBar layoutX="214.0" layoutY="1.0" prefHeight="53.0" prefWidth="731.0">
         <items>
             <HBox prefHeight="41.0" prefWidth="200.0" spacing="10.0">
                <children>
-                <Button mnemonicParsing="false" onAction="#clickVendre" prefHeight="38.0" prefWidth="50.0">
+                <Button mnemonicParsing="false" onAction="#clickVendreRaccourci" prefHeight="38.0" prefWidth="50.0">
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -268,7 +268,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#clickBonCommande">
+                  <Button mnemonicParsing="false" onAction="#clickBonCommandeRaccourci">
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -277,7 +277,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#clickedReceptionBon">
+                  <Button mnemonicParsing="false" onAction="#clickedReceptionBonRaccourci">
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -291,9 +291,12 @@
                   <Insets left="3.0" />
                </padding>
             </HBox>
-            <Pane fx:id="parentPane" prefHeight="41.0" prefWidth="610.0">
+            <Pane fx:id="parentPane" prefHeight="43.0" prefWidth="477.0">
                <children>
-                  <Text fx:id="node" layoutX="343.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TopSelpro est une application qui vous facillite la gestion" />
+                  <Text fx:id="node" layoutX="48.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TopSelpro est une application pour la gestion de votre commerce" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                     </font></Text>
                </children>
             </Pane>
         </items>

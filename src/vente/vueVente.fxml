@@ -101,10 +101,10 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Label layoutX="459.0" layoutY="169.0" styleClass="label-text" text="Quantité" />
+      <Label layoutX="481.0" layoutY="169.0" styleClass="label-text" text="Quantité" />
       <TextField fx:id="txtQte" layoutX="543.0" layoutY="165.0" prefHeight="20.0" prefWidth="143.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
       <TextField fx:id="txtPu" editable="false" layoutX="543.0" layoutY="197.0" prefHeight="20.0" prefWidth="143.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
-      <Label layoutX="447.0" layoutY="200.0" styleClass="label-text" text="P Unitaire" />
+      <Label layoutX="475.0" layoutY="200.0" styleClass="label-text" text="P Unitaire" />
       <Button fx:id="btnRetirer" layoutX="240.0" layoutY="242.0" mnemonicParsing="false" onMouseClicked="#clickRetirer" prefHeight="17.0" prefWidth="120.0" text="Retirer">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
@@ -145,20 +145,6 @@
                      </styleClass></TextField>
                </children>
             </HBox>
-            <HBox prefHeight="33.0" prefWidth="337.0" spacing="10.0">
-               <children>
-                  <Label prefHeight="24.0" prefWidth="100.0" styleClass="label-text" text="Libellé article" />
-                  <TextField fx:id="txtLibarticle" editable="false" prefHeight="26.0" prefWidth="145.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;">
-                     <font>
-                        <Font size="11.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="jfx-list-cell-container-center" />
-                        <String fx:value="read-only" />
-                     </styleClass>
-                  </TextField>
-               </children>
-            </HBox>
          </children>
       </VBox>
       <HBox layoutX="459.0" layoutY="243.0" prefHeight="29.0" prefWidth="228.0">
@@ -189,5 +175,15 @@
             </Text>
          </children>
       </Pane>
+      <Label layoutX="456.0" layoutY="131.0" prefHeight="24.0" prefWidth="79.0" styleClass="label-text" text="Libellé article" />
+      <TextField fx:id="txtLibarticle" editable="false" layoutX="542.0" layoutY="132.0" prefHeight="26.0" prefWidth="145.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;">
+         <font>
+            <Font size="11.0" />
+         </font>
+         <styleClass>
+            <String fx:value="jfx-list-cell-container-center" />
+            <String fx:value="read-only" />
+         </styleClass>
+      </TextField>
    </children>
 </AnchorPane>

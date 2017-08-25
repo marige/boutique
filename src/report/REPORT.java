@@ -21,7 +21,7 @@ public class REPORT extends SuperClass {
         sc=new SocieteJpaController().findSociete(1);
     }
   //  public static String reportPath=System.getProperty("user.dir")+"\\src\\report\\";
-    public static String reportPath=System.getProperty("user.dir")+"\\report\\";
+    public static String reportPath=System.getProperty("user.dir")+"\\";
     Societe sc=null;
     public void editionReport(String reportName,String query, HashMap hm) throws Exception{
             Connection conn=getConnection();
