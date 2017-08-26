@@ -80,6 +80,8 @@ private Pane parentPane; // pane on which text is placed
             anchor.getChildren().clear();
             anchor.setPadding(new Insets(3, 3, 3, 3));
             AnchorPane anchorVente = FXMLLoader.load(getClass().getResource("/"+packag+"/"+frmName+".fxml"));
+          /*  AnchorPane.setTopAnchor(anchorVente,5.0);
+            AnchorPane.setLeftAnchor(anchorVente,5.0);*/
             anchor.getChildren().add(anchorVente);
         } catch (IOException ex) {
             Logger.getLogger(PrincipaleController.class.getName()).log(Level.SEVERE, null, ex);

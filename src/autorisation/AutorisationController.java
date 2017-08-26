@@ -24,7 +24,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import superpackage.SuperClass;
 import utilisateur.Utilisateur;
 import utilisateur.UtilisateurJpaController;
-import utilisateur.exceptions.NonexistentEntityException;
+import exceptions.NonexistentEntityException;
 
 /**
  * FXML Controller class

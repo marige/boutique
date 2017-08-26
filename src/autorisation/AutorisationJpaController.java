@@ -14,7 +14,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import superpackage.SuperClass;
 import utilisateur.Utilisateur;
-import utilisateur.exceptions.NonexistentEntityException;
+import exceptions.NonexistentEntityException;
 
 /**
  *

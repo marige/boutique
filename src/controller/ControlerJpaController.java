@@ -14,8 +14,8 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import superpackage.SuperClass;
-import utilisateur.exceptions.NonexistentEntityException;
-import utilisateur.exceptions.PreexistingEntityException;
+import exceptions.NonexistentEntityException;
+import exceptions.PreexistingEntityException;
 
 /**
  *

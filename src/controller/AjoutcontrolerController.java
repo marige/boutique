@@ -19,7 +19,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import superpackage.SuperClass;
-import utilisateur.exceptions.NonexistentEntityException;
+import exceptions.NonexistentEntityException;
 
 /**
  * FXML Controller class
