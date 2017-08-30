@@ -103,7 +103,11 @@
          </graphic></Button>
       <Label layoutX="481.0" layoutY="169.0" styleClass="label-text" text="Quantité" />
       <TextField fx:id="txtQte" layoutX="543.0" layoutY="165.0" prefHeight="20.0" prefWidth="143.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
-      <TextField fx:id="txtPu" editable="false" layoutX="543.0" layoutY="197.0" prefHeight="20.0" prefWidth="143.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;" styleClass="jfx-list-cell-container-center" />
+      <TextField fx:id="txtPu" editable="false" layoutX="543.0" layoutY="197.0" prefHeight="20.0" prefWidth="143.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px; -fx-background-color: #e3e3e3;">
+         <styleClass>
+            <String fx:value="jfx-list-cell-container-center" />
+            <String fx:value="read-only" />
+         </styleClass></TextField>
       <Label layoutX="475.0" layoutY="200.0" styleClass="label-text" text="P Unitaire" />
       <Button fx:id="btnRetirer" layoutX="240.0" layoutY="242.0" mnemonicParsing="false" onMouseClicked="#clickRetirer" prefHeight="17.0" prefWidth="120.0" text="Retirer">
          <graphic>
@@ -138,7 +142,7 @@
             <HBox prefHeight="25.0" prefWidth="254.0" spacing="10.0">
                <children>
                   <Label alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="98.0" styleClass="label-text" text="Code article" />
-                  <TextField fx:id="txtCode" editable="false" prefHeight="22.0" prefWidth="148.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;">
+                  <TextField fx:id="txtCode" editable="false" prefHeight="22.0" prefWidth="148.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px; -fx-background-color: #e3e3e3;">
                      <styleClass>
                         <String fx:value="jfx-list-cell-container-center" />
                         <String fx:value="read-only" />
@@ -176,7 +180,7 @@
          </children>
       </Pane>
       <Label layoutX="456.0" layoutY="131.0" prefHeight="24.0" prefWidth="79.0" styleClass="label-text" text="Libellé article" />
-      <TextField fx:id="txtLibarticle" editable="false" layoutX="542.0" layoutY="132.0" prefHeight="26.0" prefWidth="145.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px;">
+      <TextField fx:id="txtLibarticle" editable="false" layoutX="542.0" layoutY="132.0" prefHeight="26.0" prefWidth="145.0" style="-fx-background-radius: 10px; -fx-border-radius: 10px; -fx-background-color: #e3e3e3;">
          <font>
             <Font size="11.0" />
          </font>
